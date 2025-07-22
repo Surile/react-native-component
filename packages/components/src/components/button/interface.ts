@@ -4,6 +4,7 @@ import type {
   TouchableHighlightProps,
   StyleProp,
   ColorValue,
+  TouchableOpacityProps,
 } from 'react-native'
 
 import type { LoadingProps } from '../loading/interface'
@@ -109,7 +110,6 @@ export interface ButtonProps
 export interface ButtonOptionProps
   extends Omit<TouchableHighlightProps, 'underlayColor' | 'activeOpacity'>,
     Pick<ButtonProps, 'text' | 'textStyle' | 'size' | 'hairline' | 'round'> {
-  theme?: Partial<ButtonTheme>
   /**
    * 是否选中、高亮
    */

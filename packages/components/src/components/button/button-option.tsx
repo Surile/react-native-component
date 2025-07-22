@@ -1,125 +1,113 @@
-import Color from 'color'
-import isNil from 'lodash/isNil'
-import React, { isValidElement, memo, useMemo } from 'react'
-import type { ViewStyle, StyleProp } from 'react-native'
-import { View, TouchableOpacity, StyleSheet } from 'react-native'
+import { cva } from 'class-variance-authority';
+import isNil from 'lodash/isNil';
+import React, { isValidElement, memo } from 'react';
+import { View, TouchableOpacity, Text } from 'react-native';
+import { twMerge } from 'tailwind-merge';
+import { ButtonOptionProps } from './interface';
 
-import { renderTextLikeJSX } from '../helpers'
-import Theme from '../theme'
+const buttonVariants = cva('items-center justify-center', {
+  variants: {
+    type: {
+      hazy: 'bg-gray-100 border border-gray-100',
+      outline: 'bg-white border border-gray-300',
+      white: 'bg-white border border-white',
+    },
+    size: {
+      s: 'h-8 px-3 text-sm',
+      m: 'h-10 px-4 text-base',
+      l: 'h-12 px-5 text-lg',
+    },
+    round: {
+      true: 'rounded-full',
+      false: 'rounded',
+    },
+    active: {
+      true: 'bg-primary-50 border-primary-500',
+    },
+    disabled: {
+      true: 'opacity-50',
+    },
+  },
+  defaultVariants: {
+    type: 'hazy',
+    size: 's',
+    round: false,
+    active: false,
+    disabled: false,
+  },
+});
 
-import type { ButtonOptionProps } from './interface'
-import { varCreator, styleCreator } from './style'
+const textVariants = cva('', {
+  variants: {
+    disabled: {
+      true: 'text-gray-300',
+      false: 'text-gray-800',
+    },
+    active: {
+      true: 'text-primary-500',
+    },
+  },
+  defaultVariants: {
+    disabled: false,
+    active: false,
+  },
+});
 
 const ButtonOption: React.FC<ButtonOptionProps> = ({
-  theme,
   active,
   activeHighlight = true,
   badge,
   type = 'hazy',
-
   text,
-  textStyle,
   size = 's',
-  hairline,
   round = false,
-
-  style,
+  className,
   children,
+  disabled,
   ...restProps
 }) => {
-  const [CV, STYLES, TOKENS] = Theme.useStyle({
-    varCreator,
-    styleCreator,
-    theme,
-  })
+  const buttonClasses = twMerge(
+    buttonVariants({
+      type,
+      size,
+      round,
+      active: active && activeHighlight,
+      disabled,
+    }),
+    className
+  );
 
-  const inactiveBackgroundColor = useMemo(() => {
-    if (type === 'outline') {
-      return TOKENS.white
-    }
+  const textClasses = textVariants({
+    disabled,
+    active: active && activeHighlight,
+  });
 
-    if (type === 'white') {
-      return TOKENS.white
-    }
+  const childrenJSX = isValidElement(children) ? (
+    children
+  ) : !isNil(children) ? (
+    <Text className={textClasses}>{children}</Text>
+  ) : (
+    <Text className={textClasses}>{text}</Text>
+  );
 
-    return TOKENS.gray_2
-  }, [TOKENS.gray_2, TOKENS.white, type])
-  const inactiveBorderColor = useMemo(() => {
-    if (restProps.disabled) {
-      if (type === 'white') {
-        return TOKENS.white
-      }
-      return CV.button_option_disabled_border_color
-    }
-
-    if (type === 'outline') {
-      return TOKENS.gray_5
-    }
-
-    if (type === 'white') {
-      return TOKENS.white
-    }
-
-    return inactiveBackgroundColor
-  }, [
-    CV.button_option_disabled_border_color,
-    TOKENS.gray_5,
-    TOKENS.white,
-    inactiveBackgroundColor,
-    restProps.disabled,
-    type,
-  ])
-  const activeBackgroundColor = useMemo(
-    () => Color(CV.button_primary_color).fade(0.89).string(),
-    [CV.button_primary_color],
-  )
-
-  const buttonStyles: StyleProp<ViewStyle> = [
-    STYLES.button,
-    STYLES.option,
-    {
-      height: CV[`button_${size}_height`],
-      backgroundColor:
-        active && activeHighlight
-          ? activeBackgroundColor
-          : inactiveBackgroundColor,
-      borderColor: active ? CV.button_primary_color : inactiveBorderColor,
-      borderWidth: hairline ? StyleSheet.hairlineWidth : 1,
-    },
-    STYLES[`button_${size}_padding_horizontal`],
-    round ? STYLES.button_round : null,
-    restProps.disabled ? STYLES.button_disabled : null,
-    style,
-  ]
-
-  const childrenJSX = isValidElement(children)
-    ? children
-    : renderTextLikeJSX(!isNil(children) ? children : text, [
-        {
-          color: restProps.disabled
-            ? CV.button_option_disabled_text_color
-            : active && activeHighlight
-              ? CV.button_primary_color
-              : TOKENS.gray_8,
-          fontSize: CV[`button_${size}_font_size`],
-        },
-        textStyle,
-      ])
-  const badgeTextJSX = renderTextLikeJSX(badge, [STYLES.option_badge_text])
-  const badgeJSX = !isNil(badgeTextJSX) ? (
-    <View style={STYLES.option_badge}>{badgeTextJSX}</View>
-  ) : null
+  const badgeJSX = !isNil(badge) ? (
+    <View className='absolute -top-1 -right-1 min-w-4 h-4 px-1 bg-red-500 rounded-full'>
+      <Text className='text-xs text-white text-center'>{badge}</Text>
+    </View>
+  ) : null;
 
   return (
     <TouchableOpacity
-      accessibilityRole="button"
+      accessibilityRole='button'
       {...restProps}
-      activeOpacity={CV.button_active_opacity}
-      style={buttonStyles}>
+      disabled={disabled}
+      activeOpacity={0.7}
+      className={buttonClasses}
+    >
       {childrenJSX}
       {badgeJSX}
     </TouchableOpacity>
-  )
-}
+  );
+};
 
-export default memo(ButtonOption)
+export default memo(ButtonOption);

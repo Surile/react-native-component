@@ -10,3 +10,9 @@ export { default as Space } from './space'
 
 export type { BlankProps } from './blank/interface'
 export { default as Blank } from './blank'
+
+export type { BottomBarProps } from './bottom-bar/interface'
+export { default as BottomBar } from './bottom-bar'
+
+export type { ButtonProps } from './button/interface'
+export { default as Button } from './button'
