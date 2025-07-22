@@ -1,0 +1,1 @@
+export * as Tst from './components'

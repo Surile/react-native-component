@@ -1,0 +1,37 @@
+{
+  "name": "tastien-ui",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "dev:example": "turbo dev --filter=example --concurrency 32",
+    "dev:example:ios": "turbo dev:ios --filter=example --concurrency 32",
+    "dev:example:android": "turbo dev:android --filter=example --concurrency 32",
+    "dev:example:web": "turbo dev:web --filter=example --concurrency 32"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.4",
+    "typescript": "^5.8.3"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@babel/*",
+        "expo-modules-*",
+        "typescript"
+      ]
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "trailingComma": "es5"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "packageManager": "pnpm@9.1.4"
+}

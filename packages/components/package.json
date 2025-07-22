@@ -1,0 +1,47 @@
+{
+  "name": "@tastien/react-native-component",
+  "version": "1.0.0",
+  "description": "Tastien React Native Components",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf node_modules"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./components/ui/textarea": "./src/components/ui/textarea/index.tsx"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lodash": "^4.17.21",
+    "nativewind": "^4.1.23",
+    "react-is": "^19.1.0",
+    "react-native-reanimated": "~3.17.4",
+    "react-native-safe-area-context": "5.4.0",
+    "react-native-svg": "^15.12.0",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.10",
+    "@types/lodash": "^4.17.20",
+    "@types/react": "~19.0.10",
+    "@types/react-is": "^19.0.0",
+    "color": "^5.0.0",
+    "react": "19.0.0",
+    "react-native": "0.79.5"
+  },
+  "peerDependencies": {
+    "react": "19.0.0",
+    "react-native": "0.79.5",
+    "react-native-web": "*"
+  },
+  "peerDependenciesMeta": {
+    "react-native": {
+      "optional": true
+    },
+    "react-native-web": {
+      "optional": true
+    }
+  }
+}
