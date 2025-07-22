@@ -54,7 +54,7 @@ export const Space: React.FC<SpaceProps> = ({
   wrap = false,
   gap = 's',
   justify = 'start',
-  align = 'center',
+  align = 'stretch',
   shrink = false,
   minWidth,
   style,

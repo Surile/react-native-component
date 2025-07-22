@@ -1,50 +1,119 @@
-import { View, Text, Button } from 'react-native';
+import { Text, ScrollView, SafeAreaView } from 'react-native';
 import { Tst } from '@tastien/react-native-component';
+import React from 'react';
+import { useRouter } from 'expo-router';
 
-const Circle = (props: { size?: number }) => {
-  const size = props.size || 20;
-  const style = {
-    borderRadius: size / 2,
-    backgroundColor: '#527fe4',
-    width: size,
-    height: size,
-    margin: 1,
-  };
-  return <View style={style} />;
-};
+const navs = [
+  {
+    title: '基础组件',
+    datas: [
+      {
+        title: 'Blank 留白',
+        name: 'DemoBlank',
+      },
+      {
+        title: 'Button 按钮',
+        name: 'DemoButton',
+      },
+      {
+        title: 'Cell 单元格',
+        name: 'DemoCell',
+      },
+    ],
+  },
+  {
+    title: '表单组件',
+    datas: [
+      {
+        title: 'Checkbox 复选框',
+        name: 'DemoCheckbox',
+      },
+      {
+        title: 'DatePicker 时间选择器',
+        name: 'DemoDatePicker',
+      },
+      {
+        title: 'DatePickerView 时间选择器视图',
+        name: 'DemoDatePickerView',
+      },
+      {
+        title: 'Field 输入项',
+        name: 'DemoField',
+      },
+      {
+        title: 'Form 表单',
+        name: 'DemoForm',
+      },
+      {
+        title: 'NumberInput 数字输入',
+        name: 'DemoNumberInput',
+      },
+      {
+        title: 'PasswordInput 密码输入',
+        name: 'DemoPasswordInput',
+      },
+      {
+        title: 'Picker 选择器',
+        name: 'DemoPicker',
+      },
+      {
+        title: 'PickerView 选择器视图',
+        name: 'DemoPickerView',
+      },
+      {
+        title: 'Search 搜索',
+        name: 'DemoSearch',
+      },
+      {
+        title: 'Selector 选择器',
+        name: 'DemoSelector',
+      },
+      {
+        title: 'StepSelector 步骤选择器',
+        name: 'DemoStepSelector',
+      },
+      {
+        title: 'Switch 开关',
+        name: 'DemoSwitch',
+      },
+      {
+        title: 'TextInput 输入框',
+        name: 'DemoTextInput',
+      },
+      {
+        title: 'Tree 树形控件',
+        name: 'DemoTree',
+      },
+    ],
+  },
+];
 
 export default function Index() {
-  return (
-    <View className='flex-1 items-center justify-center'>
-      <Tst.Loading className='mt-4'>12321312312</Tst.Loading>
+  const router = useRouter();
 
-      <Text>项目排列方式2121</Text>
-      <Tst.Flex>
-        <Tst.Flex.Item style={{ paddingRight: 4 }}>
-          <Text>按钮1</Text>
-        </Tst.Flex.Item>
-        <Tst.Flex.Item style={{ paddingLeft: 4, paddingRight: 4 }}>
-          <Text>按钮2</Text>
-        </Tst.Flex.Item>
-        <Tst.Flex.Item style={{ paddingLeft: 4 }}>
-          <Text>按钮312121</Text>
-        </Tst.Flex.Item>
-      </Tst.Flex>
-      <Tst.Flex justify='start'>
-        <Circle />
-        <Circle />
-        <Circle />
-        <Circle />
-        <Circle />
-      </Tst.Flex>
-      <Tst.Space direction='horizontal'>
-        <Text>123123123</Text>
-        <Text>123123123</Text>
-      </Tst.Space>
-      <Tst.Space direction='vertical'>
-        <Text>123123123</Text>
-        <Text>123123123</Text>
-      </Tst.Space>
-    </View>
+  return (
+    <SafeAreaView className='flex-1'>
+      <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
+        {navs.map((item) => {
+          return (
+            <Tst.Cell.Group key={item.title} title={item.title}>
+              {item.datas.map((subitem, index) => {
+                return (
+                  <Tst.Cell
+                    key={subitem.name}
+                    isLink
+                    title={subitem.title}
+                    divider={index + 1 !== item.datas.length}
+                    onPress={() => {
+                      router.push(subitem.name as any);
+                    }}
+                  />
+                );
+              })}
+            </Tst.Cell.Group>
+          );
+        })}
+      </ScrollView>
+    </SafeAreaView>
   );
 }

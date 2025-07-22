@@ -16,3 +16,12 @@ export { default as BottomBar } from './bottom-bar'
 
 export type { ButtonProps } from './button/interface'
 export { default as Button } from './button'
+
+export type { DividerProps } from './divider/interface'
+export { default as Divider } from './divider'
+
+export type { CellProps, CellGroupProps } from './cell/interface'
+export { default as Cell } from './cell'
+
+export type { CardProps } from './card/interface'
+export { default as Card } from './card'
