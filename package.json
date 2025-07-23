@@ -9,9 +9,7 @@
     "dev:example:ios": "turbo dev:ios --filter=example --concurrency 32",
     "dev:example:android": "turbo dev:android --filter=example --concurrency 32",
     "dev:example:web": "turbo dev:web --filter=example --concurrency 32",
-    "deploy:example:ios": "turbo deploy:ios --filter=example --concurrency 32",
-    "deploy:example:android": "turbo deploy:android --filter=example --concurrency 32",
-    "deploy:example:web": "turbo deploy:web --filter=example --concurrency 32"
+    "deploy": "turbo deploy --filter=example --concurrency 32"
   },
   "devDependencies": {
     "turbo": "^2.5.4",
