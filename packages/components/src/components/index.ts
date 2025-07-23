@@ -25,3 +25,22 @@ export { default as Cell } from './cell'
 
 export type { CardProps } from './card/interface'
 export { default as Card } from './card'
+
+export type { PopupProps, PopupPosition } from './popup/types'
+export { default as Popup } from './popup'
+
+export { default as Portal } from './portal'
+
+export type { OverlayProps } from './overlay/types'
+export { default as Overlay } from './overlay'
+
+export type { ButtonBarProps } from './button-bar/interface'
+export { default as ButtonBar } from './button-bar'
+
+export type { ProviderProps } from './provider/interface'
+export { default as Provider } from './provider'
+
+export type { ToastOptions } from './toast/types'
+export { default as Toast } from './toast'
+
+export * from './icons'

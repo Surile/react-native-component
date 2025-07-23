@@ -9,22 +9,7 @@ import Divider from '../divider';
 import Skeleton from '../skeleton';
 import CardBody from './card-body';
 import type { CardProps } from './interface';
-
-const cardVariants = cva('overflow-hidden bg-white', {
-  variants: {
-    size: {
-      s: 'rounded-s',
-      m: 'rounded-m',
-    },
-    square: {
-      true: 'rounded-none',
-    },
-  },
-  defaultVariants: {
-    size: 'm',
-    square: false,
-  },
-});
+import { renderTextLikeJSX } from '../../helpers';
 
 const headerVariants = cva('flex-row items-center justify-between px-3', {
   variants: {
@@ -79,31 +64,36 @@ const Card: React.FC<CardProps> = ({
   className,
   ...restProps
 }) => {
+  const isS = size === 's';
+
   const hasTitleLeftExtra = !isNil(titleLeftExtra);
 
-  const titleJSX =
-    typeof title === 'string' ? (
-      <Text
-        className={cn(titleTextVariants({ size, hasTitleLeftExtra }), titleTextClassName)}
-        numberOfLines={1}
-      >
-        {title}
-      </Text>
-    ) : (
-      title
-    );
+  const titleJSX = renderTextLikeJSX(
+    title,
+    cn(
+      'text-4xl text-[#11151A] font-bold flex-1 mr-2',
+      {
+        'text-2xl': isS,
+        'mr-2': hasTitleLeftExtra,
+      },
+      titleTextClassName
+    ),
+    {
+      numberOfLines: 1,
+    }
+  );
 
-  const footerJSX =
-    typeof footer === 'string' ? (
-      <Text className={cn('text-gray-7 text-sm leading-5', footerTextClassName)}>{footer}</Text>
-    ) : (
-      footer
-    );
+  const footerJSX = renderTextLikeJSX(footer, cn('text-[#5A6068] text-lg', footerTextClassName));
 
   const showHeader = !isNil(titleJSX) || hasTitleLeftExtra || !isNil(extra);
   const headerJSX = (
     <>
-      <View className={cn(headerVariants({ size }))}>
+      <View
+        className={cn('flex-row items-center justify-between px-3 min-h-[50px]', {
+          'min-h-10': isS,
+        })}
+        onLayout={onLayoutHeader}
+      >
         <View className={cn('flex-row items-center flex-1', titleClassName)}>
           {titleLeftExtra}
           {titleJSX}
@@ -115,7 +105,14 @@ const Card: React.FC<CardProps> = ({
   );
 
   return (
-    <View {...restProps} className='bg-fill-white'>
+    <View
+      {...restProps}
+      className={cn('bg-white overflow-hidden', {
+        'rounded-lg': !square && size === 'm',
+        'rounded-[4px]': !square && size === 's',
+        'rounded-none': square,
+      })}
+    >
       {showHeader ? (
         onPressHeader ? (
           <TouchableWithoutFeedback onPress={onPressHeader}>
@@ -136,7 +133,7 @@ const Card: React.FC<CardProps> = ({
       {!isNil(footerJSX) ? (
         <>
           {footerDivider ? <Divider /> : null}
-          <View className={cn(footerVariants(), footerClassName)}>{footerJSX}</View>
+          <View className={cn('px-3 py-2', footerClassName)}>{footerJSX}</View>
         </>
       ) : null}
     </View>

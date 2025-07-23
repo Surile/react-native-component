@@ -85,18 +85,6 @@ export interface ButtonProps
    * 渲染左侧图标
    */
   renderLeftIcon?: (color: ColorValue, size: number) => React.ReactElement
-
-  /**
-   * 按钮颜色，不支持渐变
-   */
-  color?: ColorValue
-
-  /**
-   * 按钮文案颜色
-   * @default button_primary_color
-   */
-  textColor?: ColorValue
-
   /**
    * onPress debounce wait
    * @default 0

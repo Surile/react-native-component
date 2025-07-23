@@ -8,6 +8,7 @@
     "dev:android": "expo start --android",
     "dev:ios": "expo start --ios",
     "dev:web": "expo start --web",
+    "deploy": "eas update",
     "lint": "expo lint",
     "postinstall": "npx tailwindcss -i ./global.css -o ./node_modules/.cache/nativewind/global.css"
   },
@@ -29,6 +30,7 @@
     "expo-status-bar": "~2.2.3",
     "expo-symbols": "~0.4.5",
     "expo-system-ui": "~5.0.10",
+    "expo-updates": "~0.28.17",
     "expo-web-browser": "~14.2.0",
     "nativewind": "^4.1.23",
     "react": "19.0.0",

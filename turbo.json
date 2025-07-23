@@ -28,6 +28,10 @@
       "cache": false,
       "persistent": true
     },
+    "deploy": {
+      "cache": false,
+      "persistent": true
+    },
     "clean": {
       "cache": false
     }

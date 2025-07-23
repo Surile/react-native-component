@@ -194,8 +194,6 @@ const Button: React.FC<ButtonProps> = ({
   square = false,
   round = false,
   renderLeftIcon,
-  color,
-  textColor,
   onPressDebounceWait = 0,
   className,
   ...restProps

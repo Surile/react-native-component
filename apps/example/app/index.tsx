@@ -19,6 +19,18 @@ const navs = [
         title: 'Cell 单元格',
         name: 'DemoCell',
       },
+      {
+        title: 'Popup 弹出层',
+        name: 'DemoPopup',
+      },
+      {
+        title: 'Space 间距',
+        name: 'DemoSpace',
+      },
+      {
+        title: 'Toast 轻提示',
+        name: 'DemoToast',
+      },
     ],
   },
   {
