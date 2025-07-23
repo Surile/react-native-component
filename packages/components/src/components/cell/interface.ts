@@ -64,7 +64,7 @@ export interface CellPrivateProps {
   /**
    * 内部布局样式
    */
-  innerStyle?: StyleProp<ViewStyle>
+  innerClassName?: string
 
   /**
    * 左侧标题

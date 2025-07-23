@@ -46,7 +46,7 @@ const titleVariants = cva('flex-row items-center', {
 const valueVariants = cva('flex-1 min-w-0', {
   variants: {
     hasValue: {
-      true: 'ml-2',
+      true: 'min-w-[100px]',
     },
     center: {
       true: 'self-center',
@@ -95,6 +95,7 @@ const Cell: React.FC<CellProps> = ({
   onPressDebounceWait = 0,
   className,
   underlayColor,
+  innerClassName,
   ...restProps
 }) => {
   const { run: runOnPress } = useDebounceFn(restProps.onPress || noop, {
@@ -102,6 +103,10 @@ const Cell: React.FC<CellProps> = ({
     leading: true,
     trailing: false,
   });
+
+  if (vertical) {
+    textAlign = 'left';
+  }
 
   const requiredJSX = required ? (
     <View className='mr-1' testID='CELL_REQUIRED'>
@@ -113,6 +118,9 @@ const Cell: React.FC<CellProps> = ({
     typeof title === 'string' ? (
       <Text
         className={cn('text-text-4 text-2xl', titleTextClassName)}
+        style={{
+          paddingVertical: (32 - 22) / 2,
+        }}
         numberOfLines={titleTextNumberOfLines}
       >
         {title}
@@ -125,6 +133,10 @@ const Cell: React.FC<CellProps> = ({
     typeof value === 'string' ? (
       <Text
         className={cn('text-text-3 text-2xl', valueTextClassName)}
+        style={{
+          textAlign,
+          paddingVertical: (32 - 22) / 2,
+        }}
         numberOfLines={valueTextNumberOfLines}
       >
         {value}
@@ -135,7 +147,15 @@ const Cell: React.FC<CellProps> = ({
 
   const extraJSX =
     typeof extra === 'string' ? (
-      <Text className={cn('text-text-3 text-2xl', extraTextClassName)}>{extra}</Text>
+      <Text
+        style={{
+          marginHorizontal: 9,
+          paddingBottom: 10,
+        }}
+        className={cn('text-text-3 text-2xl', extraTextClassName)}
+      >
+        {extra}
+      </Text>
     ) : (
       extra
     );
@@ -170,11 +190,8 @@ const Cell: React.FC<CellProps> = ({
     <>
       <View
         className={cn(
-          valueVariants({
-            hasValue: !!valueJSX,
-            center,
-            textAlign,
-          }),
+          'flex-1',
+          valueVariants({ hasValue: !!valueJSX, center, textAlign }),
           valueClassName
         )}
       >
@@ -203,25 +220,36 @@ const Cell: React.FC<CellProps> = ({
     >
       <View
         className={cn(
-          'p-4',
-          cellVariants({
-            vertical,
-            hasExtra: !!extra,
-            center,
-          })
+          'relative py-3 mx-[9px]',
+          {
+            'flex-row': !vertical,
+            'pb-0': extra,
+          },
+          innerClassName
         )}
       >
-        <View className={cn(titleVariants({ center }), titleClassName)}>
+        <View
+          className={cn('relative flex-row mr-2 shrink', titleVariants({ center }), titleClassName)}
+        >
           {requiredJSX}
           {titleExtra}
           {titleJSX}
         </View>
 
-        {vertical ? <View className={cn('mt-2', contentClassName)}>{ctxJSX}</View> : ctxJSX}
+        {vertical ? (
+          <View className={cn('flex-row items-center mt-2', contentClassName)}>{ctxJSX}</View>
+        ) : (
+          ctxJSX
+        )}
       </View>
       {extraJSX}
       {divider && (
-        <Divider className={cn(`ml-[${dividerLeftGap}px]`, `mr-[${dividerRightGap}px]`)} />
+        <Divider
+          style={{
+            marginLeft: dividerLeftGap,
+            marginRight: dividerRightGap,
+          }}
+        />
       )}
     </Pressable>
   );
