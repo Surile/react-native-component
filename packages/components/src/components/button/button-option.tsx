@@ -2,27 +2,29 @@ import { cva } from 'class-variance-authority';
 import isNil from 'lodash/isNil';
 import React, { isValidElement, memo } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
-import { twMerge } from 'tailwind-merge';
 import { ButtonOptionProps } from './interface';
+import { cn } from '../../lib/utils';
 
 const buttonVariants = cva('items-center justify-center', {
   variants: {
     type: {
       hazy: 'bg-gray-100 border border-gray-100',
-      outline: 'bg-white border border-gray-300',
+      outline: 'bg-white border border-primary-5',
       white: 'bg-white border border-white',
     },
     size: {
+      xs: 'h-6 px-2 text-xs',
       s: 'h-8 px-3 text-sm',
       m: 'h-10 px-4 text-base',
       l: 'h-12 px-5 text-lg',
+      xl: 'h-14 px-6 text-xl',
     },
     round: {
       true: 'rounded-full',
       false: 'rounded',
     },
     active: {
-      true: 'bg-primary-50 border-primary-500',
+      true: 'bg-primary-1 border-primary-1',
     },
     disabled: {
       true: 'opacity-50',
@@ -44,7 +46,7 @@ const textVariants = cva('', {
       false: 'text-gray-800',
     },
     active: {
-      true: 'text-primary-500',
+      true: 'text-primary-5',
     },
   },
   defaultVariants: {
@@ -66,28 +68,26 @@ const ButtonOption: React.FC<ButtonOptionProps> = ({
   disabled,
   ...restProps
 }) => {
-  const buttonClasses = twMerge(
-    buttonVariants({
-      type,
-      size,
-      round,
-      active: active && activeHighlight,
-      disabled,
-    }),
-    className
-  );
-
-  const textClasses = textVariants({
-    disabled,
-    active: active && activeHighlight,
-  });
-
   const childrenJSX = isValidElement(children) ? (
     children
   ) : !isNil(children) ? (
-    <Text className={textClasses}>{children}</Text>
+    <Text
+      className={textVariants({
+        disabled,
+        active: active && activeHighlight,
+      })}
+    >
+      {children}
+    </Text>
   ) : (
-    <Text className={textClasses}>{text}</Text>
+    <Text
+      className={textVariants({
+        disabled,
+        active: active && activeHighlight,
+      })}
+    >
+      {text}
+    </Text>
   );
 
   const badgeJSX = !isNil(badge) ? (
@@ -102,7 +102,16 @@ const ButtonOption: React.FC<ButtonOptionProps> = ({
       {...restProps}
       disabled={disabled}
       activeOpacity={0.7}
-      className={buttonClasses}
+      className={cn(
+        buttonVariants({
+          type,
+          size,
+          round,
+          active: active && activeHighlight,
+          disabled,
+        }),
+        className
+      )}
     >
       {childrenJSX}
       {badgeJSX}

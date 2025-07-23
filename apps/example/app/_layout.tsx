@@ -3,11 +3,15 @@ import 'react-native-reanimated';
 
 export default function RootLayout() {
   return (
-    <Stack>
+    <Stack
+      screenOptions={{
+        headerBackTitle: '返回',
+      }}
+    >
       <Stack.Screen name='index' options={{ headerShown: false }} />
-      <Stack.Screen name='DemoBlank' options={{ headerShown: false }} />
-      <Stack.Screen name='DemoButton' options={{ headerShown: false }} />
-      <Stack.Screen name='DemoCell' options={{ headerShown: false }} />
+      <Stack.Screen name='DemoBlank' />
+      <Stack.Screen name='DemoButton' />
+      <Stack.Screen name='DemoCell' />
     </Stack>
   );
 }

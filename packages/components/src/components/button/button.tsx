@@ -33,11 +33,11 @@ const buttonVariants = cva('items-center justify-center', {
       false: '',
     },
     square: {
-      true: 'aspect-square px-0',
+      true: 'rounded-none px-0',
     },
     round: {
       true: 'rounded-full',
-      false: 'rounded-lg',
+      false: 'rounded-none',
     },
     disabled: {
       true: 'opacity-50',
@@ -163,7 +163,7 @@ const subtextVariants = cva('text-tiny opacity-80', {
       other: '',
     },
     danger: {
-      true: 'text-danger-4',
+      true: 'text-danger-5',
       false: 'text-primary-5',
     },
   },
@@ -182,7 +182,7 @@ const Button: React.FC<ButtonProps> = ({
   style,
   text,
   subtext,
-  textStyle,
+  textClassName,
   type = 'primary',
   danger = false,
   size = 'l',
@@ -206,11 +206,24 @@ const Button: React.FC<ButtonProps> = ({
     trailing: false,
   });
 
-  const loadingColorClass = danger ? 'bg-danger-4' : 'bg-primary-5';
+  const loadingColorClass = danger ? 'bg-danger-4' : 'bg-primary-7';
 
   const contextJSX = loading ? (
-    <Loading colorClassName={loadingColorClass} size={24} textSize={16} loadingIcon={loadingIcon}>
-      {isUndefined(loadingText) ? text : loadingText}
+    <Loading colorClassName={loadingColorClass} size={16} textSize={12} loadingIcon={loadingIcon}>
+      <Text
+        className={cn(
+          textVariants({
+            type,
+            size,
+            danger,
+            withIcon: !!renderLeftIcon,
+          }),
+          textClassName,
+          'ml-2'
+        )}
+      >
+        {isUndefined(loadingText) ? text : loadingText}
+      </Text>
     </Loading>
   ) : (
     <>
@@ -221,13 +234,15 @@ const Button: React.FC<ButtonProps> = ({
             size === 'xl' ? 24 : size === 'l' ? 20 : size === 'm' ? 18 : 16
           )}
         <Text
-          className={textVariants({
-            type,
-            size,
-            danger,
-            withIcon: !!renderLeftIcon,
-          })}
-          style={textStyle}
+          className={cn(
+            textVariants({
+              type,
+              size,
+              danger,
+              withIcon: !!renderLeftIcon,
+            }),
+            textClassName
+          )}
           numberOfLines={1}
         >
           {!isNil(text) ? text : children}

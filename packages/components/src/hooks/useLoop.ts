@@ -8,7 +8,7 @@ interface UseLoopOptions {
   useNativeDriver?: boolean;
 }
 
-export const useLoop = ({
+const useLoop = ({
   duration = 1000,
   fromValue = 0,
   toValue = 1,
@@ -39,3 +39,5 @@ export const useLoop = ({
 
   return animation;
 }; 
+
+export default useLoop;

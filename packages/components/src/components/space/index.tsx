@@ -2,6 +2,8 @@ import React, { memo, Children, isValidElement } from 'react';
 import { View } from 'react-native';
 import { cva } from 'class-variance-authority';
 import type { SpaceProps } from './interface';
+import { cn } from '../../lib/utils';
+import { getDefaultValue } from '../../helpers';
 
 // 1. 用 cva 定义变体
 const spaceClass = cva('', {
@@ -49,6 +51,15 @@ const gapMap = {
   l: 'gap-4',
 };
 
+const sizeMap = {
+  s: 8,
+  m: 12,
+  l: 16,
+};
+
+const getMarginGap = (d: boolean | number | undefined, gap: number) =>
+  d ? (typeof d === 'number' ? d : gap) : 0;
+
 export const Space: React.FC<SpaceProps> = ({
   direction = 'vertical',
   wrap = false,
@@ -57,23 +68,51 @@ export const Space: React.FC<SpaceProps> = ({
   align = 'stretch',
   shrink = false,
   minWidth,
+  gapHorizontal,
   style,
   children,
+  gapVertical,
+  className,
+  head,
+  tail,
   ...restProps
 }) => {
-  // 2. 生成 className
-  const className =
-    spaceClass({ direction, wrap, justify, align, shrink }) +
-    ' ' +
-    (typeof gap === 'string' ? gapMap[gap] : '');
-
-  // 3. minWidth 只能用 style 传递
+  const isVertical = direction === 'vertical';
   const itemStyle = minWidth ? { minWidth } : undefined;
 
   const childArray = Children.toArray(children);
 
+  const defaultGap = sizeMap[gap as keyof typeof sizeMap];
+
+  const _gapVertical = getDefaultValue(gapVertical, defaultGap)!;
+  const _gapHorizontal = getDefaultValue(gapHorizontal, defaultGap)!;
+
   return (
-    <View className={className} style={style} {...restProps}>
+    <View
+      className={cn(
+        spaceClass({ direction, wrap, justify, align, shrink }),
+        className,
+        typeof gap === 'string' ? gapMap[gap] : ''
+      )}
+      style={{
+        ...(isVertical
+          ? {
+              paddingTop: getMarginGap(head, _gapVertical),
+              paddingBottom: getMarginGap(tail, _gapVertical),
+            }
+          : {
+              paddingLeft: getMarginGap(head, _gapHorizontal),
+              paddingRight: getMarginGap(tail, _gapHorizontal),
+            }),
+
+        ...(shrink && direction === 'horizontal'
+          ? {
+              marginBottom: -_gapVertical,
+            }
+          : {}),
+      }}
+      {...restProps}
+    >
       {childArray.map((child, index) => {
         let key: React.Key = index;
         if (isValidElement(child)) {

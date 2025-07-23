@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import { View, Animated } from 'react-native';
-import { cn } from '../../lib/utils';
-import { useLoop } from '../../hooks/useLoop';
+import { useLoop } from '../../hooks';
 
 const SkeletonActive: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const opacity = useLoop({
