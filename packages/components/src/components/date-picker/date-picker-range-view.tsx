@@ -123,10 +123,10 @@ const DatePickerRangeView: React.FC<DatePickerRangeViewProps> = ({
           onPress={onPressDay1}
           activeOpacity={0.8}
         >
-          <Text className='native:text-base text-sm text-muted-foreground'>开始时间</Text>
+          <Text className='native:text-lg text-sm'>开始时间</Text>
           <Text
-            className={cn('native:text-base mt-1 text-sm text-gray-300', {
-              'text-primary font-semibold': dayActive === 0,
+            className={cn('native:text-lg mt-1 text-sm text-gray-300', {
+              'text-primary-5 font-semibold': dayActive === 0,
             })}
           >
             {value[0] ? formatDate(mode, value[0]) : placeholder?.[0] ?? '请选择'}
@@ -138,10 +138,10 @@ const DatePickerRangeView: React.FC<DatePickerRangeViewProps> = ({
           onPress={onPressDay2}
           activeOpacity={0.8}
         >
-          <Text className='native:text-base text-sm text-muted-foreground'>结束时间</Text>
+          <Text className='native:text-lg text-sm text-muted-foreground'>结束时间</Text>
           <Text
-            className={cn('native:text-base mt-1 text-sm text-gray-300', {
-              'font-semibold text-primary': dayActive === 1,
+            className={cn('native:text-lg mt-1 text-sm text-gray-300', {
+              'font-semibold text-primary-5': dayActive === 1,
             })}
           >
             {value[1] ? formatDate(mode, value[1]) : placeholder?.[1] ?? '请选择'}
@@ -162,24 +162,14 @@ const DatePickerRangeView: React.FC<DatePickerRangeViewProps> = ({
       <View className='flex-row gap-x-3 px-4'>
         {clearable ? (
           <View className='flex-1 gap-y-1.5'>
-            <Button
-              size='m'
-              type='ghost'
-              onPress={onPressClear}
-              text={clearButtonText ?? '清空'}
-            ></Button>
+            <Button type='hazy' onPress={onPressClear} text={clearButtonText ?? '清空'}></Button>
           </View>
         ) : null}
         <View className={cn('flex-1', clearable ? 'gap-y-1.5' : 'gap-y-3')}>
-          <Button
-            size='m'
-            type='ghost'
-            onPress={onPressReset}
-            text={resetButtonText ?? '重置'}
-          ></Button>
+          <Button type='hazy' onPress={onPressReset} text={resetButtonText ?? '重置'}></Button>
         </View>
         <View className='flex-1 gap-y-3'>
-          <Button text={confirmButtonText ?? '确定'} size='m' onPress={onPressConfirm} />
+          <Button text={confirmButtonText ?? '确定'} onPress={onPressConfirm} />
         </View>
       </View>
     </>

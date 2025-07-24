@@ -105,7 +105,7 @@ const DatePickerSingleMethod: React.FC<DatePickerSingleMethodProps> = ({
         leftExtra={
           <Text
             suppressHighlighting
-            className='text-base text-muted-foreground color-[#5E5E5E]'
+            className='text-2xl text-[#5E5E5E]'
             onPress={loading ? undefined : onPressCancel}
           >
             {cancelButtonText ?? '取消'}
@@ -114,7 +114,7 @@ const DatePickerSingleMethod: React.FC<DatePickerSingleMethodProps> = ({
         rightExtra={
           <Text
             suppressHighlighting
-            className='text-base text-primary'
+            className='text-2xl text-primary-5'
             onPress={loading ? undefined : onPressConfirm}
           >
             {confirmButtonText ?? '确定'}

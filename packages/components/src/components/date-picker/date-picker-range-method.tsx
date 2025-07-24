@@ -132,7 +132,7 @@ const DatePickerRangeMethod: React.FC<DatePickerRangeMethodProps> = ({
 
       {subTitle && (
         <View className='flex flex-row items-center justify-center'>
-          <Text className='mx-auto text-sm text-gray-500/50'>{subTitle}</Text>
+          <Text className='mx-auto text-lg text-gray-500/50'>{subTitle}</Text>
         </View>
       )}
 
