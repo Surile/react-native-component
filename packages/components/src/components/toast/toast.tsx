@@ -5,7 +5,7 @@ import type { ToastMethods, ToastProps } from './types';
 import Spinner from '../loading/loading-spinner';
 import Popup from '../popup';
 import { cn } from '../../lib/utils';
-import { ShmError, ShmWarn } from '../icons';
+import { CrossCircleOutline, SuccessCircleOutline } from '../icons';
 
 const Toast = forwardRef<ToastMethods, ToastProps>(
   (
@@ -109,14 +109,8 @@ const Toast = forwardRef<ToastMethods, ToastProps>(
                   <Spinner colorClassName='bg-white' />
                 </View>
               ) : null}
-              {type === 'success' ? (
-                <Image
-                  className='mb-2 size-8 fill-white'
-                  source={require('../../assets/check-circle.png')}
-                />
-              ) : null}
-              {type === 'fail' ? <ShmError width={32} height={32} fill='white' /> : null}
-              {type === 'warn' ? <ShmWarn width={32} height={32} fill='white' /> : null}
+              {type === 'success' ? <SuccessCircleOutline color='white' size={36} /> : null}
+              {type === 'fail' ? <CrossCircleOutline color='white' size={36} /> : null}
               {type === 'icon' ? icon : null}
               {!isNil(msg) && msg !== '' ? (
                 <Text

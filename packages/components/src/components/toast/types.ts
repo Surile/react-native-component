@@ -1,7 +1,7 @@
 import type React from 'react';
 import type { PopupPropsCommon } from '../popup/types';
 
-export type ToastType = 'text' | 'loading' | 'success' | 'fail' | 'icon' | 'warn';
+export type ToastType = 'text' | 'loading' | 'success' | 'fail' | 'icon';
 
 export type ToastMethods = {
   close: () => void;

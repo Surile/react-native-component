@@ -1,35 +1,19 @@
-import Svg, { Defs, ClipPath, Rect, G, Path } from 'react-native-svg';
+import React from 'react';
+import { Svg, Path } from 'react-native-svg';
 
-function CrossOutline(props: any) {
+import { genOutlineIcon } from './gen';
+
+const CrossOutline = genOutlineIcon(({ size, color, strokeWidth }, props) => {
   return (
-    <Svg
-      xmlns='http://www.w3.org/2000/svg'
-      fill='none'
-      width={16}
-      height={16}
-      viewBox='0 0 16 16'
-      {...props}
-    >
-      <Defs>
-        <ClipPath id='a'>
-          <Rect width={16} height={16} rx={0} />
-        </ClipPath>
-      </Defs>
-      <G clipPath='url(#a)'>
-        <Rect width={16} height={16} rx={0} fill='#FFF' fillOpacity={0.009999999776482582} />
-        <Path
-          d='M3.197 2.136l10.667 10.667q.105.105.162.243.057.138.057.287 0 .074-.014.147-.015.072-.043.14-.028.069-.07.13-.04.061-.092.114-.053.052-.114.093-.062.04-.13.07-.068.027-.14.042-.073.014-.147.014-.149 0-.287-.057-.138-.057-.243-.162L2.136 3.197q-.105-.106-.162-.243-.057-.138-.057-.287 0-.074.014-.147.014-.072.043-.14.028-.069.069-.13.04-.061.093-.114.052-.052.114-.093.061-.041.13-.07.068-.028.14-.042.073-.014.147-.014.149 0 .287.057.137.057.243.162z'
-          fillRule='evenodd'
-          fill='#858585'
-        />
-        <Path
-          d='M13.864 3.197q.105-.106.162-.243.057-.138.057-.287 0-.074-.014-.147-.015-.072-.043-.14-.028-.069-.07-.13-.04-.061-.092-.114-.053-.052-.114-.093-.062-.041-.13-.07-.068-.028-.14-.042-.073-.014-.147-.014-.149 0-.287.057-.138.057-.243.162L2.136 12.804q-.106.105-.163.243-.057.138-.057.287 0 .074.014.147.014.072.043.14.028.069.069.13.04.061.093.114.052.052.114.093.061.04.13.07.068.027.14.042.073.014.147.014.149 0 .287-.057.137-.057.243-.162L13.864 3.197z'
-          fillRule='evenodd'
-          fill='#858585'
-        />
-      </G>
+    <Svg {...props} viewBox='0 0 24 24' fill='none' width={size} height={size}>
+      <Path
+        strokeLinejoin='round'
+        strokeLinecap='round'
+        strokeWidth={strokeWidth || 2}
+        stroke={color}
+        d='m5 5 14 14M5 19 19 5'
+      />
     </Svg>
   );
-}
-
+});
 export default CrossOutline;

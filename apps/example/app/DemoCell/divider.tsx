@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Tst } from '@tastien/react-native-component';
+import Tst from '@tastien/react-native-component';
 
 const CellDivider: React.FC = () => {
   return (

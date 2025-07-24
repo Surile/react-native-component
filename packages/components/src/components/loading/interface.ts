@@ -1,4 +1,4 @@
-import type { ViewProps } from 'react-native';
+import type { ColorValue, ViewProps } from 'react-native';
 
 export interface LoadingProps extends ViewProps {
   /**
@@ -10,6 +10,8 @@ export interface LoadingProps extends ViewProps {
    * 颜色
    */
   colorClassName?: string;
+
+  color?: ColorValue
 
   /**
    * 加载图标大小，默认单位为px

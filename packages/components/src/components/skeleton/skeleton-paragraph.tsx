@@ -1,32 +1,38 @@
-import React, { memo } from 'react';
-import { View } from 'react-native';
-import { cn } from '../../lib/utils';
+import React, { useMemo, memo } from 'react';
+import { PlaceholderLine } from 'rn-placeholder';
+
+import Space from '../space';
 
 import type { SkeletonParagraphProps } from './interface';
 import SkeletonActive from './skeleton-active';
 
 const SkeletonParagraph: React.FC<SkeletonParagraphProps> = ({
   active = true,
-  rows = 3,
-  className,
+  rows,
+  widths,
+  testID,
 }) => {
+  const paragraphs = useMemo(() => new Array(rows).fill(0).map((_, i) => i), [rows]);
   const nodeJSX = (
-    <View className={cn('space-y-2', className)}>
-      {Array(rows)
-        .fill('')
-        .map((_, index) => (
-          <View
-            key={index}
-            className={cn('h-4 bg-gray-3', index === rows - 1 ? 'w-3/4' : 'w-full')}
+    <Space testID={testID}>
+      {paragraphs.map((n) => {
+        return (
+          <PlaceholderLine
+            style={{ backgroundColor: '#EDEFF2' }}
+            key={n}
+            width={widths?.[n]}
+            noMargin
           />
-        ))}
-    </View>
+        );
+      })}
+    </Space>
   );
 
   if (active) {
     return <SkeletonActive>{nodeJSX}</SkeletonActive>;
   }
 
+  // eslint-disable-next-line react/jsx-no-useless-fragment
   return nodeJSX;
 };
 

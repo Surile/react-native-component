@@ -1,177 +1,153 @@
-import { cva, type VariantProps } from 'class-variance-authority';
 import isNil from 'lodash/isNil';
 import isUndefined from 'lodash/isUndefined';
 import noop from 'lodash/noop';
 import React, { memo } from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-import { twMerge } from 'tailwind-merge';
 
 import Flex from '../flex';
 import Loading from '../loading';
 import type { ButtonProps } from './interface';
 import { useDebounceFn } from '../../hooks';
 import { cn } from '../../lib/utils';
+import { cva } from 'class-variance-authority';
+import { renderTextLikeJSX } from '../../helpers';
 
-const buttonVariants = cva('items-center justify-center', {
+const buttonSizeVariants = cva('items-center justify-center border-solid px-2 rounded flex-col', {
   variants: {
     size: {
-      xs: 'h-7 px-2',
-      s: 'h-8 px-3',
-      m: 'h-10 px-4',
-      l: 'h-12 px-5',
-      xl: 'h-14 px-6',
+      xl: 'h-[52px]',
+      l: 'h-[44px]',
+      m: 'h-[40px]',
+      s: 'h-[32px]',
+      xs: 'h-[24px]',
     },
+  },
+  defaultVariants: {
+    size: 'l',
+  },
+});
+
+const buttonTypeVariants = cva('', {
+  variants: {
     type: {
-      primary: '',
-      outline: 'bg-fill-white border',
-      ghost: 'bg-transparent border',
-      link: 'bg-transparent border-0 p-0',
-      hazy: '',
+      primary: 'bg-primary-5',
+      hazy: 'bg-primary-5/15',
+      outline: 'bg-white border border-gray-200',
+      ghost: 'bg-transparent border border-primary-5',
+      link: '',
     },
     danger: {
-      true: '',
+      true: 'bg-danger-5',
+      false: '',
+    },
+    hairline: {
+      true: 'border-hairline',
+      false: '',
+    },
+    disabled: {
+      true: 'opacity-40',
+      false: '',
+    },
+    loading: {
+      true: 'opacity-40',
       false: '',
     },
     square: {
-      true: 'rounded-none px-0',
+      true: 'rounded-none',
+      false: '',
     },
     round: {
       true: 'rounded-full',
-      false: 'rounded-none',
-    },
-    disabled: {
-      true: 'opacity-50',
-    },
-    loading: {
-      true: 'opacity-80',
-    },
-    hairline: {
-      true: 'border-[0.5px]',
     },
   },
   compoundVariants: [
-    // Primary Type Variants
-    {
-      type: 'primary',
-      danger: false,
-      className: 'bg-primary-5 border-primary-5',
-    },
     {
       type: 'primary',
       danger: true,
-      className: 'bg-danger-4 border-danger-4',
-    },
-    // Outline Type Variants
-    {
-      type: 'outline',
-      danger: false,
-      className: 'border-line-2',
-    },
-    {
-      type: 'outline',
-      danger: true,
-      className: 'border-danger-4',
-    },
-    // Ghost Type Variants
-    {
-      type: 'ghost',
-      danger: false,
-      className: 'border-primary-5',
-    },
-    {
-      type: 'ghost',
-      danger: true,
-      className: 'border-danger-4',
-    },
-    // Hazy Type Variants
-    {
-      type: 'hazy',
-      danger: false,
-      className: 'bg-primary-1 border-primary-1',
+      className: 'bg-danger-5',
     },
     {
       type: 'hazy',
       danger: true,
-      className: 'bg-danger-1 border-danger-1',
+      className: 'bg-danger-5/15',
+    },
+    {
+      type: 'outline',
+      danger: true,
+      className: 'bg-white border',
+    },
+    {
+      type: 'ghost',
+      danger: true,
+      className: 'bg-transparent border border-danger-5',
+    },
+    {
+      type: 'link',
+      danger: true,
+      className: 'bg-transparent',
+    },
+    {
+      type: 'ghost',
+      hairline: true,
+      className: 'border-hairline border-primary-5',
+    },
+    {
+      type: 'ghost',
+      hairline: true,
+      danger: true,
+      className: 'border-hairline border-danger-5',
+    },
+    {
+      type: 'outline',
+      hairline: true,
+      className: 'border-hairline border-gray-200',
+    },
+    {
+      type: 'outline',
+      hairline: true,
+      danger: true,
+      className: 'border-hairline border-gray-200',
     },
   ],
-  defaultVariants: {
-    type: 'primary',
-    size: 'l',
-    danger: false,
-    round: false,
-    disabled: false,
-    loading: false,
-    hairline: false,
-  },
 });
 
-const textVariants = cva('text-center', {
+const buttonTextVariants = cva('', {
   variants: {
-    size: {
-      xs: 'text-xs',
-      s: 'text-sm',
-      m: 'text-base',
-      l: 'text-lg',
-      xl: 'text-xl',
-    },
     type: {
-      primary: 'text-text-1',
-      outline: '',
-      ghost: '',
-      link: '',
-      hazy: '',
+      primary: 'text-white',
+      hazy: 'text-primary-5',
+      outline: 'text-primary-5',
+      ghost: 'text-primary-5',
+      link: 'text-primary-5',
+    },
+    size: {
+      xl: 'text-4xl',
+      l: 'text-2xl',
+      m: 'text-xl',
+      s: 'text-lg',
+      xs: 'text-lg',
     },
     danger: {
       true: '',
       false: '',
     },
-    withIcon: {
-      true: 'ml-2',
-    },
   },
   compoundVariants: [
-    // Non-primary type text colors
     {
-      type: ['outline'],
-      danger: false,
-      className: 'text-text-5',
-    },
-    {
-      type: ['ghost', 'link', 'hazy'],
-      danger: false,
-      className: 'text-primary-5',
-    },
-    {
-      type: ['outline', 'ghost', 'link', 'hazy'],
+      type: ['hazy', 'outline', 'ghost', 'link'],
       danger: true,
-      className: 'text-danger-4',
+      className: 'text-danger-5',
     },
   ],
-  defaultVariants: {
-    type: 'primary',
-    size: 'l',
-    danger: false,
-    withIcon: false,
-  },
 });
 
-const subtextVariants = cva('text-tiny opacity-80', {
-  variants: {
-    type: {
-      primary: 'text-text-1',
-      other: '',
-    },
-    danger: {
-      true: 'text-danger-5',
-      false: 'text-primary-5',
-    },
-  },
-  defaultVariants: {
-    type: 'other',
-    danger: false,
-  },
-});
+const loadingSize = {
+  xl: 18,
+  l: 16,
+  m: 15,
+  s: 14,
+  xs: 14,
+};
 
 /**
  * Button 按钮
@@ -194,6 +170,7 @@ const Button: React.FC<ButtonProps> = ({
   square = false,
   round = false,
   renderLeftIcon,
+  color,
   onPressDebounceWait = 0,
   className,
   ...restProps
@@ -204,41 +181,24 @@ const Button: React.FC<ButtonProps> = ({
     trailing: false,
   });
 
-  const loadingColorClass = danger ? 'bg-danger-4' : 'bg-primary-7';
+  const leftIconColor = danger ? '#ffffff' : color || '#4080FF';
 
   const contextJSX = loading ? (
-    <Loading colorClassName={loadingColorClass} size={16} textSize={12} loadingIcon={loadingIcon}>
-      <Text
-        className={cn(
-          textVariants({
-            type,
-            size,
-            danger,
-            withIcon: !!renderLeftIcon,
-          }),
-          textClassName,
-          'ml-2'
-        )}
-      >
+    <Loading size={loadingSize[size]} textSize={12} loadingIcon={loadingIcon}>
+      <Text className={cn(textClassName, buttonTextVariants({ size, type, danger }), 'ml-2')}>
         {isUndefined(loadingText) ? text : loadingText}
       </Text>
     </Loading>
   ) : (
     <>
       <Flex direction='row' align='center' justify='center'>
-        {renderLeftIcon &&
-          renderLeftIcon(
-            danger ? '#CB2634' : '#4080FF',
-            size === 'xl' ? 24 : size === 'l' ? 20 : size === 'm' ? 18 : 16
-          )}
+        {renderLeftIcon && renderLeftIcon(leftIconColor, loadingSize[size])}
         <Text
           className={cn(
-            textVariants({
-              type,
-              size,
-              danger,
-              withIcon: !!renderLeftIcon,
-            }),
+            {
+              'ml-1': !!renderLeftIcon,
+            },
+            buttonTextVariants({ type, size, danger }),
             textClassName
           )}
           numberOfLines={1}
@@ -246,17 +206,9 @@ const Button: React.FC<ButtonProps> = ({
           {!isNil(text) ? text : children}
         </Text>
       </Flex>
-      {subtext && (
-        <Text
-          className={subtextVariants({
-            type: type === 'primary' ? 'primary' : 'other',
-            danger,
-          })}
-          numberOfLines={1}
-        >
-          {subtext}
-        </Text>
-      )}
+      {renderTextLikeJSX(subtext, cn('text-md opacity-70', buttonTextVariants({ type })), {
+        numberOfLines: 1,
+      })}
     </>
   );
 
@@ -268,16 +220,8 @@ const Button: React.FC<ButtonProps> = ({
       style={style}
       activeOpacity={0.7}
       className={cn(
-        buttonVariants({
-          type,
-          size,
-          danger,
-          square,
-          round,
-          disabled,
-          loading,
-          hairline,
-        }),
+        buttonSizeVariants({ size }),
+        buttonTypeVariants({ type, danger, hairline, disabled, loading, square, round }),
         className
       )}
       onPress={

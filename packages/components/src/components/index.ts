@@ -43,4 +43,24 @@ export { default as Provider } from './provider'
 export type { ToastOptions } from './toast/types'
 export { default as Toast } from './toast'
 
+export type { CollapseProps } from './collapse/interface'
+export { default as Collapse } from './collapse'
+
+export type { CheckboxIconProps, CheckboxProps } from './checkbox/interface'
+export { default as Checkbox } from './checkbox'
+
+export type { SkeletonProps } from './skeleton/interface'
+export { default as Skeleton } from './skeleton'
+
+export type { TagProps } from './tag/interface'
+export { default as Tag } from './tag'
+
+export type { ActionSheetProps } from './action-sheet/interface'
+export { default as ActionSheet } from './action-sheet'
+
+export { default as DatePicker } from './date-picker'
+
+export type { DatePickerColumnMode } from './date-picker-view/interface'
+export { default as DatePickerView } from './date-picker-view'
+
 export * from './icons'

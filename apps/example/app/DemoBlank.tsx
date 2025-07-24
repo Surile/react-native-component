@@ -1,5 +1,5 @@
 import { SafeAreaView, Text, View, ViewStyle } from 'react-native';
-import { Tst } from '@tastien/react-native-component';
+import Tst from '@tastien/react-native-component';
 
 const ctxStyle = { backgroundColor: '#f5f5f5' };
 const cardBodyStyle = { backgroundColor: '#61649f' };

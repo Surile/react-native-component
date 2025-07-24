@@ -99,11 +99,11 @@ export interface CardProps extends ViewProps {
    * @default true
    */
   bodyPadding?: boolean | number | {
-    left?: boolean | number
-    right?: boolean | number
-    top?: boolean | number
-    bottom?: boolean | number
-  }
+        left?: boolean | number
+        right?: boolean | number
+        top?: boolean | number
+        bottom?: boolean | number
+      }
 
   /**
    * 点击 header 区域，该区域包含 titleLeftExtra、title、extra

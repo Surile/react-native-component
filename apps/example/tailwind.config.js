@@ -1,3 +1,5 @@
+const { hairlineWidth } = require("nativewind/theme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
@@ -81,6 +83,9 @@ module.exports = {
         '4xl': ['18px', { lineHeight: '26px' }],  // 用于评分等重要标题或阅读类文
         '5xl': ['20px', { lineHeight: '28px' }],  // 重要标题
         '6xl': ['24px', { lineHeight: '32px' }],  // 超大标题
+      },
+      borderWidth: {
+        hairline: hairlineWidth(),
       },
     },
   },

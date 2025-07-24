@@ -1,4 +1,15 @@
 export { default as CrossOutline } from './cross-outline';
 export { default as ArrowLeftOutline } from './arrow-left-outline';
-export { default as ShmError } from './error';
-export { default as ShmWarn } from './warn';
+export { default as SuccessFill } from './success-fill';
+export { default as CircleOutline } from './circle-outline';
+export { default as ArrowUpOutline } from './arrow-up-outline';
+export { default as ArrowDownOutline } from './arrow-down-outline';
+export { default as ArrowLeftFill } from './arrow-left-fill';
+export { default as ArrowRightFill } from './arrow-right-fill';
+export { default as ArrowUpFill } from './arrow-up-fill';
+export { default as ArrowDownFill } from './arrow-down-fill';
+export { default as SuccessCircleOutline } from './success-circle-outline';
+export { default as CrossCircleOutline } from './cross-circle-outline';
+export { default as ArrowRightOutline } from './arrow-right-outline';
+export { default as PlayCircleFill } from './play-circle-fill';
+export { default as PlusOutline } from './plus-outline';

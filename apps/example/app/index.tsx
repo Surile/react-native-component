@@ -1,5 +1,5 @@
-import { Text, ScrollView, SafeAreaView } from 'react-native';
-import { Tst } from '@tastien/react-native-component';
+import { ScrollView, SafeAreaView } from 'react-native';
+import Tst from '@tastien/react-native-component';
 import React from 'react';
 import { useRouter } from 'expo-router';
 
@@ -95,6 +95,120 @@ const navs = [
       {
         title: 'Tree 树形控件',
         name: 'DemoTree',
+      },
+    ],
+  },
+  {
+    title: '反馈组件',
+    datas: [
+      {
+        title: 'ActionSheet 操作表',
+        name: 'DemoActionSheet',
+      },
+      {
+        title: 'Dialog 对话框',
+        name: 'DemoDialog',
+      },
+      {
+        title: 'Dropdown 下拉菜单',
+        name: 'DemoDropdown',
+      },
+      {
+        title: 'Modal 模态框',
+        name: 'DemoModal',
+      },
+      {
+        title: 'ErrorBoundary 错误捕获',
+        name: 'DemoErrorBoundary',
+      },
+      {
+        title: 'FloatingPanel 浮动面板',
+        name: 'DemoFloatingPanel',
+      },
+      {
+        title: 'Loading 加载',
+        name: 'DemoLoading',
+      },
+      {
+        title: 'Notify 消息提示',
+        name: 'DemoNotify',
+      },
+      {
+        title: 'Overlay 遮罩层',
+        name: 'DemoOverlay',
+      },
+      {
+        title: 'Popover 气泡卡片',
+        name: 'DemoPopover',
+      },
+      {
+        title: 'Progress 进度条',
+        name: 'DemoProgress',
+      },
+      {
+        title: 'Skeleton 骨架屏',
+        name: 'DemoSkeleton',
+      },
+    ],
+  },
+  {
+    title: '展示组件',
+    datas: [
+      {
+        title: 'Badge 徽标',
+        name: 'DemoBadge',
+      },
+      {
+        title: 'ButtonBar 按钮组',
+        name: 'DemoButtonBar',
+      },
+      {
+        title: 'Card 卡片',
+        name: 'DemoCard',
+      },
+      {
+        title: 'Collapse 折叠板',
+        name: 'DemoCollapse',
+      },
+      {
+        title: 'Description 描述列表',
+        name: 'DemoDescription',
+      },
+      {
+        title: 'Divider 分割线',
+        name: 'DemoDivider',
+      },
+      {
+        title: 'Empty 空元素',
+        name: 'DemoEmpty',
+      },
+      {
+        title: 'Flex 布局',
+        name: 'DemoFlex',
+      },
+      {
+        title: 'NoticeBar 通知栏',
+        name: 'DemoNoticeBar',
+      },
+      {
+        title: 'Result 结果',
+        name: 'DemoResult',
+      },
+      {
+        title: 'TabBar 标签栏',
+        name: 'DemoTabBar',
+      },
+      {
+        title: 'Tabs 标签页',
+        name: 'DemoTabs',
+      },
+      {
+        title: 'Tag 标签',
+        name: 'DemoTag',
+      },
+      {
+        title: 'Uploader 文件上传',
+        name: 'DemoUploader',
       },
     ],
   },

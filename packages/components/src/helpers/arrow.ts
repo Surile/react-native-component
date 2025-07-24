@@ -1,17 +1,35 @@
-type DirectionValue = 'left' | 'up' | 'right' | 'down';
+import { ArrowDownFill, ArrowDownOutline, ArrowLeftFill, ArrowLeftOutline, ArrowRightFill, ArrowRightOutline, ArrowUpFill, ArrowUpOutline } from "../components"
+
+type DirectionValue = 'left' | 'up' | 'right' | 'down'
 
 export const getArrowOutline = (x: DirectionValue | undefined) => {
   switch (x) {
     case 'down':
-      return 'ChevronDown';
+      return ArrowDownOutline
 
     case 'up':
-      return 'ChevronUp';
+      return ArrowUpOutline
 
     case 'left':
-      return 'chevron-left';
+      return ArrowLeftOutline
 
     default:
-      return 'chevron-small-right';
+      return ArrowRightOutline
   }
-};
+}
+
+export const getArrowFill = (x: DirectionValue | undefined) => {
+  switch (x) {
+    case 'down':
+      return ArrowDownFill
+
+    case 'up':
+      return ArrowUpFill
+
+    case 'left':
+      return ArrowLeftFill
+
+    default:
+      return ArrowRightFill
+  }
+}

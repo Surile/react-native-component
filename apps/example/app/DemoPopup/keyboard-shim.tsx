@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { Keyboard, ScrollView, Text, TextInput } from 'react-native';
-import { Tst } from '@tastien/react-native-component';
+import Tst from '@tastien/react-native-component';
 
 const BasicPopupKeyboardShim: React.FC = () => {
   const [visible, setVisible] = useState(false);

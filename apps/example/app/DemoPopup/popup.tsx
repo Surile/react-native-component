@@ -4,16 +4,15 @@
  */
 
 import React, { useState } from 'react';
-import { Text, TextInput } from 'react-native';
+import { Text } from 'react-native';
+import Tst, { PopupPosition } from '@tastien/react-native-component';
 
-import { Tst } from '@tastien/react-native-component';
-
-const positions: Tst.PopupPosition[] = ['center', 'left', 'right', 'top', 'bottom'];
+const positions: PopupPosition[] = ['center', 'left', 'right', 'top', 'bottom'];
 
 const BasicPopupPopup: React.FC = () => {
   const [state, setState] = useState<{
     show: boolean;
-    position: Tst.PopupPosition;
+    position: PopupPosition;
     show2: boolean;
     show3: boolean;
   }>({

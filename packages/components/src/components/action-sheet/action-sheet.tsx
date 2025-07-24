@@ -30,7 +30,6 @@ const ActionSheet: React.FC<ActionSheetProps> = ({
   ...restProps
 }) => {
   const safeHeight = useSafeHeight({ top: safeAreaInsetTop });
-
   const isTitleDef = !isNil(title);
   const isCancelTextDef = !isNil(cancelText);
   const isDescriptionDef = !isNil(description);
@@ -43,9 +42,9 @@ const ActionSheet: React.FC<ActionSheetProps> = ({
       <>
         <Text
           className={cn(
-            'shrink-0 text-center',
+            'shrink-0 text-center text-[#5A6068] text-lg pb-3',
             {
-              'text-[#5A6068] text-lg pb-3': isTitleDef,
+              'pt-3': !isTitleDef,
             },
             descriptionClassName
           )}
@@ -76,7 +75,13 @@ const ActionSheet: React.FC<ActionSheetProps> = ({
                 loading={item.loading}
                 type='link'
                 size='xl'
-                textClassName={cn('text-2xl font-bold', item.textClassName)}
+                textClassName={cn(
+                  'text-2xl font-bold text-[#11151A]',
+                  {
+                    'text-gray-500': item.loading,
+                  },
+                  item.textClassName
+                )}
                 onPress={() => {
                   if (!item.disabled && !item.loading) {
                     item.callback?.();

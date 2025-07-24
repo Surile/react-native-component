@@ -1,4 +1,3 @@
-import { cva } from 'class-variance-authority';
 import isBoolean from 'lodash/isBoolean';
 import isNil from 'lodash/isNil';
 import React, { memo } from 'react';
@@ -10,36 +9,6 @@ import Skeleton from '../skeleton';
 import CardBody from './card-body';
 import type { CardProps } from './interface';
 import { renderTextLikeJSX } from '../../helpers';
-
-const headerVariants = cva('flex-row items-center justify-between px-3', {
-  variants: {
-    size: {
-      s: 'min-h-[40px]',
-      m: 'min-h-[50px]',
-    },
-  },
-  defaultVariants: {
-    size: 'm',
-  },
-});
-
-const titleTextVariants = cva('flex-1 font-bold text-gray-8 mr-2', {
-  variants: {
-    size: {
-      s: 'text-[15px] leading-5',
-      m: 'text-[17px] leading-6',
-    },
-    hasTitleLeftExtra: {
-      true: 'ml-2',
-    },
-  },
-  defaultVariants: {
-    size: 'm',
-    hasTitleLeftExtra: false,
-  },
-});
-
-const footerVariants = cva('px-3 py-2');
 
 const Card: React.FC<CardProps> = ({
   children,
@@ -127,7 +96,7 @@ const Card: React.FC<CardProps> = ({
         padding={isBoolean(bodyPadding) && bodyPadding ? 12 : bodyPadding}
         onLayout={onLayoutBody}
       >
-        {loading ? <Skeleton /> : children}
+        {loading ? <Skeleton loading /> : children}
       </CardBody>
 
       {!isNil(footerJSX) ? (

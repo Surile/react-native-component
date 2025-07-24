@@ -1,4 +1,4 @@
-import { Tst } from '@tastien/react-native-component';
+import Tst from '@tastien/react-native-component';
 import { Stack } from 'expo-router';
 import 'react-native-reanimated';
 

@@ -16,8 +16,8 @@ const popupPositionVariants = cva('absolute h-auto', {
       center: 'inset-0 size-full items-center justify-center bg-transparent opacity-100',
       left: 'inset-y-0 left-0 w-1/2',
       right: 'inset-y-0 right-0 w-1/2',
-      top: 'inset-x-0 top-0 min-h-48',
-      bottom: 'inset-x-0 bottom-0 min-h-48',
+      top: 'inset-x-0 top-0',
+      bottom: 'inset-x-0 bottom-0',
     },
   },
   defaultVariants: {

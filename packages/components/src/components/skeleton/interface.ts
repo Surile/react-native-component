@@ -1,30 +1,25 @@
-import type { ReactNode } from 'react';
-import type { ViewProps } from 'react-native';
+import type { ViewProps } from 'react-native'
 
-export interface SkeletonAvatarProps extends ViewProps {
+
+export type SkeletonAvatarProps = {
   /**
    * 是否展示动画效果
    * @default true
    */
-  active?: boolean;
+  active?: boolean
 
   /**
-   * 设置大小
+   * 元素大小
    * @default 40
    */
-  size?: number;
+  size?: number
 
   /**
-   * 指定头像的形状
+   * 形状
    * @default 'circle'
    */
-  shape?: 'circle' | 'square';
-
-  /**
-   * 自定义类名
-   */
-  className?: string;
-}
+  shape?: 'circle' | 'square'
+} & Pick<ViewProps, 'testID'>
 
 export type SkeletonTitleProps = {
   /**
@@ -33,46 +28,51 @@ export type SkeletonTitleProps = {
   width?: number
 }
 
-export interface SkeletonParagraphProps extends ViewProps {
+export type SkeletonParagraphProps = {
   /**
    * 是否展示动画效果
    * @default true
    */
-  active?: boolean;
+  active?: boolean
 
   /**
-   * 段落行数
-   * @default 3
+   * 设置段落占位图的行数
    */
-  rows?: number;
+  rows: number
 
   /**
-   * 自定义类名
+   * 每行的宽
    */
-  className?: string;
-}
+  widths: number[]
+} & Pick<ViewProps, 'testID'>
 
-export interface SkeletonProps extends ViewProps {
+export interface SkeletonProps {
   /**
    * 是否展示动画效果
    * @default true
    */
-  active?: boolean;
+  active?: boolean
+
+  /**
+   * 为 true 时，显示占位图。反之则直接展示子组件
+   */
+  loading?: boolean
 
   /**
    * 是否显示头像占位图
    * @default false
    */
-  avatar?: boolean | SkeletonAvatarProps;
+  avatar?: boolean | SkeletonAvatarProps
+
+  /**
+   * 是否显示标题占位图
+   * @default true
+   */
+  title?: boolean | SkeletonTitleProps
 
   /**
    * 是否显示段落占位图
    * @default true
    */
-  paragraph?: boolean | SkeletonParagraphProps;
-
-  /**
-   * 自定义类名
-   */
-  className?: string;
+  paragraph?: boolean | SkeletonParagraphProps
 }

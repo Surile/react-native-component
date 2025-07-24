@@ -4,7 +4,7 @@
  */
 
 import React, { memo } from 'react';
-import { Tst } from '@tastien/react-native-component';
+import Tst from '@tastien/react-native-component';
 
 const ButtonDisabled: React.FC = () => {
   return (

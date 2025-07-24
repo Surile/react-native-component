@@ -6,7 +6,7 @@
 import React, { memo, useEffect, useRef } from 'react';
 
 import { Animated, ColorValue } from 'react-native';
-import { Tst } from '@tastien/react-native-component';
+import Tst from '@tastien/react-native-component';
 
 const CustomLoading = ({ size, color }: { size: number; color: ColorValue }) => {
   const spin = useRef(new Animated.Value(0));

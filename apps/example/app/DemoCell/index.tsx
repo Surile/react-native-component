@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Tst } from '@tastien/react-native-component';
+import Tst from '@tastien/react-native-component';
 import { ScrollView } from 'react-native';
 import CellBase from './base';
 import CellDivider from './divider';

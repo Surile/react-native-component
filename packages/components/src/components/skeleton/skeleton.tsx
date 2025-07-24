@@ -1,47 +1,85 @@
-import isBoolean from 'lodash/isBoolean';
+import isNil from 'lodash/isNil';
 import React, { memo } from 'react';
-import { View } from 'react-native';
-import { cn } from '../../lib/utils';
+import { View, StyleSheet } from 'react-native';
 
-import type { SkeletonProps } from './interface';
-import SkeletonActive from './skeleton-active';
+import Space from '../space';
+
+import type {
+  SkeletonProps,
+  SkeletonTitleProps,
+  SkeletonParagraphProps,
+  SkeletonAvatarProps,
+} from './interface';
 import SkeletonAvatar from './skeleton-avatar';
 import SkeletonParagraph from './skeleton-paragraph';
+import { isObject } from 'lodash';
 
-const Skeleton: React.FC<SkeletonProps> = ({
-  active = true,
-  avatar = false,
-  paragraph = true,
-  className,
+const defaultTitleWidths = [38];
+
+const defaultParagraphOption: SkeletonParagraphProps = {
+  rows: 3,
+  widths: [100, 100, 61],
+};
+
+const STYLES = StyleSheet.create({
+  skeleton: {
+    flexDirection: 'row',
+  },
+
+  avatar: {
+    marginRight: 8,
+  },
+
+  ctx: {
+    flex: 1,
+  },
+});
+
+const Skeleton: React.FC<React.PropsWithChildren<SkeletonProps>> = ({
   children,
+  active = true,
+  loading,
+  title = true,
+  paragraph = true,
+  avatar = false,
 }) => {
-  const hasAvatar = !!avatar;
-  const hasParagraph = !!paragraph;
+  const showTitle = !!title;
+  const titleWidths = isObject(title) ? [(title as SkeletonTitleProps).width!] : defaultTitleWidths;
 
-  let avatarNode: React.ReactNode;
-  if (hasAvatar) {
-    const avatarProps = isBoolean(avatar) ? {} : avatar;
-    avatarNode = <SkeletonAvatar {...avatarProps} active={false} />;
-  }
+  const showParagraph = !!paragraph;
 
-  let paragraphNode: React.ReactNode;
-  if (hasParagraph) {
-    const paragraphProps = isBoolean(paragraph) ? {} : paragraph;
-    paragraphNode = <SkeletonParagraph {...paragraphProps} active={false} />;
-  }
+  const paragraphOption = isObject(paragraph)
+    ? (paragraph as SkeletonParagraphProps)
+    : defaultParagraphOption;
 
-  const content = (
-    <View className={cn('flex-row', className)}>
-      {avatarNode && <View className='mr-3'>{avatarNode}</View>}
-      {paragraphNode && <View className='flex-1'>{paragraphNode}</View>}
+  const paragraphActive = !isNil(paragraphOption.active) ? paragraphOption.active : active;
+
+  const showAvatar = !!avatar;
+  const avatarOption = isObject(avatar) ? (avatar as SkeletonAvatarProps) : {};
+
+  const ctxJSX =
+    showParagraph || showTitle ? (
+      <Space>
+        {showTitle ? <SkeletonParagraph active={active} rows={1} widths={titleWidths} /> : null}
+        {showParagraph ? <SkeletonParagraph {...paragraphOption} active={paragraphActive} /> : null}
+      </Space>
+    ) : null;
+
+  const nodeJSX = showAvatar ? (
+    <View style={STYLES.skeleton}>
+      <View style={STYLES.avatar}>
+        <SkeletonAvatar
+          {...avatarOption}
+          active={!isNil(avatarOption.active) ? avatarOption.active : active}
+        />
+      </View>
+      {!isNil(ctxJSX) ? <View style={STYLES.ctx}>{ctxJSX}</View> : null}
     </View>
+  ) : (
+    ctxJSX
   );
 
-  if (active) {
-    return <SkeletonActive>{content}</SkeletonActive>;
-  }
-
-  return content;
+  return loading ? nodeJSX : (children as React.ReactElement);
 };
 
 export default memo(Skeleton);

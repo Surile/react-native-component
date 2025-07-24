@@ -1,20 +1,8 @@
-import React, { memo } from 'react';
-import { View, Animated } from 'react-native';
-import { useLoop } from '../../hooks';
+import React, { useMemo, memo } from 'react';
+import { Fade } from 'rn-placeholder';
 
-const SkeletonActive: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const opacity = useLoop({
-    duration: 1000,
-    fromValue: 1,
-    toValue: 0.3,
-  });
-
-  return (
-    <View className='relative'>
-      {children}
-      <Animated.View className='absolute inset-0 bg-gray-1' style={{ opacity }} />
-    </View>
-  );
+const SkeletonActive: React.FC<React.PropsWithChildren> = ({ children }) => {
+  return <Fade style={{ backgroundColor: '#EDEFF2' }}>{children}</Fade>;
 };
 
 export default memo(SkeletonActive);

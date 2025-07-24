@@ -12,7 +12,7 @@ import type { SpaceProps } from '../space/interface'
 
 export interface ButtonProps
   extends Omit<TouchableHighlightProps, 'underlayColor' | 'activeOpacity'>,
-    Pick<LoadingProps, 'loadingIcon'> {
+    Pick<LoadingProps, 'loadingIcon' | 'color'> {
   /**
    * 按钮文案
    */

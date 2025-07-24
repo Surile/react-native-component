@@ -1,44 +1,27 @@
-import { cva } from 'class-variance-authority';
-import React, { memo } from 'react';
-import { View } from 'react-native';
-import { cn } from '../../lib/utils';
+import React, { useMemo, memo } from 'react';
+import type { ViewStyle } from 'react-native';
+import { PlaceholderMedia } from 'rn-placeholder';
 
 import type { SkeletonAvatarProps } from './interface';
 import SkeletonActive from './skeleton-active';
 
-const skeletonAvatarVariants = cva('bg-gray-3', {
-  variants: {
-    shape: {
-      circle: '',
-      square: 'rounded-s',
-    },
-  },
-  defaultVariants: {
-    shape: 'circle',
-  },
-});
-
 const SkeletonAvatar: React.FC<SkeletonAvatarProps> = ({
+  theme,
   active = true,
   size = 40,
   shape = 'circle',
   testID,
-  className,
 }) => {
-  const nodeJSX = (
-    <View
-      testID={testID}
-      className={cn(
-        skeletonAvatarVariants({ shape }),
-        shape === 'circle' && `rounded-[${size / 2}px]`,
-        className
-      )}
-      style={{
-        height: size,
-        width: size,
-      }}
-    />
+  const style = useMemo<ViewStyle>(
+    () => ({
+      height: size,
+      width: size,
+      backgroundColor: '#EDEFF2',
+      borderRadius: shape === 'circle' ? size / 2 : 4,
+    }),
+    [shape, size]
   );
+  const nodeJSX = <PlaceholderMedia testID={testID} style={style} />;
 
   if (active) {
     return <SkeletonActive>{nodeJSX}</SkeletonActive>;

@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Text, View } from 'react-native';
-import { Tst } from '@tastien/react-native-component';
+import Tst from '@tastien/react-native-component';
 
 const CellGroup: React.FC = () => {
   return (

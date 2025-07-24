@@ -1,4 +1,4 @@
-import { Tst } from '@tastien/react-native-component';
+import Tst from '@tastien/react-native-component';
 import React from 'react';
 import { ScrollView } from 'react-native';
 import ButtonType from './type';
@@ -10,6 +10,7 @@ import ButtonLoading from './loading';
 import ButtonSize from './size';
 import ButtonOption from './option';
 import ButtonOptionGroup from './option-group';
+import ButtonIcon from './icon';
 
 export default function DemoButton() {
   return (
@@ -22,12 +23,12 @@ export default function DemoButton() {
         <ButtonDisabled />
         <ButtonLoading />
         <ButtonSize />
-
+        <ButtonIcon />
         <Tst.Card title='自定义颜色' square>
           <Tst.Space tail>
             <Tst.Button className='bg-success-5' text='只改变主要色' />
-            <Tst.Button type='hazy' text='只改变主要色' />
-            <Tst.Button type='outline' text='只改变主要色' />
+            <Tst.Button type='hazy' className='bg-success-5/35' text='只改变主要色' />
+            <Tst.Button type='outline' textClassName='text-success-5' text='只改变主要色' />
             <Tst.Button textClassName='text-[#666]' text='文字颜色' />
             <Tst.Button type='hazy' text='文字颜色' />
             <Tst.Button type='outline' text='文字颜色' />
