@@ -104,9 +104,10 @@ const PickerViewColumn: React.FC<PickerViewColumnProps> = ({
           return (
             <Text
               key={item?.value}
-              className={cn('text-lg text-center native:text-lg', {
-                'text-gray-500/50': item?.disabled,
-              })}
+              className={cn(
+                'text-sm text-center native:text-base text-muted-foreground',
+                item?.disabled ? 'text-muted-foreground' : 'text-foreground'
+              )}
               style={{
                 height: itemHeight,
                 lineHeight: itemHeight,

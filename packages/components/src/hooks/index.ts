@@ -7,3 +7,4 @@ export { default as useOriginalDeepCopy } from './useOriginalDeepCopy';
 export { default as useSafeHeight } from './useSafeHeight';
 export { default as useDebounceFn } from './useDebounceFn';
 export { default as useLoop } from './useLoop';
+export { default as useDifferentState } from './useDifferentState';

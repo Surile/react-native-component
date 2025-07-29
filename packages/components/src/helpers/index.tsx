@@ -14,7 +14,7 @@ export const getDefaultValue = <T,>(value: T, defaultValue: T): T => {
 export const renderTextLikeJSX = (
   node: React.ReactNode,
   className?: string,
-  restProps?: Omit<TextProps, 'className'>,
+  restProps?: Omit<TextProps, 'className'>
 ) => {
   return !isNil(node) ? (
     isValidElement(node) ? (
@@ -32,3 +32,4 @@ export * from './attach-properties-to-component';
 export * from './typeof';
 export * from './interceptor';
 export * from './arrow';
+export * from './format/number';
