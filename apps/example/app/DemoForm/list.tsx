@@ -13,6 +13,7 @@ import {
   Space,
   Button,
   DeleteFill,
+  Dialog,
 } from '@tastien/react-native-component';
 
 const BasicFormList: React.FC = () => {
@@ -51,18 +52,18 @@ const BasicFormList: React.FC = () => {
                       extra={
                         <DeleteFill
                           onPress={() => {
-                            // Dialog.confirm({
-                            //   title: '提示',
-                            //   message: '确定要删除？',
-                            //   confirmButtonColor: '#f30',
-                            //   confirmButtonText: '删除',
-                            // })
-                            //   .then((data) => {
-                            //     if (data === 'confirm') {
-                            //       remove(fieldIndex);
-                            //     }
-                            //   })
-                            //   .catch(() => {});
+                            Dialog.confirm({
+                              title: '提示',
+                              message: '确定要删除？',
+                              confirmTextClassName: 'text-[#f30]',
+                              confirmButtonText: '删除',
+                            })
+                              .then((data) => {
+                                if (data === 'confirm') {
+                                  remove(fieldIndex);
+                                }
+                              })
+                              .catch(() => {});
                           }}
                         />
                       }

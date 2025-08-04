@@ -44,7 +44,7 @@ const DemoSearch: React.FC = () => {
         <Search
           autoFocus
           prefix={
-            <View>
+            <View className='mr-2'>
               <Text>自定义内容</Text>
             </View>
           }

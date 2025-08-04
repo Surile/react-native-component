@@ -8,10 +8,9 @@ import type {
 } from 'react-native'
 
 import type { NumberInputProps } from '../number-input/interface'
-import type { PopupPropsCommon } from '../popup/interface'
+import type { PopupPropsCommon } from '../popup/types'
 import type { TextInputProps } from '../text-input/interface'
 
-import type { DialogTheme } from './style'
 
 export type DialogType = 'alert' | 'confirm'
 
@@ -65,7 +64,7 @@ interface DialogCommon extends PopupPropsCommon {
   /**
    * 确认按钮颜色
    */
-  confirmButtonColor?: ColorValue
+  confirmTextClassName?: ColorValue
 
   /**
    * 确认按钮文案 粗体
@@ -82,7 +81,7 @@ interface DialogCommon extends PopupPropsCommon {
   /**
    * 取消按钮颜色
    */
-  cancelButtonColor?: ColorValue
+  cancelTextClassName?: ColorValue
 
   /**
    * 取消按钮文案 粗体
@@ -109,7 +108,6 @@ interface DialogCommon extends PopupPropsCommon {
 }
 
 export interface DialogProps extends DialogCommon, PropsWithChildren<{}> {
-  theme?: Partial<DialogTheme>
   /**
    * 取消按钮加载中
    * @default false
@@ -172,7 +170,6 @@ export interface DialogInputProps
       'visible' | 'onPressOverlay' | 'messageAlign' | 'onPressClose'
     >,
     Pick<DialogKeyboardProps, 'safeAreaTop'> {
-  theme?: Partial<DialogTheme>
   /**
    * 关闭前的回调函数，返回 false 可阻止关闭，支持返回 Promise
    */

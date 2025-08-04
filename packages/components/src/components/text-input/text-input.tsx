@@ -242,7 +242,7 @@ const TextInput = forwardRef<TextInputInstance, TextInputProps>(
       ? null
       : renderTextLikeJSX(
           prefix,
-          cn('text-[#11151A] mr-2', prefixTextClassName, textInputFontSize({ size }))
+          cn('text-[#11151A]', prefixTextClassName, textInputFontSize({ size }))
         );
     const suffixJSX = isTextarea
       ? null
@@ -359,7 +359,7 @@ const TextInput = forwardRef<TextInputInstance, TextInputProps>(
         {prefixJSX || suffixJSX || bordered ? (
           <View
             className={cn(
-              'flex-row items-center',
+              'flex-row items-center px-2',
               bordered && {
                 'border rounded border-[#E3E5E8]': bordered,
                 'flex-1': addonAfterJSX || addonBeforeJSX,

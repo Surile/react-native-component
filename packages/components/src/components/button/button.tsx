@@ -211,6 +211,7 @@ const Button: React.FC<ButtonProps> = ({
       })}
     </>
   );
+  console.log('🚀 ~ Button ~ textClassName:', textClassName);
 
   return (
     <TouchableOpacity

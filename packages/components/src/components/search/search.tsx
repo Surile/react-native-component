@@ -123,7 +123,7 @@ const Search = forwardRef<TextInputInstance, SearchProps>(
           prefix={
             <>
               {prefix}
-              <SearchOutline className='mx-2' color={iconColor} size={20} />
+              <SearchOutline className='mr-2' color={iconColor} size={20} />
             </>
           }
           suffix={suffix}

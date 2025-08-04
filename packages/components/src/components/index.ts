@@ -112,3 +112,12 @@ export type {
   SelectorProps,
 } from './selector/interface'
 export { default as Selector } from './selector'
+
+export type { DialogProps } from './dialog/interface'
+export { default as Dialog } from './dialog'
+
+export type {
+  StepSelectorInstance,
+  StepSelectorProps,
+} from './step-selector/interface'
+export { default as StepSelector } from './step-selector'

@@ -1,21 +1,19 @@
-import { CrossOutline } from '@fruits-chain/icons-react-native'
-import isNil from 'lodash/isNil'
-import React, { useRef, useCallback, memo, isValidElement } from 'react'
-import { View, Text, Animated } from 'react-native'
+import isNil from 'lodash/isNil';
+import React, { useRef, useCallback, memo, isValidElement } from 'react';
+import { View, Text, Animated } from 'react-native';
 
-import Button from '../button'
-import { getDefaultValue, easing, renderTextLikeJSX } from '../helpers'
-import { usePersistFn } from '../hooks'
-import Locale from '../locale'
-import Popup from '../popup/popup'
-import Theme from '../theme'
+import Button from '../button';
+import Popup from '../popup/popup';
 
-import type { DialogProps } from './interface'
-import { varCreator, styleCreator } from './style'
+import type { DialogProps } from './interface';
+import { easing, getDefaultValue, renderTextLikeJSX } from '../../helpers';
+import { usePersistFn } from '../../hooks';
+import { cn } from '../../lib/utils';
+import { CrossOutline } from '../icons';
 
 const defaultOnRequestClose = () => {
-  return true
-}
+  return true;
+};
 
 /**
  * Dialog 弹出框
@@ -25,7 +23,6 @@ const defaultOnRequestClose = () => {
 const Dialog: React.FC<DialogProps> = ({
   children,
   style,
-  theme,
   title,
   message,
   width,
@@ -34,9 +31,9 @@ const Dialog: React.FC<DialogProps> = ({
   showCancelButton = false,
   confirmButtonText,
   cancelButtonText,
-  confirmButtonColor,
+  confirmTextClassName,
   confirmButtonTextBold = true,
-  cancelButtonColor,
+  cancelTextClassName,
   cancelButtonTextBold = false,
   confirmButtonLoading = false,
   cancelButtonLoading = false,
@@ -51,23 +48,17 @@ const Dialog: React.FC<DialogProps> = ({
   onRequestClose = defaultOnRequestClose,
   ...resetProps
 }) => {
-  const fadeAnim = useRef(new Animated.Value(0)).current
-  const fadeInstance = useRef<Animated.CompositeAnimation | null>(null)
-  const locale = Locale.useLocale().Dialog
-  const [CV, STYLES] = Theme.useStyle({
-    varCreator,
-    styleCreator,
-    theme,
-  })
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const fadeInstance = useRef<Animated.CompositeAnimation | null>(null);
 
-  width = getDefaultValue(width, CV.dialog_width)
-  duration = getDefaultValue(duration, CV.dialog_transition)
+  width = getDefaultValue(width, 300);
+  duration = getDefaultValue(duration, 300);
 
   const showDialog = useCallback(
     (show: boolean) => {
       if (fadeInstance.current) {
-        fadeInstance.current.stop()
-        fadeInstance.current = null
+        fadeInstance.current.stop();
+        fadeInstance.current = null;
       }
 
       fadeInstance.current = Animated.timing(
@@ -77,73 +68,64 @@ const Dialog: React.FC<DialogProps> = ({
           duration: duration,
           useNativeDriver: true,
           easing: show ? easing.easeOutCirc : easing.easeInCubic,
-        },
-      )
+        }
+      );
 
-      fadeInstance.current.start()
+      fadeInstance.current.start();
     },
-    [duration, fadeAnim],
-  )
+    [duration, fadeAnim]
+  );
   const onOpenPersistFn = usePersistFn(() => {
-    showDialog(true)
-    onOpenFn?.()
-  })
+    showDialog(true);
+    onOpenFn?.();
+  });
   const onClosePersistFn = usePersistFn(() => {
-    showDialog(false)
-    onCloseFn?.()
-  })
+    showDialog(false);
+    onCloseFn?.();
+  });
 
-  const titleJSX = renderTextLikeJSX(title, [
-    STYLES.title_text,
-    isNil(message) ? STYLES.title_isolated : null,
-  ])
+  const titleJSX = renderTextLikeJSX(
+    title,
+    cn('text-center text-4xl px-6 pt-6 pb-4 text-gray-800', {
+      'pb-0': isNil(message),
+    })
+  );
   const messageJSX = !isNil(message) ? (
     isValidElement(message) ? (
       message
     ) : (
       <Text
-        style={[
-          STYLES.message_text,
-          {
-            textAlign: messageAlign,
-          },
-        ]}>
+        className={cn('px-6 text-4xl text-gray-800')}
+        style={{
+          textAlign: messageAlign,
+        }}
+      >
         {message}
       </Text>
     )
-  ) : null
+  ) : null;
 
   const cancelButtonProps = {
-    color: cancelButtonColor || CV.dialog_cancel_button_text_color,
-    text: cancelButtonText ?? locale.cancelButtonText,
+    text: cancelButtonText ?? '取消',
     loading: cancelButtonLoading,
     onPress: onPressCancel,
-  }
+  };
 
   const confirmButtonProps = {
-    color: confirmButtonColor || CV.dialog_confirm_button_text_color,
-    text: confirmButtonText ?? locale.confirmButtonText,
+    text: confirmButtonText ?? '确认',
     loading: confirmButtonLoading,
     onPress: onPressConfirm,
-  }
+  };
 
   // TODO 优化逆转按钮变量变换
-  const _showCancelButton = buttonReverse ? showConfirmButton : showCancelButton
-  const _showConfirmButton = buttonReverse
-    ? showCancelButton
-    : showConfirmButton
-  const _cancelButtonTextBold = buttonReverse
-    ? confirmButtonTextBold
-    : cancelButtonTextBold
-  const _confirmButtonTextBold = buttonReverse
-    ? cancelButtonTextBold
-    : confirmButtonTextBold
-  const _cancelButtonProps = buttonReverse
-    ? confirmButtonProps
-    : cancelButtonProps
-  const _confirmButtonProps = buttonReverse
-    ? cancelButtonProps
-    : confirmButtonProps
+  const _showCancelButton = buttonReverse ? showConfirmButton : showCancelButton;
+  const _showConfirmButton = buttonReverse ? showCancelButton : showConfirmButton;
+  const _cancelButtonTextBold = buttonReverse ? confirmButtonTextBold : cancelButtonTextBold;
+  const _confirmButtonTextBold = buttonReverse ? cancelButtonTextBold : confirmButtonTextBold;
+  const _cancelButtonProps = buttonReverse ? confirmButtonProps : cancelButtonProps;
+  const _confirmButtonProps = buttonReverse ? cancelButtonProps : confirmButtonProps;
+
+  console.log('🚀 ~ cn ~ confirmTextClassName:', confirmTextClassName);
 
   return (
     <Popup
@@ -151,10 +133,11 @@ const Dialog: React.FC<DialogProps> = ({
       duration={duration}
       onOpen={onOpenPersistFn}
       onClose={onClosePersistFn}
-      onRequestClose={onRequestClose}>
+      onRequestClose={onRequestClose}
+    >
       <Animated.View
+        className='overflow-hidden bg-white rounded-2xl'
         style={[
-          STYLES.dialog,
           style,
           {
             width,
@@ -167,13 +150,14 @@ const Dialog: React.FC<DialogProps> = ({
               },
             ],
           },
-        ]}>
+        ]}
+      >
         {showClose ? (
           <CrossOutline
-            style={STYLES.close}
+            className='absolute top-4 right-4'
             onPress={onPressClose}
-            color={CV.dialog_close_color}
-            size={CV.dialog_close_size}
+            color='#11151A'
+            size={20}
           />
         ) : null}
 
@@ -182,48 +166,50 @@ const Dialog: React.FC<DialogProps> = ({
         {titleJSX ? (
           messageJSX
         ) : (
-          <View style={STYLES.content_isolated}>{messageJSX}</View>
+          <View className='pt-6 items-center justify-center'>{messageJSX}</View>
         )}
 
         {children}
 
         {_showCancelButton || _showConfirmButton ? (
-          <View style={STYLES.footer}>
+          <View className='flex-row border-t border-gray-200 mt-4'>
             {_showCancelButton ? (
               <Button
                 {..._cancelButtonProps}
-                type="link"
-                size="xl"
+                type='link'
+                size='xl'
                 square
-                style={STYLES.btn}
-                textStyle={_cancelButtonTextBold ? STYLES.btn_text_bold : null}
+                className='flex-1 m-0'
+                textClassName={cn(
+                  {
+                    'font-bold': _cancelButtonTextBold,
+                  },
+                  cancelTextClassName
+                )}
               />
             ) : null}
             {_showConfirmButton ? (
               <Button
                 {..._confirmButtonProps}
-                type="link"
-                size="xl"
+                type='link'
+                size='xl'
                 square
-                style={[
-                  STYLES.btn,
-                  _showCancelButton
-                    ? // eslint-disable-next-line react-native/no-inline-styles
-                      {
-                        // react-native-web 覆盖原 button 样式
-                        borderLeftWidth: 1,
-                        borderColor: CV.dialog_footer_divider_color,
-                      }
-                    : null,
-                ]}
-                textStyle={_confirmButtonTextBold ? STYLES.btn_text_bold : null}
+                className={cn('flex-1 m-0', {
+                  'border-l border-gray-200': _showCancelButton,
+                })}
+                textClassName={cn(
+                  {
+                    'font-bold': _confirmButtonTextBold,
+                  },
+                  confirmTextClassName
+                )}
               />
             ) : null}
           </View>
         ) : null}
       </Animated.View>
     </Popup>
-  )
-}
+  );
+};
 
-export default memo(Dialog)
+export default memo(Dialog);
