@@ -90,3 +90,25 @@ export type {
   RuleRender,
 } from './form'
 export { default as Form, FormItemContext, ListContext } from './form'
+
+export type {
+  PickerViewProps,
+  PickerOption,
+  PickerOptionMultiple,
+  PickerOptionCascade,
+  PickerValue,
+} from './picker-view/interface'
+export { default as PickerView } from './picker-view'
+
+export type { PickerProps } from './picker/interface'
+export { default as Picker } from './picker'
+
+export type { SearchProps } from './search/interface'
+export { default as Search } from './search'
+
+export type {
+  SelectorValue,
+  SelectorOption,
+  SelectorProps,
+} from './selector/interface'
+export { default as Selector } from './selector'

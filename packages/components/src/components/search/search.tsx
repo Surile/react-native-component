@@ -116,14 +116,14 @@ const Search = forwardRef<TextInputInstance, SearchProps>(
           ref={ref}
           {...textInputProps}
           clearable
-          fixGroupClassName='flex-1 bg-gray-300 rounded'
-          className={cn('ml-2 text-gray-500')}
+          fixGroupClassName='flex-1 bg-gray-100 rounded'
+          className={cn('ml-2')}
           placeholder={placeholder}
           placeholderTextColor={placeholderTextColor}
           prefix={
             <>
               {prefix}
-              <SearchOutline color={iconColor} size={iconSize} />
+              <SearchOutline className='mx-2' color={iconColor} size={20} />
             </>
           }
           suffix={suffix}

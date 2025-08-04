@@ -20,3 +20,4 @@ export { default as WarningOutline } from './warning-outline';
 export { default as SuccessOutline } from './success-outline';
 export { default as SwapRightOutline } from './swap-right-outline';
 export { default as DeleteFill } from './delete-fill';
+export { default as MenuOutline } from './menu-outline';

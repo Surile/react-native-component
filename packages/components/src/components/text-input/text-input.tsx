@@ -359,7 +359,7 @@ const TextInput = forwardRef<TextInputInstance, TextInputProps>(
         {prefixJSX || suffixJSX || bordered ? (
           <View
             className={cn(
-              'flex-row items-center px-2',
+              'flex-row items-center',
               bordered && {
                 'border rounded border-[#E3E5E8]': bordered,
                 'flex-1': addonAfterJSX || addonBeforeJSX,
