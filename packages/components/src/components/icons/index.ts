@@ -19,3 +19,4 @@ export { default as SearchOutline } from './search-outline';
 export { default as WarningOutline } from './warning-outline';
 export { default as SuccessOutline } from './success-outline';
 export { default as SwapRightOutline } from './swap-right-outline';
+export { default as DeleteFill } from './delete-fill';

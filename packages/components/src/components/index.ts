@@ -76,3 +76,17 @@ export { default as NumberInput } from './number-input'
 
 export type { TextInputProps, TextInputInstance } from './text-input/interface'
 export { default as TextInput } from './text-input'
+
+export type { PasswordInputProps } from './password-input/interface'
+export { default as PasswordInput } from './password-input'
+
+export type {
+  FormInstance,
+  FormProps,
+  FormItemProps,
+  ListProps,
+  Rule,
+  RuleObject,
+  RuleRender,
+} from './form'
+export { default as Form, FormItemContext, ListContext } from './form'

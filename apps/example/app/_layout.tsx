@@ -14,6 +14,7 @@ export default function RootLayout() {
         <Stack.Screen name='DemoBlank' />
         <Stack.Screen name='DemoButton' />
         <Stack.Screen name='DemoCell' />
+        <Stack.Screen name='DemoPasswordInput' />
         <Stack.Screen name='DemoPopup' />
         <Stack.Screen name='DemoSpace' />
         <Stack.Screen name='DemoToast' />
