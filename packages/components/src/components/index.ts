@@ -121,3 +121,6 @@ export type {
   StepSelectorProps,
 } from './step-selector/interface'
 export { default as StepSelector } from './step-selector'
+
+export type { SwitchProps } from './switch/interface'
+export { default as Switch } from './switch'
