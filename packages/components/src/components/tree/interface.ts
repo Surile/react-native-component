@@ -23,7 +23,7 @@ export interface TreeOption {
   /**
    * 自定义渲染
    */
-  render?: (p: { label: string; disabled?: boolean; labelHighlight?: boolean; active: boolean }) => React.ReactNode;
+  render?: (p: { label: string; disabled?: boolean; labelHighlight?: boolean; active: boolean, activeColor:ColorValue }) => React.ReactNode;
 
   /**
    * 自定义渲染树节点的展开/折叠图标
@@ -52,6 +52,8 @@ export interface TreeOption {
   switcherHighlight?: boolean;
 
   children?: TreeOption[];
+
+  activeColor?: ColorValue;
 }
 
 export interface TreeSearchListData extends TreeOption {

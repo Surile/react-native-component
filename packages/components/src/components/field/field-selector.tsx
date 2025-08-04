@@ -11,7 +11,7 @@ import type { TreeOption } from '../tree/interface';
 import FieldText from './field-text';
 import type { FieldSelectorProps } from './interface';
 import { usePersistFn } from '../../hooks';
-import Loading from '../loading';
+import LoadingSpinner from '../loading/loading-spinner';
 
 /**
  * 输入框 选择输入
@@ -27,7 +27,7 @@ const FieldSelector: React.FC<FieldSelectorProps> = ({
   selectorTitle,
   renderResultText,
   search,
-
+  optionsLoadingSpinnerColorClassName,
   isLink = true,
   ...restProps
 }) => {
@@ -76,7 +76,11 @@ const FieldSelector: React.FC<FieldSelectorProps> = ({
             {restProps.valueExtra}
             {optionsLoading ? (
               <View className='ml-2 justify-center items-center'>
-                <Loading testID='FIELD_SELECTOR_LOADING' size={16} color={'#8C9199'} />
+                <LoadingSpinner
+                  colorClassName={optionsLoadingSpinnerColorClassName}
+                  testID='FIELD_SELECTOR_LOADING'
+                  size={16}
+                />
               </View>
             ) : (
               <TextInputClear

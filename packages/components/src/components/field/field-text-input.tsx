@@ -37,7 +37,12 @@ const FieldTextInput: React.FC<FieldTextInputProps> = ({
   return (
     <Cell
       {...cellProps}
-      valueClassName={cn(cellProps.valueClassName, cellProps.vertical && 'mt-2')}
+      valueClassName={cn(
+        {
+          'mt-2': cellProps.vertical,
+        },
+        cellProps.valueClassName
+      )}
       value={
         <TextInput
           {...otherProps}

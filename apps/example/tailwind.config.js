@@ -11,6 +11,10 @@ module.exports = {
   ],
   presets: [require('nativewind/preset')],
   theme: { 
+    spacing: Array.from({ length: 1000 }).reduce((map, _, index) => {
+      map[index / 2] = `${(index / 2) * 4}px`;
+      return map;
+    }, {}),
     extend: {
       colors: {
         // 品牌色 Brand Colors

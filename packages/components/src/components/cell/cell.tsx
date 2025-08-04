@@ -7,6 +7,7 @@ import { cn } from '../../lib/utils';
 import Divider from '../divider';
 import type { CellProps } from './interface';
 import { useDebounceFn } from '../../hooks';
+import { getArrowOutline } from '../../helpers';
 
 const cellVariants = cva('bg-fill-white', {
   variants: {
@@ -159,31 +160,15 @@ const Cell: React.FC<CellProps> = ({
     ) : (
       extra
     );
-
+  const IconArrow = getArrowOutline(arrowDirection);
   const linkJSX = isLink ? (
-    <View
-      className='ml-2 w-4 h-4 justify-center items-center'
+    <IconArrow
       testID='CELL_LINK_ARROW'
-      onTouchEnd={onPressLink}
-    >
-      <View
-        className='w-2 h-2 border-t border-r border-text-3'
-        style={{
-          transform: [
-            {
-              rotate:
-                arrowDirection === 'up'
-                  ? '-45deg'
-                  : arrowDirection === 'down'
-                  ? '135deg'
-                  : arrowDirection === 'left'
-                  ? '-135deg'
-                  : '45deg',
-            },
-          ],
-        }}
-      />
-    </View>
+      size={16}
+      color={'#8C9199'}
+      onPress={onPressLink}
+      className='self-center ml-2'
+    />
   ) : null;
 
   const ctxJSX = (

@@ -9,6 +9,8 @@ import PopupHeader from '../popup/popup-header';
 import PopupPage from '../popup/popup-page';
 import Tree from '../tree';
 import type { TreeProps, TreeValue } from '../tree/interface';
+import ButtonBar from '../button-bar';
+import Button from '../button';
 
 const treePropsField = [
   'multiple',
@@ -104,12 +106,9 @@ const Selector: React.FC<SelectorProps> = ({
       />
 
       {treeProps.multiple ? (
-        <TouchableOpacity
-          onPress={onPressOk}
-          className='mx-3 items-center justify-center rounded-md bg-primary py-3'
-        >
-          <Text className='text-base font-semibold text-white'>{confirmButtonText ?? '确定'}</Text>
-        </TouchableOpacity>
+        <ButtonBar alone divider={false} height={60} safeAreaInsetBottom={false}>
+          <Button type='primary' onPress={onPressOk} text={confirmButtonText ?? '确定'} />
+        </ButtonBar>
       ) : null}
     </>
   );

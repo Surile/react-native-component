@@ -6,7 +6,7 @@ import { CrossOutline } from '../icons';
 const TextInputClear: React.FC<TextInputClearProps> = ({ onPress }) => {
   return (
     <CrossOutline
-      className='self-center size-4 rounded-lg text-[#B9BEC5] items-center justify-center ml-2'
+      className='self-center size-4 rounded-lg bg-gray-500 items-center justify-center ml-2'
       color='#FFFFFF'
       size={12}
       onPress={onPress}

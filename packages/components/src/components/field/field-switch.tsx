@@ -15,7 +15,7 @@ function FieldSwitch<ActiveValueT = boolean, InactiveValueT = boolean>(
   return (
     <Cell
       {...cellProps}
-      valueClassName={cn('flex-row items-center justify-center', cellProps.valueClassName)}
+      valueClassName={cn('flex-row items-center justify-end', cellProps.valueClassName)}
       value={<Switch<ActiveValueT, InactiveValueT> {...otherProps} />}
     />
   );

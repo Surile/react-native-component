@@ -21,14 +21,14 @@ const TreeItem: React.FC<TreeItemProps> = ({
   labelHighlight,
   hasChildren,
   onPressSwitcherIcon,
-  activeColor,
+  activeColor = '#4080FF',
   ...restProps
 }) => {
   const leftJSX = (
-    <View className='flex-row items-center'>
+    <Flex direction='row' align='center'>
       {indent ? (
         <View
-          className='h-12.5'
+          className='h-[50px]'
           style={{
             width: tier * indent,
           }}
@@ -37,13 +37,13 @@ const TreeItem: React.FC<TreeItemProps> = ({
       <Flex
         align='center'
         justify='center'
-        className={cn({
-          'bg-primary-5/50 p-4 rounded self-center': hasChildren && switcherHighlight,
+        className={cn('items-center justify-center mr-1', {
+          'rounded self-center bg-primary-5/20 p-1': hasChildren && switcherHighlight,
         })}
       >
         {switcherIcon}
       </Flex>
-    </View>
+    </Flex>
   );
 
   return (
@@ -63,10 +63,11 @@ const TreeItem: React.FC<TreeItemProps> = ({
             disabled: restProps.disabled,
             labelHighlight,
             active,
+            activeColor,
           })
         ) : (
           <Text
-            className={cn('flex-1 mx-[4px] text-[15px]', {
+            className={cn('flex-1 my-[4px] text-[15px]', {
               'text-gary-400': restProps.disabled && !hasChildren,
               'font-bold': bold,
               'text-primary': labelHighlight,

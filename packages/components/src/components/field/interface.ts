@@ -97,6 +97,8 @@ export interface FieldSelectorProps
     options: SelectorPropsUsed['options'],
   ) => ReactNode
 
+  optionsLoadingSpinnerColorClassName?: string
+
   /**
    * 是否展示右侧箭头
    * @default true
@@ -344,7 +346,8 @@ export interface FieldCheckboxProps
       | 'multiple'
       | 'editable'
       | 'scrollable'
-      | 'checkboxLabelTextClassName'
+      | 'checkboxLabelTextStyle'
+      | 'checkboxIconLabelGap'
       | 'activeColor'
       | 'iconSize'
       | 'deselect'

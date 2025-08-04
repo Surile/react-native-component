@@ -49,10 +49,10 @@ const iOSPlatform = Platform.OS === 'ios';
 const textInputFontSize = cva('', {
   variants: {
     size: {
-      xl: 'text-2xl',
-      l: 'text-2xl',
-      m: 'text-2xl',
-      s: 'text-2xl',
+      xl: 'text-2xl leading-[20px]',
+      l: 'text-2xl leading-[20px]',
+      m: 'text-2xl leading-[20px]',
+      s: 'text-2xl leading-[20px]',
     },
   },
   defaultVariants: {
@@ -298,13 +298,18 @@ const TextInput = forwardRef<TextInputInstance, TextInputProps>(
           {...resetProps}
           ref={TextInputRef}
           className={cn(
-            'grow shrink p-0 m-0 border-none text-center text-[#5A6068]',
+            'grow shrink p-0 m-0 border-none text-gray-700',
             {
               'bg-[#EDEFF2]': showDisabledInput,
             },
             textInputFontSize({ size })
           )}
-          style={style}
+          style={[
+            {
+              textAlignVertical: 'center',
+            },
+            style,
+          ]}
           placeholder={
             focus && resetProps.textAlign === 'center' ? undefined : resetProps.placeholder
           }

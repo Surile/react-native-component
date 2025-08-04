@@ -4,7 +4,7 @@ import { ScrollView } from 'react-native';
 import Checkbox from './checkbox';
 import type { CheckboxGroupProps } from './interface';
 import { useControllableValue } from '../../hooks';
-import { Space } from '../space';
+import Space from '../space';
 
 function CheckboxGroup<T = any>({
   options,
@@ -30,7 +30,7 @@ function CheckboxGroup<T = any>({
         return (
           <Checkbox
             {...checkboxProps}
-            labelTextClassName={restProps.labelTextClassName ?? checkboxLabelTextClassName}
+            labelTextClassName={checkboxLabelTextClassName}
             key={`${checkboxValue}`}
             activeValue={checkboxValue}
             inactiveValue={null}

@@ -13,7 +13,15 @@ const FieldCheckbox: React.FC<FieldCheckboxProps> = (restProps) => {
     <Cell
       {...cellProps}
       center={!restProps.vertical}
-      value={<CheckboxGroup {...otherProps} direction='horizontal' gap={24} />}
+      value={
+        <CheckboxGroup
+          {...otherProps}
+          direction='horizontal'
+          gapHorizontal={24}
+          justify={restProps.vertical ? 'flex-start' : 'flex-end'}
+          align='center'
+        />
+      }
     />
   );
 };

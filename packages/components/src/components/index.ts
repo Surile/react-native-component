@@ -70,3 +70,9 @@ export { default as Field } from './field'
 
 export type { TreeItemProps, TreeOption } from './tree/interface'
 export { default as Tree } from './tree'
+
+export type { NumberInputProps } from './number-input/interface'
+export { default as NumberInput } from './number-input'
+
+export type { TextInputProps, TextInputInstance } from './text-input/interface'
+export { default as TextInput } from './text-input'

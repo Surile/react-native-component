@@ -100,11 +100,6 @@ export interface SelectorTextProps {
   head?: boolean;
 
   /**
-   * 样式
-   */
-  containerClassName?: string;
-
-  /**
    * 文本样式
    */
   textClassName?: string;

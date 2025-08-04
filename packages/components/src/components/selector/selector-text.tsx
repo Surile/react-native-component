@@ -6,6 +6,7 @@ import { usePersistFn } from '../../hooks';
 import { cn } from '../../lib/utils';
 import Divider from '../divider';
 import { getArrowOutline } from '../../helpers';
+import Space from '../space';
 
 const SelectorText: React.FC<SelectorTextProps> = ({
   title,
@@ -14,8 +15,8 @@ const SelectorText: React.FC<SelectorTextProps> = ({
   onChange,
   arrowDirection = 'right',
   divider = true,
-  containerClassName,
   textClassName,
+  head,
 }) => {
   const onPress = usePersistFn(() => {
     SelectorInstance({
@@ -33,17 +34,17 @@ const SelectorText: React.FC<SelectorTextProps> = ({
   });
   const IconArrow = getArrowOutline(arrowDirection);
   const textIndex = options.findIndex((op) => op.value === value);
-  const text = textIndex !== -1 ? options[textIndex].label : '';
+  const text = options[textIndex].label;
 
   return (
     <TouchableOpacity activeOpacity={0.8} onPress={onPress} className='justify-center'>
-      <View className={cn('flex-row items-center', containerClassName)}>
+      <Space direction='horizontal' align='center' head={head}>
         {divider ? <Divider direction='vertical' /> : null}
         <Text suppressHighlighting className={cn('text-base text-gray-300', textClassName)}>
           {text}
         </Text>
         <IconArrow size={16} color={'#8C9199'} />
-      </View>
+      </Space>
     </TouchableOpacity>
   );
 };
