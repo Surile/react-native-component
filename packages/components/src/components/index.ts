@@ -64,3 +64,9 @@ export type { DatePickerColumnMode } from './date-picker-view/interface'
 export { default as DatePickerView } from './date-picker-view'
 
 export * from './icons'
+
+export type { FieldTextProps } from './field/interface'
+export { default as Field } from './field'
+
+export type { TreeItemProps, TreeOption } from './tree/interface'
+export { default as Tree } from './tree'

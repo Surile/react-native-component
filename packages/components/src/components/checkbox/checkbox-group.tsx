@@ -13,6 +13,7 @@ function CheckboxGroup<T = any>({
   scrollable = false,
   deselect = true,
   checkboxLabelTextClassName,
+  checkboxIconLabelGap,
   ...restProps
 }: CheckboxGroupProps<T>) {
   const [value, onChange] = useControllableValue<T | T[] | undefined | null>(restProps, {
@@ -33,6 +34,7 @@ function CheckboxGroup<T = any>({
             key={`${checkboxValue}`}
             activeValue={checkboxValue}
             inactiveValue={null}
+            gap={checkboxProps?.gap ?? checkboxIconLabelGap}
             value={selected ? checkboxValue : null}
             onChange={(_value) => {
               if (!editable) {

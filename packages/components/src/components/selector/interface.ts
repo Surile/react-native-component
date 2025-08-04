@@ -81,9 +81,11 @@ export interface SelectorTextProps {
   onChange?: (value: SelectorValue, options: SelectorOption[]) => void;
 
   /**
-   * 箭头Icon名称
+   * 箭头方向
+   * @default 'right'
    */
-  arrowName: string;
+  arrowDirection?: 'left' | 'up' | 'right' | 'down'
+
 
   /**
    * 显示分割线

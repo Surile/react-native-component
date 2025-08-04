@@ -11,7 +11,7 @@ import {
 } from './helper';
 import TreeItem from './tree-item';
 import { TreeMultipleMode } from './var';
-import Empty from '../Empty';
+import Empty from '../empty';
 import { TreeOption, TreeProps, TreeSearchListData, TreeValue } from './interface';
 import { useControllableValue, usePersistFn } from '../../hooks';
 import { getDefaultValue } from '../../helpers';
@@ -45,8 +45,6 @@ const Tree: React.FC<TreeProps> = ({
   minHeight = true,
   cancellable = false,
   editable = true,
-  onEndReached,
-  refreshControl,
   ...restProps
 }) => {
   const [value, onChange] = useControllableValue<TreeValue | TreeValue[] | null>(restProps, {
@@ -315,12 +313,10 @@ const Tree: React.FC<TreeProps> = ({
                 />
               );
             }}
-            onEndReached={onEndReached}
-            refreshControl={refreshControl}
           />
         ) : (
           <View className='h-52'>
-            <Empty style={flatListStyle} full />
+            <Empty full />
           </View>
         )
       ) : (
@@ -388,11 +384,10 @@ const Tree: React.FC<TreeProps> = ({
                 labelHighlight={_labelHighlight}
                 hasChildren={(item.children?.length || 0) > 0}
                 onPressSwitcherIcon={_onPressSwitcherIcon}
+                activeColor={''}
               />
             );
           }}
-          onEndReached={onEndReached}
-          refreshControl={refreshControl}
         />
       )}
     </>

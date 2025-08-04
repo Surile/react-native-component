@@ -117,10 +117,11 @@ type SpaceDirection = 'vertical' | 'horizontal';
 
 export interface CheckboxGroupProps<ActiveValueT = any> extends Omit<CheckboxProps, 'onChange'> {
   checkboxLabelTextClassName?: CheckboxProps['labelTextClassName'];
+  checkboxIconLabelGap?: number
   options: ({
     value: ActiveValueT;
     label: string;
-  } & Partial<Pick<CheckboxProps, 'labelTextClassName' | 'disabled'>>)[];
+  } & Partial<Pick<CheckboxProps, 'labelTextClassName' | 'disabled' | 'gap' | "iconSize" | "activeColor">>)[];
 
   /**
    * 间距方向 `'vertical' | 'horizontal'`

@@ -19,6 +19,7 @@ function Checkbox<ActiveValueT = boolean, InactiveValueT = boolean>({
   labelPosition = 'right',
   renderIcon,
   disabled,
+  gap = 8,
   className,
   children,
   iconContainerClassName,
@@ -48,6 +49,9 @@ function Checkbox<ActiveValueT = boolean, InactiveValueT = boolean>({
         },
         labelTextClassName
       )}
+      style={{
+        [labelPosition === 'left' ? 'marginRight' : 'marginLeft']: gap,
+      }}
       onPress={labelDisabled ? undefined : onChangeValue}
     >
       {label}

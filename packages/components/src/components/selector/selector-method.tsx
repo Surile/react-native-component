@@ -1,24 +1,30 @@
-import React, { memo, useEffect } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import type { SelectorMethodProps, SelectorOption, SelectorValue } from './interface';
 import Selector from './selector';
-import { callInterceptor } from '../helpers';
-import { usePersistFn } from '../hooks';
-import useState from '../hooks/useStateUpdate';
+import { callInterceptor } from '../../helpers';
+import { usePersistFn } from '../../hooks';
 
 /**
  * Selector 函数使用时对应需要的组件
  */
-const SelectorMethod: React.FC<SelectorMethodProps> = ({ onChange, onClose, beforeChange, ...restProps }) => {
+const SelectorMethod: React.FC<SelectorMethodProps> = ({
+  onChange,
+  onClose,
+  beforeChange,
+  ...restProps
+}) => {
   const [visible, setVisible] = useState(false);
-  const onChangePersistFn = usePersistFn((v: SelectorValue | SelectorValue[], o: SelectorOption[]) => {
-    callInterceptor(beforeChange, {
-      args: [v, o],
-      done: () => {
-        onChange?.(v, o);
-        setVisible(false);
-      },
-    });
-  });
+  const onChangePersistFn = usePersistFn(
+    (v: SelectorValue | SelectorValue[], o: SelectorOption[]) => {
+      callInterceptor(beforeChange, {
+        args: [v, o],
+        done: () => {
+          onChange?.(v, o);
+          setVisible(false);
+        },
+      });
+    }
+  );
   const onClosePersistFn = usePersistFn(() => {
     onClose?.();
     setVisible(false);

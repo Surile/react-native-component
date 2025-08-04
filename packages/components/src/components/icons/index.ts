@@ -18,3 +18,4 @@ export { default as EyeCloseOutline } from './eye-close-outline';
 export { default as SearchOutline } from './search-outline';
 export { default as WarningOutline } from './warning-outline';
 export { default as SuccessOutline } from './success-outline';
+export { default as SwapRightOutline } from './swap-right-outline';

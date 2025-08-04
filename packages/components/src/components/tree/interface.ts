@@ -121,7 +121,7 @@ export interface TreeItemProps extends TouchableOpacityProps {
   /**
    * 选中状态颜色
    */
-  activeColor: ColorValue
+  activeColor?: ColorValue
 
   /**
    * 点击展开/折叠图标区域
