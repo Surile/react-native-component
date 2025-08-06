@@ -144,3 +144,6 @@ export type {
   DropdownTextProps,
 } from './dropdown/interface'
 export { default as Dropdown } from './dropdown'
+
+export type { ErrorBoundaryProps } from './error-boundary/interface'
+export { default as ErrorBoundary } from './error-boundary'
