@@ -14,6 +14,7 @@
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dayjs": "^1.11.13",
     "lodash": "^4.17.21",
     "nativewind": "^4.1.23",
     "rc-field-form": "^2.7.0",
@@ -39,7 +40,8 @@
     "react": "19.0.0",
     "react-native": "0.79.5",
     "react-native-safe-area-context": "*",
-    "react-native-svg": "*"
+    "react-native-svg": "*",
+    "dayjs": "*"
   },
   "peerDependenciesMeta": {
     "react-native": {

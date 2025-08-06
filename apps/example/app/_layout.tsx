@@ -18,6 +18,7 @@ export default function RootLayout() {
         <Stack.Screen name='DemoPopup' />
         <Stack.Screen name='DemoSpace' />
         <Stack.Screen name='DemoToast' />
+        <Stack.Screen name='DemoDropdown' />
       </Stack>
     </Tst.Provider>
   );

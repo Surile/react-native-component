@@ -137,3 +137,10 @@ export { default as Progress } from './progress'
 
 export type { PopoverProps } from './popover/interface'
 export { default as Popover } from './popover'
+
+export type {
+  DropdownMenuProps,
+  DropdownItemOption,
+  DropdownTextProps,
+} from './dropdown/interface'
+export { default as Dropdown } from './dropdown'
