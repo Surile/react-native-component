@@ -68,6 +68,8 @@ export interface PopupPropsCommon {
    * Used to locate this view in end-to-end tests.
    */
   testID?: string | undefined;
+
+  overlayClassName?: string
 }
 
 export interface PopupProps extends PopupPropsCommon, PropsWithChildren<{}> {
@@ -76,7 +78,6 @@ export interface PopupProps extends PopupPropsCommon, PropsWithChildren<{}> {
    */
   style?: StyleProp<ViewStyle>;
   className?: string;
-  overlayClassName?: string;
 
   /**
    * 弹出位置，可选值为 `'top' | 'bottom' | 'right' | 'left' | 'center'`

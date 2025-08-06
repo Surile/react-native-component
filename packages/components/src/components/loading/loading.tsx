@@ -14,6 +14,7 @@ const Loading: React.FC<LoadingProps> = ({
   size,
   colorClassName,
   textSize,
+  color,
   vertical = false,
   loadingIcon,
   ...restProps
@@ -53,7 +54,7 @@ const Loading: React.FC<LoadingProps> = ({
       {isValidElement(loadingIcon) ? (
         loadingIcon
       ) : typeof loadingIcon === 'function' ? (
-        loadingIcon(colorClassName)
+        loadingIcon(size, color)
       ) : (
         <Spinner size={size} colorClassName={colorClassName} />
       )}

@@ -1,3 +1,4 @@
+export { PopoverMode, PopoverPlacement } from 'react-native-popover-view'
 
 export type { LoadingProps } from './loading/interface'
 export { default as Loading } from './loading'
@@ -124,3 +125,15 @@ export { default as StepSelector } from './step-selector'
 
 export type { SwitchProps } from './switch/interface'
 export { default as Switch } from './switch'
+
+export type { NotifyProps, NotifyOptions } from './notify/interface'
+export { default as Notify } from './notify'
+
+export type { FloatingPanelProps } from './floating-panel/interface'
+export { default as FloatingPanel } from './floating-panel' 
+
+export type { ProgressProps, ProgressPageProps } from './progress/interface'
+export { default as Progress } from './progress'
+
+export type { PopoverProps } from './popover/interface'
+export { default as Popover } from './popover'

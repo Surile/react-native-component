@@ -114,10 +114,6 @@ const navs = [
         name: 'DemoDropdown',
       },
       {
-        title: 'Modal 模态框',
-        name: 'DemoModal',
-      },
-      {
         title: 'ErrorBoundary 错误捕获',
         name: 'DemoErrorBoundary',
       },
