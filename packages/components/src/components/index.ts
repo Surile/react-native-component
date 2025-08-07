@@ -150,3 +150,9 @@ export { default as ErrorBoundary } from './error-boundary'
 
 export type { BadgeProps } from './badge/interface'
 export { default as Badge } from './badge'
+
+export type {
+  DescriptionGroupProps,
+  DescriptionProps,
+} from './description/interface'
+export { default as Description } from './description'
