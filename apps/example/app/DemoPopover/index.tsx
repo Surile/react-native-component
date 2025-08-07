@@ -23,13 +23,13 @@ const BasicPopover: React.FC = () => {
           duration={0}
           content={[
             <Popover.Item key='1' value='1' divider>
-              <Text style={{ color: 'white' }}>弹出1</Text>
+              <Text>弹出1</Text>
             </Popover.Item>,
             <Popover.Item key='2' value='2' disabled>
-              <Text style={{ color: 'white' }}>弹出2 disabled</Text>
+              <Text>弹出2 disabled</Text>
             </Popover.Item>,
             <Popover.Item key='3' value='3'>
-              <Text style={{ color: 'white' }}>弹出3</Text>
+              <Text>弹出3</Text>
             </Popover.Item>,
           ]}
         >

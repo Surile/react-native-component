@@ -93,6 +93,7 @@ const Collapse: React.FC<CollapseProps> = ({
     (e: LayoutChangeEvent) => {
       // 有点疑惑，折叠的过程中，高度在动态变化，通过 absolute 布局解决无法完全渲染
       BodyHeight.current = e.nativeEvent.layout.height;
+      console.log('🚀 ~ Collapse ~ e.nativeEvent.layout.height:', e.nativeEvent.layout.height);
       // 展开的过程中才会存在动态高度
       if (Visible.current) {
         // 当收齐的时候已知高度
@@ -114,10 +115,15 @@ const Collapse: React.FC<CollapseProps> = ({
   const titleExtraJSX = renderTitleExtra ? renderTitleExtra(collapse, arrowJSX) : arrowJSX;
   const bodyJSX =
     lazyRender && !MountedRef.current && !collapse ? null : renderBody ? renderBody() : children;
+  console.log('🚀 ~ cn ~ AnimatedValue:', AnimatedValue);
 
   const ctxJSX = (
     <Animated.View className={cn('overflow-hidden bg-white')} style={{ height: AnimatedValue }}>
-      <View collapsable={false} className={cn('absolute inset-0')} onLayout={onLayoutBody}>
+      <View
+        collapsable={false}
+        className={cn('absolute left-0 right-0 top-0')}
+        onLayout={onLayoutBody}
+      >
         <View
           className={cn(
             {
@@ -129,7 +135,7 @@ const Collapse: React.FC<CollapseProps> = ({
           {bodyJSX}
         </View>
 
-        {bodyDivider ? <Divider type='light' /> : null}
+        {bodyDivider ? <Divider type='light' className='mx-3' /> : null}
       </View>
     </Animated.View>
   );

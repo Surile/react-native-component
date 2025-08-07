@@ -101,7 +101,7 @@ const Popover = <T,>({
         ]}
         popoverStyle={[
           {
-            backgroundColor: ' white',
+            backgroundColor: 'white',
             borderRadius: 4,
             paddingVertical: 0,
             paddingHorizontal: 0,

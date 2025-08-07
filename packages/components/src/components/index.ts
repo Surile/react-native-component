@@ -147,3 +147,6 @@ export { default as Dropdown } from './dropdown'
 
 export type { ErrorBoundaryProps } from './error-boundary/interface'
 export { default as ErrorBoundary } from './error-boundary'
+
+export type { BadgeProps } from './badge/interface'
+export { default as Badge } from './badge'
