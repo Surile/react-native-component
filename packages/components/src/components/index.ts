@@ -165,3 +165,6 @@ export { default as NoticeBar } from './notice-bar'
 
 export type { ResultProps } from './result/interface'
 export { default as Result } from './result'
+
+export type { WaterMarkProps } from './water-mark/interface'
+export { default as WaterMark } from './water-mark'

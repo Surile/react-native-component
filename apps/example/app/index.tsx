@@ -206,6 +206,10 @@ const navs = [
         title: 'Uploader 文件上传',
         name: 'DemoUploader',
       },
+      {
+        title: 'WaterMark 水印',
+        name: 'DemoWaterMark',
+      },
     ],
   },
 ];
