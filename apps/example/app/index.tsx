@@ -212,7 +212,7 @@ const navs = [
       },
       {
         title: 'Sidebar 水印',
-        name: 'DemoSidebar',
+        name: 'DemoSidebarw',
       },
     ],
   },
