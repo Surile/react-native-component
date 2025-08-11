@@ -162,3 +162,6 @@ export { default as Empty } from './empty'
 
 export type { NoticeBarProps } from './notice-bar/interface'
 export { default as NoticeBar } from './notice-bar'
+
+export type { ResultProps } from './result/interface'
+export { default as Result } from './result'
