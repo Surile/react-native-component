@@ -168,3 +168,6 @@ export { default as Result } from './result'
 
 export type { WaterMarkProps } from './water-mark/interface'
 export { default as WaterMark } from './water-mark'
+
+export type { SidebarProps } from './sidebar/interface'
+export { default as Sidebar } from './sidebar'
