@@ -171,3 +171,6 @@ export { default as WaterMark } from './water-mark'
 
 export type { SidebarProps } from './sidebar/interface'
 export { default as Sidebar } from './sidebar'
+
+export type { UploaderProps, UploaderValue } from './uploader/interface'
+export { default as Uploader } from './uploader'

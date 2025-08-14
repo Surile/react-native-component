@@ -211,8 +211,8 @@ const navs = [
         name: 'DemoWaterMark',
       },
       {
-        title: 'Sidebar 水印',
-        name: 'DemoSidebarw',
+        title: 'Sidebar',
+        name: 'DemoSidebar',
       },
     ],
   },

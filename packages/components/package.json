@@ -41,7 +41,12 @@
     "react-native": "0.79.5",
     "react-native-safe-area-context": "*",
     "react-native-svg": "*",
-    "dayjs": "*"
+    "dayjs": "*",
+    "react-native-image-zoom-viewer": "*",
+    "react-native-url-polyfill": "*",
+    "react-native-video": "*",
+    "react-native-image-crop-picker": "*",
+    "react-native-document-picker": "*"
   },
   "peerDependenciesMeta": {
     "react-native": {

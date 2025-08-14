@@ -22,3 +22,5 @@ export { default as SwapRightOutline } from './swap-right-outline';
 export { default as DeleteFill } from './delete-fill';
 export { default as MenuOutline } from './menu-outline';
 export { default as DoubleArrowClockwiseOutline } from './double-arrow-clockwise-outline';
+export { default as VideoColours } from './video-colours';
+export { default as CrossFill } from './cross-fill';
