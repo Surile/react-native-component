@@ -24,3 +24,4 @@ export { default as MenuOutline } from './menu-outline';
 export { default as DoubleArrowClockwiseOutline } from './double-arrow-clockwise-outline';
 export { default as VideoColours } from './video-colours';
 export { default as CrossFill } from './cross-fill';
+export { default as VolumeOutline } from './volume-outline';

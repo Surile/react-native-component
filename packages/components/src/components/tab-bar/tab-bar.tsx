@@ -2,8 +2,8 @@ import { JSX, memo, useCallback, useEffect, useRef, useState } from 'react';
 import isNil from 'lodash/isNil';
 import isNumber from 'lodash/isNumber';
 import type { LayoutChangeEvent, LayoutRectangle } from 'react-native';
-import { ScrollView, Text, TouchableOpacity } from 'react-native';
-import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
+import { ScrollView, Text, TouchableOpacity, Animated } from 'react-native';
+import { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import type { TabBarProps, TabValue } from './interface';
 import BottomBar from '../bottom-bar';
 import { useControllableValue, useOriginalDeepCopy, useUpdateEffect } from '../../hooks';
@@ -41,8 +41,8 @@ const TabBar = <T extends TabValue>({
     new Array(tabNum).fill({})
   );
 
-  const AnimatedIndicatorLeft = useSharedValue(0);
-  const AnimatedIndicatorWidth = useSharedValue(0);
+  const AnimatedIndicatorLeft = useRef(new Animated.Value(0));
+  const AnimatedIndicatorWidth = useRef(new Animated.Value(0));
   const ScrollViewRef = useRef<ScrollView>(null);
   const ScrollViewWidthRef = useRef(0);
 
@@ -54,31 +54,34 @@ const TabBar = <T extends TabValue>({
     (n: number) => {
       const targetLayout = layouts.current[n];
       const left =
-        targetLayout?.tab.x +
-        (targetLayout?.tab.width -
+        targetLayout.tab.x +
+        (targetLayout.tab.width -
           (isIndicatorWidthLayout ? targetLayout.text.width : indicatorWidth)) /
           2;
       const width = isIndicatorWidthLayout ? targetLayout.text.width : indicatorWidth;
 
-      AnimatedIndicatorLeft.value = withTiming(left, { duration: 300 });
-      AnimatedIndicatorWidth.value = withTiming(width, { duration: 300 });
+      Animated.parallel([
+        Animated.timing(AnimatedIndicatorLeft.current, {
+          toValue: left,
+          useNativeDriver: false,
+          duration: 300,
+        }),
+        Animated.timing(AnimatedIndicatorWidth.current, {
+          toValue: width,
+          useNativeDriver: false,
+          duration: 300,
+        }),
+      ]).start();
 
       if (!isTabAdaption) {
         const hh = ScrollViewWidthRef.current / 2;
-
         ScrollViewRef.current?.scrollTo({
-          x: targetLayout?.tab.x + targetLayout?.tab.width / 2 - hh,
+          x: targetLayout.tab.x + targetLayout.tab.width / 2 - hh,
           animated: true,
         });
       }
     },
-    [
-      AnimatedIndicatorLeft,
-      AnimatedIndicatorWidth,
-      indicatorWidth,
-      isIndicatorWidthLayout,
-      isTabAdaption,
-    ]
+    [indicatorWidth, isIndicatorWidthLayout, isTabAdaption]
   );
 
   const initIndicator = useCallback(() => {
@@ -100,7 +103,7 @@ const TabBar = <T extends TabValue>({
 
   useEffect(() => {
     if (state.layoutFinish) {
-      const n = optionsDeepCopy.findIndex((item: any) => item.value === value);
+      const n = optionsDeepCopy.findIndex((item) => item.value === value);
 
       navigateTo(n);
     }
@@ -149,10 +152,10 @@ const TabBar = <T extends TabValue>({
         {item.iconRender?.(isActive)}
         {item.label ? (
           <Text
-            className={cn('text-sm', {
+            className={cn('text-lg', {
               'w-full text-center': isTabTextCompact,
-              'mt-1 text-sm': item.iconRender,
-              'text-primary font-medium': isActive,
+              'mt-1 text-lg': item.iconRender,
+              'text-primary-5 font-medium': isActive,
               'text-gray-400 font-normal': !isActive,
             })}
             style={[
@@ -184,20 +187,16 @@ const TabBar = <T extends TabValue>({
     );
   });
 
-  const indicatorStyle = useAnimatedStyle(() => ({
-    width: AnimatedIndicatorWidth.value,
-    left: AnimatedIndicatorLeft.value,
-  }));
-
   const indicatorJSX =
     indicator && state.layoutFinish ? (
       <Animated.View
-        className={cn('bg-primary rounded-full absolute bottom-0 mb-[1px]', indicatorClassName)}
+        className={cn('bg-primary-5 rounded-full absolute bottom-0 mb-[1px]', indicatorClassName)}
         style={[
           {
             height: indicatorHeight,
+            width: AnimatedIndicatorWidth.current,
+            left: AnimatedIndicatorLeft.current,
           },
-          indicatorStyle,
         ]}
       />
     ) : null;

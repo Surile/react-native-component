@@ -16,6 +16,7 @@ const parseTabList = (children: React.ReactNode) => {
         const key = node.key !== undefined ? String(node.key) : undefined;
         return {
           ...node.props,
+          key,
           node,
         };
       }
@@ -36,6 +37,7 @@ const Tabs: React.FC<TabsProps> = ({
 }) => {
   const [_options, _tabs] = useMemo(() => {
     const tabs = parseTabList(children);
+    // @ts-ignore
     const options: TabItem<string>[] = tabs.map((t) => ({
       value: t!.key,
       label: t!.tab,

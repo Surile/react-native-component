@@ -174,3 +174,9 @@ export { default as Sidebar } from './sidebar'
 
 export type { UploaderProps, UploaderValue } from './uploader/interface'
 export { default as Uploader } from './uploader'
+
+export type { TabBarProps } from './tab-bar/interface'
+export { default as TabBar } from './tab-bar'
+
+export type { TabsProps, TabPaneProps } from './tabs/interface'
+export { default as Tabs } from './tabs'

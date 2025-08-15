@@ -52,12 +52,6 @@ export interface TabBarProps<T extends TabValue> extends BottomBarProps {
   indicatorHeight?: number;
 
   /**
-   * 指示器颜色
-   * @default tab_bar_indicator_color
-   */
-  indicatorColor?: ColorValue;
-
-  /**
    * 排列方式，left 标识自适应宽、有滚动条，center 标识居中、无滚动条
    * @default 'center'
    */
