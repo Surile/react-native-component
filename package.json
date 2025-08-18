@@ -8,9 +8,12 @@
     "dev:example": "turbo dev --filter=example --concurrency 32",
     "dev:example:ios": "turbo dev:ios --filter=example --concurrency 32",
     "dev:example:android": "turbo dev:android --filter=example --concurrency 32",
-    "dev:example:web": "turbo dev:web --filter=example --concurrency 32"
+    "dev:example:web": "turbo dev:web --filter=example --concurrency 32",
+    "publish-packages": "changeset version && changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.6",
+    "changeset": "^0.2.6",
     "turbo": "^2.5.4",
     "typescript": "^5.8.3"
   },
