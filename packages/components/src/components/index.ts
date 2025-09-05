@@ -180,3 +180,6 @@ export { default as TabBar } from './tab-bar'
 
 export type { TabsProps, TabPaneProps } from './tabs/interface'
 export { default as Tabs } from './tabs'
+
+export type { NavBarProps } from './navbar/interface';
+export { default as NavBar } from './navbar';
