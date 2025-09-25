@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "divider",
+  "type": "registry:component",
+  "title": "Example divider",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/divider/divider-line-dashed.tsx",
+      "content": "import React, { memo, useCallback, useState } from 'react';\nimport type { LayoutChangeEvent } from 'react-native';\nimport { useWindowDimensions, View } from 'react-native';\nimport { Line, Svg } from 'react-native-svg';\nimport type { DividerLineProps } from './interface';\nimport { cn } from '../../lib/utils';\n\n/**\n * 分割线\n */\nconst DividerLineDashed: React.FC<DividerLineProps> = ({\n  position,\n  adaptive = true,\n  direction = 'horizontal',\n  className,\n  color,\n}) => {\n  const isVertical = direction === 'vertical';\n  const { width } = useWindowDimensions();\n\n  const [size, setSize] = useState(isVertical ? 12 : width);\n\n  const onLayout = useCallback(\n    (e: LayoutChangeEvent) => {\n      setSize(e.nativeEvent.layout[isVertical ? 'height' : 'width']);\n    },\n    [isVertical]\n  );\n\n  return (\n    <View\n      onLayout={onLayout}\n      className={cn(className, {\n        'flex-1 w-[1px] h-full': isVertical,\n        'flex-1 max-w-[auto] mr-[16px]': position === 'left',\n        'flex-1 max-w-[auto] ml-[16px]': position === 'right',\n        'flex-1 max-w-[10%]': !adaptive,\n      })}\n    >\n      {isVertical ? (\n        <Svg width={1} height={size} viewBox={`0 0 1 ${size}`}>\n          <Line\n            x1='0.5'\n            y1='0'\n            x2='0.5'\n            y2={size}\n            strokeWidth={1}\n            strokeDasharray='2 2'\n            stroke={color}\n          />\n        </Svg>\n      ) : (\n        <Svg width={size} height={1} viewBox={`0 0 ${size} 1`}>\n          <Line\n            x1='0'\n            y1='0.5'\n            x2={size}\n            y2='0.5'\n            strokeWidth={1}\n            strokeDasharray='2 2'\n            stroke={color}\n          />\n        </Svg>\n      )}\n    </View>\n  );\n};\n\nexport default memo(DividerLineDashed);\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/divider/divider-line.tsx",
+      "content": "import React, { memo, useMemo } from 'react';\nimport { DimensionValue, View, ViewStyle } from 'react-native';\nimport type { DividerLineProps } from './interface';\n\n/**\n * 分割线\n */\nconst DividerLine: React.FC<DividerLineProps> = ({\n  color,\n  position,\n  adaptive = true,\n  direction = 'horizontal',\n  className,\n}) => {\n  const isVertical = direction === 'vertical';\n\n  const viewStyle = useMemo(() => {\n    if (isVertical) {\n      return {\n        flex: 1,\n        width: 1,\n        height: '100%' as DimensionValue,\n        backgroundColor: color,\n      };\n    }\n\n    const s: ViewStyle = {\n      flex: 1,\n      maxWidth: 'auto',\n      height: 1,\n      backgroundColor: color,\n    };\n\n    if (position === 'left') {\n      s.marginRight = 16;\n    }\n\n    if (position === 'right') {\n      s.marginLeft = 16;\n    }\n\n    if (!adaptive) {\n      s.maxWidth = position === 'left' ? '10%' : '10%';\n    }\n\n    return s;\n  }, [adaptive, color, isVertical, position]);\n\n  return <View style={viewStyle} className={className} />;\n};\n\nexport default memo(DividerLine);\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/divider/divider.tsx",
+      "content": "import React, { memo } from 'react';\nimport isNil from 'lodash/isNil';\nimport { Text, View } from 'react-native';\nimport DividerLine from './divider-line';\nimport DividerLineDashed from './divider-line-dashed';\nimport type { DividerProps } from './interface';\nimport { getDefaultValue } from '../../helpers';\nimport { cn } from '../../lib/utils';\n\n/**\n * Divider 分割线\n * @description 用于将内容分隔为多个区域。\n */\nconst Divider: React.FC<DividerProps> = ({\n  children,\n  type = 'light',\n  direction = 'horizontal',\n  dashed = false,\n  color,\n  contentPosition = 'center',\n  ...restProps\n}) => {\n  const isVertical = direction === 'vertical';\n  const Line = dashed ? DividerLineDashed : DividerLine;\n\n  color = getDefaultValue(color, type === 'dark' ? '#E3E5E8' : '#EFF3F9')!;\n\n  return (\n    <View {...restProps} className={cn('flex-row items-center', restProps.className)}>\n      {isVertical ? (\n        <Line\n          color={color}\n          position='center'\n          direction={direction}\n          className={restProps.className}\n        />\n      ) : !isNil(children) ? (\n        <>\n          <Line\n            color={color}\n            position='left'\n            adaptive={contentPosition !== 'left'}\n            className={restProps.className}\n          />\n\n          <Text>{children}</Text>\n\n          <Line\n            color={color}\n            position='right'\n            adaptive={contentPosition !== 'right'}\n            className={restProps.className}\n          />\n        </>\n      ) : (\n        <Line color={color} position='center' className={restProps.className} />\n      )}\n    </View>\n  );\n};\n\nexport default memo(Divider);\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/divider/index.ts",
+      "content": "import Divider from './divider';\n\nexport default Divider\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/divider/interface.ts",
+      "content": "import type { ColorValue, StyleProp, TextStyle, ViewProps } from 'react-native';\n\ntype DividerDirection = 'vertical' | 'horizontal';\n\nexport interface DividerProps extends ViewProps {\n  /**\n   * 文字样式\n   */\n  textStyle?: StyleProp<TextStyle>;\n\n  /**\n   * 颜色模式\n   * @default 'light'\n   */\n  type?: 'dark' | 'light';\n\n  /**\n   * 间距方向 `'vertical' | 'horizontal'`，vertical 只有线无文案\n   * @default 'horizontal'\n   */\n  direction?: DividerDirection;\n\n  /**\n   * 是否使用虚线\n   */\n  dashed?: boolean;\n\n  /**\n   * 内容位置，可选值为 `'left' | 'center' | 'right'`\n   *\n   * @default 'center'\n   */\n  contentPosition?: 'left' | 'center' | 'right';\n\n  /**\n   * 自定义颜色\n   */\n  color?: ColorValue;\n\n  /**\n   * 自定义样式\n   */\n  className?: string;\n}\n\nexport interface DividerLineProps extends Required<Pick<DividerProps, 'color'>> {\n  /**\n   * 自定义样式\n   */\n  className?: string;\n  /**\n   * 所处位置\n   */\n  position: 'left' | 'center' | 'right';\n\n  /**\n   * 是否自适应 占满剩余控件\n   * @default true\n   */\n  adaptive?: boolean;\n\n  /**\n   * 间距方向 `'vertical' | 'horizontal'`，vertical 只有线无文案\n   * @default 'horizontal'\n   */\n  direction?: DividerDirection;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

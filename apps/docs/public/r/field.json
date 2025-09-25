@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field",
+  "type": "registry:component",
+  "title": "Example field",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/field/index.ts",
+      "content": "import FieldButtonOption from './field-button-option'\nimport FieldCheckbox from './field-checkbox'\nimport FieldDate from './field-date'\nimport FieldDateRange from './field-date-range'\nimport FieldNumberInput from './field-number-input'\nimport FieldPasswordInput from './field-password'\nimport FieldSelector from './field-selector'\nimport FieldSwitch from './field-switch'\nimport FieldText from './field-text'\nimport FieldTextInput from './field-text-input'\n\nexport default {\n  Checkbox: FieldCheckbox,\n  Date: FieldDate,\n  DateRange: FieldDateRange,\n  NumberInput: FieldNumberInput,\n  Password: FieldPasswordInput,\n  Selector: FieldSelector,\n  Switch: FieldSwitch,\n  Text: FieldText,\n  TextInput: FieldTextInput,\n  ButtonOption: FieldButtonOption,\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,1092 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "React Native Reusables registry example",
+  "homepage": "https://rnr-registry-template-docs.vercel.app/",
+  "items": [
+    {
+      "name": "helpers",
+      "type": "registry:file",
+      "title": "Example button",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/helpers/attach-properties-to-component.ts",
+          "type": "registry:file",
+          "target": "helpers/attach-properties-to-component.ts"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/helpers/arrow.ts",
+          "type": "registry:file",
+          "target": "helpers/arrow.ts"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/helpers/interceptor.ts",
+          "type": "registry:file",
+          "target": "helpers/interceptor.ts"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/helpers/typeof.ts",
+          "type": "registry:file",
+          "target": "helpers/typeof.ts"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/helpers/types.ts",
+          "type": "registry:file",
+          "target": "helpers/types.ts"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/helpers/z-index.ts",
+          "type": "registry:file",
+          "target": "helpers/z-index.ts"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/helpers/index.tsx",
+          "type": "registry:file",
+          "target": "helpers/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hooks",
+      "type": "registry:file",
+      "title": "Example button",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/hooks/useControllableValue.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/hooks/useDebounceFn.tsx",
+          "type": "registry:hook"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/hooks/useDestroyed.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/hooks/useDifferentState.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/hooks/useLoop.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/hooks/useOriginalCopyFn.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/hooks/useOriginalDeepCopy.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/hooks/usePersistFn.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/hooks/useSafeHeight.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/hooks/useStateUpdate.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/hooks/useUpdateEffect.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "example-button",
+      "type": "registry:component",
+      "title": "Example button",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/flex.json",
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/space.json",
+        "http://localhost:3000/r/hooks.json"
+      ],
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/button/button-option-group.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/button/button-option.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/button/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/button/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/button/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "action-sheet",
+      "type": "registry:component",
+      "title": "Example action-sheet",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/action-sheet/action-sheet-instance.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/action-sheet/action-sheet-method.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/action-sheet/action-sheet.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/action-sheet/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/action-sheet/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:component",
+      "title": "Example badge",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/badge/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/badge/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/badge/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "blank",
+      "type": "registry:component",
+      "title": "Example blank",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/blank/blank.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/blank/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/blank/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "bottom-bar",
+      "type": "registry:component",
+      "title": "Example bottom-bar",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/bottom-bar/bottom-bar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/bottom-bar/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/bottom-bar/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "button-bar",
+      "type": "registry:component",
+      "title": "Example button-bar",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/button-bar/button-bar-confirm.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/button-bar/button-bar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/button-bar/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/button-bar/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:component",
+      "title": "Example card",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/card/card-body.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/card/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/card/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/card/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cell",
+      "type": "registry:component",
+      "title": "Example cell",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/cell/cell-group.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/cell/cell.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/cell/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/cell/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:component",
+      "title": "Example checkbox",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/checkbox/checkbox-group.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/checkbox/checkbox-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/checkbox/checkbox.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/checkbox/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/checkbox/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "collapse",
+      "type": "registry:component",
+      "title": "Example collapse",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/collapse/collapse.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/collapse/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/collapse/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:component",
+      "title": "Example date-picker",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/date-picker/date-picker-range-method.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/date-picker/date-picker-range-view.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/date-picker/date-picker-single-method.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/date-picker/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/date-picker/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "date-picker-view",
+      "type": "registry:component",
+      "title": "Example date-picker-view",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/date-picker-view/date-picker-view.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/date-picker-view/helper.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/date-picker-view/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/date-picker-view/date-picker-view.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/date-picker-view/useDateMinMax.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/date-picker-view/useDatePicker.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "description",
+      "type": "registry:component",
+      "title": "Example description",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/description/context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/description/description-date-range.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/description/description-date.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/description/description-group.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/description/description-thousand.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/description/description.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/description/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/description/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/description/render.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/description/styles.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:component",
+      "title": "Example dialog",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dialog/dialog-input.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dialog/dialog-instance.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dialog/dialog-keyboard.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dialog/dialog-method.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dialog/dialog.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dialog/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dialog/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "divider",
+      "type": "registry:component",
+      "title": "Example divider",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/divider/divider-line-dashed.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/divider/divider-line.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/divider/divider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/divider/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/divider/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown",
+      "type": "registry:component",
+      "title": "Example dropdown",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dropdown/context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-filter-panel.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-multiple.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-popup.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-selector.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-text.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-time.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-type-items.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dropdown/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/dropdown/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:component",
+      "title": "Example empty",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/empty/empty.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "error-boundary",
+      "type": "registry:component",
+      "title": "Example error-boundary",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/error-boundary/index.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:component",
+      "title": "Example field",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/field/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "flex",
+      "type": "registry:component",
+      "title": "Example flex",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/flex/flex-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/flex/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/flex/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "floating-panel",
+      "type": "registry:component",
+      "title": "Example floating-panel",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/floating-panel/index.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:component",
+      "title": "Example form",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/form/form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "loading",
+      "type": "registry:component",
+      "title": "Example loading",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/loading/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/loading/loading.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/loading/loading-spinner.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/loading/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+
+    {
+      "name": "navbar",
+      "type": "registry:component",
+      "title": "Example navbar",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/navbar/index.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "notice-bar",
+      "type": "registry:component",
+      "title": "Example notice-bar",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/notice-bar/notice-bar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "notify",
+      "type": "registry:component",
+      "title": "Example notify",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/notify/notify.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "number-input",
+      "type": "registry:component",
+      "title": "Example number-input",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/number-input/index.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "overlay",
+      "type": "registry:component",
+      "title": "Example overlay",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/overlay/overlay.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "password-input",
+      "type": "registry:component",
+      "title": "Example password-input",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/password-input/index.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "picker",
+      "type": "registry:component",
+      "title": "Example picker",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/picker/picker.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "picker-view",
+      "type": "registry:component",
+      "title": "Example picker-view",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/picker-view/picker-view.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:component",
+      "title": "Example popover",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/popover/popover.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "popup",
+      "type": "registry:component",
+      "title": "Example popup",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/popup/popup.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "portal",
+      "type": "registry:component",
+      "title": "Example portal",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/portal/portal.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:component",
+      "title": "Example progress",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/progress/progress.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "result",
+      "type": "registry:component",
+      "title": "Example result",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/result/result.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "search",
+      "type": "registry:component",
+      "title": "Example search",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/search/search.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "selector",
+      "type": "registry:component",
+      "title": "Example selector",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/selector/selector.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:component",
+      "title": "Example sidebar",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/sidebar/sidebar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:component",
+      "title": "Example skeleton",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/skeleton/skeleton.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "space",
+      "type": "registry:component",
+      "title": "Example space",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/space/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/space/interface.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "step-selector",
+      "type": "registry:component",
+      "title": "Example step-selector",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/step-selector/step-selector.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:component",
+      "title": "Example switch",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/switch/switch.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tab-bar",
+      "type": "registry:component",
+      "title": "Example tab-bar",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/tab-bar/tab-bar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:component",
+      "title": "Example tabs",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/tabs/tabs.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tag",
+      "type": "registry:component",
+      "title": "Example tag",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/tag/tag.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "text-input",
+      "type": "registry:component",
+      "title": "Example text-input",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/text-input/text-input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:component",
+      "title": "Example toast",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/toast/toast.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tree",
+      "type": "registry:component",
+      "title": "Example tree",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/tree/tree.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "uploader",
+      "type": "registry:component",
+      "title": "Example uploader",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/uploader/uploader.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "water-mark",
+      "type": "registry:component",
+      "title": "Example water-mark",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/components/water-mark/water-mark.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "example-block",
+      "type": "registry:block",
+      "title": "Example Block",
+      "description": "Displays a set of buttons which are always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@rnr/example-library/src/blocks/multiple-buttons.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "registryDependencies": [
+        "https://reactnativereusables.com/r/new-york/text.json",
+        "https://reactnativereusables.com/r/new-york/button.json",
+        "https://reactnativereusables.com/r/new-york/card.json"
+      ]
+    }
+  ]
+}

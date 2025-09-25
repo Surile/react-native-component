@@ -1,0 +1,65 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hooks",
+  "type": "registry:file",
+  "title": "Example button",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@rnr/example-library/src/hooks/useControllableValue.ts",
+      "content": "import { useState } from 'react';\nimport usePersistFn from './usePersistFn';\n\nexport interface Options<T> {\n  defaultValue?: T;\n  defaultValuePropName?: string;\n  valuePropName?: string;\n  trigger?: string;\n}\n\nexport type Props = Record<string, any>;\n\nexport interface StandardProps<T> {\n  value: T;\n  defaultValue?: T;\n  onChange: (val: T) => void;\n}\n\nfunction useControllableValue<T = any>(props: StandardProps<T>): [T, (val: T) => void];\nfunction useControllableValue<T = any>(props?: Props, options?: Options<T>): [T, (v: T, ...args: any[]) => void];\nfunction useControllableValue<T = any>(props: Props = {}, options: Options<T> = {}) {\n  const {\n    defaultValue,\n    defaultValuePropName = 'defaultValue',\n    valuePropName = 'value',\n    trigger = 'onChange',\n  } = options;\n\n  const value = props[valuePropName] as T;\n  const isControlled = valuePropName in props;\n\n  const [localValue, setLocalValue] = useState<T>(() => {\n    if (isControlled) {\n      return value;\n    }\n\n    if (defaultValuePropName in props) {\n      return props[defaultValuePropName];\n    }\n\n    return defaultValue;\n  });\n\n  const setState = (v: T, ...args: any[]) => {\n    if (!isControlled) {\n      setLocalValue(v);\n    }\n\n    if (props[trigger]) {\n      props[trigger](v, ...args);\n    }\n  };\n\n  return [isControlled ? value : localValue, usePersistFn(setState)] as const;\n}\n\nexport default useControllableValue;\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/hooks/useDebounceFn.tsx",
+      "content": "import { useEffect, useMemo, useRef } from 'react';\nimport debounce from 'lodash/debounce';\n\ntype noop = (...args: any) => any;\n\nexport interface DebounceOptions {\n  wait?: number;\n  leading?: boolean;\n  trailing?: boolean;\n  maxWait?: number;\n}\n\nconst useDebounceFn = <T extends noop>(fn: T, options?: DebounceOptions) => {\n  const fnRef = useRef(fn);\n  const optionsRef = useRef(options);\n\n  fnRef.current = fn;\n\n  const wait = options?.wait ?? 1000;\n\n  const debounced = useMemo(\n    () =>\n      debounce(\n        (...args: Parameters<T>): ReturnType<T> => {\n          // @ts-ignore\n          return fnRef.current?.(...args);\n        },\n        wait,\n        optionsRef.current,\n      ),\n    [wait],\n  );\n\n  useEffect(() => {\n    return () => {\n      debounced.cancel();\n    };\n  }, [debounced]);\n\n  return {\n    run: debounced,\n    cancel: debounced.cancel,\n    flush: debounced.flush,\n  };\n};\n\nexport default useDebounceFn;\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/hooks/useDestroyed.ts",
+      "content": "import { useCallback, useEffect, useRef } from 'react';\n\n/**\n * 组件是否已经被销毁了\n */\nconst useDestroyed = () => {\n  const DestroyedRef = useRef(true);\n  const getDestroyed = useCallback(() => DestroyedRef.current, []);\n\n  useEffect(() => {\n    DestroyedRef.current = false;\n\n    return () => {\n      DestroyedRef.current = true;\n    };\n  }, []);\n\n  return getDestroyed;\n};\n\nexport default useDestroyed;\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/hooks/useDifferentState.ts",
+      "content": "import isEqual from 'lodash/isEqual'\nimport type { Dispatch, SetStateAction } from 'react'\nimport { useState, useCallback, useRef } from 'react'\n\nconst useDifferentState = <S>(\n  initialState: S | (() => S),\n): [S, Dispatch<SetStateAction<S>>] => {\n  const [state, setState] = useState(initialState)\n  const StateRef = useRef<S>(state)\n  const onChange = useCallback<Dispatch<SetStateAction<S>>>(v => {\n    const value =\n      typeof v === 'function' ? (v as (prevState: S) => S)(StateRef.current) : v\n\n    if (!isEqual(value, StateRef.current)) {\n      setState(value)\n      StateRef.current = value\n    }\n  }, [])\n\n  return [state, onChange]\n}\n\nexport default useDifferentState\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/hooks/useLoop.ts",
+      "content": "import { useEffect, useRef } from 'react';\nimport { Animated } from 'react-native';\n\ninterface UseLoopOptions {\n  duration?: number;\n  fromValue?: number;\n  toValue?: number;\n  useNativeDriver?: boolean;\n}\n\nconst useLoop = ({\n  duration = 1000,\n  fromValue = 0,\n  toValue = 1,\n  useNativeDriver = false,\n}: UseLoopOptions = {}) => {\n  const animation = useRef(new Animated.Value(fromValue)).current;\n\n  useEffect(() => {\n    Animated.loop(\n      Animated.sequence([\n        Animated.timing(animation, {\n          toValue,\n          duration,\n          useNativeDriver,\n        }),\n        Animated.timing(animation, {\n          toValue: fromValue,\n          duration,\n          useNativeDriver,\n        }),\n      ])\n    ).start();\n\n    return () => {\n      animation.stopAnimation();\n    };\n  }, [animation, duration, fromValue, toValue, useNativeDriver]);\n\n  return animation;\n}; \n\nexport default useLoop;",
+      "type": "registry:hook"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/hooks/useOriginalCopyFn.ts",
+      "content": "import { useEffect, useRef } from 'react';\n\ntype CustomEquals<T> = (previous: T | undefined, current: T) => boolean;\n\nconst useOriginalCopyFn = <T>(value: T, equals: CustomEquals<T>): T => {\n  const cache = useRef<T>(value);\n  const equalsRef = useRef(equals);\n\n  useEffect(() => {\n    equalsRef.current = equals;\n  }, [equals]);\n  useEffect(() => {\n    if (!equalsRef.current(cache.current, value)) {\n      cache.current = value;\n    }\n  }, [value]);\n\n  return equals(cache.current, value) ? cache.current : value;\n};\n\nexport default useOriginalCopyFn;\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/hooks/useOriginalDeepCopy.ts",
+      "content": "import deepEquals from 'fast-deep-equal';\nimport useOriginalCopyFn from './useOriginalCopyFn';\n\nconst useOriginalDeepCopy = <T>(value: T): T => {\n  return useOriginalCopyFn(value, deepEquals);\n};\n\nexport default useOriginalDeepCopy;\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/hooks/usePersistFn.ts",
+      "content": "/**\n * 代码来源：https://github.com/alibaba/hooks/blob/master/packages/hooks/src/usePersistFn/index.ts\n * 关于 this：https://www.jianshu.com/p/8b3a2513d8e5\n */\n\nimport { useRef } from 'react';\n\nexport type noop = (...args: any[]) => any;\n\n/**\n * 持久化 function 的 Hook\n */\nfunction usePersistFn<T extends noop>(fn: T) {\n  const fnRef = useRef<T>(fn);\n\n  fnRef.current = fn;\n\n  const persistFn = useRef<T>();\n\n  if (!persistFn.current) {\n    persistFn.current = function (this: T, ...args) {\n      return fnRef.current?.apply(this, args);\n    } as T;\n  }\n\n  return persistFn.current!;\n}\n\nexport default usePersistFn;\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/hooks/useSafeHeight.ts",
+      "content": "import { useLayoutEffect, useState } from 'react';\nimport { useWindowDimensions } from 'react-native';\nimport { useSafeAreaInsets } from 'react-native-safe-area-context';\n\ninterface UseSafeHeightParams {\n  top?: boolean | number;\n  bottom?: boolean | number;\n}\n\nconst getDefaultValue = (v: boolean | number | undefined, dv: number) => {\n  if (typeof v === 'number') {\n    return v;\n  }\n\n  if (typeof v === 'boolean' && v) {\n    return dv;\n  }\n\n  return 0;\n};\n\nconst useSafeHeight = ({ top = true, bottom = true }: UseSafeHeightParams = {}) => {\n  const insets = useSafeAreaInsets();\n  const insetTop = getDefaultValue(top, insets.top);\n  const insetBottom = getDefaultValue(bottom, insets.bottom);\n  const dimensionsWindow = useWindowDimensions();\n  const [height, setHeight] = useState(dimensionsWindow.height - insetTop - insetBottom);\n\n  useLayoutEffect(() => {\n    setHeight(dimensionsWindow.height - insetTop - insetBottom);\n  }, [dimensionsWindow.height, insetTop, insetBottom]);\n\n  return height;\n};\n\nexport default useSafeHeight;\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/hooks/useStateUpdate.ts",
+      "content": "import { useCallback, useState } from 'react';\nimport isFunction from 'lodash/isFunction';\nimport useDestroyed from './useDestroyed';\nimport { isObject } from '../helpers';\n\ntype UpdateStateParam<T> = Partial<T> | ((s: T) => Partial<T>);\n\ntype UpdateState<T> = (p: UpdateStateParam<T>) => void;\n\n/**\n * useState 类似 this.setState 可以传入部分字段更新\n * @param state 状态\n */\nconst useStateUpdate = <T>(state: T | (() => T)): [T, UpdateState<T>] => {\n  const [localState, setLocalState] = useState<T>(state);\n  const getDestroyed = useDestroyed();\n  const updateState = useCallback(\n    (s: UpdateStateParam<T>) => {\n      if (!getDestroyed()) {\n        setLocalState((ls) => {\n          const value = isFunction(s) ? s(ls) : s;\n\n          if (isObject(ls)) {\n            return {\n              ...ls,\n              ...value,\n            };\n          }\n\n          return value as T;\n        });\n      }\n    },\n    [getDestroyed],\n  );\n\n  return [localState, updateState];\n};\n\nexport default useStateUpdate;\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/hooks/useUpdateEffect.ts",
+      "content": "import type React from 'react';\nimport { useEffect, useRef } from 'react';\n\n/**\n * 页面更新后执行副作用操作\n * @param effect 副作用操作\n * @param deps 更新触发依赖\n */\nconst useUpdateEffect = (effect: React.EffectCallback, deps: React.DependencyList) => {\n  const mounted = useRef(false);\n\n  useEffect(() => {\n    if (!mounted.current) {\n      mounted.current = true;\n    } else {\n      return effect();\n    }\n    // eslint-disable-next-line react-hooks/exhaustive-deps\n  }, deps);\n};\n\nexport default useUpdateEffect;\n",
+      "type": "registry:hook"
+    }
+  ]
+}

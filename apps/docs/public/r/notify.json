@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "notify",
+  "type": "registry:component",
+  "title": "Example notify",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/notify/notify.tsx",
+      "content": "import isNil from 'lodash/isNil';\nimport React, { isValidElement, memo } from 'react';\nimport { View, Text, TouchableWithoutFeedback } from 'react-native';\nimport { useSafeAreaInsets } from 'react-native-safe-area-context';\n\nimport Popup from '../popup/popup';\n\nimport type { NotifyProps } from './interface';\nimport { cn } from '../../lib/utils';\nimport { cva } from 'class-variance-authority';\n\nconst notifyTypeVar = cva('', {\n  variants: {\n    type: {\n      primary: 'bg-primary-5',\n      success: 'bg-success-5',\n      error: 'bg-danger-5',\n      warning: 'bg-warning-5',\n    },\n  },\n  defaultVariants: {\n    type: 'primary',\n  },\n});\n\n/**\n * Notify 消息提示\n * @description 在页面顶部展示消息提示，支持函数调用和组件调用两种方式。\n * @description 原计划 Notify 的 Props 继承 TouchableWithoutFeedbackProps，更贴近 React Native 提供的组件，这里需要把 Popup 中通用的属性提取出来，如果以后涉及到改动，有点麻烦，等大部分组件完整后看看怎么优化。\n */\nconst Notify: React.FC<React.PropsWithChildren<NotifyProps>> = ({\n  children,\n  theme,\n  style,\n  textClassName,\n  type = 'primary',\n  message,\n  color,\n  backgroundColor,\n  onPress,\n  ...restProps\n}) => {\n  const insets = useSafeAreaInsets();\n\n  const messageJSX = !isNil(message) ? (\n    isValidElement(message) ? (\n      message\n    ) : (\n      <Text\n        className={cn('text-xl', textClassName)}\n        style={{\n          color: !isNil(color) ? color : 'white',\n        }}\n        numberOfLines={1}\n      >\n        {message}\n      </Text>\n    )\n  ) : (\n    children\n  );\n\n  return (\n    <Popup {...restProps} overlay={false} position='top'>\n      <TouchableWithoutFeedback onPress={onPress}>\n        <View\n          className={cn('items-center justify-center px-4 py-2', notifyTypeVar({ type }))}\n          style={[\n            {\n              paddingTop: insets.top > 8 ? insets.top : 8,\n            },\n            !isNil(backgroundColor) && {\n              backgroundColor,\n            },\n            style,\n          ]}\n        >\n          {messageJSX}\n        </View>\n      </TouchableWithoutFeedback>\n    </Popup>\n  );\n};\n\nexport default memo(Notify);\n",
+      "type": "registry:component"
+    }
+  ]
+}

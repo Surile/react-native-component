@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "error-boundary",
+  "type": "registry:component",
+  "title": "Example error-boundary",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/error-boundary/index.tsx",
+      "content": "import type { ErrorInfo } from 'react'\nimport React, { PureComponent } from 'react'\nimport type { ViewStyle } from 'react-native'\n\nimport Blank from '../blank'\nimport Button from '../button'\nimport Result from '../result'\nimport ResultIconError from '../result/icons/result-icon-error'\n\nimport type { ErrorBoundaryProps } from './interface'\n\ntype ErrorBoundaryState = {\n  error: Error | null\n}\n\nconst ERROR_PAGE_STYLE: ViewStyle = {\n  flex: 1,\n  backgroundColor: '#fff',\n}\n\n/**\n * ErrorBoundary 错误捕获\n * @description 一般用于应用根组件，捕获 React 内产生的问题。\n */\nclass ErrorBoundary extends PureComponent<ErrorBoundaryProps> {\n  public static getDerivedStateFromError(error: Error) {\n    // 更新 state，下次渲染可以展示错误相关的 UI\n    return { error }\n  }\n\n  public state: ErrorBoundaryState = {\n    error: null,\n  }\n\n  public componentDidCatch(error: Error, info: ErrorInfo) {\n    this.props.onError?.(error, info)\n  }\n\n  /**\n   * 点击清空错误，重新渲染子组件\n   */\n  public onPressReload = () => {\n    this.setState({\n      error: null,\n    })\n  }\n\n  public render() {\n    if (this.state.error) {\n      // 渲染出错时的 UI\n      if (this.props.renderError) {\n        return this.props.renderError({\n          name: this.state.error.name,\n          message: this.state.error.message,\n          onReset: this.onPressReload,\n        })\n      }\n\n      return (\n        <Blank type=\"padding\" style={ERROR_PAGE_STYLE}>\n          <Result\n            status=\"error\"\n            renderIcon={() => <ResultIconError />}\n            subtitle={`${this.props.title || '加载失败，请稍后再试~'}\\n${\n              this.state.error.name\n            }\\n${this.state.error.message}`}\n            extra={\n              <Button\n                type=\"primary\"\n                size=\"s\"\n                text={this.props.reloadText || '重新加载'}\n                onPress={this.onPressReload}\n              />\n            }\n          />\n        </Blank>\n      )\n    }\n\n    return this.props.children\n  }\n}\n\nexport default ErrorBoundary\n",
+      "type": "registry:component"
+    }
+  ]
+}

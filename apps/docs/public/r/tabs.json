@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs",
+  "type": "registry:component",
+  "title": "Example tabs",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/tabs/tabs.tsx",
+      "content": "import React, { useMemo, memo, isValidElement } from 'react';\n\nimport Divider from '../divider';\nimport TabBar from '../tab-bar';\nimport type { TabItem } from '../tab-bar/interface';\n\nimport type { TabsProps, TabPaneProps } from './interface';\nimport TabView from './tab-view';\nimport { childrenToArray } from '../../helpers';\nimport { useControllableValue } from '../../hooks';\n\nconst parseTabList = (children: React.ReactNode) => {\n  return childrenToArray(children)\n    .map((node) => {\n      if (isValidElement<TabPaneProps>(node)) {\n        const key = node.key !== undefined ? String(node.key) : undefined;\n        return {\n          ...node.props,\n          key,\n          node,\n        };\n      }\n\n      return null;\n    })\n    .filter((tab) => tab);\n};\n\nconst Tabs: React.FC<TabsProps> = ({\n  children,\n  tabBarStyle,\n  tabBarHeight,\n  tabBarBackgroundColor,\n  divider,\n  dividerColor,\n  ...restProps\n}) => {\n  const [_options, _tabs] = useMemo(() => {\n    const tabs = parseTabList(children);\n    // @ts-ignore\n    const options: TabItem<string>[] = tabs.map((t) => ({\n      value: t!.key,\n      label: t!.tab,\n      badge: t!.badge,\n    }));\n\n    return [options, tabs];\n  }, [children]);\n\n  const [value, onChange] = useControllableValue<string>(restProps, {\n    valuePropName: 'activeKey',\n    defaultValuePropName: 'defaultActiveKey',\n    defaultValue: _options[0]?.value as string,\n  });\n\n  return (\n    <>\n      <TabBar\n        {...restProps}\n        style={tabBarStyle}\n        height={tabBarHeight}\n        backgroundColor={tabBarBackgroundColor}\n        indicator\n        divider={false}\n        safeAreaInsetBottom={false}\n        keyboardShowNotRender={false}\n        hidden={false}\n        value={value}\n        options={_options}\n        onChange={onChange}\n      />\n\n      {divider ? <Divider color={dividerColor} /> : null}\n\n      {_tabs.map((t) => {\n        return (\n          <TabView key={t!.key} lazyRender={t!.node.props.lazyRender} active={t!.key === value}>\n            {t!.node}\n          </TabView>\n        );\n      })}\n    </>\n  );\n};\n\nexport default memo(Tabs);\n",
+      "type": "registry:component"
+    }
+  ]
+}

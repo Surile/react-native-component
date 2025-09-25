@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "type": "registry:component",
+  "title": "Example badge",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/badge/badge.tsx",
+      "content": "import isNil from 'lodash/isNil';\nimport React, { memo, useMemo } from 'react';\nimport { View, Text } from 'react-native';\n\nimport type { BadgeProps } from './interface';\nimport { cva } from 'class-variance-authority';\nimport { cn } from '../../lib/utils';\n\nconst badgeVariants = cva('rounded-full', {\n  variants: {\n    status: {\n      primary: 'bg-primary-5',\n      success: 'bg-success-4',\n      warning: 'bg-warning-4',\n      error: 'bg-danger-5',\n    },\n    size: {\n      small: 'w-2 h-2 min-w-[0px]',\n      medium: 'w-4 h-4',\n      large: 'w-7.5 h-4',\n    },\n  },\n  defaultVariants: {\n    status: 'error',\n    size: 'medium',\n  },\n});\n\n/**\n * Badge 徽标\n * @description 在右上角展示徽标数字或小红点。\n */\nconst Badge: React.FC<BadgeProps> = ({\n  children,\n  count,\n  dot,\n  max,\n  color,\n  countClassName,\n  countTextClassName,\n  loading = false,\n  showZero = false,\n  offset,\n  status,\n  size,\n  ...restProps\n}) => {\n  if (!isNil(max) && typeof count === 'number' && count > max) {\n    count = `${max}+`;\n  }\n  // 根据 dot 和 count 判断 badge 的 size\n  const badgeSize = useMemo(() => {\n    if (dot) {\n      return 'small';\n    }\n\n    if (count && count.toString().length > 1) {\n      return 'large';\n    }\n\n    return size;\n  }, [dot, count]);\n\n  const hasCount = !isNil(count) && (count === 0 ? showZero : true);\n  const badgeJSX =\n    !loading && (hasCount || dot) ? (\n      <View\n        className={cn(\n          badgeVariants({ status, size: badgeSize }),\n          !isNil(children) && {\n            'absolute right-0 top-0 z-[2] translate-x-2 -translate-y-2': true,\n            'translate-x-1 -translate-y-1': dot,\n          },\n          countClassName\n        )}\n        style={\n          !isNil(offset)\n            ? {\n                transform: [{ translateX: offset[0] }, { translateY: offset[1] }],\n              }\n            : null\n        }\n      >\n        {dot ? null : (\n          <Text\n            className={cn(\n              'text-base leading-[16px] text-white font-medium text-center',\n              countTextClassName\n            )}\n          >\n            {count}\n          </Text>\n        )}\n      </View>\n    ) : null;\n\n  return (\n    <View {...restProps} collapsable={false}>\n      {badgeJSX}\n      {children}\n    </View>\n  );\n};\n\nexport default memo(Badge);\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/badge/index.ts",
+      "content": "import Badge from './badge'\n\nexport default Badge",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/badge/interface.ts",
+      "content": "import type {\n  TextStyle,\n  ViewStyle,\n  StyleProp,\n  ColorValue,\n  ViewProps,\n} from 'react-native'\n\nexport interface BadgeProps extends ViewProps {\n  /**\n   * 文案样式\n   */\n  countClassName?: string\n\n  /**\n   * 文案文字样式\n   */\n  countTextClassName?: string\n\n  /**\n   * 徽标内容/展示的数字\n   */\n  count?: number | string\n\n  /**\n   * 徽标背景颜色\n   * @default badge_background_color\n   */\n  color?: ColorValue\n\n  /**\n   * 不展示数字，只有一个小红点\n   * @default false\n   */\n  dot?: boolean\n\n  /**\n   * 最大值，超过最大值会显示 {max}+，仅当 count 为数字时有效\n   */\n  max?: number\n\n  /**\n   * 数据是否在加载中，如果在加载中就暂时不显示 count\n   * @default false\n   */\n  loading?: boolean\n\n  /**\n   * 当数值为 0 时，是否展示 Badge\n   * @default false\n   */\n  showZero?: boolean\n\n  /**\n   * 设置状态点的位置偏移\n   */\n  offset?: [number, number]\n\n  /**\n   * 内置颜色，优先级低于自定义 color\n   */\n  status?: 'primary' | 'success' | 'warning' | 'error'\n  \n  /**\n   * 内置大小\n   */\n  size?: 'small' | 'medium' | 'large'\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

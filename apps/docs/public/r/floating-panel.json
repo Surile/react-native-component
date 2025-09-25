@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "floating-panel",
+  "type": "registry:component",
+  "title": "Example floating-panel",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/floating-panel/index.tsx",
+      "content": "import React from 'react';\n\nimport Portal from '../portal';\n\nimport FloatingPanel from './floating-panel';\nimport FloatingPanelScrollView from './floating-panel-scroll-view';\nimport type { FloatingPanelProps } from './interface';\nimport { attachPropertiesToComponent } from '../../helpers';\n\nconst FloatingPanelContainer: React.FC<FloatingPanelProps> = (props) => {\n  return (\n    <Portal>\n      <FloatingPanel {...props} />\n    </Portal>\n  );\n};\n\nconst FloatingPanelScrollViewContainer: React.FC<FloatingPanelProps> = (props) => {\n  return (\n    <Portal>\n      <FloatingPanelScrollView {...props} />\n    </Portal>\n  );\n};\n\nexport default attachPropertiesToComponent(FloatingPanelContainer, {\n  Component: FloatingPanel,\n  ScrollView: FloatingPanelScrollViewContainer,\n  ScrollViewComponent: FloatingPanelScrollView,\n});\n",
+      "type": "registry:component"
+    }
+  ]
+}

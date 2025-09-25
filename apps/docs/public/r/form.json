@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form",
+  "type": "registry:component",
+  "title": "Example form",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/form/form.tsx",
+      "content": "import type { FormInstance as RCFormInstance } from 'rc-field-form';\nimport RCForm from 'rc-field-form';\nimport type { ValidateErrorEntity } from 'rc-field-form/lib/interface';\nimport React, { useImperativeHandle, forwardRef, useMemo } from 'react';\n\nimport Toast from '../toast';\n\nimport { FormContext } from './context';\nimport type { FormProps } from './interface';\nimport useForm from './useForm';\nimport { usePersistFn } from '../../hooks';\n\n/**\n * 默认处理错误的回调\n */\nconst defaultOnFinishFailed = (errorInfo: ValidateErrorEntity<unknown>) => {\n  Toast(errorInfo.errorFields[0].errors[0]);\n};\n\nconst InternalForm: React.ForwardRefRenderFunction<RCFormInstance, FormProps> = (\n  { onFinishFailed = defaultOnFinishFailed, form, onFinish, ...restProps },\n  ref\n) => {\n  const [wrapForm] = useForm(form);\n  const value = useMemo(\n    () => ({\n      form: wrapForm,\n    }),\n    [wrapForm]\n  );\n\n  useImperativeHandle(ref, () => wrapForm);\n\n  const onFinishPersistFn = usePersistFn(() => {\n    onFinish?.(wrapForm.getFieldsValue(true));\n  });\n\n  return (\n    <FormContext.Provider value={value}>\n      <RCForm\n        {...restProps}\n        component={false}\n        form={wrapForm}\n        onFinishFailed={onFinishFailed}\n        onFinish={onFinishPersistFn}\n      />\n    </FormContext.Provider>\n  );\n};\n\nconst Form = forwardRef<RCFormInstance, FormProps>(InternalForm) as <Values = any>(\n  props: React.PropsWithChildren<FormProps<Values>> & {\n    ref?: React.Ref<RCFormInstance<Values>>;\n  }\n) => React.ReactElement;\n\nexport default Form;\n",
+      "type": "registry:component"
+    }
+  ]
+}

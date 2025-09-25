@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "portal",
+  "type": "registry:component",
+  "title": "Example portal",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/portal/portal.tsx",
+      "content": "/* eslint-disable @typescript-eslint/explicit-member-accessibility */\n/* eslint-disable @typescript-eslint/consistent-type-definitions */\nimport React, { Component } from 'react'\n\nimport PortalConsumer from './portal-consumer'\nimport PortalHost, { portal, PortalContext } from './portal-host'\n\nexport type PortalProps = {\n  /**\n   * Content of the `Portal`.\n   */\n  children?: React.ReactNode\n}\n\n/**\n * Portal allows to render a component at a different place in the parent tree.\n * You can use it to render content which should appear above other elements, similar to `Modal`.\n * It requires a `Portal.Host` component to be rendered somewhere in the parent tree.\n *\n * ## Usage\n * ```js\n * import * as React from 'react';\n * import { Text } from 'react-native';\n * import { Portal } from '@fruits-chain/react-native-xiaoshu';\n *\n * export default class MyComponent extends React.Component {\n *   render() {\n *     const { visible } = this.state;\n *     return (\n *       <Portal>\n *         <Text>This is rendered at a different place</Text>\n *       </Portal>\n *     );\n *   }\n * }\n * ```\n */\nclass Portal extends Component<PortalProps> {\n  static Host = PortalHost\n  static add = portal.add\n  static remove = portal.remove\n  render() {\n    const { children } = this.props\n\n    return (\n      <PortalContext.Consumer>\n        {manager => (\n          <PortalConsumer manager={manager}>{children}</PortalConsumer>\n        )}\n      </PortalContext.Consumer>\n    )\n  }\n}\n\nexport default Portal\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "picker",
+  "type": "registry:component",
+  "title": "Example picker",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/picker/picker.tsx",
+      "content": "import React, { memo } from 'react';\nimport omit from 'lodash/omit';\nimport pick from 'lodash/pick';\nimport { Platform, View, Text } from 'react-native';\nimport { useSafeAreaInsets } from 'react-native-safe-area-context';\nimport type { PickerProps } from './interface';\nimport PickerView from '../picker-view';\nimport type { PickerViewProps } from '../picker-view/interface';\nimport Popup from '../popup';\nimport { cn } from '../../lib/utils';\n\nconst PICKER_VIEW_PROPS_KEYS = [\n  'value',\n  'defaultValue',\n  'columns',\n  'loading',\n  'itemHeight',\n  'visibleItemCount',\n  'onChange',\n];\n\nconst Picker: React.FC<PickerProps> = ({\n  visible,\n  title,\n  confirmButtonText,\n  cancelButtonText,\n  toolbarPosition = 'top',\n  showToolbar = true,\n  onCancel,\n  onConfirm,\n  ...restProps\n}) => {\n  const insets = useSafeAreaInsets();\n\n  const pickerViewProps = pick(restProps, PICKER_VIEW_PROPS_KEYS) as PickerViewProps;\n\n  const popupProps = omit(restProps, PICKER_VIEW_PROPS_KEYS);\n\n  const headerTitleJSX = (\n    <Popup.Header\n      showClose={false}\n      title={title}\n      leftExtra={\n        <Text\n          suppressHighlighting\n          className='text-base text-muted-foreground color-[#5E5E5E]'\n          onPress={restProps.loading ? undefined : onCancel}\n        >\n          {cancelButtonText ?? '取消'}\n        </Text>\n      }\n      rightExtra={\n        <Text\n          suppressHighlighting\n          className='text-base text-primary'\n          onPress={restProps.loading ? undefined : onConfirm}\n        >\n          {confirmButtonText ?? '确认'}\n        </Text>\n      }\n    />\n  );\n\n  return (\n    <Popup {...popupProps} visible={visible} position='bottom' round>\n      {showToolbar && toolbarPosition === 'top' ? headerTitleJSX : null}\n      <PickerView {...pickerViewProps} />\n      {showToolbar && toolbarPosition === 'bottom' ? headerTitleJSX : null}\n      <View\n        className={cn(Platform.OS !== 'ios' ? 'h-4' : 'h-0')}\n        style={{ height: insets.bottom }}\n      />\n    </Popup>\n  );\n};\n\nexport default memo(Picker);\n",
+      "type": "registry:component"
+    }
+  ]
+}

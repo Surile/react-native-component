@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton",
+  "type": "registry:component",
+  "title": "Example skeleton",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/skeleton/skeleton.tsx",
+      "content": "import isNil from 'lodash/isNil';\nimport React, { memo } from 'react';\nimport { View, StyleSheet } from 'react-native';\n\nimport Space from '../space';\n\nimport type {\n  SkeletonProps,\n  SkeletonTitleProps,\n  SkeletonParagraphProps,\n  SkeletonAvatarProps,\n} from './interface';\nimport SkeletonAvatar from './skeleton-avatar';\nimport SkeletonParagraph from './skeleton-paragraph';\nimport { isObject } from 'lodash';\n\nconst defaultTitleWidths = [38];\n\nconst defaultParagraphOption: SkeletonParagraphProps = {\n  rows: 3,\n  widths: [100, 100, 61],\n};\n\nconst STYLES = StyleSheet.create({\n  skeleton: {\n    flexDirection: 'row',\n  },\n\n  avatar: {\n    marginRight: 8,\n  },\n\n  ctx: {\n    flex: 1,\n  },\n});\n\nconst Skeleton: React.FC<React.PropsWithChildren<SkeletonProps>> = ({\n  children,\n  active = true,\n  loading,\n  title = true,\n  paragraph = true,\n  avatar = false,\n}) => {\n  const showTitle = !!title;\n  const titleWidths = isObject(title) ? [(title as SkeletonTitleProps).width!] : defaultTitleWidths;\n\n  const showParagraph = !!paragraph;\n\n  const paragraphOption = isObject(paragraph)\n    ? (paragraph as SkeletonParagraphProps)\n    : defaultParagraphOption;\n\n  const paragraphActive = !isNil(paragraphOption.active) ? paragraphOption.active : active;\n\n  const showAvatar = !!avatar;\n  const avatarOption = isObject(avatar) ? (avatar as SkeletonAvatarProps) : {};\n\n  const ctxJSX =\n    showParagraph || showTitle ? (\n      <Space>\n        {showTitle ? <SkeletonParagraph active={active} rows={1} widths={titleWidths} /> : null}\n        {showParagraph ? <SkeletonParagraph {...paragraphOption} active={paragraphActive} /> : null}\n      </Space>\n    ) : null;\n\n  const nodeJSX = showAvatar ? (\n    <View style={STYLES.skeleton}>\n      <View style={STYLES.avatar}>\n        <SkeletonAvatar\n          {...avatarOption}\n          active={!isNil(avatarOption.active) ? avatarOption.active : active}\n        />\n      </View>\n      {!isNil(ctxJSX) ? <View style={STYLES.ctx}>{ctxJSX}</View> : null}\n    </View>\n  ) : (\n    ctxJSX\n  );\n\n  return loading ? nodeJSX : (children as React.ReactElement);\n};\n\nexport default memo(Skeleton);\n",
+      "type": "registry:component"
+    }
+  ]
+}

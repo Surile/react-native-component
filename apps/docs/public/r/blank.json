@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "blank",
+  "type": "registry:component",
+  "title": "Example blank",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/blank/blank.tsx",
+      "content": "import React, { memo } from 'react';\nimport { View } from 'react-native';\nimport type { BlankProps } from './interface';\n\nconst getGapValue = (v: boolean | number, initialValue: number) => {\n  return typeof v === 'boolean' ? (v ? initialValue : 0) : v;\n};\n\nconst sizeMap = {\n  m: 8,\n  s: 4,\n  l: 16,\n};\n\nconst Blank: React.FC<BlankProps> = ({\n  left = true,\n  right = true,\n  top = false,\n  bottom = false,\n  size = 'm',\n  type = 'margin',\n  children,\n  style,\n  ...restProps\n}) => {\n  // 重置值\n  left = getGapValue(left, sizeMap[size]);\n  right = getGapValue(right, sizeMap[size]);\n  top = getGapValue(top, sizeMap[size]);\n  bottom = getGapValue(bottom, sizeMap[size]);\n\n  return (\n    <View\n      {...restProps}\n      style={[\n        {\n          [`${type}Left`]: left,\n          [`${type}Right`]: right,\n          [`${type}Top`]: top,\n          [`${type}Bottom`]: bottom,\n        },\n        style,\n      ]}\n    >\n      {children}\n    </View>\n  );\n};\n\nexport default memo(Blank);\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/blank/index.ts",
+      "content": "\nimport Blank from './blank'\n\nexport default Blank; \n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/blank/interface.ts",
+      "content": "import type { ViewProps } from 'react-native'\n\nexport interface BlankProps extends ViewProps {\n\n  /**\n   * 上边距\n   * @default false\n   */\n  top?: boolean | number\n\n  /**\n   * 下边距\n   * @default false\n   */\n  bottom?: boolean | number\n\n  /**\n   * 左边距\n   * @default true\n   */\n  left?: boolean | number\n\n  /**\n   * 右边距\n   * @default true\n   */\n  right?: boolean | number\n\n  /**\n   * 默认留白大小\n   * @default 'm'\n   */\n  size?: 's' | 'm' | 'l'\n\n  /**\n   * 边距类型\n   * @default 'margin'\n   */\n  type?: 'margin' | 'padding'\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

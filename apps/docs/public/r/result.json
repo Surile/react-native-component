@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "result",
+  "type": "registry:component",
+  "title": "Example result",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/result/result.tsx",
+      "content": "import React, { memo } from 'react';\nimport { View } from 'react-native';\n\nimport Space from '../space';\n\nimport type { ResultProps, ResultStatus } from './interface';\nimport { renderTextLikeJSX } from '../../helpers';\nimport { cn } from '../../lib/utils';\nimport { cva } from 'class-variance-authority';\nimport { CrossOutline, SuccessOutline, WarningOutline } from '../icons';\n\nconst renderStatusIcon = (status: ResultStatus, size: number) => {\n  const props = {\n    size,\n    color: '#fff',\n  };\n\n  switch (status) {\n    case 'success':\n      return <SuccessOutline {...props} />;\n\n    case 'warning':\n    case 'info':\n      return <WarningOutline {...props} />;\n\n    case 'error':\n      return <CrossOutline {...props} />;\n\n    default:\n      return null;\n  }\n};\n\nconst result_icon_colors = {\n  success: '#009A29',\n  error: '#CB2634',\n  info: '#4080FF',\n  warning: '#D25F00',\n};\n\nconst iconBgColors = cva('', {\n  variants: {\n    status: {\n      success: 'bg-success-4',\n      error: 'bg-danger-4',\n      info: 'bg-info-4',\n      warning: 'bg-warning-4',\n    },\n  },\n});\n\n/**\n * Result结果\n * @description 用于反馈一系列操作任务的处理结果。\n */\nconst Result: React.FC<ResultProps> = ({\n  subtitleTextClassName,\n  titleTextClassName,\n  title,\n  subtitle,\n  extra,\n  renderIcon,\n  status,\n  ...restProps\n}) => {\n  const color = result_icon_colors[status as keyof typeof result_icon_colors];\n  const iconSize = 54;\n\n  const iconJSX = renderIcon ? (\n    renderIcon(color, iconSize)\n  ) : (\n    <View\n      className={cn(\n        'size-[72px] rounded-full self-center justify-center ',\n        iconBgColors({ status })\n      )}\n    >\n      {renderStatusIcon(status, iconSize)}\n    </View>\n  );\n  const titleJSX = renderTextLikeJSX(\n    title,\n    cn('text-4xl text-gray-800 text-center', titleTextClassName)\n  );\n  const subtitleJSX = renderTextLikeJSX(\n    subtitle,\n    cn('text-lg text-gray-700 text-center mt-2', subtitleTextClassName)\n  );\n\n  return (\n    <Space {...restProps}>\n      {iconJSX}\n      {titleJSX}\n      {subtitleJSX}\n      {extra}\n    </Space>\n  );\n};\n\nexport default memo(Result);\n",
+      "type": "registry:component"
+    }
+  ]
+}

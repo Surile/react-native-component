@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-bar",
+  "type": "registry:component",
+  "title": "Example button-bar",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/button-bar/button-bar-confirm.tsx",
+      "content": "import isNil from 'lodash/isNil';\nimport React, { memo } from 'react';\nimport type { ViewStyle } from 'react-native';\nimport { View } from 'react-native';\n\nimport Space from '../space';\n\nimport ButtonBar from './button-bar';\nimport type { ButtonBarConfirmProps } from './interface';\n\nconst customButtonBarStyle: ViewStyle = {\n  flexDirection: 'row',\n  alignItems: 'center',\n};\n\nconst customChildrenStyle: ViewStyle = {\n  flex: 1,\n};\n\nconst ButtonBarConfirm: React.FC<ButtonBarConfirmProps> = ({\n  children,\n  cancel,\n\n  ...restProps\n}) => {\n  return (\n    <ButtonBar {...restProps} alone style={customButtonBarStyle}>\n      {!isNil(cancel) ? (\n        <Space direction='horizontal' tail align='center' minWidth={92}>\n          {cancel}\n        </Space>\n      ) : null}\n      <View style={customChildrenStyle}>{children}</View>\n    </ButtonBar>\n  );\n};\n\nexport default memo(ButtonBarConfirm);\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/button-bar/button-bar.tsx",
+      "content": "import isArray from 'lodash/isArray';\nimport noop from 'lodash/noop';\nimport React, { memo } from 'react';\n\nimport ActionSheet from '../action-sheet';\nimport BottomBar from '../bottom-bar';\nimport Button from '../button';\nimport Space from '../space';\n\nimport type { ButtonBarProps } from './interface';\nimport { size } from '../styles';\nimport { cn } from '../../lib/utils';\n\nconst ButtonBar: React.FC<ButtonBarProps> = ({\n  alone = false,\n  buttons,\n  count = 4,\n  moreText,\n  blankSize = 'm',\n  className,\n  children,\n  style,\n  ...restProps\n}) => {\n  const realButtons = (buttons || []).filter((item) => !item.hidden);\n  const isConfig = isArray(buttons);\n  const showMore = realButtons.length > count;\n  const bottomButtons = showMore ? realButtons.slice(0, count - 1) : realButtons;\n\n  const onPressMore = () => {\n    const restButtons = realButtons.slice(count - 1);\n\n    ActionSheet({\n      actions: restButtons.map((item) => item.text),\n      cancelText: '取消',\n    })\n      .then(({ index }: { index: number }) => {\n        restButtons[index].onPress?.();\n      })\n      .catch(noop);\n  };\n\n  const defaultGap = size[blankSize];\n\n  if (isConfig && realButtons.length === 0) {\n    return null;\n  }\n\n  return (\n    <BottomBar\n      className={cn(\n        'flex-row justify-end items-center',\n        {\n          'flex-col items-stretch justify-center': alone,\n        },\n        className\n      )}\n      style={[\n        {\n          paddingHorizontal: defaultGap,\n        },\n        style,\n      ]}\n      {...restProps}\n    >\n      {isConfig ? (\n        <Space justify='end' align='center' direction='horizontal' gapHorizontal={8}>\n          {showMore ? <Button type='link' text={moreText ?? '更多'} onPress={onPressMore} /> : null}\n          {bottomButtons.reverse().map((b, index) => {\n            return <Button key={index} {...b} size={b.size || 'm'} />;\n          })}\n        </Space>\n      ) : (\n        children\n      )}\n    </BottomBar>\n  );\n};\n\nexport default memo(ButtonBar);\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/button-bar/index.ts",
+      "content": "\nimport { attachPropertiesToComponent } from '../../helpers'\nimport ButtonBar from './button-bar'\nimport ButtonBarConfirm from './button-bar-confirm'\n\nexport default attachPropertiesToComponent(ButtonBar, {\n  Confirm: ButtonBarConfirm,\n})\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/button-bar/interface.ts",
+      "content": "import type { BlankProps } from '../blank/interface'\nimport type { BottomBarProps } from '../bottom-bar/interface'\nimport type { ButtonProps } from '../button/interface'\n\nexport interface ButtonBarProps extends Omit<BottomBarProps, 'theme'> {\n  /**\n   * 单独一个按钮\n   * @default false\n   */\n  alone?: boolean\n\n  /**\n   * 配置方式的按钮\n   */\n  buttons?: (Omit<ButtonProps, 'onPress' | 'text'> & {\n    text: string\n    hidden?: boolean\n    onPress?: () => void\n  })[]\n\n  /**\n   * 配置方式的按钮最大显示个数\n   * @default 4\n   */\n  count?: number\n\n  /**\n   * 更多按钮文案\n   * @default '更多'\n   */\n  moreText?: string\n\n  /**\n   * 左右留白大小\n   * @default 'm'\n   */\n  blankSize?: BlankProps['size']\n}\n\nexport interface ButtonBarConfirmProps\n  extends Omit<ButtonBarProps, 'alone' | 'buttons' | 'count' | 'moreText'> {\n  /**\n   * 取消按钮，可以是多个按钮\n   */\n  cancel?: React.ReactNode\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

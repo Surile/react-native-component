@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bottom-bar",
+  "type": "registry:component",
+  "title": "Example bottom-bar",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/bottom-bar/bottom-bar.tsx",
+      "content": "import { cva } from 'class-variance-authority';\nimport React, { memo, useEffect, useRef } from 'react';\nimport { Animated, Easing, Keyboard, Platform } from 'react-native';\nimport { useSafeAreaInsets } from 'react-native-safe-area-context';\nimport { cn } from '../../lib/utils';\nimport type { BottomBarProps } from './interface';\n\nconst bottomBarVariants = cva('overflow-hidden', {\n  variants: {\n    divider: {\n      true: 'border-t border-line-1',\n    },\n  },\n  defaultVariants: {\n    divider: true,\n  },\n});\n\nconst BottomBar: React.FC<BottomBarProps> = ({\n  safeAreaInsetBottom = true,\n  backgroundColor = 'bg-fill-white',\n  height = 50,\n  hidden = false,\n  keyboardShowNotRender = true,\n  divider = true,\n  style,\n  className,\n  ...restProps\n}) => {\n  const { bottom } = useSafeAreaInsets();\n  const realHeight = height + (safeAreaInsetBottom ? bottom : 0);\n  const heightAnimated = useRef(new Animated.Value(realHeight));\n\n  useEffect(() => {\n    if (keyboardShowNotRender && Platform.OS === 'android') {\n      const keyboardDidShow = Keyboard.addListener('keyboardDidShow', () => {\n        Animated.timing(heightAnimated.current, {\n          toValue: 0,\n          duration: 300,\n          useNativeDriver: false,\n          easing: Easing.bezier(0.755, 0.05, 0.855, 0.06),\n        }).start();\n      });\n      const keyboardDidHide = Keyboard.addListener('keyboardDidHide', () => {\n        Animated.timing(heightAnimated.current, {\n          toValue: realHeight,\n          duration: 100,\n          useNativeDriver: false,\n          delay: 200,\n        }).start();\n      });\n\n      return () => {\n        keyboardDidShow.remove();\n        keyboardDidHide.remove();\n      };\n    }\n  }, [keyboardShowNotRender, realHeight]);\n\n  if (hidden) {\n    return null;\n  }\n\n  return (\n    <Animated.View\n      {...restProps}\n      style={[\n        { height: heightAnimated.current },\n        { paddingBottom: safeAreaInsetBottom ? bottom : 0 },\n        style,\n      ]}\n      className={cn(bottomBarVariants({ divider }), backgroundColor, className)}\n    />\n  );\n};\n\nexport default memo(BottomBar);\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/bottom-bar/index.ts",
+      "content": "import BottomBar from './bottom-bar';\n\nexport default BottomBar;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@rnr/example-library/src/components/bottom-bar/interface.ts",
+      "content": "import type { ColorValue, ViewProps } from 'react-native';\n\nexport interface BottomBarProps extends ViewProps {\n  /**\n   * 是否开启底部安全区适配\n   * @default true\n   */\n  safeAreaInsetBottom?: boolean;\n\n  /**\n   * 背景色\n   * @default bottom_bar_background_color\n   */\n  backgroundColor?: ColorValue;\n\n  /**\n   * 元素高度\n   * @default bottom_bar_height\n   */\n  height?: number;\n\n  /**\n   * 是否隐藏\n   * @default false\n   */\n  hidden?: boolean;\n\n  /**\n   * 当软键盘弹出来的时候不渲染，BottomBar 固定在底部的布局中，在 Android 机器上 BottomBar 会被软键盘挤上去\n   * @default true\n   */\n  keyboardShowNotRender?: boolean;\n\n  /**\n   * 是否显示分割线\n   * @default true\n   */\n  divider?: boolean;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}
