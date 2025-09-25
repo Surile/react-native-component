@@ -3,11 +3,14 @@ title: Example button
 description: An example component to help you get started.
 ---
 
-import { ButtonPreview } from '@docs/components/examples';
+import { ButtonPreview } from "@docs/components/examples";
 
 <ExternalLinks
   links={[
-    { title: 'Button Docs', url: 'https://reactnativereusables.com/docs/components/button/' },
+    {
+      title: "Button Docs",
+      url: "https://reactnativereusables.com/docs/components/button/",
+    },
   ]}
 />
 
@@ -27,7 +30,7 @@ import { ButtonPreview } from '@docs/components/examples';
   <TabsContent value="code">
     ```json doc-gen:file
     {
-      "file": "./node_modules/@rnr/example-library/src/examples/button/button.tsx",
+      "file": "./node_modules/@tastien/react-native-component/src/examples/button/button.tsx",
       "codeblock": {
         "lang": "tsx"
       }
@@ -46,7 +49,10 @@ import { ButtonPreview } from '@docs/components/examples';
   </TabsList>
   <TabsContent value="cli">
     <CommandTabs
-      args={['add', 'https://rnr-registry-template-docs.vercel.app/r/example-button.json']}
+      args={[
+        "add",
+        "https://rnr-registry-template-docs.vercel.app/r/example-button.json",
+      ]}
     />
   </TabsContent>
 </Tabs>
@@ -54,8 +60,8 @@ import { ButtonPreview } from '@docs/components/examples';
 ### 使用
 
 ```tsx
-import Button from '@/components/button';
-import { Text } from 'react-native';
+import Button from "@/components/button";
+import { Text } from "react-native";
 
 <Button>
   <Text>按钮</Text>

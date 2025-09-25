@@ -7,7 +7,7 @@ const config = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   transpilePackages: [
-    '@rnr/example-library',
+    '@tastien/react-native-component',
     'react-native',
     'react-native-web',
     'expo',

@@ -4,6 +4,20 @@
   "homepage": "https://rnr-registry-template-docs.vercel.app/",
   "items": [
     {
+      "name": "components",
+      "type": "registry:file",
+      "title": "组件导出文件",
+      "description": "组件导出文件",
+      "author": "@zhaolinyang",
+      "files": [
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/index.ts",
+          "type": "registry:file",
+          "target": "components/index.ts"
+        }
+      ]
+    },
+    {
       "name": "helpers",
       "type": "registry:file",
       "title": "Example button",
@@ -11,37 +25,37 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/helpers/attach-properties-to-component.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/helpers/attach-properties-to-component.ts",
           "type": "registry:file",
           "target": "helpers/attach-properties-to-component.ts"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/helpers/arrow.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/helpers/arrow.ts",
           "type": "registry:file",
           "target": "helpers/arrow.ts"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/helpers/interceptor.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/helpers/interceptor.ts",
           "type": "registry:file",
           "target": "helpers/interceptor.ts"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/helpers/typeof.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/helpers/typeof.ts",
           "type": "registry:file",
           "target": "helpers/typeof.ts"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/helpers/types.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/helpers/types.ts",
           "type": "registry:file",
           "target": "helpers/types.ts"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/helpers/z-index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/helpers/z-index.ts",
           "type": "registry:file",
           "target": "helpers/z-index.ts"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/helpers/index.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/helpers/index.tsx",
           "type": "registry:file",
           "target": "helpers/index.tsx"
         }
@@ -55,47 +69,47 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/hooks/useControllableValue.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/hooks/useControllableValue.ts",
           "type": "registry:hook"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/hooks/useDebounceFn.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/hooks/useDebounceFn.tsx",
           "type": "registry:hook"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/hooks/useDestroyed.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/hooks/useDestroyed.ts",
           "type": "registry:hook"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/hooks/useDifferentState.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/hooks/useDifferentState.ts",
           "type": "registry:hook"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/hooks/useLoop.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/hooks/useLoop.ts",
           "type": "registry:hook"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/hooks/useOriginalCopyFn.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/hooks/useOriginalCopyFn.ts",
           "type": "registry:hook"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/hooks/useOriginalDeepCopy.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/hooks/useOriginalDeepCopy.ts",
           "type": "registry:hook"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/hooks/usePersistFn.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/hooks/usePersistFn.ts",
           "type": "registry:hook"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/hooks/useSafeHeight.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/hooks/useSafeHeight.ts",
           "type": "registry:hook"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/hooks/useStateUpdate.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/hooks/useStateUpdate.ts",
           "type": "registry:hook"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/hooks/useUpdateEffect.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/hooks/useUpdateEffect.ts",
           "type": "registry:hook"
         }
       ]
@@ -114,23 +128,23 @@
       ],
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/button/button-option-group.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/button/button-option-group.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/button/button-option.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/button/button-option.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/button/button.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/button/button.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/button/index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/button/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/button/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/button/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -143,23 +157,23 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/action-sheet/action-sheet-instance.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/action-sheet/action-sheet-instance.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/action-sheet/action-sheet-method.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/action-sheet/action-sheet-method.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/action-sheet/action-sheet.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/action-sheet/action-sheet.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/action-sheet/index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/action-sheet/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/action-sheet/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/action-sheet/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -172,15 +186,15 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/badge/badge.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/badge/badge.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/badge/index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/badge/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/badge/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/badge/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -193,15 +207,15 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/blank/blank.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/blank/blank.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/blank/index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/blank/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/blank/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/blank/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -214,15 +228,15 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/bottom-bar/bottom-bar.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/bottom-bar/bottom-bar.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/bottom-bar/index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/bottom-bar/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/bottom-bar/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/bottom-bar/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -235,19 +249,19 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/button-bar/button-bar-confirm.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/button-bar/button-bar-confirm.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/button-bar/button-bar.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/button-bar/button-bar.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/button-bar/index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/button-bar/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/button-bar/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/button-bar/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -260,19 +274,19 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/card/card-body.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/card/card-body.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/card/card.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/card/card.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/card/index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/card/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/card/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/card/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -285,19 +299,19 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/cell/cell-group.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/cell/cell-group.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/cell/cell.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/cell/cell.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/cell/index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/cell/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/cell/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/cell/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -310,23 +324,23 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/checkbox/checkbox-group.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/checkbox/checkbox-group.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/checkbox/checkbox-icon.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/checkbox/checkbox-icon.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/checkbox/checkbox.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/checkbox/checkbox.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/checkbox/index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/checkbox/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/checkbox/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/checkbox/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -339,15 +353,15 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/collapse/collapse.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/collapse/collapse.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/collapse/index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/collapse/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/collapse/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/collapse/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -360,23 +374,23 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/date-picker/date-picker-range-method.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/date-picker/date-picker-range-method.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/date-picker/date-picker-range-view.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/date-picker/date-picker-range-view.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/date-picker/date-picker-single-method.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/date-picker/date-picker-single-method.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/date-picker/index.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/date-picker/index.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/date-picker/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/date-picker/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -389,27 +403,27 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/date-picker-view/date-picker-view.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/date-picker-view/date-picker-view.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/date-picker-view/helper.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/date-picker-view/helper.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/date-picker-view/index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/date-picker-view/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/date-picker-view/date-picker-view.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/date-picker-view/date-picker-view.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/date-picker-view/useDateMinMax.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/date-picker-view/useDateMinMax.ts",
           "type": "registry:hook"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/date-picker-view/useDatePicker.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/date-picker-view/useDatePicker.ts",
           "type": "registry:hook"
         }
       ]
@@ -422,43 +436,43 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/description/context.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/description/context.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/description/description-date-range.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/description/description-date-range.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/description/description-date.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/description/description-date.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/description/description-group.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/description/description-group.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/description/description-thousand.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/description/description-thousand.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/description/description.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/description/description.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/description/index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/description/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/description/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/description/interface.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/description/render.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/description/render.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/description/styles.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/description/styles.ts",
           "type": "registry:component"
         }
       ]
@@ -471,31 +485,31 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dialog/dialog-input.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dialog/dialog-input.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dialog/dialog-instance.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dialog/dialog-instance.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dialog/dialog-keyboard.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dialog/dialog-keyboard.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dialog/dialog-method.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dialog/dialog-method.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dialog/dialog.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dialog/dialog.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dialog/index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dialog/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dialog/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dialog/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -508,23 +522,23 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/divider/divider-line-dashed.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/divider/divider-line-dashed.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/divider/divider-line.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/divider/divider-line.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/divider/divider.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/divider/divider.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/divider/index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/divider/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/divider/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/divider/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -535,57 +549,58 @@
       "title": "Example dropdown",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": ["http://localhost:3000/r/components.json"],
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dropdown/context.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dropdown/context.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-badge.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dropdown/dropdown-badge.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-filter-panel.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dropdown/dropdown-filter-panel.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-item.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dropdown/dropdown-item.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-menu.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dropdown/dropdown-menu.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-multiple.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dropdown/dropdown-multiple.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-popup.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dropdown/dropdown-popup.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-selector.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dropdown/dropdown-selector.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-text.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dropdown/dropdown-text.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-time.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dropdown/dropdown-time.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dropdown/dropdown-type-items.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dropdown/dropdown-type-items.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dropdown/index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dropdown/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/dropdown/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/dropdown/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -598,7 +613,15 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/empty/empty.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/empty/empty.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/empty/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/empty/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -611,7 +634,11 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/error-boundary/index.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/error-boundary/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/error-boundary/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -624,7 +651,51 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/field/index.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/field/field-button-option.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/field/field-checkbox.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/field/field-date-range.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/field/field-date.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/field/field-number-input.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/field/field-password.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/field/field-selector.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/field/field-switch.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/field/field-text-input.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/field/field-text.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/field/helper.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/field/index.ts",
           "type": "registry:component"
         }
       ]
@@ -637,15 +708,15 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/flex/flex-item.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/flex/flex-item.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/flex/index.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/flex/index.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/flex/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/flex/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -658,7 +729,19 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/floating-panel/index.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/floating-panel/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/floating-panel/floating-panel-scroll-view.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/floating-panel/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/floating-panel/floating-panel.tsx",
           "type": "registry:component"
         }
       ]
@@ -671,7 +754,31 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/form/form.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/form/form.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/form/context.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/form/form-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/form/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/form/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/form/useForm.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/form/useFormInstance.tsx",
           "type": "registry:component"
         }
       ]
@@ -684,19 +791,19 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/loading/index.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/loading/index.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/loading/loading.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/loading/loading.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/loading/loading-spinner.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/loading/loading-spinner.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/loading/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/loading/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -710,7 +817,11 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/navbar/index.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/navbar/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/navbar/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -723,7 +834,15 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/notice-bar/notice-bar.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/notice-bar/notice-bar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/notice-bar/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/notice-bar/index.ts",
           "type": "registry:component"
         }
       ]
@@ -736,7 +855,23 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/notify/notify.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/notify/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/notify/notify-method.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/notify/notify-instance.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/notify/notify.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/notify/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -749,7 +884,11 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/number-input/index.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/number-input/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/number-input/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -762,7 +901,15 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/overlay/overlay.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/overlay/overlay.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/overlay/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/overlay/types.ts",
           "type": "registry:component"
         }
       ]
@@ -775,7 +922,11 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/password-input/index.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/password-input/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/password-input/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -788,7 +939,23 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/picker/picker.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/picker/picker.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/picker/picker-method.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/picker/picker-instance.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/picker/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/picker/index.ts",
           "type": "registry:component"
         }
       ]
@@ -801,7 +968,27 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/picker-view/picker-view.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/picker-view/picker-view.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/picker-view/helper/column.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/picker-view/helper/picker.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/picker-view/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/picker-view/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/picker-view/picker-view-column.tsx",
           "type": "registry:component"
         }
       ]
@@ -814,7 +1001,23 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/popover/popover.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/popover/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/popover/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/popover/popover-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/popover/popover-text.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/popover/popover.tsx",
           "type": "registry:component"
         }
       ]
@@ -827,7 +1030,31 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/popup/popup.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/popup/helper.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/popup/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/popup/popup-header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/popup/popup-keyboard-shim.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/popup/popup-page.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/popup/popup.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/popup/types.ts",
           "type": "registry:component"
         }
       ]
@@ -840,7 +1067,23 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/portal/portal.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/portal/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/portal/portal-consumer.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/portal/portal-host.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/portal/portal-manager.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/portal/portal.tsx",
           "type": "registry:component"
         }
       ]
@@ -853,7 +1096,19 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/progress/progress.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/progress/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/progress/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/progress/progress-page.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/progress/progress.tsx",
           "type": "registry:component"
         }
       ]
@@ -866,7 +1121,31 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/result/result.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/result/icons/result-icon-box.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/result/icons/result-icon-empty.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/result/icons/result-icon-error.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/result/icons/result-icon-warning.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/result/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/result/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/result/result.tsx",
           "type": "registry:component"
         }
       ]
@@ -879,7 +1158,15 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/search/search.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/search/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/search/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/search/search.tsx",
           "type": "registry:component"
         }
       ]
@@ -892,7 +1179,31 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/selector/selector.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/selector/helper.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/selector/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/selector/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/selector/selector-instance.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/selector/selector-method.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/selector/selector-text.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/selector/selector.tsx",
           "type": "registry:component"
         }
       ]
@@ -905,7 +1216,15 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/sidebar/sidebar.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/sidebar/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/sidebar/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/sidebar/sidebar.tsx",
           "type": "registry:component"
         }
       ]
@@ -918,7 +1237,27 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/skeleton/skeleton.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/skeleton/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/skeleton/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/skeleton/skeleton-active.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/skeleton/skeleton-avatar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/skeleton/skeleton-paragraph.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/skeleton/skeleton.tsx",
           "type": "registry:component"
         }
       ]
@@ -931,11 +1270,11 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/space/index.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/space/index.tsx",
           "type": "registry:component"
         },
         {
-          "path": "./node_modules/@rnr/example-library/src/components/space/interface.ts",
+          "path": "./node_modules/@tastien/react-native-component/src/components/space/interface.ts",
           "type": "registry:component"
         }
       ]
@@ -948,7 +1287,27 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/step-selector/step-selector.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/step-selector/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/step-selector/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/step-selector/line.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/step-selector/step-selector-instance.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/step-selector/step-selector-method.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/step-selector/step-selector.tsx",
           "type": "registry:component"
         }
       ]
@@ -961,7 +1320,15 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/switch/switch.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/switch/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/switch/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/switch/switch.tsx",
           "type": "registry:component"
         }
       ]
@@ -974,7 +1341,15 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/tab-bar/tab-bar.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/tab-bar/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/tab-bar/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/tab-bar/tab-bar.tsx",
           "type": "registry:component"
         }
       ]
@@ -987,7 +1362,23 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/tabs/tabs.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/tabs/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/tabs/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/tabs/tab-pane.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/tabs/tab-view.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/tabs/tabs.tsx",
           "type": "registry:component"
         }
       ]
@@ -1000,7 +1391,15 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/tag/tag.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/tag/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/tag/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/tag/tag.tsx",
           "type": "registry:component"
         }
       ]
@@ -1013,7 +1412,19 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/text-input/text-input.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/text-input/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/text-input/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/text-input/text-input-clear.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/text-input/text-input.tsx",
           "type": "registry:component"
         }
       ]
@@ -1026,7 +1437,19 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/toast/toast.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/toast/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/toast/toast-instance.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/toast/toast.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/toast/types.ts",
           "type": "registry:component"
         }
       ]
@@ -1039,7 +1462,27 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/tree/tree.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/tree/helper.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/tree/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/tree/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/tree/tree-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/tree/tree.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/tree/var.ts",
           "type": "registry:component"
         }
       ]
@@ -1052,7 +1495,27 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/uploader/uploader.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/uploader/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/uploader/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/uploader/uploader-image.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/uploader/uploader-regular.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/uploader/uploader.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/uploader/useImageLayout.ts",
           "type": "registry:component"
         }
       ]
@@ -1065,27 +1528,142 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/water-mark/water-mark.tsx",
+          "path": "./node_modules/@tastien/react-native-component/src/components/water-mark/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/water-mark/interface.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/water-mark/water-mark.tsx",
           "type": "registry:component"
         }
       ]
     },
     {
-      "name": "example-block",
-      "type": "registry:block",
-      "title": "Example Block",
-      "description": "Displays a set of buttons which are always red.",
-      "author": "@gabimoncha",
+      "name": "icons",
+      "type": "registry:component",
+      "title": "icons",
+      "description": "icons",
+      "author": "@zhaolinyang",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/blocks/multiple-buttons.tsx",
-          "type": "registry:block"
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/arrow-down-fill.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/arrow-down-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/arrow-left-fill.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/arrow-left-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/arrow-right-fill.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/arrow-right-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/arrow-up-fill.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/arrow-up-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/circle-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/cross-circle-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/cross-fill.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/cross-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/delete-fill.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/double-arrow-clockwise-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/eye-close-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/eye-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/gen.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/menu-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/play-circle-fill.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/plus-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/search-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/success-circle-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/success-fill.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/success-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/swap-right-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/video-colours.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/volume-outline.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/icons/warning-outline.tsx",
+          "type": "registry:component"
         }
-      ],
-      "registryDependencies": [
-        "https://reactnativereusables.com/r/new-york/text.json",
-        "https://reactnativereusables.com/r/new-york/button.json",
-        "https://reactnativereusables.com/r/new-york/card.json"
       ]
     }
   ]

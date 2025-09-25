@@ -7,17 +7,17 @@
   "description": "Displays a button which is always red.",
   "files": [
     {
-      "path": "./node_modules/@rnr/example-library/src/components/flex/flex-item.tsx",
+      "path": "./node_modules/@tastien/react-native-component/src/components/flex/flex-item.tsx",
       "content": "import React, { memo } from 'react';\nimport { TouchableWithoutFeedback, View } from 'react-native';\n\nimport type { FlexItemProps } from './interface';\nimport { cn } from '../../lib/utils';\n\nconst FlexItem: React.FC<FlexItemProps> = (props) => {\n  const { style, children, className, ...restProps } = props;\n  const inner = (\n    <View style={style} className={cn('flex-1', className)} {...restProps}>\n      {children}\n    </View>\n  );\n  const shouldWrapInTouchableComponent =\n    restProps.onPress || restProps.onLongPress || restProps.onPressIn || restProps.onPressOut;\n\n  if (shouldWrapInTouchableComponent) {\n    return <TouchableWithoutFeedback {...restProps}>{inner}</TouchableWithoutFeedback>;\n  }\n\n  return inner;\n};\n\nexport default memo(FlexItem);\n",
       "type": "registry:component"
     },
     {
-      "path": "./node_modules/@rnr/example-library/src/components/flex/index.tsx",
+      "path": "./node_modules/@tastien/react-native-component/src/components/flex/index.tsx",
       "content": "import React from 'react';\nimport type { FlexStyle } from 'react-native';\nimport { TouchableWithoutFeedback, View } from 'react-native';\nimport { attachPropertiesToComponent } from '../../helpers';\n\nimport FlexItem from './flex-item';\nimport type { FlexProps, FlexAlign, FlexJustify } from './interface';\n\nconst Flex: React.FC<FlexProps> = (props) => {\n  const {\n    style,\n    direction = 'row',\n    wrap = 'nowrap',\n    justify = 'start',\n    align = 'center',\n    children,\n    ...restProps\n  } = props;\n  const transferConst: [FlexJustify, FlexAlign] = [justify, align];\n  const transferConstStyle = transferConst.map<\n    FlexStyle['justifyContent'] | FlexStyle['alignItems']\n  >((tc) => {\n    switch (tc) {\n      case 'start':\n        return 'flex-start';\n      case 'end':\n        return 'flex-end';\n      case 'between':\n        return 'space-between';\n      case 'around':\n        return 'space-around';\n      default:\n        return tc;\n    }\n  }) as [FlexStyle['justifyContent'], FlexStyle['alignItems']];\n\n  const flexStyle = {\n    flexDirection: direction,\n    flexWrap: wrap,\n    justifyContent: transferConstStyle[0],\n    alignItems: transferConstStyle[1],\n  };\n\n  const inner = (\n    <View style={[flexStyle, style]} {...restProps}>\n      {children}\n    </View>\n  );\n\n  const shouldWrapInTouchableComponent =\n    restProps.onPress || restProps.onLongPress || restProps.onPressIn || restProps.onPressOut;\n\n  if (shouldWrapInTouchableComponent) {\n    return <TouchableWithoutFeedback {...restProps}>{inner}</TouchableWithoutFeedback>;\n  } else {\n    return inner;\n  }\n};\n\nexport default attachPropertiesToComponent(Flex, { Item: FlexItem });\n",
       "type": "registry:component"
     },
     {
-      "path": "./node_modules/@rnr/example-library/src/components/flex/interface.ts",
+      "path": "./node_modules/@tastien/react-native-component/src/components/flex/interface.ts",
       "content": "import type { TouchableWithoutFeedbackProps, FlexStyle } from 'react-native'\nimport { FixHitSlopProps } from '../../helpers/types'\n\nexport type FlexJustify = 'start' | 'end' | 'center' | 'between' | 'around'\n\nexport type FlexAlign = 'start' | 'center' | 'end' | 'baseline' | 'stretch'\n\nexport interface FlexProps\n  extends FixHitSlopProps<TouchableWithoutFeedbackProps> {\n  /**\n   * flexDirection\n   * @default 'row'\n   */\n  direction?: FlexStyle['flexDirection']\n\n  /**\n   * flexWrap\n   * @default 'nowrap'\n   */\n  wrap?: FlexStyle['flexWrap']\n\n  /**\n   * justifyContent\n   * @default 'start'\n   */\n  justify?: FlexJustify\n\n  /**\n   * alignItems\n   * @default 'center'\n   */\n  align?: FlexAlign\n}\n\nexport interface FlexItemProps\n  extends FixHitSlopProps<TouchableWithoutFeedbackProps> {\n}",
       "type": "registry:component"
     }
