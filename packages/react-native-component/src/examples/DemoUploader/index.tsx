@@ -16,7 +16,7 @@ import {
   UploaderValue,
   Uploader,
   CrossFill,
-} from '@tastien/react-native-component';
+} from '@/react-native-component/components';
 
 const BasicUploader: React.FC = () => {
   const [list1, setList1] = useState<UploaderValue[]>([

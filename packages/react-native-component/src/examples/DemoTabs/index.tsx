@@ -3,7 +3,14 @@
  * description: 把各种场景、API 都运用了
  */
 
-import { Field, Result, Blank, Card, Button, Tabs } from '@tastien/react-native-component';
+import {
+  Field,
+  Result,
+  Blank,
+  Card,
+  Button,
+  Tabs,
+} from '@/react-native-component/components';
 import React, { useState } from 'react';
 import { ScrollView } from 'react-native';
 
@@ -12,7 +19,12 @@ const T = () => {
 
   return (
     <>
-      <Field.TextInput title='测试' placeholder='请输入' value={text} onChange={setText} />
+      <Field.TextInput
+        title='测试'
+        placeholder='请输入'
+        value={text}
+        onChange={setText}
+      />
       <Result status='warning' title='嗯哼？1' subtitle='哈哈哈' />
       <Button
         onPress={() => {
@@ -115,7 +127,11 @@ const BasicTabs: React.FC = () => {
         </Card>
       </Blank>
 
-      <Tabs tabBarHeight={60} tabBarBackgroundColor='#f9f9f9' tabBarStyle={{ marginTop: 40 }}>
+      <Tabs
+        tabBarHeight={60}
+        tabBarBackgroundColor='#f9f9f9'
+        tabBarStyle={{ marginTop: 40 }}
+      >
         <Tabs.TabPane key='1' tab='第一个'>
           <Result status='success' title='啊哈' subtitle='嘿嘿嘿' />
         </Tabs.TabPane>

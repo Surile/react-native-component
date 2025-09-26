@@ -3,7 +3,11 @@
  * description: 当候选项太多的时候可以启用搜索。
  */
 
-import { Cell, SelectorOption, Selector } from '@tastien/react-native-component';
+import {
+  Cell,
+  SelectorOption,
+  Selector,
+} from '@/react-native-component/components';
 import React from 'react';
 
 const BasicSelectorSearch: React.FC = () => {

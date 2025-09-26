@@ -1,4 +1,4 @@
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 import { ScrollView } from 'react-native';
 import ButtonType from './type';
 import ButtonSubtext from './subtext';

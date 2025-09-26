@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import BaseFloatingPanel from './base';
 import BaseFloatingPanel2 from './base2';
 import ScrollFloatingPanel from './scroll';
-import { Button } from '@tastien/react-native-component';
+import { Button } from '@/react-native-component/components';
 
 const demos = [
   {

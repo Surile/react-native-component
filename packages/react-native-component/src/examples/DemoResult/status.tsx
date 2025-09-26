@@ -3,7 +3,7 @@
  * description: 共有四种样式 info、success、warning、error。
  */
 
-import { Result, Space } from '@tastien/react-native-component';
+import { Result, Space } from '@/react-native-component/components';
 
 const ResultStatus = () => {
   return (

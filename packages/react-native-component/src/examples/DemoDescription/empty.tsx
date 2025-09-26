@@ -3,12 +3,15 @@
  * description: 支持自定义空数据占位符。
  */
 
-import { Space, Card, Description } from '@tastien/react-native-component';
+import { Space, Card, Description } from '@/react-native-component/components';
 import React from 'react';
 
 const d = new Date();
 
-const dd: [Date, Date] = [new Date(2016, 6, 20, 18, 40, 10), new Date(2026, 2, 10, 12, 20, 50)];
+const dd: [Date, Date] = [
+  new Date(2016, 6, 20, 18, 40, 10),
+  new Date(2026, 2, 10, 12, 20, 50),
+];
 
 const DescriptionEmpty: React.FC = () => {
   return (
@@ -21,7 +24,10 @@ const DescriptionEmpty: React.FC = () => {
           <Description label='Description' text='一袋米由我洗嘞' />
           <Description label='Description' text={undefined} />
           <Description.Thousand label='Description.Thousand' />
-          <Description.Thousand label='Description.Thousand' text={12892394839} />
+          <Description.Thousand
+            label='Description.Thousand'
+            text={12892394839}
+          />
           <Description.Date label='Description.Date' />
           <Description.Date label='Description.Date' text={d} />
           <Description.DateRange label='Description.DateRange' />
@@ -35,7 +41,10 @@ const DescriptionEmpty: React.FC = () => {
           <Description label='Description' text='一袋米由我洗嘞' />
           <Description label='Description' text={undefined} />
           <Description.Thousand label='Description.Thousand' />
-          <Description.Thousand label='Description.Thousand' text={12892394839} />
+          <Description.Thousand
+            label='Description.Thousand'
+            text={12892394839}
+          />
           <Description.Date label='Description.Date' />
           <Description.Date label='Description.Date' text={d} />
           <Description.DateRange label='Description.DateRange' />
@@ -47,10 +56,23 @@ const DescriptionEmpty: React.FC = () => {
         <Description.Group showEmpty empty='暂无数据'>
           <Description label='Description' empty='没没有蜡烛就不用勉强庆祝' />
           <Description label='Description' text='一袋米由我洗嘞' />
-          <Description label='Description' empty='没没想到答案就不用寻找题目' text={undefined} />
-          <Description.Thousand label='Description.Thousand' empty='没没有退路那我也不要散步' />
-          <Description.Thousand label='Description.Thousand' text={12892394839} />
-          <Description.Date label='Description.Date' empty='没没人去仰慕那我就继续忙碌' />
+          <Description
+            label='Description'
+            empty='没没想到答案就不用寻找题目'
+            text={undefined}
+          />
+          <Description.Thousand
+            label='Description.Thousand'
+            empty='没没有退路那我也不要散步'
+          />
+          <Description.Thousand
+            label='Description.Thousand'
+            text={12892394839}
+          />
+          <Description.Date
+            label='Description.Date'
+            empty='没没人去仰慕那我就继续忙碌'
+          />
           <Description.Date label='Description.Date' text={d} />
           <Description.DateRange label='Description.DateRange' />
           <Description.DateRange label='Description.DateRange' text={dd} />

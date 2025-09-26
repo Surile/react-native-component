@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { ScrollView } from 'react-native';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const DemoSkeleton: React.FC = () => {
   return (

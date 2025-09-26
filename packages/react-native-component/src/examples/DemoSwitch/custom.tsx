@@ -3,7 +3,7 @@
  * description: 支持自定义激活、未激活的值、颜色。
  */
 
-import { Space, Switch } from '@tastien/react-native-component';
+import { Space, Switch } from '@/react-native-component/components';
 import React from 'react';
 
 type TSwitch = '3' | '4';

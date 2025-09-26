@@ -1,4 +1,8 @@
-import { PickerOptionCascade, Cell, PickerView } from '@tastien/react-native-component';
+import {
+  PickerOptionCascade,
+  Cell,
+  PickerView,
+} from '@/react-native-component/components';
 import React, { useState } from 'react';
 
 const buildChildren = (
@@ -23,7 +27,11 @@ const columns4 = buildChildren(8, 'sj', '省级', (sjValue, sjLabel) =>
     sjValue.replace('sj', 'sq'),
     sjLabel.replace('省级', '市区'),
     (sqValue, sqLabel) =>
-      buildChildren(4, sqValue.replace('sq', 'qx'), sqLabel.replace('市区', '区县'))
+      buildChildren(
+        4,
+        sqValue.replace('sq', 'qx'),
+        sqLabel.replace('市区', '区县')
+      )
   )
 );
 

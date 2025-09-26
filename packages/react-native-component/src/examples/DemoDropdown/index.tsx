@@ -3,7 +3,13 @@
  * description: 把各种场景、API 都运用了
  */
 
-import { Cell, Dropdown, Tree, Portal, Button } from '@tastien/react-native-component';
+import {
+  Cell,
+  Dropdown,
+  Tree,
+  Portal,
+  Button,
+} from '@/react-native-component/components';
 import React, { useState, useRef, useCallback } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 
@@ -40,11 +46,13 @@ const itemOptions3 = [
   })),
 ];
 
-const itemOptions4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11, 12, 13, 14].map((v) => ({
-  label: `商品分类${v}`,
-  value: v,
-  badge: v,
-}));
+const itemOptions4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11, 12, 13, 14].map(
+  (v) => ({
+    label: `商品分类${v}`,
+    value: v,
+    badge: v,
+  })
+);
 
 const BasicDropdown: React.FC = () => {
   const [values, setValues] = useState({
@@ -71,12 +79,18 @@ const BasicDropdown: React.FC = () => {
       <Cell.Group title='基础用法'>
         <Text>暂无数据</Text>
         <Dropdown>
-          <Dropdown.Item options={[]} placeholder='请选择' titleTextClassName='text-[#098]' />
+          <Dropdown.Item
+            options={[]}
+            placeholder='请选择'
+            titleTextClassName='text-[#098]'
+          />
         </Dropdown>
         <View style={{ height: 200 }} />
 
         <Text>自定义布局 左右对齐</Text>
-        <Dropdown style={{ justifyContent: 'space-between', paddingHorizontal: 12 }}>
+        <Dropdown
+          style={{ justifyContent: 'space-between', paddingHorizontal: 12 }}
+        >
           <Dropdown.Item
             search
             options={itemOptions}

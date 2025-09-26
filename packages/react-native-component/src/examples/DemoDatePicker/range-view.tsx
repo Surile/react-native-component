@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const defaultValueView: [Date, Date] = [
   new Date(2020, 6, 20, 18, 40, 10),
@@ -17,7 +17,8 @@ const onChangeLog = (v: [Date | null, Date | null]) => {
 };
 
 const BasicDatePickerViewRangeView: React.FC = () => {
-  const [value, setValue] = useState<[Date | null, Date | null]>(defaultValueView);
+  const [value, setValue] =
+    useState<[Date | null, Date | null]>(defaultValueView);
 
   return (
     <Tst.Card title='时间段视图'>

@@ -1,10 +1,9 @@
 ---
-title: Blank
+title: ActionSheet
 description: An example component to help you get started.
-categories: [基础组件]
 ---
 
-import { BlankPreview } from '@docs/components/examples';
+import { ActionSheetPreview } from '@docs/components/examples';
 
 <ExternalLinks
   links={[
@@ -26,12 +25,12 @@ import { BlankPreview } from '@docs/components/examples';
     <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
       ## Preview
     </div>
-    <PreviewCard preview={<BlankPreview />} />
+    <PreviewCard preview={<ActionSheetPreview />} />
   </TabsContent>
   <TabsContent value="code">
     ```json doc-gen:file
     {
-      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoBlank/index.tsx",
+      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoActionSheet/index.tsx",
       "codeblock": {
         "lang": "tsx"
       }
@@ -49,17 +48,32 @@ import { BlankPreview } from '@docs/components/examples';
     </TabsTrigger>
   </TabsList>
   <TabsContent value='cli'>
-    <CommandTabs args={['add', 'http://localhost:3000/r/blank.json']} />
+    <CommandTabs
+      args={[
+        'add',
+        'https://rnr-registry-template-docs.vercel.app/r/example-button.json',
+      ]}
+    />
   </TabsContent>
 </Tabs>
 
 ### 使用
 
 ```tsx
-import Blank from '@/components/Blank';
-import { Text } from 'react-native';
+import ActionSheet from '@/components/ActionSheet';
 
-<Blank top bottom style={blankStyle} size='s'>
-  <Text style={ctxStyle}>size="s"</Text>
-</Blank>;
+const show = () => {
+  ActionSheet({
+    actions: ['选项一', '选项二'],
+  })
+    .then(({ item, index }) => {
+      console.log('提示弹窗 -> 选项');
+      console.log(item);
+      console.log(index);
+    })
+    .catch((e) => {
+      console.log('提示弹窗 -> 关闭');
+      console.log(e);
+    });
+};
 ```

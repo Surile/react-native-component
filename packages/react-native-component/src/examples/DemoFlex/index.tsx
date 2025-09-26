@@ -3,7 +3,7 @@
  * description: 把各种场景、API 都运用了
  */
 
-import { Space, Card, Flex, Button } from '@tastien/react-native-component';
+import { Space, Card, Flex, Button } from '@/react-native-component/components';
 import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
 

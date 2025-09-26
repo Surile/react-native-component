@@ -3,7 +3,7 @@
  * description: 简单的展示。
  */
 
-import { Empty } from '@tastien/react-native-component';
+import { Empty } from '@/react-native-component/components';
 
 const EmptyBase = () => {
   return <Empty />;

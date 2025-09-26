@@ -3,7 +3,12 @@
  * description: 把各种场景、API 都运用了
  */
 
-import { Button, Card, Progress, Space } from '@tastien/react-native-component';
+import {
+  Button,
+  Card,
+  Progress,
+  Space,
+} from '@/react-native-component/components';
 import React, { useState, useEffect, useCallback, memo, useRef } from 'react';
 import { ScrollView } from 'react-native';
 

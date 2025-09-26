@@ -3,7 +3,7 @@
  * description: 点击图标切换输入框内容是否明文。
  */
 
-import { Cell, PasswordInput } from '@tastien/react-native-component';
+import { Cell, PasswordInput } from '@/react-native-component/components';
 import React, { useState } from 'react';
 import { ScrollView } from 'react-native';
 
@@ -18,7 +18,10 @@ const DemoPasswordInput: React.FC = () => {
       </Cell.Group>
 
       <Cell.Group title='状态控制'>
-        <Cell title='默认' value={<PasswordInput bordered defaultSecureTextEntry={false} />} />
+        <Cell
+          title='默认'
+          value={<PasswordInput bordered defaultSecureTextEntry={false} />}
+        />
         <Cell
           title='默认:受控'
           value={

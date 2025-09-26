@@ -3,7 +3,7 @@
  * description: 使用 dependencies 动态渲染。
  */
 
-import { Card, Form, Field } from '@tastien/react-native-component';
+import { Card, Form, Field } from '@/react-native-component/components';
 import React from 'react';
 
 let index = 0;
@@ -22,7 +22,12 @@ const BasicFormDeps: React.FC = () => {
           <Field.TextInput required title='用户名' placeholder='请输入用户名' />
         </Form.Item>
         <Form.Item name='password'>
-          <Field.TextInput required title='密码' placeholder='请输入密码' divider={false} />
+          <Field.TextInput
+            required
+            title='密码'
+            placeholder='请输入密码'
+            divider={false}
+          />
         </Form.Item>
       </Form>
     </Card>

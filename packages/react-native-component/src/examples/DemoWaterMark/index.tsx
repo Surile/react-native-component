@@ -3,7 +3,7 @@
  * description: 给指定内容添加文字。
  */
 
-import { WaterMark, Blank, Space } from '@tastien/react-native-component';
+import { WaterMark, Blank, Space } from '@/react-native-component/components';
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 

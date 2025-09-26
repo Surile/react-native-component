@@ -3,7 +3,7 @@
  * description: 共有两个种模式可以使用。
  */
 
-import { Space, NoticeBar } from '@tastien/react-native-component';
+import { Space, NoticeBar } from '@/react-native-component/components';
 
 const NoticeBarMode = () => {
   return (

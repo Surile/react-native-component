@@ -3,7 +3,7 @@
  * description: 把各种场景、API 都运用了
  */
 
-import { Cell, Notify } from '@tastien/react-native-component';
+import { Cell, Notify } from '@/react-native-component/components';
 import React, { useState } from 'react';
 import { ScrollView } from 'react-native';
 

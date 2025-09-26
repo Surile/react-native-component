@@ -10,7 +10,7 @@ import DescriptionBase from './base';
 import DescriptionSize from './size';
 import DescriptionOther from './other';
 import DescriptionEmpty from './empty';
-import { Space } from '@tastien/react-native-component';
+import { Space } from '@/react-native-component/components';
 
 const DemoDescription: React.FC = () => {
   return (

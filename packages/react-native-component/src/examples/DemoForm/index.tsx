@@ -1,5 +1,4 @@
-import { Space } from '@tastien/react-native-component';
-import React from 'react';
+import { Space } from '@/react-native-component/components';
 
 import Base from './base';
 import Ref from './ref';

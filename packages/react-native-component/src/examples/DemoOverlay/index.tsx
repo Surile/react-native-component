@@ -3,12 +3,19 @@
  * description: 把各种场景、API 都运用了
  */
 
-import { Space, Card, Overlay, Button } from '@tastien/react-native-component';
+import {
+  Space,
+  Card,
+  Overlay,
+  Button,
+} from '@/react-native-component/components';
 import React, { useState } from 'react';
 import { View, Text, TouchableWithoutFeedback } from 'react-native';
 
 const BasicOverlay: React.FC = () => {
-  const [state, setState] = useState<Record<'normal' | 'inset' | 'backgroundColor', boolean>>({
+  const [state, setState] = useState<
+    Record<'normal' | 'inset' | 'backgroundColor', boolean>
+  >({
     normal: false,
     inset: false,
     backgroundColor: false,
@@ -96,7 +103,8 @@ const BasicOverlay: React.FC = () => {
             }}
           >
             <Text>
-              外层嵌套 TouchableWithoutFeedback 可以阻断子元素的点击事件向外传递，避免误触发关闭。
+              外层嵌套 TouchableWithoutFeedback
+              可以阻断子元素的点击事件向外传递，避免误触发关闭。
             </Text>
 
             <Text>一般情况不在内部放置子元素，而是和其他弹出层同层级。</Text>

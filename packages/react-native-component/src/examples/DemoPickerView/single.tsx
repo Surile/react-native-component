@@ -1,4 +1,4 @@
-import { Cell, PickerView } from '@tastien/react-native-component';
+import { Cell, PickerView } from '@/react-native-component/components';
 import React, { useState } from 'react';
 
 const columns1 = new Array(10).fill(0).map((_, index) => ({

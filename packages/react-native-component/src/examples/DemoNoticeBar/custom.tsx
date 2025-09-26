@@ -3,8 +3,7 @@
  * description: 根据自身需求自定义组件。
  */
 
-import { Space, NoticeBar, SuccessCircleOutline } from '@tastien/react-native-component';
-import React from 'react';
+import { Space, NoticeBar } from '@/react-native-component/components';
 
 const NoticeBarCustom = () => {
   return (

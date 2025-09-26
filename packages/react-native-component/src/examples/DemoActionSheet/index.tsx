@@ -7,7 +7,7 @@ import React from 'react';
 import Tst from '@/react-native-component/index';
 import ActionSheet from '@/react-native-component/components/action-sheet';
 
-export const ActionSheetBase: React.FC = () => {
+const ActionSheetBase: React.FC = () => {
   return (
     <>
       <Tst.Cell.Group title='基础用法'>

@@ -14,7 +14,7 @@ import {
   Button,
   DeleteFill,
   Dialog,
-} from '@tastien/react-native-component';
+} from '@/react-native-component/components';
 
 const BasicFormList: React.FC = () => {
   const [form] = Form.useForm();
@@ -37,7 +37,12 @@ const BasicFormList: React.FC = () => {
             },
           ]}
         >
-          <Field.TextInput required title='用户名' placeholder='请输入用户名' divider={false} />
+          <Field.TextInput
+            required
+            title='用户名'
+            placeholder='请输入用户名'
+            divider={false}
+          />
         </Form.Item>
 
         <Form.List name='address'>
@@ -77,7 +82,11 @@ const BasicFormList: React.FC = () => {
                           },
                         ]}
                       >
-                        <Field.TextInput required title='邮编' placeholder='请输入邮编' />
+                        <Field.TextInput
+                          required
+                          title='邮编'
+                          placeholder='请输入邮编'
+                        />
                       </Form.Item>
                       <Form.Item
                         name={[field.name, 'city']}

@@ -3,7 +3,7 @@
  * description: 对话框内有一个输入框，支持数字、单/多行字符串，对应 numberInput、textInput 可以自定义输入框一些属性。异步操作配合 `beforeClose`、`onPressCancel`、`onPressConfirm` 控制点击按钮的 loading 状态。
  */
 
-import { Cell, Dialog, Toast } from '@tastien/react-native-component';
+import { Cell, Dialog, Toast } from '@/react-native-component/components';
 import React from 'react';
 
 const BasicDialogInput: React.FC = () => {
@@ -57,7 +57,8 @@ const BasicDialogInput: React.FC = () => {
           Dialog.input({
             title: '输入框',
             placeholder: '请输入内容',
-            message: '一袋米要抗几楼，一袋米要抗二楼，一袋米要给多了，一袋米由我洗嘞',
+            message:
+              '一袋米要抗几楼，一袋米要抗二楼，一袋米要给多了，一袋米由我洗嘞',
             onPressConfirm: (t) => {
               console.log(t);
             },
@@ -124,7 +125,8 @@ const BasicDialogInput: React.FC = () => {
           Dialog.input({
             title: '输入框？',
             placeholder: '请输入内容',
-            message: '一袋米要抗几楼，一袋米要抗二楼，一袋米要给多了，一袋米由我洗嘞',
+            message:
+              '一袋米要抗几楼，一袋米要抗二楼，一袋米要给多了，一袋米由我洗嘞',
             type: 'textarea',
             defaultValue: '343434',
 

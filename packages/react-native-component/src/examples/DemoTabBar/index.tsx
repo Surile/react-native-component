@@ -13,7 +13,7 @@ import {
   Divider,
   TabBar,
   VolumeOutline,
-} from '@tastien/react-native-component';
+} from '@/react-native-component/components';
 
 const bottomBarIconStyle: ViewStyle = {
   alignSelf: 'center',

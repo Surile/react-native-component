@@ -3,7 +3,11 @@
  * description: icon={null} 可以隐藏图标，或传入一个自定义组件
  */
 
-import { Space, ArrowDownOutline, Empty } from '@tastien/react-native-component';
+import {
+  Space,
+  ArrowDownOutline,
+  Empty,
+} from '@/react-native-component/components';
 
 const EmptyIcon = () => {
   return (

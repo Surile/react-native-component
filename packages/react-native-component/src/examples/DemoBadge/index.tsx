@@ -1,5 +1,4 @@
-import { Badge, Space } from '@tastien/react-native-component';
-import React from 'react';
+import { Space } from '@/react-native-component/components';
 import { ScrollView } from 'react-native';
 
 import BadgeBase from './base';

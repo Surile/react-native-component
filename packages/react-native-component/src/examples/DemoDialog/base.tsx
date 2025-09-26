@@ -3,7 +3,7 @@
  * description: 采用函数的方式使用，自定义标题、message、按钮，异步操作配合 `beforeClose` 控制点击按钮的 loading 状态。
  */
 
-import { Cell, Dialog } from '@tastien/react-native-component';
+import { Cell, Dialog } from '@/react-native-component/components';
 import React from 'react';
 
 const DialogBase: React.FC = () => {
@@ -28,7 +28,8 @@ const DialogBase: React.FC = () => {
         onPress={() => {
           Dialog({
             title: '这里是标题',
-            message: '一袋米要抗几楼，一袋米要抗二楼，一袋米要给多了，一袋米由我洗嘞',
+            message:
+              '一袋米要抗几楼，一袋米要抗二楼，一袋米要给多了，一袋米由我洗嘞',
           }).then((action) => {
             console.log('提示弹窗：', action);
           });
@@ -41,7 +42,8 @@ const DialogBase: React.FC = () => {
           Dialog({
             title: '这里是标题',
             showClose: true,
-            message: '一袋米要抗几楼，一袋米要抗二楼，一袋米要给多了，一袋米由我洗嘞',
+            message:
+              '一袋米要抗几楼，一袋米要抗二楼，一袋米要给多了，一袋米由我洗嘞',
           }).then((action) => {
             console.log('提示弹窗：', action);
           });
@@ -94,7 +96,8 @@ const DialogBase: React.FC = () => {
         onPress={() => {
           Dialog.confirm({
             title: '提示',
-            message: '一袋米要抗几楼，一袋米要抗二楼，一袋米要给多了，一袋米由我洗嘞',
+            message:
+              '一袋米要抗几楼，一袋米要抗二楼，一袋米要给多了，一袋米由我洗嘞',
           });
         }}
       />
@@ -104,7 +107,8 @@ const DialogBase: React.FC = () => {
         onPress={() => {
           Dialog.confirm({
             title: '提示',
-            message: '一袋米要抗几楼，一袋米要抗二楼，一袋米要给多了，一袋米由我洗嘞',
+            message:
+              '一袋米要抗几楼，一袋米要抗二楼，一袋米要给多了，一袋米由我洗嘞',
             confirmTextClassName: 'text-[#F30]',
             confirmButtonText: '删除',
           });
@@ -116,7 +120,8 @@ const DialogBase: React.FC = () => {
         onPress={() => {
           Dialog.confirm({
             title: '提示',
-            message: '一袋米要抗几楼，一袋米要抗二楼，一袋米要给多了，一袋米由我洗嘞',
+            message:
+              '一袋米要抗几楼，一袋米要抗二楼，一袋米要给多了，一袋米由我洗嘞',
             cancelButtonTextBold: true,
             // 默认值就是 true
             // confirmButtonTextBold: true,

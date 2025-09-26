@@ -3,7 +3,7 @@
  * description: 对可能出错的组件进行包裹
  */
 
-import { ErrorBoundary } from '@tastien/react-native-component';
+import { ErrorBoundary } from '@/react-native-component/components';
 import React, { useMemo } from 'react';
 import { Text } from 'react-native';
 

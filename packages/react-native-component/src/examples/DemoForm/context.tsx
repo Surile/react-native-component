@@ -3,7 +3,13 @@
  * description: 使用 Form.Provider 关联两个独立表单。
  */
 
-import { Form, Card, Field, Space, Button } from '@tastien/react-native-component';
+import {
+  Form,
+  Card,
+  Field,
+  Space,
+  Button,
+} from '@/react-native-component/components';
 import React from 'react';
 import { Text } from 'react-native';
 
@@ -93,7 +99,10 @@ const BasicFormContext: React.FC = () => {
         }}
       >
         <Space>
-          <Text>Support global `validateMessages` config and communication between forms.</Text>
+          <Text>
+            Support global `validateMessages` config and communication between
+            forms.
+          </Text>
 
           <FormOne />
           <FormTwo />

@@ -3,7 +3,7 @@
  * description: 非受控、受控两种使用方式，简单的输入限制
  */
 
-import { Cell, NumberInput } from '@tastien/react-native-component';
+import { Cell, NumberInput } from '@/react-native-component/components';
 import React, { useState } from 'react';
 
 const consoleNum = (n: number) => {
@@ -15,10 +15,19 @@ const BasicNumberInputBase: React.FC = () => {
 
   return (
     <Cell.Group title='基础用法'>
-      <Cell title='非受控' value={<NumberInput placeholder='请输入' onChange={consoleNum} />} />
+      <Cell
+        title='非受控'
+        value={<NumberInput placeholder='请输入' onChange={consoleNum} />}
+      />
       <Cell
         title='默认值'
-        value={<NumberInput placeholder='请输入' defaultValue={1000} onChange={consoleNum} />}
+        value={
+          <NumberInput
+            placeholder='请输入'
+            defaultValue={1000}
+            onChange={consoleNum}
+          />
+        }
       />
       <Cell
         title='默认值:整数'

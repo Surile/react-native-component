@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const DemoTag: React.FC = () => {
   return (
@@ -19,9 +19,18 @@ const DemoTag: React.FC = () => {
 
       <Tst.Cell.Group title='基础用法'>
         <Tst.Cell title='default 类型' value={<Tst.Tag>标签</Tst.Tag>} />
-        <Tst.Cell title='primary 类型' value={<Tst.Tag type='primary'>标签</Tst.Tag>} />
-        <Tst.Cell title='hazy 类型' value={<Tst.Tag type='hazy'>标签</Tst.Tag>} />
-        <Tst.Cell title='ghost 类型' value={<Tst.Tag type='ghost'>标签</Tst.Tag>} />
+        <Tst.Cell
+          title='primary 类型'
+          value={<Tst.Tag type='primary'>标签</Tst.Tag>}
+        />
+        <Tst.Cell
+          title='hazy 类型'
+          value={<Tst.Tag type='hazy'>标签</Tst.Tag>}
+        />
+        <Tst.Cell
+          title='ghost 类型'
+          value={<Tst.Tag type='ghost'>标签</Tst.Tag>}
+        />
         <Tst.Cell
           title='ghost 类型:细边框'
           value={
@@ -98,13 +107,34 @@ const DemoTag: React.FC = () => {
         />
       </Tst.Cell.Group>
       <Tst.Cell.Group title='自定义颜色'>
-        <Tst.Cell title='#FFA238' value={<Tst.Tag innerClassName='bg-[#FFA238]'>标签</Tst.Tag>} />
-        <Tst.Cell title='#FA541C' value={<Tst.Tag innerClassName='bg-[#FA541C]'>标签</Tst.Tag>} />
-        <Tst.Cell title='#34B545' value={<Tst.Tag innerClassName='bg-[#34B545]'>标签</Tst.Tag>} />
-        <Tst.Cell title='#AD101A' value={<Tst.Tag innerClassName='bg-[#AD101A]'>标签</Tst.Tag>} />
-        <Tst.Cell title='#1BA2FC' value={<Tst.Tag innerClassName='bg-[#1BA2FC]'>标签</Tst.Tag>} />
-        <Tst.Cell title='#7D45E6' value={<Tst.Tag innerClassName='bg-[#7D45E6]'>标签</Tst.Tag>} />
-        <Tst.Cell title='#0065FE' value={<Tst.Tag innerClassName='bg-[#0065FE]'>标签</Tst.Tag>} />
+        <Tst.Cell
+          title='#FFA238'
+          value={<Tst.Tag innerClassName='bg-[#FFA238]'>标签</Tst.Tag>}
+        />
+        <Tst.Cell
+          title='#FA541C'
+          value={<Tst.Tag innerClassName='bg-[#FA541C]'>标签</Tst.Tag>}
+        />
+        <Tst.Cell
+          title='#34B545'
+          value={<Tst.Tag innerClassName='bg-[#34B545]'>标签</Tst.Tag>}
+        />
+        <Tst.Cell
+          title='#AD101A'
+          value={<Tst.Tag innerClassName='bg-[#AD101A]'>标签</Tst.Tag>}
+        />
+        <Tst.Cell
+          title='#1BA2FC'
+          value={<Tst.Tag innerClassName='bg-[#1BA2FC]'>标签</Tst.Tag>}
+        />
+        <Tst.Cell
+          title='#7D45E6'
+          value={<Tst.Tag innerClassName='bg-[#7D45E6]'>标签</Tst.Tag>}
+        />
+        <Tst.Cell
+          title='#0065FE'
+          value={<Tst.Tag innerClassName='bg-[#0065FE]'>标签</Tst.Tag>}
+        />
         <Tst.Cell
           title='#FFA238'
           value={

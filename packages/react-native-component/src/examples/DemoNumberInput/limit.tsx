@@ -3,7 +3,7 @@
  * description: 最小、最小值，小数位控制
  */
 
-import { Cell, NumberInput } from '@tastien/react-native-component';
+import { Cell, NumberInput } from '@/react-native-component/components';
 import React from 'react';
 
 const consoleNum = (n: number) => {
@@ -55,7 +55,12 @@ const BasicNumberInputLimit: React.FC = () => {
       <Cell
         title='默认值:4位小数限制'
         value={
-          <NumberInput type='number' placeholder='请输入' limitDecimals={4} onChange={consoleNum} />
+          <NumberInput
+            type='number'
+            placeholder='请输入'
+            limitDecimals={4}
+            onChange={consoleNum}
+          />
         }
       />
       <Cell
@@ -117,7 +122,9 @@ const BasicNumberInputLimit: React.FC = () => {
       />
       <Cell
         title='最小值是0'
-        value={<NumberInput placeholder='请输入' min={0} onChange={consoleNum} />}
+        value={
+          <NumberInput placeholder='请输入' min={0} onChange={consoleNum} />
+        }
         divider={false}
       />
     </Cell.Group>

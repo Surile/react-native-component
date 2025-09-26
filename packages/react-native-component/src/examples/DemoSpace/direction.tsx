@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Text } from 'react-native';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const BasicSpaceDirection: React.FC = () => {
   return (
@@ -53,7 +53,9 @@ const BasicSpaceDirection: React.FC = () => {
         </Tst.Card>
 
         <Tst.Card title='方向:horizontal:wrap'>
-          <Text>多行的情况下边距不好消除，可以使用 shrink（0.3.17+） 收缩底边距</Text>
+          <Text>
+            多行的情况下边距不好消除，可以使用 shrink（0.3.17+） 收缩底边距
+          </Text>
 
           <Tst.Space gap='m' direction='horizontal' wrap shrink>
             <Tst.Button text='Button' />

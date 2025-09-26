@@ -3,7 +3,7 @@
  * description: 把各种场景、API 都运用了
  */
 
-import { Sidebar, Space } from '@tastien/react-native-component';
+import { Sidebar, Space } from '@/react-native-component/components';
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 

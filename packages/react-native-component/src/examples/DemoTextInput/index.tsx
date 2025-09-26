@@ -3,7 +3,12 @@
  * description: 把各种场景、API 都运用了
  */
 
-import { Button, Cell, SuccessOutline, TextInput } from '@tastien/react-native-component';
+import {
+  Button,
+  Cell,
+  SuccessOutline,
+  TextInput,
+} from '@/react-native-component/components';
 import React, { useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 
@@ -13,14 +18,25 @@ const DemoTextInput: React.FC = () => {
   return (
     <ScrollView>
       <Cell.Group title='基础用法'>
-        <Cell title='text' value={<TextInput placeholder='不可编辑' editable={false} />} />
+        <Cell
+          title='text'
+          value={<TextInput placeholder='不可编辑' editable={false} />}
+        />
 
-        <Cell title='text' value={<TextInput placeholder='不可编辑' bordered editable={false} />} />
+        <Cell
+          title='text'
+          value={<TextInput placeholder='不可编辑' bordered editable={false} />}
+        />
 
         <Cell
           title='text'
           value={
-            <TextInput placeholder='不可编辑' value='不可编辑？？？' bordered editable={false} />
+            <TextInput
+              placeholder='不可编辑'
+              value='不可编辑？？？'
+              bordered
+              editable={false}
+            />
           }
         />
 
@@ -67,25 +83,46 @@ const DemoTextInput: React.FC = () => {
           }
         />
 
-        <Cell title='text' value={<TextInput placeholder='内容右对齐' textAlign='right' />} />
+        <Cell
+          title='text'
+          value={<TextInput placeholder='内容右对齐' textAlign='right' />}
+        />
 
-        <Cell title='text' value={<TextInput placeholder='内容居中' textAlign='center' />} />
+        <Cell
+          title='text'
+          value={<TextInput placeholder='内容居中' textAlign='center' />}
+        />
 
-        <Cell title='text' value={<TextInput placeholder='输入内容有删除按钮' clearable />} />
+        <Cell
+          title='text'
+          value={<TextInput placeholder='输入内容有删除按钮' clearable />}
+        />
 
-        <Cell title='text' value={<TextInput placeholder='一个有边框的输入框' bordered />} />
+        <Cell
+          title='text'
+          value={<TextInput placeholder='一个有边框的输入框' bordered />}
+        />
 
         <Cell
           title='text'
           value={
-            <TextInput placeholder='一个有边框的输入框且输入内容有删除按钮' bordered clearable />
+            <TextInput
+              placeholder='一个有边框的输入框且输入内容有删除按钮'
+              bordered
+              clearable
+            />
           }
         />
 
         <Cell
           title='text'
           value={
-            <TextInput placeholder='输入框视觉内有额外元素' prefix='prefixAAA' bordered clearable />
+            <TextInput
+              placeholder='输入框视觉内有额外元素'
+              prefix='prefixAAA'
+              bordered
+              clearable
+            />
           }
         />
 
@@ -96,7 +133,12 @@ const DemoTextInput: React.FC = () => {
               placeholder='请填写验证码'
               prefix={<SuccessOutline size={16} color='#680' />}
               suffix={
-                <Button type='primary' size='xs' text='发送验证码' style={{ marginLeft: 8 }} />
+                <Button
+                  type='primary'
+                  size='xs'
+                  text='发送验证码'
+                  style={{ marginLeft: 8 }}
+                />
               }
               bordered
               clearable
@@ -185,17 +227,29 @@ const DemoTextInput: React.FC = () => {
           }
         />
 
-        <Cell title='textarea' value={<TextInput type='textarea' placeholder='多行文本' />} />
+        <Cell
+          title='textarea'
+          value={<TextInput type='textarea' placeholder='多行文本' />}
+        />
 
         <Cell
           vertical
           title='textarea'
-          value={<TextInput type='textarea' editable={false} placeholder='多行文本' bordered />}
+          value={
+            <TextInput
+              type='textarea'
+              editable={false}
+              placeholder='多行文本'
+              bordered
+            />
+          }
         />
 
         <Cell
           title='clear:有着就一直显示'
-          value={<TextInput clearable clearTrigger='always' placeholder='单行文本' />}
+          value={
+            <TextInput clearable clearTrigger='always' placeholder='单行文本' />
+          }
         />
 
         <Cell
@@ -223,7 +277,12 @@ const DemoTextInput: React.FC = () => {
             bordered
             addonGroupClassName='mr-2'
           />
-          <TextInput placeholder='请输入' addonAfter='kg' inputWidth={90} bordered />
+          <TextInput
+            placeholder='请输入'
+            addonAfter='kg'
+            inputWidth={90}
+            bordered
+          />
         </View>
         <Text>自定义大小</Text>
         <View

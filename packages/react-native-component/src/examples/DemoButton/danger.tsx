@@ -4,7 +4,7 @@
  */
 
 import React, { memo } from 'react';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const onPress = () => {
   console.log('点击按钮');

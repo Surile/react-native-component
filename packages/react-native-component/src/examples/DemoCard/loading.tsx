@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Text } from 'react-native';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const CardLoading: React.FC = () => {
   return (
@@ -21,7 +21,11 @@ const CardLoading: React.FC = () => {
           <Text>Card content</Text>
           <Text>Card content</Text>
         </Tst.Card>
-        <Tst.Card loading title='Default card' extra={<Tst.Button type='link' text='More' />}>
+        <Tst.Card
+          loading
+          title='Default card'
+          extra={<Tst.Button type='link' text='More' />}
+        >
           <Text>Card content</Text>
           <Text>Card content</Text>
           <Text>Card content</Text>

@@ -3,7 +3,7 @@
  * description: 内部有滚动，未打开时整个面板都可以触发打开，打开时可以滚动内容同时向下滑动可以触发关闭。新开窗口模拟移动设备体验更好。
  */
 
-import { FloatingPanel } from '@tastien/react-native-component';
+import { FloatingPanel } from '@/react-native-component/components';
 import React from 'react';
 import { Text, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';

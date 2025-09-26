@@ -3,12 +3,22 @@
  * description: 把各种场景、API 都运用了
  */
 
-import { Cell, DoubleArrowClockwiseOutline, Loading } from '@tastien/react-native-component';
+import {
+  Cell,
+  DoubleArrowClockwiseOutline,
+  Loading,
+} from '@/react-native-component/components';
 import React, { useEffect, useRef } from 'react';
 
 import { Animated, ColorValue } from 'react-native';
 
-const CustomLoading = ({ size, color }: { size?: number; color?: ColorValue }) => {
+const CustomLoading = ({
+  size,
+  color,
+}: {
+  size?: number;
+  color?: ColorValue;
+}) => {
   const spin = useRef(new Animated.Value(0));
 
   useEffect(() => {
@@ -89,10 +99,14 @@ const DemoLoading: React.FC = () => {
       </Cell.Group>
 
       <Cell.Group title='自定义loading'>
-        <Loading loadingIcon={<CustomLoading size={40} color='#098' />}>加载文案...</Loading>
+        <Loading loadingIcon={<CustomLoading size={40} color='#098' />}>
+          加载文案...
+        </Loading>
       </Cell.Group>
       <Cell.Group title='自定义loading2'>
-        <Loading loadingIcon={() => <CustomLoading size={40} color='#098' />}>加载文案...</Loading>
+        <Loading loadingIcon={() => <CustomLoading size={40} color='#098' />}>
+          加载文案...
+        </Loading>
       </Cell.Group>
     </>
   );

@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const CheckboxBase: React.FC = () => {
   const [value, setValue] = useState(true);
@@ -26,7 +26,11 @@ const CheckboxBase: React.FC = () => {
               console.log('当前状态：', v);
             }}
           />
-          <Tst.Checkbox defaultValue label='自定义 icon 边距' iconStyle={{ marginRight: 16 }} />
+          <Tst.Checkbox
+            defaultValue
+            label='自定义 icon 边距'
+            iconStyle={{ marginRight: 16 }}
+          />
           <Tst.Checkbox label='受控:不更新' value={value} />
           <Tst.Checkbox label='受控:更新' value={value} onChange={setValue} />
         </Tst.Space>
@@ -41,13 +45,21 @@ const CheckboxBase: React.FC = () => {
 
       <Tst.Card title='自定义'>
         <Tst.Space>
-          <Tst.Checkbox defaultValue activeColor='#f30' label='自定义激活时图标颜色' />
+          <Tst.Checkbox
+            defaultValue
+            activeColor='#f30'
+            label='自定义激活时图标颜色'
+          />
           <Tst.Checkbox defaultValue iconSize={30} label='自定义图标大小' />
         </Tst.Space>
       </Tst.Card>
 
       <Tst.Card title='禁用文本点击'>
-        <Tst.Checkbox labelDisabled defaultValue label='点击图标可以更新状态，点击文字不更新状态' />
+        <Tst.Checkbox
+          labelDisabled
+          defaultValue
+          label='点击图标可以更新状态，点击文字不更新状态'
+        />
       </Tst.Card>
 
       <Tst.Card title='自定义图标'>
@@ -70,9 +82,17 @@ const CheckboxBase: React.FC = () => {
             label='点击图标响应切换'
             renderIcon={({ activeColor, size, active, onPress }) =>
               active ? (
-                <Tst.ArrowUpOutline color={activeColor} size={size} onPress={onPress} />
+                <Tst.ArrowUpOutline
+                  color={activeColor}
+                  size={size}
+                  onPress={onPress}
+                />
               ) : (
-                <Tst.ArrowDownOutline color={activeColor} size={size} onPress={onPress} />
+                <Tst.ArrowDownOutline
+                  color={activeColor}
+                  size={size}
+                  onPress={onPress}
+                />
               )
             }
           />

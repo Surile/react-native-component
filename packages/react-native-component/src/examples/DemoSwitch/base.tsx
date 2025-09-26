@@ -3,7 +3,7 @@
  * description: 最简单的用法，受控、非受控。
  */
 
-import { Space, Switch } from '@tastien/react-native-component';
+import { Space, Switch } from '@/react-native-component/components';
 import React, { useState } from 'react';
 
 const BasicSwitchBase: React.FC = () => {

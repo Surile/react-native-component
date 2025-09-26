@@ -3,7 +3,7 @@
  * description: 通过 `size` 可以自定义元素大小。
  */
 
-import { Space, Switch } from '@tastien/react-native-component';
+import { Space, Switch } from '@/react-native-component/components';
 import React from 'react';
 
 import { Text } from 'react-native';

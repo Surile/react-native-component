@@ -4,7 +4,7 @@
  */
 
 import React, { memo } from 'react';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const onPress = () => {
   console.log('点击按钮 => ', new Date().getTime());
@@ -27,7 +27,11 @@ const ButtonType: React.FC = () => {
             onPress={onPress}
             onPressDebounceWait={300}
           />
-          <Tst.Button type='outline' text='outline 边框按钮' onPress={onPress} />
+          <Tst.Button
+            type='outline'
+            text='outline 边框按钮'
+            onPress={onPress}
+          />
           <Tst.Button type='ghost' text='ghost 幽灵按钮' onPress={onPress} />
           <Tst.Button type='link' text='link 链接按钮' onPress={onPress} />
         </Tst.Space>

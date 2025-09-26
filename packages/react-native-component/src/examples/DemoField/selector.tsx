@@ -3,7 +3,7 @@
  * description: 适合单选、多选。
  */
 
-import { Cell, Field, TreeOption } from '@tastien/react-native-component';
+import { Cell, Field, TreeOption } from '@/react-native-component/components';
 import React, { useState } from 'react';
 import { Text } from 'react-native';
 
@@ -55,10 +55,16 @@ const BasicFieldSelector: React.FC = () => {
           if (opts.length) {
             return (
               <>
-                <Text style={{ textAlign: 'right', fontSize: 14, color: '#666' }}>
+                <Text
+                  style={{ textAlign: 'right', fontSize: 14, color: '#666' }}
+                >
                   {opts[0].label}
                 </Text>
-                <Text style={{ textAlign: 'right', fontSize: 12, color: '#098' }}>其他描述</Text>
+                <Text
+                  style={{ textAlign: 'right', fontSize: 12, color: '#098' }}
+                >
+                  其他描述
+                </Text>
               </>
             );
           }
@@ -170,7 +176,11 @@ const BasicFieldSelector: React.FC = () => {
           const texts: string[] = [];
           const findText = (list: TreeOption[]) => {
             list.forEach((item) => {
-              if (Array.isArray(v) ? v.indexOf(item.value as number) > -1 : v === item.value) {
+              if (
+                Array.isArray(v)
+                  ? v.indexOf(item.value as number) > -1
+                  : v === item.value
+              ) {
                 texts.push(item.label);
               }
               if (item.children?.length) {

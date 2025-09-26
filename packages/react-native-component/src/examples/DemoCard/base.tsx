@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Text } from 'react-native';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const CardBase: React.FC = () => {
   return (
@@ -25,14 +25,20 @@ const CardBase: React.FC = () => {
           <Text>Card content</Text>
         </Tst.Card>
 
-        <Tst.Card title='Default card' extra={<Tst.Button type='link' text='More' />}>
+        <Tst.Card
+          title='Default card'
+          extra={<Tst.Button type='link' text='More' />}
+        >
           <Text>卡片有标题，有自定义标题扩展</Text>
           <Text>Card content</Text>
           <Text>Card content</Text>
           <Text>Card content</Text>
         </Tst.Card>
 
-        <Tst.Card title='Default card' extra={<Tst.Button type='link' text='More' />}>
+        <Tst.Card
+          title='Default card'
+          extra={<Tst.Button type='link' text='More' />}
+        >
           <Text>卡片有标题，有自定义标题扩展，有左侧自定义扩展</Text>
           <Text>Card content</Text>
           <Text>Card content</Text>
@@ -76,15 +82,25 @@ const CardBase: React.FC = () => {
         </Tst.Card>
 
         <Tst.Card title='title' bodyPadding={{ top: true, bottom: 32 }}>
-          <Text>自定义内容区域内边距 {`bodyPadding={{ top: true, bottom: 32 }}`}</Text>
+          <Text>
+            自定义内容区域内边距 {`bodyPadding={{ top: true, bottom: 32 }}`}
+          </Text>
           <Text>Card content</Text>
           <Text>Card content</Text>
           <Text>Card content</Text>
         </Tst.Card>
 
-        <Tst.Card title='title' bodyPadding={{ top: true, bottom: 32 }} bodyClassName='px-4 py-8'>
-          <Text>自定义内容区域样式 {`bodyStyle={{ paddingVertical: 40 }}`}</Text>
-          <Text>自定义内容区域内边距 {`bodyPadding={{ top: true, bottom: 32 }}`}</Text>
+        <Tst.Card
+          title='title'
+          bodyPadding={{ top: true, bottom: 32 }}
+          bodyClassName='px-4 py-8'
+        >
+          <Text>
+            自定义内容区域样式 {`bodyStyle={{ paddingVertical: 40 }}`}
+          </Text>
+          <Text>
+            自定义内容区域内边距 {`bodyPadding={{ top: true, bottom: 32 }}`}
+          </Text>
           <Text>Card content</Text>
           <Text>Card content</Text>
           <Text>Card content</Text>

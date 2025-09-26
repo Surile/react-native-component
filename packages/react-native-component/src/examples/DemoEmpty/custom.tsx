@@ -3,7 +3,7 @@
  * description: 根据自身需求自定义组件。
  */
 
-import { Space, Empty, Flex } from '@tastien/react-native-component';
+import { Space, Empty, Flex } from '@/react-native-component/components';
 import { Text, View } from 'react-native';
 
 const EmptyCustom = () => {

@@ -3,15 +3,22 @@
  * description: 单个时间选择器。
  */
 
-import { Cell, Field, Toast } from '@tastien/react-native-component';
+import { Cell, Field, Toast } from '@/react-native-component/components';
 import React, { useState } from 'react';
 
-const formatValueText = (_: [Date, Date], __: any, s: [string, string]): [string, string] => {
+const formatValueText = (
+  _: [Date, Date],
+  __: any,
+  s: [string, string]
+): [string, string] => {
   return [s[0], s[1]];
 };
 
 const BasicFieldDateRange: React.FC = () => {
-  const [value, setValue] = useState<[Date | null, Date | null]>([new Date(), new Date()]);
+  const [value, setValue] = useState<[Date | null, Date | null]>([
+    new Date(),
+    new Date(),
+  ]);
 
   return (
     <Cell.Group title='Field Date Range'>
@@ -61,7 +68,11 @@ const BasicFieldDateRange: React.FC = () => {
         placeholder={['请选择', '请选择']}
         editable={false}
       />
-      <Field.DateRange title='标题:非受控:Y-D' placeholder={['请选择', '请选择']} mode='Y-D' />
+      <Field.DateRange
+        title='标题:非受控:Y-D'
+        placeholder={['请选择', '请选择']}
+        mode='Y-D'
+      />
       <Field.DateRange
         title='标题:受控不更新'
         placeholder={['请选择', '请选择']}

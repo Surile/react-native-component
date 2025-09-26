@@ -3,7 +3,13 @@
  * description: 把各种场景、API 都运用了
  */
 
-import { Cell, PickerOptionCascade, Space, Button, Picker } from '@tastien/react-native-component';
+import {
+  Cell,
+  PickerOptionCascade,
+  Space,
+  Button,
+  Picker,
+} from '@/react-native-component/components';
 import React from 'react';
 import { ScrollView } from 'react-native';
 
@@ -51,7 +57,11 @@ const columns4 = buildChildren(8, 'sj', '省级', (sjValue, sjLabel) =>
     sjValue.replace('sj', 'sq'),
     sjLabel.replace('省级', '市区'),
     (sqValue, sqLabel) =>
-      buildChildren(4, sqValue.replace('sq', 'qx'), sqLabel.replace('市区', '区县'))
+      buildChildren(
+        4,
+        sqValue.replace('sq', 'qx'),
+        sqLabel.replace('市区', '区县')
+      )
   )
 );
 
@@ -78,9 +88,18 @@ const BasicPicker: React.FC = () => {
                 title: '这是单选',
                 columns: columns1,
                 beforeClose: (action, values, columns) => {
-                  console.log('单选:beforeClose:Promise   =>  action  => ', action);
-                  console.log('单选:beforeClose:Promise   =>  values  => ', values);
-                  console.log('单选:beforeClose:Promise   =>  columns  => ', columns);
+                  console.log(
+                    '单选:beforeClose:Promise   =>  action  => ',
+                    action
+                  );
+                  console.log(
+                    '单选:beforeClose:Promise   =>  values  => ',
+                    values
+                  );
+                  console.log(
+                    '单选:beforeClose:Promise   =>  columns  => ',
+                    columns
+                  );
 
                   return new Promise<boolean>((resolve) => {
                     setTimeout(() => {

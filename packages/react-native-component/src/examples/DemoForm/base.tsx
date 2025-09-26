@@ -3,7 +3,14 @@
  * description: 给 Form.Item 添加校验规则，form 表单实例关联表单并操作数据。
  */
 
-import { Form, Card, Toast, Field, Space, Button } from '@tastien/react-native-component';
+import {
+  Form,
+  Card,
+  Toast,
+  Field,
+  Space,
+  Button,
+} from '@/react-native-component/components';
 import React from 'react';
 
 const BasicFormBase: React.FC = () => {
@@ -48,7 +55,12 @@ const BasicFormBase: React.FC = () => {
             },
           ]}
         >
-          <Field.TextInput required secureTextEntry title='密码' placeholder='请输入密码' />
+          <Field.TextInput
+            required
+            secureTextEntry
+            title='密码'
+            placeholder='请输入密码'
+          />
         </Form.Item>
         <Form.Item dependencies={['password']}>
           {({ getFieldValue, setFieldsValue }) => {

@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const CellDivider: React.FC = () => {
   return (
@@ -19,20 +19,45 @@ const CellDivider: React.FC = () => {
       <Tst.Cell.Group title='左侧无边距，右侧保留边距'>
         <Tst.Cell title='标题' value='左侧无' dividerLeftGap={0} />
         <Tst.Cell title='标题' value='左侧无' dividerLeftGap={0} />
-        <Tst.Cell title='标题' value='左侧无' dividerLeftGap={0} divider={false} />
+        <Tst.Cell
+          title='标题'
+          value='左侧无'
+          dividerLeftGap={0}
+          divider={false}
+        />
       </Tst.Cell.Group>
 
       <Tst.Cell.Group title='右侧无边距，左侧保留边距'>
         <Tst.Cell title='标题' value='右侧无' dividerRightGap={0} />
         <Tst.Cell title='标题' value='右侧无' dividerRightGap={0} />
         <Tst.Cell title='标题' value='右侧无' dividerRightGap={0} />
-        <Tst.Cell title='标题' value='右侧无' dividerRightGap={0} divider={false} />
+        <Tst.Cell
+          title='标题'
+          value='右侧无'
+          dividerRightGap={0}
+          divider={false}
+        />
       </Tst.Cell.Group>
 
       <Tst.Cell.Group title='左右自定义边距'>
-        <Tst.Cell title='标题' value='左右皆无' dividerLeftGap={0} dividerRightGap={0} />
-        <Tst.Cell title='标题' value='左24右0' dividerLeftGap={24} dividerRightGap={0} />
-        <Tst.Cell title='标题' value='左0右24' dividerLeftGap={0} dividerRightGap={24} />
+        <Tst.Cell
+          title='标题'
+          value='左右皆无'
+          dividerLeftGap={0}
+          dividerRightGap={0}
+        />
+        <Tst.Cell
+          title='标题'
+          value='左24右0'
+          dividerLeftGap={24}
+          dividerRightGap={0}
+        />
+        <Tst.Cell
+          title='标题'
+          value='左0右24'
+          dividerLeftGap={0}
+          dividerRightGap={24}
+        />
         <Tst.Cell title='标题' value='不显示分割线' divider={false} />
       </Tst.Cell.Group>
     </>

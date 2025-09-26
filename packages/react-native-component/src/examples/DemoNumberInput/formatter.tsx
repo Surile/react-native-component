@@ -3,7 +3,7 @@
  * description: 通过 `formatter` 格式化数字，以展示具有具体含义的数据，往往需要配合 `parser` 一起使用。
  */
 
-import { Cell, NumberInput } from '@tastien/react-native-component';
+import { Cell, NumberInput } from '@/react-native-component/components';
 import React, { useState } from 'react';
 
 const consoleNum = (n: number) => {

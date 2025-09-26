@@ -3,7 +3,7 @@
  * description: 共有四种样式 primary、success、warning、error。
  */
 
-import { Space, NoticeBar } from '@tastien/react-native-component';
+import { Space, NoticeBar } from '@/react-native-component/components';
 
 const NoticeBarStatus = () => {
   return (

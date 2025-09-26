@@ -3,7 +3,12 @@
  * description: 函数调用方式，`Promise` 或 `onConfirm` 两种方式拿到选择的时间，在确定之前可以通过 `beforeClose` 判断时间是否合适以及阻止关闭弹层。
  */
 
-import { Card, Button, DatePicker, Space } from '@tastien/react-native-component';
+import {
+  Card,
+  Button,
+  DatePicker,
+  Space,
+} from '@/react-native-component/components';
 import React from 'react';
 
 const Y_M_LIMIT = {
@@ -32,7 +37,10 @@ const BasicDatePickerViewSingle: React.FC = () => {
             DatePicker({
               title: '某个时间',
               beforeClose: (action, value) => {
-                console.log('单选:beforeClose:Promise   =>  action  => ', action);
+                console.log(
+                  '单选:beforeClose:Promise   =>  action  => ',
+                  action
+                );
                 console.log('单选:beforeClose:Promise   =>  value  => ', value);
 
                 return new Promise<boolean>((resolve) => {

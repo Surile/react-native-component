@@ -3,7 +3,14 @@
  * description: 获取当前上下文正在使用的 Form 实例，常见于封装子组件消费无需透传 Form 实例。
  */
 
-import { Button, Card, Field, Form, Space, Toast } from '@tastien/react-native-component';
+import {
+  Button,
+  Card,
+  Field,
+  Form,
+  Space,
+  Toast,
+} from '@/react-native-component/components';
 import React from 'react';
 
 const BasicFormUseFormInstanceSub = () => {
@@ -53,7 +60,12 @@ const BasicFormUseFormInstance: React.FC = () => {
             },
           ]}
         >
-          <Field.TextInput required secureTextEntry title='密码' placeholder='请输入密码' />
+          <Field.TextInput
+            required
+            secureTextEntry
+            title='密码'
+            placeholder='请输入密码'
+          />
         </Form.Item>
         <Form.Item dependencies={['password']}>
           {({ getFieldValue, setFieldsValue }) => {

@@ -6,7 +6,7 @@
 import React, { memo, useState } from 'react';
 
 import { View } from 'react-native';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const options = new Array(10).fill(0).map((_, index) => ({
   value: index + 1,
@@ -33,7 +33,12 @@ const ButtonOptionGroup: React.FC = () => {
 
           <Tst.Divider>·</Tst.Divider>
 
-          <Tst.Button.OptionGroup options={options} type='outline' scrollable defaultValue={2} />
+          <Tst.Button.OptionGroup
+            options={options}
+            type='outline'
+            scrollable
+            defaultValue={2}
+          />
 
           <Tst.Divider>·</Tst.Divider>
 
@@ -43,7 +48,12 @@ const ButtonOptionGroup: React.FC = () => {
               backgroundColor: '#f5f5f5',
             }}
           >
-            <Tst.Button.OptionGroup options={options} type='white' scrollable defaultValue={2} />
+            <Tst.Button.OptionGroup
+              options={options}
+              type='white'
+              scrollable
+              defaultValue={2}
+            />
           </View>
 
           <Tst.Divider>·</Tst.Divider>
@@ -52,7 +62,11 @@ const ButtonOptionGroup: React.FC = () => {
 
           <Tst.Divider>·</Tst.Divider>
 
-          <Tst.Button.OptionGroup options={options} scrollable activeHighlight={false} />
+          <Tst.Button.OptionGroup
+            options={options}
+            scrollable
+            activeHighlight={false}
+          />
         </Tst.Space>
       </Tst.Card>
 

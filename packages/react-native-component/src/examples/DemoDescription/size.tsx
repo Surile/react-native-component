@@ -3,7 +3,7 @@
  * description: 支持三种尺寸。
  */
 
-import { Space, Card, Description } from '@tastien/react-native-component';
+import { Space, Card, Description } from '@/react-native-component/components';
 import React from 'react';
 
 const DescriptionSize: React.FC = () => {

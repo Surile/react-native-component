@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Text } from 'react-native';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const CellExtra: React.FC = () => {
   return (
@@ -16,7 +16,12 @@ const CellExtra: React.FC = () => {
       />
       <Tst.Cell title='标题' value={<Text>自定义 value JSX</Text>} />
       <Tst.Cell title='自定义样式' value='title、value 部件自定义样式' />
-      <Tst.Cell title='自定义箭头方向' value='down' isLink arrowDirection='down' />
+      <Tst.Cell
+        title='自定义箭头方向'
+        value='down'
+        isLink
+        arrowDirection='down'
+      />
       <Tst.Cell title='自定义箭头方向' value='up' isLink arrowDirection='up' />
       <Tst.Cell
         title='title 左侧扩展'

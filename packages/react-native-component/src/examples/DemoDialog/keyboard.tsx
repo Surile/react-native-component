@@ -3,7 +3,14 @@
  * description: 对话框内有输入框的情况。
  */
 
-import { Cell, Dialog, Blank, Space, NumberInput, Button } from '@tastien/react-native-component';
+import {
+  Cell,
+  Dialog,
+  Blank,
+  Space,
+  NumberInput,
+  Button,
+} from '@/react-native-component/components';
 import React, { useCallback, useState } from 'react';
 
 import { Keyboard } from 'react-native';

@@ -3,7 +3,7 @@
  * description: 把各种场景、API 都运用了
  */
 
-import { Space, Card, Divider } from '@tastien/react-native-component';
+import { Space, Card, Divider } from '@/react-native-component/components';
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 
@@ -80,11 +80,17 @@ const BasicDivider: React.FC = () => {
 
         <Card title='自定义样式' square>
           <Space>
-            <Divider style={{ backgroundColor: '#999' }} textStyle={{ color: '#690' }}>
+            <Divider
+              style={{ backgroundColor: '#999' }}
+              textStyle={{ color: '#690' }}
+            >
               文字
             </Divider>
 
-            <Divider style={{ backgroundColor: '#f30' }} textStyle={{ color: '#000' }}>
+            <Divider
+              style={{ backgroundColor: '#f30' }}
+              textStyle={{ color: '#000' }}
+            >
               文字
             </Divider>
           </Space>

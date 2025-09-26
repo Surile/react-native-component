@@ -3,7 +3,7 @@
  * description: 适用于纯数字输入。
  */
 
-import { Cell, Field, Button } from '@tastien/react-native-component';
+import { Cell, Field, Button } from '@/react-native-component/components';
 import React, { useState } from 'react';
 
 const BasicFieldTextInput: React.FC = () => {

@@ -4,7 +4,7 @@
  */
 
 import React, { memo } from 'react';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const onPress = () => {
   console.log('点击按钮 => ', new Date().getTime());
@@ -49,8 +49,18 @@ const ButtonSubtext: React.FC = () => {
             subtext='更多描述内容，哈哈哈'
             onPress={onPress}
           />
-          <Tst.Button type='ghost' text='ghost' subtext='更多描述内容，哈哈哈' onPress={onPress} />
-          <Tst.Button type='link' text='link' subtext='更多描述内容，哈哈哈' onPress={onPress} />
+          <Tst.Button
+            type='ghost'
+            text='ghost'
+            subtext='更多描述内容，哈哈哈'
+            onPress={onPress}
+          />
+          <Tst.Button
+            type='link'
+            text='link'
+            subtext='更多描述内容，哈哈哈'
+            onPress={onPress}
+          />
         </Tst.Space>
 
         <Tst.Divider>·</Tst.Divider>
@@ -62,15 +72,30 @@ const ButtonSubtext: React.FC = () => {
             subtext='更多描述内容，哈哈哈'
             onPress={onPress}
           />
-          <Tst.Button type='hazy' text='hazy' subtext='更多描述内容，哈哈哈' onPress={onPress} />
+          <Tst.Button
+            type='hazy'
+            text='hazy'
+            subtext='更多描述内容，哈哈哈'
+            onPress={onPress}
+          />
           <Tst.Button
             type='outline'
             text='outline'
             subtext='更多描述内容，哈哈哈'
             onPress={onPress}
           />
-          <Tst.Button type='ghost' text='ghost' subtext='更多描述内容，哈哈哈' onPress={onPress} />
-          <Tst.Button type='link' text='link' subtext='更多描述内容，哈哈哈' onPress={onPress} />
+          <Tst.Button
+            type='ghost'
+            text='ghost'
+            subtext='更多描述内容，哈哈哈'
+            onPress={onPress}
+          />
+          <Tst.Button
+            type='link'
+            text='link'
+            subtext='更多描述内容，哈哈哈'
+            onPress={onPress}
+          />
         </Tst.Space>
       </Tst.Space>
     </Tst.Card>

@@ -8,7 +8,7 @@ import { ScrollView } from 'react-native';
 import DatePickerViewSingle from './single';
 import DatePickerViewRangeView from './range-view';
 import DatePickerViewRange from './range';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const BasicDatePickerView: React.FC = () => {
   return (

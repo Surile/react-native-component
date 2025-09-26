@@ -4,7 +4,7 @@ import { ScrollView } from 'react-native';
 import BasicBlankDirection from './direction';
 import BasicBlankSize from './size';
 
-export const BasicButtonBar: React.FC = () => {
+const BasicButtonBar: React.FC = () => {
   return (
     <ScrollView>
       <BasicBlankDirection />

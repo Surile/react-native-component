@@ -3,7 +3,12 @@
  * description: 把各种场景、API 都运用了
  */
 
-import { Toast, Space, Popover, PopoverPlacement } from '@tastien/react-native-component';
+import {
+  Toast,
+  Space,
+  Popover,
+  PopoverPlacement,
+} from '@/react-native-component/components';
 import React from 'react';
 import { ScrollView } from 'react-native';
 import { Text, View } from 'react-native';
@@ -106,7 +111,11 @@ const BasicPopover: React.FC = () => {
           <Text>自构文案 UI:单选项:深色</Text>
         </Popover>
 
-        <Popover dark statusBarTranslucent content={<Popover.Text text='哈哈哈 dark' />}>
+        <Popover
+          dark
+          statusBarTranslucent
+          content={<Popover.Text text='哈哈哈 dark' />}
+        >
           <Text>内置文案 UI:单选项:深色</Text>
         </Popover>
 

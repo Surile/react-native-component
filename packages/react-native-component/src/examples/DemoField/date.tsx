@@ -3,7 +3,7 @@
  * description: 单个时间选择器。
  */
 
-import { Cell, Field } from '@tastien/react-native-component';
+import { Cell, Field } from '@/react-native-component/components';
 import React, { useState } from 'react';
 
 const formatValueText = (_: Date, __: any, s: string) => {
@@ -29,17 +29,30 @@ const BasicFieldDate: React.FC = () => {
         })}
         valueClassName='text-2xl'
       />
-      <Field.Date title='标题:非受控' placeholder='请选择' datePickerTitle='选择时间吗' />
+      <Field.Date
+        title='标题:非受控'
+        placeholder='请选择'
+        datePickerTitle='选择时间吗'
+      />
       <Field.Date
         title='自定义文案:非受控'
         placeholder='请选择'
         formatValueText={formatValueText}
         clearable
       />
-      <Field.Date title='标题:非受控:禁用' placeholder='请选择' editable={false} />
+      <Field.Date
+        title='标题:非受控:禁用'
+        placeholder='请选择'
+        editable={false}
+      />
       <Field.Date title='标题:非受控:Y-D' placeholder='请选择' mode='Y-D' />
       <Field.Date title='标题:受控不更新' placeholder='请选择' value={value} />
-      <Field.Date title='标题:受控不更新' placeholder='请选择' textAlign='left' value={value} />
+      <Field.Date
+        title='标题:受控不更新'
+        placeholder='请选择'
+        textAlign='left'
+        value={value}
+      />
       <Field.Date
         title='标题:受控'
         value={value}

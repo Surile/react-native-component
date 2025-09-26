@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { Text } from 'react-native';
-import Tst, { PopupPosition } from '@tastien/react-native-component';
+import Tst, { PopupPosition } from '@/react-native-component/components';
 
 const positions: PopupPosition[] = ['center', 'left', 'right', 'top', 'bottom'];
 

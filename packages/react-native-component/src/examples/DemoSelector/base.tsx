@@ -3,7 +3,12 @@
  * description: 通过函数的方式使用，使用 `options` 填充选项，可以使用 `onChange` 响应改变后的值，也可以采用 Promise 的方式。`beforeChange` 可以拿到当前选择的值，也可以阻断弹出层关闭，返回 `boolean | Promise<boolean>`。
  */
 
-import { Cell, Selector, SelectorOption, Toast } from '@tastien/react-native-component';
+import {
+  Cell,
+  Selector,
+  SelectorOption,
+  Toast,
+} from '@/react-native-component/components';
 import React from 'react';
 import { Text, View } from 'react-native';
 

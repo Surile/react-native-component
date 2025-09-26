@@ -1,5 +1,5 @@
 import { ScrollView } from 'react-native';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 import ButtonBarBase from './base';
 import ButtonBarButtons from './buttons';
 import ButtonBarConfirm from './confirm';
@@ -21,7 +21,9 @@ const BasicButtonBar = () => {
         <Tst.Button
           text='新增数据'
           type='primary'
-          renderLeftIcon={(color, size) => <Tst.PlusOutline color={color} size={size} />}
+          renderLeftIcon={(color, size) => (
+            <Tst.PlusOutline color={color} size={size} />
+          )}
         />
       </Tst.ButtonBar>
     </>

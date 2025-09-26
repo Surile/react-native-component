@@ -3,7 +3,7 @@
  * description: 内部无滚动，整个面板都可以触发滑动打开、关闭。
  */
 
-import { FloatingPanel } from '@tastien/react-native-component';
+import { FloatingPanel } from '@/react-native-component/components';
 import React from 'react';
 import { Text, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -26,7 +26,11 @@ const BaseFloatingPanel: React.FC = () => {
         <Text>底部内容，可以是地图或图片</Text>
       </View>
 
-      <FloatingPanel title='FloatingPanel' anchorStart={anchorStart} anchorEnd={anchorEnd}>
+      <FloatingPanel
+        title='FloatingPanel'
+        anchorStart={anchorStart}
+        anchorEnd={anchorEnd}
+      >
         <Text>434</Text>
         <View style={{ backgroundColor: '#ff8', height: 400 }} />
         <View style={{ backgroundColor: '#f18', height: 400 }} />

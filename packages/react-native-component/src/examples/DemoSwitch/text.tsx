@@ -3,7 +3,12 @@
  * description: 带有文字和图标。`activeChildren`、`inactiveChildren` 在 `0.3.17` 以后的版本中可以使用。
  */
 
-import { CrossOutline, Space, SuccessOutline, Switch } from '@tastien/react-native-component';
+import {
+  CrossOutline,
+  Space,
+  SuccessOutline,
+  Switch,
+} from '@/react-native-component/components';
 import React from 'react';
 
 const BasicSwitchText: React.FC = () => {

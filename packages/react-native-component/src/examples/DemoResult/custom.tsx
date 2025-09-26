@@ -3,8 +3,13 @@
  * description: 根据自身需求自定义组件。
  */
 
-import { ArrowLeftOutline, Space, Result, Flex, Button } from '@tastien/react-native-component';
-import React from 'react';
+import {
+  ArrowLeftOutline,
+  Space,
+  Result,
+  Flex,
+  Button,
+} from '@/react-native-component/components';
 import { Text, View } from 'react-native';
 
 const ResultCustom = () => {

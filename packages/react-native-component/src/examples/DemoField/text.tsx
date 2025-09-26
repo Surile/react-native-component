@@ -3,7 +3,7 @@
  * description: 适合文案展示的地方。
  */
 
-import { Cell, Field, Toast } from '@tastien/react-native-component';
+import { Cell, Field, Toast } from '@/react-native-component/components';
 import React from 'react';
 
 const BasicFieldText: React.FC = () => {

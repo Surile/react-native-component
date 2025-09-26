@@ -3,7 +3,7 @@
  * description: 单选多选。
  */
 
-import { Cell, Field } from '@tastien/react-native-component';
+import { Cell, Field } from '@/react-native-component/components';
 import React, { useState } from 'react';
 
 const options = new Array(2).fill(0).map((_, index) => ({
@@ -32,7 +32,12 @@ const BasicFieldCheckbox: React.FC = () => {
         }}
         iconSize={12}
       />
-      <Field.Checkbox title='单选:禁用' options={options} value={value} editable={false} />
+      <Field.Checkbox
+        title='单选:禁用'
+        options={options}
+        value={value}
+        editable={false}
+      />
       <Field.Checkbox title='单选:受控不更新' options={options} value={value} />
       <Field.Checkbox
         title='单选:受控'
@@ -61,7 +66,12 @@ const BasicFieldCheckbox: React.FC = () => {
         value={value2}
         editable={false}
       />
-      <Field.Checkbox title='多选:受控不更新' multiple options={options} value={value2} />
+      <Field.Checkbox
+        title='多选:受控不更新'
+        multiple
+        options={options}
+        value={value2}
+      />
       <Field.Checkbox
         title='多选:受控'
         multiple
@@ -84,7 +94,12 @@ const BasicFieldCheckbox: React.FC = () => {
         }}
       />
 
-      <Field.Checkbox title='多选:非受控' multiple vertical options={options2} />
+      <Field.Checkbox
+        title='多选:非受控'
+        multiple
+        vertical
+        options={options2}
+      />
     </Cell.Group>
   );
 };

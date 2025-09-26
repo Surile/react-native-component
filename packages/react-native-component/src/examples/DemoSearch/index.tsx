@@ -13,12 +13,19 @@ import {
   MenuOutline,
   Button,
   Search,
-} from '@tastien/react-native-component';
+} from '@/react-native-component/components';
 
 const PopupSearch = () => {
   const [value1, setValue] = useState('22');
 
-  return <Search key='123' placeholder='请输入关键词搜索' value={value1} onChangeText={setValue} />;
+  return (
+    <Search
+      key='123'
+      placeholder='请输入关键词搜索'
+      value={value1}
+      onChangeText={setValue}
+    />
+  );
 };
 
 const DemoSearch: React.FC = () => {
@@ -145,11 +152,18 @@ const DemoSearch: React.FC = () => {
             }}
           />
 
-          <ScrollView style={{ height: 500 }} keyboardShouldPersistTaps='handled'>
+          <ScrollView
+            style={{ height: 500 }}
+            keyboardShouldPersistTaps='handled'
+          >
             <Search placeholder='请输入关键词搜索' />
 
             <Cell.Group title='无法输入中文'>
-              <Search placeholder='请输入关键词搜索' value={value1} onChangeText={setValue} />
+              <Search
+                placeholder='请输入关键词搜索'
+                value={value1}
+                onChangeText={setValue}
+              />
             </Cell.Group>
             <Cell.Group title='可以输入中文'>
               <PopupSearch />

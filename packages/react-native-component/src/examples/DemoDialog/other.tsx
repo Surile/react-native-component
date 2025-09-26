@@ -3,7 +3,7 @@
  * description: 结合业务自定义对话框的内容。
  */
 
-import { Cell, Dialog } from '@tastien/react-native-component';
+import { Cell, Dialog } from '@/react-native-component/components';
 import React, { useState } from 'react';
 
 const BasicDialogOther: React.FC = () => {

@@ -3,7 +3,7 @@
  * description: 组件 `Toast` 参数支持字符串或配置对象，当 `duration` 为 `0` 的时候不会主动消失。
  */
 
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 import React, { useState, useEffect, useRef } from 'react';
 import { View, ScrollView } from 'react-native';
 

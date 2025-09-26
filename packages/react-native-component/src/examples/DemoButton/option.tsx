@@ -4,7 +4,7 @@
  */
 
 import React, { memo } from 'react';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const onPress = () => {
   console.log('点击按钮');
@@ -17,8 +17,17 @@ const ButtonOption: React.FC = () => {
         <Tst.Space>
           <Tst.Button.Option text='Option' onPress={onPress} />
           <Tst.Button.Option text='Option' onPress={onPress} active />
-          <Tst.Button.Option text='Option:outline' type='outline' onPress={onPress} />
-          <Tst.Button.Option text='Option:outline' type='outline' onPress={onPress} active />
+          <Tst.Button.Option
+            text='Option:outline'
+            type='outline'
+            onPress={onPress}
+          />
+          <Tst.Button.Option
+            text='Option:outline'
+            type='outline'
+            onPress={onPress}
+            active
+          />
           <Tst.Button.Option
             text='Option:white:边框颜色是白色的outline'
             type='white'
@@ -36,7 +45,12 @@ const ButtonOption: React.FC = () => {
 
         <Tst.Space>
           <Tst.Button.Option text='大小:xs' size='xs' onPress={onPress} />
-          <Tst.Button.Option text='大小:s:默认' size='s' onPress={onPress} active />
+          <Tst.Button.Option
+            text='大小:s:默认'
+            size='s'
+            onPress={onPress}
+            active
+          />
           <Tst.Button.Option text='大小:m' size='m' onPress={onPress} />
           <Tst.Button.Option text='大小:l' size='l' onPress={onPress} active />
           <Tst.Button.Option text='大小:xl' size='xl' onPress={onPress} />
@@ -64,8 +78,19 @@ const ButtonOption: React.FC = () => {
         </Tst.Space>
 
         <Tst.Space direction='horizontal'>
-          <Tst.Button.Option text='最小' type='outline' onPress={onPress} disabled />
-          <Tst.Button.Option text='宽度' type='outline' onPress={onPress} disabled active />
+          <Tst.Button.Option
+            text='最小'
+            type='outline'
+            onPress={onPress}
+            disabled
+          />
+          <Tst.Button.Option
+            text='宽度'
+            type='outline'
+            onPress={onPress}
+            disabled
+            active
+          />
           <Tst.Button.Option
             text='宽度'
             type='outline'
@@ -77,8 +102,19 @@ const ButtonOption: React.FC = () => {
         </Tst.Space>
 
         <Tst.Space direction='horizontal'>
-          <Tst.Button.Option text='最小' type='outline' onPress={onPress} round />
-          <Tst.Button.Option text='宽度' type='outline' onPress={onPress} round active />
+          <Tst.Button.Option
+            text='最小'
+            type='outline'
+            onPress={onPress}
+            round
+          />
+          <Tst.Button.Option
+            text='宽度'
+            type='outline'
+            onPress={onPress}
+            round
+            active
+          />
           <Tst.Button.Option
             text='宽度'
             type='outline'
@@ -91,11 +127,21 @@ const ButtonOption: React.FC = () => {
 
         <Tst.Space direction='horizontal'>
           <Tst.Button.Option text='激活状态' onPress={onPress} active />
-          <Tst.Button.Option text='激活不高亮' onPress={onPress} active activeHighlight={false} />
+          <Tst.Button.Option
+            text='激活不高亮'
+            onPress={onPress}
+            active
+            activeHighlight={false}
+          />
         </Tst.Space>
 
         <Tst.Space direction='horizontal'>
-          <Tst.Button.Option text='激活状态:outline' type='outline' onPress={onPress} active />
+          <Tst.Button.Option
+            text='激活状态:outline'
+            type='outline'
+            onPress={onPress}
+            active
+          />
           <Tst.Button.Option
             text='激活不高亮:outline'
             type='outline'
@@ -119,7 +165,13 @@ const ButtonOption: React.FC = () => {
         </Tst.Space>
 
         <Tst.Space direction='horizontal'>
-          <Tst.Button.Option text='Option' type='outline' onPress={onPress} badge={1} active />
+          <Tst.Button.Option
+            text='Option'
+            type='outline'
+            onPress={onPress}
+            badge={1}
+            active
+          />
           <Tst.Button.Option
             text='Option'
             type='outline'

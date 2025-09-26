@@ -2,7 +2,7 @@
  * title: 按钮组
  * description: 通过 `buttons` 放置按钮，配合 `count` 动态限制最大个数。
  */
-import Tst, { ButtonBarProps } from '@tastien/react-native-component';
+import Tst, { ButtonBarProps } from '@/react-native-component/components';
 
 const buttons: ButtonBarProps['buttons'] = [
   {

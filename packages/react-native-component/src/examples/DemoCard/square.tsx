@@ -5,19 +5,27 @@
 
 import React from 'react';
 import { Text } from 'react-native';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const CardSquare: React.FC = () => {
   return (
     <Tst.Blank>
       <Tst.Space head>
-        <Tst.Card square title='Default card' extra={<Tst.Button type='link' text='More' />}>
+        <Tst.Card
+          square
+          title='Default card'
+          extra={<Tst.Button type='link' text='More' />}
+        >
           <Text>Card content</Text>
           <Text>Card content</Text>
           <Text>Card content</Text>
         </Tst.Card>
 
-        <Tst.Card square title='Default card' extra={<Tst.Button type='link' text='More' />}>
+        <Tst.Card
+          square
+          title='Default card'
+          extra={<Tst.Button type='link' text='More' />}
+        >
           <Text>Card content</Text>
           <Text>Card content</Text>
           <Text>Card content</Text>

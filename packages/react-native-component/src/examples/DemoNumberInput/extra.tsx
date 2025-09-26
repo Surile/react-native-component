@@ -6,7 +6,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-import { Cell, NumberInput, Space } from '@tastien/react-native-component';
+import { Cell, NumberInput, Space } from '@/react-native-component/components';
 
 const consoleNum = (n: number) => {
   console.log('[新数据]  ->  ', n);
@@ -17,7 +17,14 @@ const BasicNumberInputExtra: React.FC = () => {
     <Cell.Group title='其他属性'>
       <Cell
         title='前置'
-        value={<NumberInput placeholder='请输入' onChange={consoleNum} addonBefore='+' bordered />}
+        value={
+          <NumberInput
+            placeholder='请输入'
+            onChange={consoleNum}
+            addonBefore='+'
+            bordered
+          />
+        }
       />
       <Cell
         title='后置'
@@ -47,7 +54,14 @@ const BasicNumberInputExtra: React.FC = () => {
 
       <Cell
         title='内部前置'
-        value={<NumberInput placeholder='请输入' onChange={consoleNum} prefix='+' bordered />}
+        value={
+          <NumberInput
+            placeholder='请输入'
+            onChange={consoleNum}
+            prefix='+'
+            bordered
+          />
+        }
       />
       <Cell
         title='内部后置'
@@ -74,7 +88,13 @@ const BasicNumberInputExtra: React.FC = () => {
           />
         }
       />
-      <Space head tail direction='horizontal' align='center' style={{ backgroundColor: '#fff' }}>
+      <Space
+        head
+        tail
+        direction='horizontal'
+        align='center'
+        style={{ backgroundColor: '#fff' }}
+      >
         <Text>采购量</Text>
         <NumberInput
           placeholder='请输入'

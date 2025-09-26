@@ -3,7 +3,12 @@
  * description: 左右、上下布局，自定义 label、text 样式，自定义内容区域渲染、排版。
  */
 
-import { Space, Card, Description, Button } from '@tastien/react-native-component';
+import {
+  Space,
+  Card,
+  Description,
+  Button,
+} from '@/react-native-component/components';
 import React from 'react';
 import { Text } from 'react-native';
 
@@ -73,7 +78,10 @@ const DescriptionBase: React.FC = () => {
           labelClassName='text-gray-300'
           contentTextClassName='text-red-500'
         >
-          <Description label='Description.Group' text='统一配置 label、text 文案颜色' />
+          <Description
+            label='Description.Group'
+            text='统一配置 label、text 文案颜色'
+          />
           <Description label='colon' text='一袋米要抗几楼' colon />
           <Description label='hidden' text='一袋米要抗几楼' hidden />
           <Description
@@ -88,8 +96,16 @@ const DescriptionBase: React.FC = () => {
           />
           <Description label='bold' text='一袋米要给多了' bold />
           <Description label='color' text='color 优先级相对较低' color='#000' />
-          <Description label='addonBefore' addonBefore={<Text>$</Text>} text='10000' />
-          <Description label='addonAfter' addonAfter={<Text>元/kg</Text>} text='10000' />
+          <Description
+            label='addonBefore'
+            addonBefore={<Text>$</Text>}
+            text='10000'
+          />
+          <Description
+            label='addonAfter'
+            addonAfter={<Text>元/kg</Text>}
+            text='10000'
+          />
           <Description
             label='renderAlignCenter'
             addonBefore={<Text>$</Text>}

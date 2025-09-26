@@ -6,9 +6,15 @@
 import React, { memo, useEffect, useRef } from 'react';
 
 import { Animated, ColorValue } from 'react-native';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
-const CustomLoading = ({ size, color }: { size: number; color: ColorValue }) => {
+const CustomLoading = ({
+  size,
+  color,
+}: {
+  size: number;
+  color: ColorValue;
+}) => {
   const spin = useRef(new Animated.Value(0));
 
   useEffect(() => {
@@ -67,20 +73,50 @@ const ButtonLoading: React.FC = () => {
       <Tst.Space>
         <Tst.Space>
           <Tst.Button type='primary' text='primary' loading />
-          <Tst.Button type='hazy' text='hazy' loading loadingText='自定义 loading 文案' />
-          <Tst.Button type='outline' text='outline' loading loadingText='自定义 loading 文案' />
+          <Tst.Button
+            type='hazy'
+            text='hazy'
+            loading
+            loadingText='自定义 loading 文案'
+          />
+          <Tst.Button
+            type='outline'
+            text='outline'
+            loading
+            loadingText='自定义 loading 文案'
+          />
           <Tst.Button type='ghost' text='ghost' loading />
-          <Tst.Button type='link' text='link' loading loadingText='自定义 loading 文案' />
+          <Tst.Button
+            type='link'
+            text='link'
+            loading
+            loadingText='自定义 loading 文案'
+          />
         </Tst.Space>
 
         <Tst.Divider>·</Tst.Divider>
 
         <Tst.Space direction='horizontal' wrap>
           <Tst.Button type='primary' text='primary' loading />
-          <Tst.Button type='hazy' text='hazy' loading loadingText='自定义 loading 文案' />
-          <Tst.Button type='outline' text='outline' loading loadingText='自定义 loading 文案' />
+          <Tst.Button
+            type='hazy'
+            text='hazy'
+            loading
+            loadingText='自定义 loading 文案'
+          />
+          <Tst.Button
+            type='outline'
+            text='outline'
+            loading
+            loadingText='自定义 loading 文案'
+          />
           <Tst.Button type='ghost' text='ghost' loading />
-          <Tst.Button type='link' text='link' loading loadingText='自定义 loading 文案' />
+          <Tst.Button
+            type='link'
+            text='link'
+            loading
+            loadingText='自定义 loading 文案'
+          />
         </Tst.Space>
 
         <Tst.Divider>·</Tst.Divider>

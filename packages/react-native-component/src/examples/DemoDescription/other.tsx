@@ -3,7 +3,7 @@
  * description: 内置一些其他格式组件。
  */
 
-import { Card, Description, Button } from '@tastien/react-native-component';
+import { Card, Description, Button } from '@/react-native-component/components';
 import React from 'react';
 
 const Y_M_LIMIT = {
@@ -27,14 +27,22 @@ const DescriptionOther: React.FC = () => {
           render={Description.renderAlignCenter}
         />
         <Description.Date label='单个时间' text={Y_M_LIMIT.min} />
-        <Description.Date label='单个时间:Y-D' text={Y_M_LIMIT.min} mode='Y-D' />
+        <Description.Date
+          label='单个时间:Y-D'
+          text={Y_M_LIMIT.min}
+          mode='Y-D'
+        />
         <Description.Date
           label='单个时间'
           text={Y_M_LIMIT.max}
           addonAfter={<Button text='修改' type='outline' size='xs' />}
           render={Description.renderAlignCenter}
         />
-        <Description.Date label='单个时间:Y-D' text={Y_M_LIMIT.max} mode='Y-D' />
+        <Description.Date
+          label='单个时间:Y-D'
+          text={Y_M_LIMIT.max}
+          mode='Y-D'
+        />
         <Description.DateRange label='时间段' text={Y_M} />
         <Description.DateRange
           label='时间段:Y-D'

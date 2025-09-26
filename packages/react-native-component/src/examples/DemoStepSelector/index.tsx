@@ -3,7 +3,7 @@
  * description: 把各种场景、API 都运用了
  */
 
-import { Cell, StepSelector } from '@tastien/react-native-component';
+import { Cell, StepSelector } from '@/react-native-component/components';
 import React, { useState } from 'react';
 
 import { Text } from 'react-native';
@@ -21,7 +21,9 @@ const request = (pId: string, index: number) =>
             : new Array(20).fill(0).map((_, i) => ({
                 value: `${index * 100 + i}`,
                 label: `选项${index}_${i}`,
-                index: String.fromCharCode(65 + Math.ceil((Math.random() * 10) / 3)),
+                index: String.fromCharCode(
+                  65 + Math.ceil((Math.random() * 10) / 3)
+                ),
               })),
         placeholder: index === 0 ? '' : `请选择${index}`,
       });

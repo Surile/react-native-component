@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const CellBase: React.FC = () => {
   return (
@@ -28,7 +28,11 @@ const CellBase: React.FC = () => {
       <Tst.Cell title='onLongPress 点击事件' isLink onLongPress={() => {}} />
       <Tst.Cell title='onPressIn 点击事件' isLink onPressIn={() => {}} />
       <Tst.Cell title='onPressOut 点击事件' isLink onPressOut={() => {}} />
-      <Tst.Cell title='onPressLink 点击箭头事件' isLink onPressLink={() => {}} />
+      <Tst.Cell
+        title='onPressLink 点击箭头事件'
+        isLink
+        onPressLink={() => {}}
+      />
       <Tst.Cell title='标题' extra='这里的有一个可以扩展说明的文案' />
       <Tst.Cell
         title='标题'

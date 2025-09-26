@@ -3,7 +3,7 @@
  * description: 共有两个大小可以选择。
  */
 
-import { Space, NoticeBar } from '@tastien/react-native-component';
+import { Space, NoticeBar } from '@/react-native-component/components';
 
 const NoticeBarSize = () => {
   return (

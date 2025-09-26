@@ -3,7 +3,7 @@
  * description: 内部无滚动，仅头部可以触发滑动打开、关闭。
  */
 
-import { FloatingPanel } from '@tastien/react-native-component';
+import { FloatingPanel } from '@/react-native-component/components';
 import React from 'react';
 import { Text, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';

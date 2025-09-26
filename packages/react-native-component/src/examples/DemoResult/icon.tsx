@@ -3,7 +3,7 @@
  * description: 内置几种图标。
  */
 
-import { Result, Space } from '@tastien/react-native-component';
+import { Result, Space } from '@/react-native-component/components';
 
 const ResultIcon = () => {
   return (
@@ -12,7 +12,9 @@ const ResultIcon = () => {
       <Result.IconEmpty />
       <Result.IconError />
       <Result.IconWarning />
-      <Result.IconWarning style={{ backgroundColor: '#f30', alignSelf: 'center' }} />
+      <Result.IconWarning
+        style={{ backgroundColor: '#f30', alignSelf: 'center' }}
+      />
     </Space>
   );
 };

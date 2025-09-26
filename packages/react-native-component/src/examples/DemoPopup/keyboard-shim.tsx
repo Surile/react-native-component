@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { Keyboard, ScrollView, Text, TextInput } from 'react-native';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const BasicPopupKeyboardShim: React.FC = () => {
   const [visible, setVisible] = useState(false);
@@ -39,7 +39,9 @@ const BasicPopupKeyboardShim: React.FC = () => {
           <TextInput
             placeholder='请输入备注'
             onChangeText={(text) => {
-              setData(text ? new Array(20).fill(0).map((_, i) => `${text}-${i}`) : []);
+              setData(
+                text ? new Array(20).fill(0).map((_, i) => `${text}-${i}`) : []
+              );
             }}
           />
         </Tst.Blank>

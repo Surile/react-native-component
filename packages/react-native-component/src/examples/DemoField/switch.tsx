@@ -3,7 +3,7 @@
  * description: 适合开启或关闭部分控件填写。
  */
 
-import { Cell, Field } from '@tastien/react-native-component';
+import { Cell, Field } from '@/react-native-component/components';
 import React, { useState } from 'react';
 
 const BasicFieldSwitch: React.FC = () => {
@@ -64,7 +64,12 @@ const BasicFieldSwitch: React.FC = () => {
         }}
       />
 
-      <Field.Switch title='受控:有onChange' value={value} onChange={setValue} divider={false} />
+      <Field.Switch
+        title='受控:有onChange'
+        value={value}
+        onChange={setValue}
+        divider={false}
+      />
     </Cell.Group>
   );
 };

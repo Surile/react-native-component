@@ -3,7 +3,7 @@
  * description: 把各种场景、API 都运用了
  */
 
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 import React, { useCallback, useState } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 
@@ -72,7 +72,11 @@ const DemoCollapse: React.FC = () => {
           <Text style={{ lineHeight: 20 }}>文案</Text>
         </Tst.Collapse>
 
-        <Tst.Collapse title='标题12:body 无内边距' bodyPadding={false} defaultCollapse>
+        <Tst.Collapse
+          title='标题12:body 无内边距'
+          bodyPadding={false}
+          defaultCollapse
+        >
           <Text style={{ lineHeight: 20 }}>文案</Text>
           <View style={{ height: 20 }} />
           <Text style={{ lineHeight: 20 }}>文案</Text>
@@ -84,7 +88,12 @@ const DemoCollapse: React.FC = () => {
           <Text style={{ lineHeight: 20 }}>文案</Text>
         </Tst.Collapse>
 
-        <Tst.Collapse title='受控:正常' bodyPadding={false} collapse={value} onCollapse={setValue}>
+        <Tst.Collapse
+          title='受控:正常'
+          bodyPadding={false}
+          collapse={value}
+          onCollapse={setValue}
+        >
           <Text style={{ lineHeight: 20 }}>文案</Text>
           <View style={{ height: 20 }} />
           {value ? <View style={{ height: 400 }} /> : null}
@@ -107,16 +116,21 @@ const DemoCollapse: React.FC = () => {
         <Tst.Collapse
           title='title文案'
           renderTitle={useCallback((v: boolean) => {
-            return <Text>{`不要这样写 useCallback：${v ? '好的' : `\n不好`}`}</Text>;
-          }, [])}
-          renderTitleExtra={useCallback((v: boolean, arrowJSX: React.ReactNode) => {
             return (
-              <Tst.Space direction='horizontal' align='center'>
-                <Text>{v ? '点击收齐' : '点击展开'}</Text>
-                {arrowJSX}
-              </Tst.Space>
+              <Text>{`不要这样写 useCallback：${v ? '好的' : `\n不好`}`}</Text>
             );
           }, [])}
+          renderTitleExtra={useCallback(
+            (v: boolean, arrowJSX: React.ReactNode) => {
+              return (
+                <Tst.Space direction='horizontal' align='center'>
+                  <Text>{v ? '点击收齐' : '点击展开'}</Text>
+                  {arrowJSX}
+                </Tst.Space>
+              );
+            },
+            []
+          )}
           renderBody={useCallback(() => {
             return (
               <>
@@ -163,7 +177,11 @@ const DemoCollapse: React.FC = () => {
             <Text style={{ lineHeight: 20 }}>文案</Text>
           </Tst.Collapse>
 
-          <Tst.Collapse title='标题:没有 header 分割线' type='card' headerDivider={false}>
+          <Tst.Collapse
+            title='标题:没有 header 分割线'
+            type='card'
+            headerDivider={false}
+          >
             <Text style={{ lineHeight: 20 }}>文案</Text>
             <View style={{ height: 20 }} />
             <Text style={{ lineHeight: 20 }}>文案</Text>
@@ -191,7 +209,12 @@ const DemoCollapse: React.FC = () => {
             <Text style={{ lineHeight: 20 }}>文案</Text>
           </Tst.Collapse>
 
-          <Tst.Collapse title='受控:展不开' type='card' bodyPadding={false} collapse={false}>
+          <Tst.Collapse
+            title='受控:展不开'
+            type='card'
+            bodyPadding={false}
+            collapse={false}
+          >
             <Text style={{ lineHeight: 20 }}>文案</Text>
             <View style={{ height: 20 }} />
             <Text style={{ lineHeight: 20 }}>文案</Text>
@@ -228,16 +251,25 @@ const DemoCollapse: React.FC = () => {
             title='title文案'
             type='card'
             renderTitle={useCallback((v: boolean) => {
-              return <Text>{`不要这样写 useCallback：${v ? '好的' : `\n不好\n不好\n`}`}</Text>;
-            }, [])}
-            renderTitleExtra={useCallback((v: boolean, arrowJSX: React.ReactNode) => {
               return (
-                <Tst.Space direction='horizontal' align='center' justify='center'>
-                  <Text>{v ? '点击收齐' : '点击展开'}</Text>
-                  {arrowJSX}
-                </Tst.Space>
+                <Text>{`不要这样写 useCallback：${v ? '好的' : `\n不好\n不好\n`}`}</Text>
               );
             }, [])}
+            renderTitleExtra={useCallback(
+              (v: boolean, arrowJSX: React.ReactNode) => {
+                return (
+                  <Tst.Space
+                    direction='horizontal'
+                    align='center'
+                    justify='center'
+                  >
+                    <Text>{v ? '点击收齐' : '点击展开'}</Text>
+                    {arrowJSX}
+                  </Tst.Space>
+                );
+              },
+              []
+            )}
             renderBody={useCallback(() => {
               return (
                 <>
@@ -276,7 +308,12 @@ const DemoCollapse: React.FC = () => {
               paddingVertical: 24,
             }}
           >
-            <Tst.Collapse title='title文案' type='card' bodyClassName='bg-[#f5f5f5]' square={false}>
+            <Tst.Collapse
+              title='title文案'
+              type='card'
+              bodyClassName='bg-[#f5f5f5]'
+              square={false}
+            >
               <Text style={{ lineHeight: 20 }}>文案</Text>
               <View style={{ height: 20 }} />
               <Text style={{ lineHeight: 20 }}>文案</Text>

@@ -3,7 +3,12 @@
  * description: 适用于单位切换，对输入控件进行补充、扩展。
  */
 
-import { SelectorOption, Cell, Field, Selector } from '@tastien/react-native-component';
+import {
+  SelectorOption,
+  Cell,
+  Field,
+  Selector,
+} from '@/react-native-component/components';
 import React, { useState } from 'react';
 
 const units: SelectorOption[] = [
@@ -25,7 +30,13 @@ const BasicSelectorLabel: React.FC = () => {
       <Field.TextInput
         title='配合 Field.TextInput'
         defaultValue='100'
-        valueExtra={<Selector.Text value={unitValue} options={units} onChange={setUnitValue} />}
+        valueExtra={
+          <Selector.Text
+            value={unitValue}
+            options={units}
+            onChange={setUnitValue}
+          />
+        }
       />
       <Field.TextInput
         title='配合 Field.TextInput'

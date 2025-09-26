@@ -3,7 +3,7 @@
  * description: Switch 失效状态。
  */
 
-import { Button, Space, Switch } from '@tastien/react-native-component';
+import { Button, Space, Switch } from '@/react-native-component/components';
 import React, { useState } from 'react';
 
 const BasicSwitchDisabled: React.FC = () => {

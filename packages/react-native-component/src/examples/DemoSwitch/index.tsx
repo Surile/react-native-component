@@ -6,7 +6,7 @@ import BasicSwitchText from './text';
 import BasicSwitchDisabled from './disabled';
 import BasicSwitchSize from './size';
 import BasicSwitchCustom from './custom';
-import { Card, Space } from '@tastien/react-native-component';
+import { Card, Space } from '@/react-native-component/components';
 
 const DemoSwitch: React.FC = () => {
   return (

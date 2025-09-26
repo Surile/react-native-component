@@ -3,7 +3,7 @@
  * description: 在内部放置两个以上按钮，其中一个有相对更大的空间占比。
  */
 
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const ButtonBarConfirm = () => {
   return (

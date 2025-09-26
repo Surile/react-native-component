@@ -4,7 +4,12 @@
  */
 
 import React from 'react';
-import { Button, Card, DatePicker, Space } from '@tastien/react-native-component';
+import {
+  Button,
+  Card,
+  DatePicker,
+  Space,
+} from '@/react-native-component/components';
 
 const Y_M_LIMIT = {
   min: new Date(2016, 6, 20, 18, 40, 10),
@@ -32,8 +37,14 @@ const BasicDatePickerViewRange: React.FC = () => {
             DatePicker.range({
               title: '某个时间',
               beforeClose: (action, value) => {
-                console.log('日期段:Y-D:beforeClose:Promise   =>  action  => ', action);
-                console.log('日期段:Y-D:beforeClose:Promise   =>  value  => ', value);
+                console.log(
+                  '日期段:Y-D:beforeClose:Promise   =>  action  => ',
+                  action
+                );
+                console.log(
+                  '日期段:Y-D:beforeClose:Promise   =>  value  => ',
+                  value
+                );
 
                 return new Promise<boolean>((resolve) => {
                   setTimeout(() => {

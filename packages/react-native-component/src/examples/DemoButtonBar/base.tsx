@@ -3,7 +3,7 @@
  * description: 在内部放置一个、多个按钮。
  */
 import { StyleSheet } from 'react-native';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const ButtonBarBase = () => {
   return (
@@ -23,7 +23,9 @@ const ButtonBarBase = () => {
         <Tst.Button
           type='primary'
           size='l'
-          renderLeftIcon={(color, size) => <Tst.PlusOutline color={color} size={size} />}
+          renderLeftIcon={(color, size) => (
+            <Tst.PlusOutline color={color} size={size} />
+          )}
         >
           新增数据
         </Tst.Button>

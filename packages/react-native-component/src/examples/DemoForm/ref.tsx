@@ -11,7 +11,7 @@ import {
   Field,
   Space,
   Button,
-} from '@tastien/react-native-component';
+} from '@/react-native-component/components';
 import React, { useRef } from 'react';
 
 const BasicFormRef: React.FC = () => {
@@ -46,7 +46,12 @@ const BasicFormRef: React.FC = () => {
             },
           ]}
         >
-          <Field.TextInput required secureTextEntry title='密码' placeholder='请输入密码' />
+          <Field.TextInput
+            required
+            secureTextEntry
+            title='密码'
+            placeholder='请输入密码'
+          />
         </Form.Item>
 
         <Space head>

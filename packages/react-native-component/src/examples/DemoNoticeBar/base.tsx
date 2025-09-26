@@ -3,7 +3,7 @@
  * description: 最简单的用法，适用于简短的警告提示。
  */
 
-import { Space, NoticeBar } from '@tastien/react-native-component';
+import { Space, NoticeBar } from '@/react-native-component/components';
 
 const NoticeBarBase = () => {
   return (
@@ -19,7 +19,11 @@ const NoticeBarBase = () => {
 
       <NoticeBar message='一袋米要抗几楼，一袋米要抗二楼' bordered />
 
-      <NoticeBar message='一袋米要抗几楼，一袋米要抗二楼' bordered square={false} />
+      <NoticeBar
+        message='一袋米要抗几楼，一袋米要抗二楼'
+        bordered
+        square={false}
+      />
     </Space>
   );
 };

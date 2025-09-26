@@ -3,7 +3,7 @@
  * description: 普通组件。
  */
 
-import { Cell, Selector } from '@tastien/react-native-component';
+import { Cell, Selector } from '@/react-native-component/components';
 import React, { useState } from 'react';
 
 const BasicSelectorComponent: React.FC = () => {

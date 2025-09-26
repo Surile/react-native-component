@@ -3,7 +3,11 @@
  * description: 把各种场景、API 都运用了
  */
 
-import { Cell, DatePickerColumnMode, DatePickerView } from '@tastien/react-native-component';
+import {
+  Cell,
+  DatePickerColumnMode,
+  DatePickerView,
+} from '@/react-native-component/components';
 import React, { useState } from 'react';
 import { ScrollView } from 'react-native';
 
@@ -54,7 +58,11 @@ const DemoDatePickerView: React.FC = () => {
               <DatePickerView mode={mode} onChange={onChangeLog} />
             </Cell.Group>
             <Cell.Group title={`${mode}:最大最小值:非受控`}>
-              <DatePickerView mode={mode} min={Y_M_LIMIT.min} max={Y_M_LIMIT.max} />
+              <DatePickerView
+                mode={mode}
+                min={Y_M_LIMIT.min}
+                max={Y_M_LIMIT.max}
+              />
             </Cell.Group>
             <Cell.Group title={`${mode}:受控`}>
               <DatePickerView mode={mode} value={value} onChange={setValue} />

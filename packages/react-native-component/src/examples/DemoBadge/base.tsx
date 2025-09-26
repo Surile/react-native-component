@@ -7,7 +7,7 @@ import React from 'react';
 import { Text } from 'react-native';
 
 import BadgeDemoItem from './component/item';
-import { Space, Card, Badge } from '@tastien/react-native-component';
+import { Space, Card, Badge } from '@/react-native-component/components';
 
 const BadgeBase: React.FC = () => {
   return (

@@ -9,7 +9,7 @@ import {
   VolumeOutline,
   Space,
   TabBar,
-} from '@tastien/react-native-component';
+} from '@/react-native-component/components';
 import React, { useState } from 'react';
 import { View, type ViewStyle } from 'react-native';
 

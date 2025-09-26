@@ -4,7 +4,7 @@
  */
 
 import React, { memo } from 'react';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 
 const onPress = () => {
   console.log('点击按钮');
@@ -15,17 +15,46 @@ const ButtonHairline: React.FC = () => {
     <Tst.Card title='细边框' square>
       <Tst.Space>
         <Tst.Space>
-          <Tst.Button type='outline' text='outline' onPress={onPress} hairline />
+          <Tst.Button
+            type='outline'
+            text='outline'
+            onPress={onPress}
+            hairline
+          />
           <Tst.Button type='ghost' text='ghost' onPress={onPress} hairline />
-          <Tst.Button type='outline' text='outline & danger' onPress={onPress} danger hairline />
-          <Tst.Button type='ghost' text='ghost & danger' onPress={onPress} danger hairline />
+          <Tst.Button
+            type='outline'
+            text='outline & danger'
+            onPress={onPress}
+            danger
+            hairline
+          />
+          <Tst.Button
+            type='ghost'
+            text='ghost & danger'
+            onPress={onPress}
+            danger
+            hairline
+          />
         </Tst.Space>
 
         <Tst.Divider>·</Tst.Divider>
 
         <Tst.Space direction='horizontal'>
-          <Tst.Button type='outline' text='outline' size='xs' onPress={onPress} hairline />
-          <Tst.Button type='ghost' text='ghost' size='xs' onPress={onPress} hairline />
+          <Tst.Button
+            type='outline'
+            text='outline'
+            size='xs'
+            onPress={onPress}
+            hairline
+          />
+          <Tst.Button
+            type='ghost'
+            text='ghost'
+            size='xs'
+            onPress={onPress}
+            hairline
+          />
           <Tst.Button
             type='outline'
             text='outline & danger'

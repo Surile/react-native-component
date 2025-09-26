@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import Tst from '@tastien/react-native-component';
+import Tst from '@/react-native-component/index';
 import { Text } from 'react-native';
 
 const options = new Array(6).fill(0).map((_, index) => ({
@@ -30,7 +30,12 @@ const CheckboxGroup: React.FC = () => {
         <Tst.Divider>·</Tst.Divider>
 
         <Text>选项多了，scrollable 左右滚动</Text>
-        <Tst.Checkbox.Group options={options} value={value1} direction='horizontal' scrollable />
+        <Tst.Checkbox.Group
+          options={options}
+          value={value1}
+          direction='horizontal'
+          scrollable
+        />
 
         <Tst.Divider>·</Tst.Divider>
 
