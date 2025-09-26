@@ -1,0 +1,65 @@
+---
+title: Blank
+description: An example component to help you get started.
+categories: [基础组件]
+---
+
+import { BasicButtonBar } from '@docs/components/examples';
+
+<ExternalLinks
+  links={[
+    {
+      title: 'Button Docs',
+      url: 'https://reactnativereusables.com/docs/components/button/',
+    },
+  ]}
+/>
+
+<div className='h-5' />
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
+      ## Preview
+    </div>
+    <PreviewCard preview={<BasicButtonBar />} />
+  </TabsContent>
+  <TabsContent value="code">
+    ```json doc-gen:file
+    {
+      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoBlank/index.tsx",
+      "codeblock": {
+        "lang": "tsx"
+      }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## 安装
+
+<Tabs defaultValue='cli'>
+  <TabsList>
+    <TabsTrigger id='cli' value='cli'>
+      CLI
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value='cli'>
+    <CommandTabs args={['add', 'http://localhost:3000/r/blank.json']} />
+  </TabsContent>
+</Tabs>
+
+### 使用
+
+```tsx
+import Blank from '@/components/Blank';
+import { Text } from 'react-native';
+
+<Blank top bottom style={blankStyle} size='s'>
+  <Text style={ctxStyle}>size="s"</Text>
+</Blank>;
+```

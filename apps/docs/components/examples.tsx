@@ -1,3 +1,3 @@
 'use client';
 
-export * from '@/example-library/examples';
+export * from '@/react-native-component/examples';

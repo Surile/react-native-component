@@ -11,7 +11,7 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/ui/red-button.tsx",
+          "path": "./node_modules/@rnr/react-native-component/src/components/ui/red-button.tsx",
           "type": "registry:component"
         }
       ],
@@ -28,7 +28,7 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/components/ui/button.tsx",
+          "path": "./node_modules/@rnr/react-native-component/src/components/ui/button.tsx",
           "type": "registry:component"
         }
       ],
@@ -45,7 +45,7 @@
       "author": "@gabimoncha",
       "files": [
         {
-          "path": "./node_modules/@rnr/example-library/src/blocks/multiple-buttons.tsx",
+          "path": "./node_modules/@rnr/react-native-component/src/blocks/multiple-buttons.tsx",
           "type": "registry:block"
         }
       ],

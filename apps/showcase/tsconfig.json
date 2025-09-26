@@ -4,8 +4,10 @@
     "baseUrl": ".",
     "paths": {
       "@showcase/*": ["./*"],
-      "~/*": ["../../packages/example-library/src/*"],
-      "@/example-library/*": ["../../packages/example-library/src/*"]
+      "~/*": ["../../packages/react-native-component/src/*"],
+      "@/react-native-component/*": [
+        "../../packages/react-native-component/src/*"
+      ]
     },
     "jsx": "react-native",
     "types": ["nativewind/types"],

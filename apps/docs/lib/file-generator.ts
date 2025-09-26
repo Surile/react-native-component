@@ -58,5 +58,7 @@ export function fileGenerator(): DocGenerator {
 }
 
 function fixImports(value: string) {
-  return value.replaceAll('@/example-library/', '@/').replaceAll('~/', '@/');
+  return value
+    .replaceAll('@/react-native-component/', '@/')
+    .replaceAll('~/', '@/');
 }

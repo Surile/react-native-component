@@ -8,7 +8,8 @@ import type { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: 'React Native Reusables Registry Template',
-  description: 'A template you can use to create your own Universal Components registry.',
+  description:
+    'A template you can use to create your own Universal Components registry.',
 };
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -16,11 +17,11 @@ export default function Layout({ children }: { children: ReactNode }) {
     <>
       <SkipNavigationButton />
       <HomeLayout
-        githubUrl="https://github.com/gabimoncha/rnr-registry-template"
+        githubUrl='https://github.com/gabimoncha/rnr-registry-template'
         nav={{
           title: (
-            <div className="hover:bg-fd-accent -ml-0.5 flex size-8 items-center justify-center rounded-md transition-colors duration-200">
-              <RnrIcon className="w-6" pathClassName="stroke-[1px]" />
+            <div className='hover:bg-fd-accent -ml-0.5 flex size-8 items-center justify-center rounded-md transition-colors duration-200'>
+              <RnrIcon className='w-6' pathClassName='stroke-[1px]' />
             </div>
           ),
         }}
@@ -29,11 +30,12 @@ export default function Layout({ children }: { children: ReactNode }) {
             type: 'custom',
             children: (
               <Button
-                variant="ghost"
-                size="sm"
+                variant='ghost'
+                size='sm'
                 asChild
-                className="hover:bg-fd-accent dark:hover:bg-fd-accent -ml-1.5 justify-start sm:ml-0 sm:justify-center">
-                <Link href="/docs">Docs</Link>
+                className='hover:bg-fd-accent dark:hover:bg-fd-accent -ml-1.5 justify-start sm:ml-0 sm:justify-center'
+              >
+                <Link href='/docs'>Docs</Link>
               </Button>
             ),
           },
@@ -41,27 +43,17 @@ export default function Layout({ children }: { children: ReactNode }) {
             type: 'custom',
             children: (
               <Button
-                variant="ghost"
-                size="sm"
+                variant='ghost'
+                size='sm'
                 asChild
-                className="hover:bg-fd-accent dark:hover:bg-fd-accent -ml-1.5 justify-start sm:ml-0 sm:justify-center">
-                <Link href="/docs/blocks/example-block/example">Blocks</Link>
+                className='hover:bg-fd-accent dark:hover:bg-fd-accent -ml-1.5 justify-start sm:ml-0 sm:justify-center'
+              >
+                <Link href='/docs'>Components</Link>
               </Button>
             ),
           },
-          {
-            type: 'custom',
-            children: (
-              <Button
-                variant="ghost"
-                size="sm"
-                asChild
-                className="hover:bg-fd-accent dark:hover:bg-fd-accent -ml-1.5 justify-start sm:ml-0 sm:justify-center">
-                <Link href="/docs/components/example-button">Components</Link>
-              </Button>
-            ),
-          },
-        ]}>
+        ]}
+      >
         {children}
       </HomeLayout>
     </>

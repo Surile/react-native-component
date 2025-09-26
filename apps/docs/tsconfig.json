@@ -18,8 +18,10 @@
     "incremental": true,
     "paths": {
       "@docs/*": ["./*"],
-      "~/*": ["../../packages/example-library/reusables/*"],
-      "@/example-library/*": ["../../packages/example-library/src/*"]
+      "~/*": ["../../packages/react-native-component/src/*"],
+      "@/react-native-component/*": [
+        "../../packages/react-native-component/src/*"
+      ]
     },
     "plugins": [
       {
