@@ -1,7 +1,12 @@
-import React, { memo, useEffect, useRef, useState } from 'react';
-import { Animated, BackHandler, TouchableOpacity } from 'react-native';
-import type { OverlayProps } from './types';
-import { cn } from '../../lib/utils';
+import React, { memo, useEffect, useRef, useState } from "react";
+import {
+  Animated,
+  BackHandler,
+  Platform,
+  TouchableOpacity,
+} from "react-native";
+import type { OverlayProps } from "./types";
+import { cn } from "../../lib/utils";
 
 /**
  * Overlay 遮罩层
@@ -58,15 +63,20 @@ const Overlay: React.FC<OverlayProps> = ({
 
   // Android 返回按钮
   useEffect(() => {
-    const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-      if (typeof onRequestClose === 'function' && visible) {
-        return onRequestClose();
-      }
+    if (Platform.OS === "android") {
+      const backHandler = BackHandler.addEventListener(
+        "hardwareBackPress",
+        () => {
+          if (typeof onRequestClose === "function" && visible) {
+            return onRequestClose();
+          }
 
-      return false;
-    });
+          return false;
+        }
+      );
 
-    return () => backHandler.remove();
+      return () => backHandler.remove();
+    }
   }, [visible, onRequestClose]);
 
   if (!localVisible) {
@@ -83,12 +93,16 @@ const Overlay: React.FC<OverlayProps> = ({
         opacity: fadeAnim.current,
       }}
       className={cn(
-        'relative left-0 right-0 bottom-0 top-0 bg-black/70',
-        localVisible ? 'absolute' : null,
+        "relative left-0 right-0 bottom-0 top-0 bg-black/70",
+        localVisible ? "absolute" : null,
         overlayClassName
       )}
     >
-      <TouchableOpacity className={cn('flex-1', className)} activeOpacity={1} onPress={onPress}>
+      <TouchableOpacity
+        className={cn("flex-1", className)}
+        activeOpacity={1}
+        onPress={onPress}
+      >
         {children}
       </TouchableOpacity>
     </Animated.View>
