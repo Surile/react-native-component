@@ -5,6 +5,13 @@
   "title": "Example card",
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/helpers.json",
+    "http://localhost:3000/r/blank.json",
+    "http://localhost:3000/r/divider.json",
+    "http://localhost:3000/r/skeleton.json",
+    "http://localhost:3000/r/card-body.json"
+  ],
   "files": [
     {
       "path": "./node_modules/@tastien/react-native-component/src/components/card/card-body.tsx",

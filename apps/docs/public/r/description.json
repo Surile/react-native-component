@@ -5,6 +5,11 @@
   "title": "Example description",
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/helpers.json",
+    "http://localhost:3000/r/date-picker-view.json",
+    "http://localhost:3000/r/space.json"
+  ],
   "files": [
     {
       "path": "./node_modules/@tastien/react-native-component/src/components/description/context.ts",

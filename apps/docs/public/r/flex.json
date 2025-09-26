@@ -5,6 +5,9 @@
   "title": "Example flex",
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/helpers.json"
+  ],
   "files": [
     {
       "path": "./node_modules/@tastien/react-native-component/src/components/flex/flex-item.tsx",

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "styles",
+  "type": "registry:file",
+  "title": "Example styles",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/styles/index.ts",
+      "content": "const size = {\n  s: 8,\n  m: 16,\n  l: 24,\n}\n\nexport { size }",
+      "type": "registry:lib"
+    }
+  ]
+}

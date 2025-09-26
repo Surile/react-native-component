@@ -5,6 +5,15 @@
   "title": "Example tree",
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/helpers.json",
+    "http://localhost:3000/r/flex.json",
+    "http://localhost:3000/r/checkbox.json",
+    "http://localhost:3000/r/icons.json",
+    "http://localhost:3000/r/empty.json",
+    "http://localhost:3000/r/hooks.json",
+    "http://localhost:3000/r/search.json"
+  ],
   "files": [
     {
       "path": "./node_modules/@tastien/react-native-component/src/components/tree/helper.ts",

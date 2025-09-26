@@ -115,7 +115,20 @@
       ]
     },
     {
-      "name": "example-button",
+      "name": "styles",
+      "type": "registry:file",
+      "title": "Example styles",
+      "description": "Displays a button which is always red.",
+      "author": "@gabimoncha",
+      "files": [
+        {
+          "path": "./node_modules/@tastien/react-native-component/src/components/styles/index.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "button",
       "type": "registry:component",
       "title": "Example button",
       "description": "Displays a button which is always red.",
@@ -155,6 +168,13 @@
       "title": "Example action-sheet",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/button.json",
+        "http://localhost:3000/r/divider.json",
+        "http://localhost:3000/r/popup.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/action-sheet/action-sheet-instance.tsx",
@@ -247,6 +267,14 @@
       "title": "Example button-bar",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/space.json",
+        "http://localhost:3000/r/action-sheet.json",
+        "http://localhost:3000/r/bottom-bar.json",
+        "http://localhost:3000/r/button.json",
+        "http://localhost:3000/r/styles.json",
+        "http://localhost:3000/r/helpers.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/button-bar/button-bar-confirm.tsx",
@@ -272,6 +300,13 @@
       "title": "Example card",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/blank.json",
+        "http://localhost:3000/r/divider.json",
+        "http://localhost:3000/r/skeleton.json",
+        "http://localhost:3000/r/card-body.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/card/card-body.tsx",
@@ -297,6 +332,11 @@
       "title": "Example cell",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/divider.json",
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/helpers.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/cell/cell-group.tsx",
@@ -322,6 +362,12 @@
       "title": "Example checkbox",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/space.json",
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/icons.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/checkbox/checkbox-group.tsx",
@@ -351,6 +397,13 @@
       "title": "Example collapse",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/card.json",
+        "http://localhost:3000/r/cell.json",
+        "http://localhost:3000/r/divider.json",
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/hooks.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/collapse/collapse.tsx",
@@ -372,6 +425,13 @@
       "title": "Example date-picker",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/popup.json",
+        "http://localhost:3000/r/date-picker-view.json",
+        "http://localhost:3000/r/button.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/date-picker/date-picker-range-method.tsx",
@@ -401,6 +461,11 @@
       "title": "Example date-picker-view",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/picker-view.json",
+        "http://localhost:3000/r/helpers.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/date-picker-view/date-picker-view.tsx",
@@ -434,6 +499,11 @@
       "title": "Example description",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/date-picker-view.json",
+        "http://localhost:3000/r/space.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/description/context.ts",
@@ -483,6 +553,15 @@
       "title": "Example dialog",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/number-input.json",
+        "http://localhost:3000/r/text-input.json",
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/portal.json",
+        "http://localhost:3000/r/popup.json",
+        "http://localhost:3000/r/icons.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/dialog/dialog-input.tsx",
@@ -520,6 +599,7 @@
       "title": "Example divider",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": ["http://localhost:3000/r/helpers.json"],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/divider/divider-line-dashed.tsx",
@@ -549,7 +629,17 @@
       "title": "Example dropdown",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
-      "registryDependencies": ["http://localhost:3000/r/components.json"],
+      "registryDependencies": [
+        "http://localhost:3000/r/components.json",
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/portal.json",
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/popup.json",
+        "http://localhost:3000/r/tree.json",
+        "http://localhost:3000/r/date-picker.json",
+        "http://localhost:3000/r/date-picker-view.json",
+        "http://localhost:3000/r/button.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/dropdown/context.ts",
@@ -611,6 +701,7 @@
       "title": "Example empty",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": ["http://localhost:3000/r/result.json"],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/empty/empty.tsx",
@@ -632,6 +723,11 @@
       "title": "Example error-boundary",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/blank.json",
+        "http://localhost:3000/r/button.json",
+        "http://localhost:3000/r/result.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/error-boundary/index.tsx",
@@ -649,6 +745,22 @@
       "title": "Example field",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/button.json",
+        "http://localhost:3000/r/cell.json",
+        "http://localhost:3000/r/checkbox.json",
+        "http://localhost:3000/r/date-picker.json",
+        "http://localhost:3000/r/date-picker-view.json",
+        "http://localhost:3000/r/text-input.json",
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/icons.json",
+        "http://localhost:3000/r/number-input.json",
+        "http://localhost:3000/r/password-input.json",
+        "http://localhost:3000/r/selector.json",
+        "http://localhost:3000/r/loading.json",
+        "http://localhost:3000/r/switch.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/field/field-button-option.tsx",
@@ -706,6 +818,7 @@
       "title": "Example flex",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": ["http://localhost:3000/r/helpers.json"],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/flex/flex-item.tsx",
@@ -727,6 +840,11 @@
       "title": "Example floating-panel",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/divider.json",
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/portal.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/floating-panel/index.tsx",
@@ -752,6 +870,10 @@
       "title": "Example form",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/toast.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/form/form.tsx",
@@ -789,6 +911,7 @@
       "title": "Example loading",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": ["http://localhost:3000/r/helpers.json"],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/loading/index.tsx",
@@ -808,13 +931,17 @@
         }
       ]
     },
-
     {
       "name": "navbar",
       "type": "registry:component",
       "title": "Example navbar",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/divider.json",
+        "http://localhost:3000/r/icons.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/navbar/index.tsx",
@@ -832,6 +959,10 @@
       "title": "Example notice-bar",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/icons.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/notice-bar/notice-bar.tsx",
@@ -853,6 +984,11 @@
       "title": "Example notify",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/portal.json",
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/popup.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/notify/index.ts",
@@ -882,6 +1018,11 @@
       "title": "Example number-input",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/text-input.json",
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/helpers.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/number-input/index.tsx",
@@ -920,6 +1061,11 @@
       "title": "Example password-input",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/text-input.json",
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/icons.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/password-input/index.tsx",
@@ -937,6 +1083,13 @@
       "title": "Example picker",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/picker-view.json",
+        "http://localhost:3000/r/popup.json",
+        "http://localhost:3000/r/portal.json",
+        "http://localhost:3000/r/hooks.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/picker/picker.tsx",
@@ -966,6 +1119,12 @@
       "title": "Example picker-view",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/loading.json",
+        "http://localhost:3000/r/divider.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/picker-view/picker-view.tsx",
@@ -999,6 +1158,7 @@
       "title": "Example popover",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": ["http://localhost:3000/r/helpers.json"],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/popover/index.ts",
@@ -1028,6 +1188,14 @@
       "title": "Example popup",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/portal.json",
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/icons.json",
+        "http://localhost:3000/r/overlay.json",
+        "http://localhost:3000/r/navbar.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/popup/helper.ts",
@@ -1094,6 +1262,13 @@
       "title": "Example progress",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/button.json",
+        "http://localhost:3000/r/result.json",
+        "http://localhost:3000/r/space.json",
+        "http://localhost:3000/r/hooks.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/progress/index.ts",
@@ -1119,6 +1294,10 @@
       "title": "Example result",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/icons.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/result/icons/result-icon-box.tsx",
@@ -1155,6 +1334,12 @@
       "type": "registry:component",
       "title": "Example search",
       "description": "Displays a button which is always red.",
+      "registryDependencies": [
+        "http://localhost:3000/r/text-input.json",
+        "http://localhost:3000/r/button.json",
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/icons.json"
+      ],
       "author": "@gabimoncha",
       "files": [
         {
@@ -1177,6 +1362,18 @@
       "title": "Example selector",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/portal.json",
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/popup.json",
+        "http://localhost:3000/r/tree.json",
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/divider.json",
+        "http://localhost:3000/r/space.json",
+        "http://localhost:3000/r/button-bar.json",
+        "http://localhost:3000/r/button.json",
+        ""
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/selector/helper.ts",
@@ -1214,6 +1411,12 @@
       "title": "Example sidebar",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/badge.json",
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/loading.json",
+        "http://localhost:3000/r/result.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/sidebar/index.ts",
@@ -1235,6 +1438,10 @@
       "title": "Example skeleton",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/space.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/skeleton/index.ts",
@@ -1268,6 +1475,10 @@
       "title": "Example space",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/blank.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/space/index.tsx",
@@ -1285,6 +1496,15 @@
       "title": "Example step-selector",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/popup.json",
+        "http://localhost:3000/r/portal.json",
+        "http://localhost:3000/r/cell.json",
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/loading.json",
+        "http://localhost:3000/r/icons.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/step-selector/index.ts",
@@ -1318,6 +1538,11 @@
       "title": "Example switch",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/loading.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/switch/index.ts",
@@ -1339,6 +1564,10 @@
       "title": "Example tab-bar",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/bottom-bar.json",
+        "http://localhost:3000/r/hooks.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/tab-bar/index.ts",
@@ -1360,6 +1589,12 @@
       "title": "Example tabs",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/tab-bar.json",
+        "http://localhost:3000/r/divider.json",
+        "http://localhost:3000/r/hooks.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/tabs/index.ts",
@@ -1389,6 +1624,7 @@
       "title": "Example tag",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": ["http://localhost:3000/r/icons.json"],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/tag/index.ts",
@@ -1410,6 +1646,11 @@
       "title": "Example text-input",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/icons.json",
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/hooks.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/text-input/index.ts",
@@ -1435,6 +1676,13 @@
       "title": "Example toast",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/portal.json",
+        "http://localhost:3000/r/loading.json",
+        "http://localhost:3000/r/popup.json",
+        "http://localhost:3000/r/icons.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/toast/index.tsx",
@@ -1460,6 +1708,15 @@
       "title": "Example tree",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/flex.json",
+        "http://localhost:3000/r/checkbox.json",
+        "http://localhost:3000/r/icons.json",
+        "http://localhost:3000/r/empty.json",
+        "http://localhost:3000/r/hooks.json",
+        "http://localhost:3000/r/search.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/tree/helper.ts",
@@ -1493,6 +1750,12 @@
       "title": "Example uploader",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/icons.json",
+        "http://localhost:3000/r/loading.json",
+        "http://localhost:3000/r/hooks.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/uploader/index.ts",
@@ -1526,6 +1789,10 @@
       "title": "Example water-mark",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
+      "registryDependencies": [
+        "http://localhost:3000/r/helpers.json",
+        "http://localhost:3000/r/hooks.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/water-mark/index.ts",

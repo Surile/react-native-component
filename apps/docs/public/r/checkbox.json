@@ -5,6 +5,12 @@
   "title": "Example checkbox",
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/hooks.json",
+    "http://localhost:3000/r/space.json",
+    "http://localhost:3000/r/helpers.json",
+    "http://localhost:3000/r/icons.json"
+  ],
   "files": [
     {
       "path": "./node_modules/@tastien/react-native-component/src/components/checkbox/checkbox-group.tsx",

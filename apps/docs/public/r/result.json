@@ -5,6 +5,10 @@
   "title": "Example result",
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/helpers.json",
+    "http://localhost:3000/r/icons.json"
+  ],
   "files": [
     {
       "path": "./node_modules/@tastien/react-native-component/src/components/result/icons/result-icon-box.tsx",

@@ -34,7 +34,9 @@ export function fileGenerator(): DocGenerator {
       const { file, codeblock = false } = fileGeneratorSchema.parse(input);
 
       const dest = path.resolve(ctx.cwd, file);
-      const value = fixImports(await fs.readFile(dest).then((res) => res.toString()));
+      const value = fixImports(
+        await fs.readFile(dest).then((res) => res.toString())
+      );
 
       if (codeblock === false) {
         return {
@@ -56,8 +58,5 @@ export function fileGenerator(): DocGenerator {
 }
 
 function fixImports(value: string) {
-  return value
-    .replaceAll('@/example-library/', '@/')
-    .replaceAll('@/example-library/blocks/', '@/components/')
-    .replaceAll('~/', '@/');
+  return value.replaceAll('@/example-library/', '@/').replaceAll('~/', '@/');
 }

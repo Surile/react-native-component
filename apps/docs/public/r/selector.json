@@ -5,6 +5,18 @@
   "title": "Example selector",
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/portal.json",
+    "http://localhost:3000/r/helpers.json",
+    "http://localhost:3000/r/popup.json",
+    "http://localhost:3000/r/tree.json",
+    "http://localhost:3000/r/hooks.json",
+    "http://localhost:3000/r/divider.json",
+    "http://localhost:3000/r/space.json",
+    "http://localhost:3000/r/button-bar.json",
+    "http://localhost:3000/r/button.json",
+    ""
+  ],
   "files": [
     {
       "path": "./node_modules/@tastien/react-native-component/src/components/selector/helper.ts",

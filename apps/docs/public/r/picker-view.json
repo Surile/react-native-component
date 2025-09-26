@@ -5,6 +5,12 @@
   "title": "Example picker-view",
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/hooks.json",
+    "http://localhost:3000/r/helpers.json",
+    "http://localhost:3000/r/loading.json",
+    "http://localhost:3000/r/divider.json"
+  ],
   "files": [
     {
       "path": "./node_modules/@tastien/react-native-component/src/components/picker-view/picker-view.tsx",

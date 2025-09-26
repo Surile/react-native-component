@@ -5,6 +5,22 @@
   "title": "Example field",
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/button.json",
+    "http://localhost:3000/r/cell.json",
+    "http://localhost:3000/r/checkbox.json",
+    "http://localhost:3000/r/date-picker.json",
+    "http://localhost:3000/r/date-picker-view.json",
+    "http://localhost:3000/r/text-input.json",
+    "http://localhost:3000/r/helpers.json",
+    "http://localhost:3000/r/hooks.json",
+    "http://localhost:3000/r/icons.json",
+    "http://localhost:3000/r/number-input.json",
+    "http://localhost:3000/r/password-input.json",
+    "http://localhost:3000/r/selector.json",
+    "http://localhost:3000/r/loading.json",
+    "http://localhost:3000/r/switch.json"
+  ],
   "files": [
     {
       "path": "./node_modules/@tastien/react-native-component/src/components/field/field-button-option.tsx",

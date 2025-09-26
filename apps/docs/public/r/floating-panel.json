@@ -5,6 +5,11 @@
   "title": "Example floating-panel",
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/divider.json",
+    "http://localhost:3000/r/helpers.json",
+    "http://localhost:3000/r/portal.json"
+  ],
   "files": [
     {
       "path": "./node_modules/@tastien/react-native-component/src/components/floating-panel/index.tsx",

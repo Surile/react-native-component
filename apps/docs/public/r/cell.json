@@ -5,6 +5,11 @@
   "title": "Example cell",
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/divider.json",
+    "http://localhost:3000/r/hooks.json",
+    "http://localhost:3000/r/helpers.json"
+  ],
   "files": [
     {
       "path": "./node_modules/@tastien/react-native-component/src/components/cell/cell-group.tsx",

@@ -64,7 +64,10 @@ const Notify: React.FC<React.PropsWithChildren<NotifyProps>> = ({
     <Popup {...restProps} overlay={false} position='top'>
       <TouchableWithoutFeedback onPress={onPress}>
         <View
-          className={cn('items-center justify-center px-4 py-2', notifyTypeVar({ type }))}
+          className={cn(
+            'items-center justify-center px-4 py-2',
+            notifyTypeVar({ type })
+          )}
           style={[
             {
               paddingTop: insets.top > 8 ? insets.top : 8,

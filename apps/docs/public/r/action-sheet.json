@@ -5,6 +5,13 @@
   "title": "Example action-sheet",
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/hooks.json",
+    "http://localhost:3000/r/helpers.json",
+    "http://localhost:3000/r/button.json",
+    "http://localhost:3000/r/divider.json",
+    "http://localhost:3000/r/popup.json"
+  ],
   "files": [
     {
       "path": "./node_modules/@tastien/react-native-component/src/components/action-sheet/action-sheet-instance.tsx",

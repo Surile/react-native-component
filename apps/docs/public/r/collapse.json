@@ -5,6 +5,13 @@
   "title": "Example collapse",
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/card.json",
+    "http://localhost:3000/r/cell.json",
+    "http://localhost:3000/r/divider.json",
+    "http://localhost:3000/r/helpers.json",
+    "http://localhost:3000/r/hooks.json"
+  ],
   "files": [
     {
       "path": "./node_modules/@tastien/react-native-component/src/components/collapse/collapse.tsx",

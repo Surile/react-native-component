@@ -5,6 +5,11 @@
   "title": "Example date-picker-view",
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/hooks.json",
+    "http://localhost:3000/r/picker-view.json",
+    "http://localhost:3000/r/helpers.json"
+  ],
   "files": [
     {
       "path": "./node_modules/@tastien/react-native-component/src/components/date-picker-view/date-picker-view.tsx",

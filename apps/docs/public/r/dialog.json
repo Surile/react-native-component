@@ -5,6 +5,15 @@
   "title": "Example dialog",
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/hooks.json",
+    "http://localhost:3000/r/number-input.json",
+    "http://localhost:3000/r/text-input.json",
+    "http://localhost:3000/r/helpers.json",
+    "http://localhost:3000/r/portal.json",
+    "http://localhost:3000/r/popup.json",
+    "http://localhost:3000/r/icons.json"
+  ],
   "files": [
     {
       "path": "./node_modules/@tastien/react-native-component/src/components/dialog/dialog-input.tsx",

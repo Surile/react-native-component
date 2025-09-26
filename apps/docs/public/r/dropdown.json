@@ -6,7 +6,15 @@
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
   "registryDependencies": [
-    "http://localhost:3000/r/components.json"
+    "http://localhost:3000/r/components.json",
+    "http://localhost:3000/r/helpers.json",
+    "http://localhost:3000/r/portal.json",
+    "http://localhost:3000/r/hooks.json",
+    "http://localhost:3000/r/popup.json",
+    "http://localhost:3000/r/tree.json",
+    "http://localhost:3000/r/date-picker.json",
+    "http://localhost:3000/r/date-picker-view.json",
+    "http://localhost:3000/r/button.json"
   ],
   "files": [
     {

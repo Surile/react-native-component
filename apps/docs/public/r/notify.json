@@ -5,6 +5,11 @@
   "title": "Example notify",
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/portal.json",
+    "http://localhost:3000/r/helpers.json",
+    "http://localhost:3000/r/popup.json"
+  ],
   "files": [
     {
       "path": "./node_modules/@tastien/react-native-component/src/components/notify/index.ts",
