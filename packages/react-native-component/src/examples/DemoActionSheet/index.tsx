@@ -4,12 +4,12 @@
  */
 
 import React from 'react';
-import Tst from '@/react-native-component/index';
+import Tst, { Provider } from '@/react-native-component/components';
 import ActionSheet from '@/react-native-component/components/action-sheet';
 
 const ActionSheetBase: React.FC = () => {
   return (
-    <>
+    <Provider>
       <Tst.Cell.Group title='基础用法'>
         <Tst.Cell
           title='提示弹窗'
@@ -165,7 +165,7 @@ const ActionSheetBase: React.FC = () => {
           }}
         />
       </Tst.Cell.Group>
-    </>
+    </Provider>
   );
 };
 

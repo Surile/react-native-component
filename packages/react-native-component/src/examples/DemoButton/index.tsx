@@ -1,4 +1,4 @@
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 import { ScrollView } from 'react-native';
 import ButtonType from './type';
 import ButtonSubtext from './subtext';

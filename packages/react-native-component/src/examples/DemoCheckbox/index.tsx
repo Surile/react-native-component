@@ -10,7 +10,7 @@ import CheckboxIcon from './icon';
 import CheckboxBase from './base';
 import CheckboxGroup from './group';
 
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 
 const BasicCheckbox: React.FC = () => {
   return (

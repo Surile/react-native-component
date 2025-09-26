@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 
 const CheckboxBase: React.FC = () => {
   const [value, setValue] = useState(true);

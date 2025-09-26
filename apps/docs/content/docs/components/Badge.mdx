@@ -5,15 +5,6 @@ description: An example component to help you get started.
 
 import { BadgePreview } from '@docs/components/examples';
 
-<ExternalLinks
-  links={[
-    {
-      title: 'Button Docs',
-      url: 'https://reactnativereusables.com/docs/components/button/',
-    },
-  ]}
-/>
-
 <div className='h-5' />
 
 <Tabs defaultValue="preview">
@@ -51,7 +42,7 @@ import { BadgePreview } from '@docs/components/examples';
     <CommandTabs
       args={[
         'add',
-        'https://rnr-registry-template-docs.vercel.app/r/example-button.json',
+        'https://react-native-component-docs.vercel.app/r/badge.json',
       ]}
     />
   </TabsContent>
@@ -60,20 +51,9 @@ import { BadgePreview } from '@docs/components/examples';
 ### 使用
 
 ```tsx
-import ActionSheet from '@/components/ActionSheet';
+import Badge from '@/components/Badge';
 
-const show = () => {
-  ActionSheet({
-    actions: ['选项一', '选项二'],
-  })
-    .then(({ item, index }) => {
-      console.log('提示弹窗 -> 选项');
-      console.log(item);
-      console.log(index);
-    })
-    .catch((e) => {
-      console.log('提示弹窗 -> 关闭');
-      console.log(e);
-    });
-};
+<Badge size='large' count='999'>
+  <></>
+</Badge>;
 ```

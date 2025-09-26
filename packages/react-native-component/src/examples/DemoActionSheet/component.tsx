@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 
 const ActionSheetComponent: React.FC = () => {
   const [state, setState] = useState({

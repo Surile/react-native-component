@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 import { ScrollView } from 'react-native';
 import CellBase from './base';
 import CellDivider from './divider';

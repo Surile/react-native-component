@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Text } from 'react-native';
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 
 const CardSquare: React.FC = () => {
   return (

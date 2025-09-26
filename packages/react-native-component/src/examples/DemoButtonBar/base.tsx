@@ -3,7 +3,7 @@
  * description: 在内部放置一个、多个按钮。
  */
 import { StyleSheet } from 'react-native';
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 
 const ButtonBarBase = () => {
   return (

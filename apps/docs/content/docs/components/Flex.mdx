@@ -1,0 +1,68 @@
+---
+title: Flex
+Flex: An example component to help you get started.
+---
+
+import { FlexPreview } from '@docs/components/examples';
+
+<div className='h-5' />
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
+      ## Preview
+    </div>
+    <PreviewCard preview={<FlexPreview />} />
+  </TabsContent>
+  <TabsContent value="code">
+    ```json doc-gen:file
+    {
+      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoFlex/index.tsx",
+      "codeblock": {
+        "lang": "tsx"
+      }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## 安装
+
+<Tabs defaultValue='cli'>
+  <TabsList>
+    <TabsTrigger id='cli' value='cli'>
+      CLI
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value='cli'>
+    <CommandTabs
+      args={[
+        'add',
+        'https://react-native-component-docs.vercel.app/r/flex.json',
+      ]}
+    />
+  </TabsContent>
+</Tabs>
+
+### 使用
+
+```tsx
+import { Flex, Button } from '@/components';
+import { Text } from 'react-native';
+
+<Flex direction='column'>
+  <Flex.Item style={{ paddingBottom: 4 }}>
+    <Button size='xs'>按钮1</Button>
+  </Flex.Item>
+  <Flex.Item style={{ paddingBottom: 4 }}>
+    <Button size='xs'>按钮2</Button>
+  </Flex.Item>
+  <Flex.Item style={{ paddingBottom: 4 }}>
+    <Button size='xs'>按钮3</Button>
+  </Flex.Item>
+</Flex>;
+```

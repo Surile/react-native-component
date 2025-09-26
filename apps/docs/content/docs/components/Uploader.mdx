@@ -1,0 +1,57 @@
+---
+title: Uploader
+Uploader: An example component to help you get started.
+---
+
+import { UploaderPreview } from '@docs/components/examples';
+
+<div className='h-5' />
+
+<Uploader defaultValue="preview">
+  <UploaderList>
+    <UploaderTrigger value="preview">Preview</UploaderTrigger>
+    <UploaderTrigger value="code">Code</UploaderTrigger>
+  </UploaderList>
+  <UploaderContent value="preview">
+    <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
+      ## Preview
+    </div>
+    <PreviewCard preview={<UploaderPreview />} />
+  </UploaderContent>
+  <UploaderContent value="code">
+    ```json doc-gen:file
+    {
+      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoUploader/index.tsx",
+      "codeblock": {
+        "lang": "tsx"
+      }
+    }
+    ```
+  </UploaderContent>
+</Uploader>
+
+## 安装
+
+<Uploader defaultValue='cli'>
+  <UploaderList>
+    <UploaderTrigger id='cli' value='cli'>
+      CLI
+    </UploaderTrigger>
+  </UploaderList>
+  <UploaderContent value='cli'>
+    <CommandUploader
+      args={[
+        'add',
+        'https://react-native-component-docs.vercel.app/r/uploader.json',
+      ]}
+    />
+  </UploaderContent>
+</Uploader>
+
+### 使用
+
+```tsx
+import Uploader from '@/components/Uploader';
+
+<Uploader list={[]} colGap={4} />;
+```

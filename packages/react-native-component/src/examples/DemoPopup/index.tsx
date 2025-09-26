@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { ScrollView } from 'react-native';
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 import PopupHeader from './header';
 import PopupPopup from './popup';
 import PopupPage from './page';

@@ -1,0 +1,72 @@
+---
+title: Popup
+Popup: An example component to help you get started.
+---
+
+import { PopupPreview } from '@docs/components/examples';
+
+<div className='h-5' />
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
+      ## Preview
+    </div>
+    <PreviewCard preview={<PopupPreview />} />
+  </TabsContent>
+  <TabsContent value="code">
+    ```json doc-gen:file
+    {
+      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoPopup/index.tsx",
+      "codeblock": {
+        "lang": "tsx"
+      }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## 安装
+
+<Tabs defaultValue='cli'>
+  <TabsList>
+    <TabsTrigger id='cli' value='cli'>
+      CLI
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value='cli'>
+    <CommandTabs
+      args={[
+        'add',
+        'https://react-native-component-docs.vercel.app/r/popup.json',
+      ]}
+    />
+  </TabsContent>
+</Tabs>
+
+### 使用
+
+```tsx
+import Popup from '@/components/Popup';
+import { useState } from 'react';
+
+const [visible, setVisible] = useState(false);
+
+<Popup
+  destroyOnClosed
+  visible={visible}
+  round
+  position='bottom'
+  safeAreaInsetBottom
+  onPressOverlay={() => {
+    setVisible(false);
+  }}
+>
+  <Popup.Header title='每次打开都是新的子元素' />
+  <Popup.KeyboardShim />
+</Popup>;
+```

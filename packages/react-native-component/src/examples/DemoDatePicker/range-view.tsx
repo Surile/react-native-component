@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 
 const defaultValueView: [Date, Date] = [
   new Date(2020, 6, 20, 18, 40, 10),

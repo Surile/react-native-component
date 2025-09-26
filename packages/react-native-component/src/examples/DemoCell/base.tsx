@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 
 const CellBase: React.FC = () => {
   return (

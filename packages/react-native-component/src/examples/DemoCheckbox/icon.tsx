@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 
 const CheckboxIcon: React.FC = () => {
   const [active, setActive] = useState(false);

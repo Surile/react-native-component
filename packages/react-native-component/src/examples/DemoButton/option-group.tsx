@@ -6,7 +6,7 @@
 import React, { memo, useState } from 'react';
 
 import { View } from 'react-native';
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 
 const options = new Array(10).fill(0).map((_, index) => ({
   value: index + 1,

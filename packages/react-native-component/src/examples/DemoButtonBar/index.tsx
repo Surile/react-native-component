@@ -1,5 +1,5 @@
 import { ScrollView } from 'react-native';
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 import ButtonBarBase from './base';
 import ButtonBarButtons from './buttons';
 import ButtonBarConfirm from './confirm';

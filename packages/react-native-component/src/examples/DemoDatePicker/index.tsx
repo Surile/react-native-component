@@ -8,21 +8,23 @@ import { ScrollView } from 'react-native';
 import DatePickerViewSingle from './single';
 import DatePickerViewRangeView from './range-view';
 import DatePickerViewRange from './range';
-import Tst from '@/react-native-component/index';
+import Tst, { Provider } from '@/react-native-component/components';
 
 const BasicDatePickerView: React.FC = () => {
   return (
-    <ScrollView>
-      <Tst.Blank>
-        <Tst.Space tail head>
-          <DatePickerViewSingle />
+    <Provider>
+      <ScrollView>
+        <Tst.Blank>
+          <Tst.Space tail head>
+            <DatePickerViewSingle />
 
-          <DatePickerViewRangeView />
+            <DatePickerViewRangeView />
 
-          <DatePickerViewRange />
-        </Tst.Space>
-      </Tst.Blank>
-    </ScrollView>
+            <DatePickerViewRange />
+          </Tst.Space>
+        </Tst.Blank>
+      </ScrollView>
+    </Provider>
   );
 };
 

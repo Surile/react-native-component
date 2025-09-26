@@ -1,0 +1,67 @@
+---
+title: Collapse
+description: An example component to help you get started.
+---
+
+import { CollapsePreview } from '@docs/components/examples';
+
+<div className='h-5' />
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
+      ## Preview
+    </div>
+    <PreviewCard preview={<CollapsePreview />} />
+  </TabsContent>
+  <TabsContent value="code">
+    ```json doc-gen:file
+    {
+      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoCollapse/index.tsx",
+      "codeblock": {
+        "lang": "tsx"
+      }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## 安装
+
+<Tabs defaultValue='cli'>
+  <TabsList>
+    <TabsTrigger id='cli' value='cli'>
+      CLI
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value='cli'>
+    <CommandTabs
+      args={[
+        'add',
+        'https://react-native-component-docs.vercel.app/r/example-collapse.json',
+      ]}
+    />
+  </TabsContent>
+</Tabs>
+
+### 使用
+
+```tsx
+import Collapse from '@/components/Collapse';
+import { Text, View } from 'react-native';
+
+<Collapse
+  title='标题11'
+  onAnimationEnd={(v) => {
+    console.log('动画结束:title 固定 => ', v);
+  }}
+>
+  <Text style={{ lineHeight: 20 }}>文案</Text>
+  <View style={{ height: 20 }} />
+  <Text style={{ lineHeight: 20 }}>文案</Text>
+</Collapse>;
+```

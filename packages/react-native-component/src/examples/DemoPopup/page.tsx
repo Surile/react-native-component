@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { ScrollView, View } from 'react-native';
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 
 const BasicPopupPage: React.FC = () => {
   const [pageVisible, setPageVisible] = useState(false);

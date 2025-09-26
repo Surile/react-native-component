@@ -6,7 +6,7 @@
 import React, { memo, useEffect, useRef } from 'react';
 
 import { Animated, ColorValue } from 'react-native';
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 
 const CustomLoading = ({
   size,

@@ -9,6 +9,7 @@ import {
   Space,
   Button,
   Picker,
+  Provider,
 } from '@/react-native-component/components';
 import React from 'react';
 import { ScrollView } from 'react-native';
@@ -67,128 +68,130 @@ const columns4 = buildChildren(8, 'sj', '省级', (sjValue, sjLabel) =>
 
 const BasicPicker: React.FC = () => {
   return (
-    <ScrollView>
-      <Cell.Group title='函数使用'>
-        <Space>
-          <Button
-            text='单选:Promise'
-            onPress={() => {
-              Picker({
-                title: '这是单选',
-                columns: columns1,
-              }).then((data) => {
-                console.log(data);
-              });
-            }}
-          />
-          <Button
-            text='单选:beforeClose:Promise'
-            onPress={() => {
-              Picker({
-                title: '这是单选',
-                columns: columns1,
-                beforeClose: (action, values, columns) => {
-                  console.log(
-                    '单选:beforeClose:Promise   =>  action  => ',
-                    action
-                  );
-                  console.log(
-                    '单选:beforeClose:Promise   =>  values  => ',
-                    values
-                  );
-                  console.log(
-                    '单选:beforeClose:Promise   =>  columns  => ',
-                    columns
-                  );
+    <Provider>
+      <ScrollView>
+        <Cell.Group title='函数使用'>
+          <Space>
+            <Button
+              text='单选:Promise'
+              onPress={() => {
+                Picker({
+                  title: '这是单选',
+                  columns: columns1,
+                }).then((data) => {
+                  console.log(data);
+                });
+              }}
+            />
+            <Button
+              text='单选:beforeClose:Promise'
+              onPress={() => {
+                Picker({
+                  title: '这是单选',
+                  columns: columns1,
+                  beforeClose: (action, values, columns) => {
+                    console.log(
+                      '单选:beforeClose:Promise   =>  action  => ',
+                      action
+                    );
+                    console.log(
+                      '单选:beforeClose:Promise   =>  values  => ',
+                      values
+                    );
+                    console.log(
+                      '单选:beforeClose:Promise   =>  columns  => ',
+                      columns
+                    );
 
-                  return new Promise<boolean>((resolve) => {
-                    setTimeout(() => {
-                      resolve(true);
-                    }, 2000);
-                  });
-                },
-              });
-            }}
-          />
-          <Button
-            text='单选:默认值:Promise'
-            onPress={() => {
-              Picker({
-                title: '这是单选',
-                columns: columns1,
-                defaultValue: [columns1[4].value],
-              }).then((data) => {
-                console.log(data);
-              });
-            }}
-          />
-          <Button
-            text='单选:Callback'
-            onPress={() => {
-              Picker({
-                title: '这是单选',
-                columns: columns1,
-                onCancel: (v, c) => {
-                  console.log('onCancel');
-                  console.log('单选:Callback ==> values ', v);
-                  console.log('单选:Callback ==> columns ', c);
-                },
-                onConfirm: (v, c) => {
-                  console.log('onConfirm');
-                  console.log('单选:Callback ==> values ', v);
-                  console.log('单选:Callback ==> columns ', c);
-                },
-              });
-            }}
-          />
-          <Button
-            text='多选:Promise'
-            onPress={() => {
-              Picker({
-                title: '这是多选',
-                columns: columns2,
-              }).then((data) => {
-                console.log(data);
-              });
-            }}
-          />
-          <Button
-            text='多选:默认值:Promise'
-            onPress={() => {
-              Picker({
-                title: '这是多选',
-                columns: columns2,
-                defaultValue: [columns2[0][4].value, columns2[1][8].value],
-              }).then((data) => {
-                console.log(data);
-              });
-            }}
-          />
-          <Button
-            text='多选:选项默认值:Promise'
-            onPress={() => {
-              Picker({
-                title: '这是多选',
-                columns: columns3,
-              }).then((data) => {
-                console.log(data);
-              });
-            }}
-          />
-          <Button
-            text='联级选择:Promise'
-            onPress={() => {
-              Picker({
-                title: '这是联级',
-                columns: columns4,
-              }).then((data) => {
-                console.log(data);
-              });
-            }}
-          />
-        </Space>
-      </Cell.Group>
-    </ScrollView>
+                    return new Promise<boolean>((resolve) => {
+                      setTimeout(() => {
+                        resolve(true);
+                      }, 2000);
+                    });
+                  },
+                });
+              }}
+            />
+            <Button
+              text='单选:默认值:Promise'
+              onPress={() => {
+                Picker({
+                  title: '这是单选',
+                  columns: columns1,
+                  defaultValue: [columns1[4].value],
+                }).then((data) => {
+                  console.log(data);
+                });
+              }}
+            />
+            <Button
+              text='单选:Callback'
+              onPress={() => {
+                Picker({
+                  title: '这是单选',
+                  columns: columns1,
+                  onCancel: (v, c) => {
+                    console.log('onCancel');
+                    console.log('单选:Callback ==> values ', v);
+                    console.log('单选:Callback ==> columns ', c);
+                  },
+                  onConfirm: (v, c) => {
+                    console.log('onConfirm');
+                    console.log('单选:Callback ==> values ', v);
+                    console.log('单选:Callback ==> columns ', c);
+                  },
+                });
+              }}
+            />
+            <Button
+              text='多选:Promise'
+              onPress={() => {
+                Picker({
+                  title: '这是多选',
+                  columns: columns2,
+                }).then((data) => {
+                  console.log(data);
+                });
+              }}
+            />
+            <Button
+              text='多选:默认值:Promise'
+              onPress={() => {
+                Picker({
+                  title: '这是多选',
+                  columns: columns2,
+                  defaultValue: [columns2[0][4].value, columns2[1][8].value],
+                }).then((data) => {
+                  console.log(data);
+                });
+              }}
+            />
+            <Button
+              text='多选:选项默认值:Promise'
+              onPress={() => {
+                Picker({
+                  title: '这是多选',
+                  columns: columns3,
+                }).then((data) => {
+                  console.log(data);
+                });
+              }}
+            />
+            <Button
+              text='联级选择:Promise'
+              onPress={() => {
+                Picker({
+                  title: '这是联级',
+                  columns: columns4,
+                }).then((data) => {
+                  console.log(data);
+                });
+              }}
+            />
+          </Space>
+        </Cell.Group>
+      </ScrollView>
+    </Provider>
   );
 };
 

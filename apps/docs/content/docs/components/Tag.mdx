@@ -1,0 +1,57 @@
+---
+title: Tag
+Tag: An example component to help you get started.
+---
+
+import { TagPreview } from '@docs/components/examples';
+
+<div className='h-5' />
+
+<Tag defaultValue="preview">
+  <TagList>
+    <TagTrigger value="preview">Preview</TagTrigger>
+    <TagTrigger value="code">Code</TagTrigger>
+  </TagList>
+  <TagContent value="preview">
+    <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
+      ## Preview
+    </div>
+    <PreviewCard preview={<TagPreview />} />
+  </TagContent>
+  <TagContent value="code">
+    ```json doc-gen:file
+    {
+      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoTag/index.tsx",
+      "codeblock": {
+        "lang": "tsx"
+      }
+    }
+    ```
+  </TagContent>
+</Tag>
+
+## 安装
+
+<Tag defaultValue='cli'>
+  <TagList>
+    <TagTrigger id='cli' value='cli'>
+      CLI
+    </TagTrigger>
+  </TagList>
+  <TagContent value='cli'>
+    <CommandTag
+      args={[
+        'add',
+        'https://react-native-component-docs.vercel.app/r/tag.json',
+      ]}
+    />
+  </TagContent>
+</Tag>
+
+### 使用
+
+```tsx
+import Tag from '@/components/Tag';
+
+<Tag>标签</Tag>;
+```

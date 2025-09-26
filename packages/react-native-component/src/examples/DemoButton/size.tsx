@@ -4,7 +4,7 @@
  */
 
 import React, { memo } from 'react';
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 
 const ButtonSize: React.FC = () => {
   return (

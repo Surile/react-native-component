@@ -1,0 +1,76 @@
+---
+title: Tabs
+Tabs: An example component to help you get started.
+---
+
+import { TabsPreview } from '@docs/components/examples';
+
+<div className='h-5' />
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
+      ## Preview
+    </div>
+    <PreviewCard preview={<TabsPreview />} />
+  </TabsContent>
+  <TabsContent value="code">
+    ```json doc-gen:file
+    {
+      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoTabs/index.tsx",
+      "codeblock": {
+        "lang": "tsx"
+      }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## 安装
+
+<Tabs defaultValue='cli'>
+  <TabsList>
+    <TabsTrigger id='cli' value='cli'>
+      CLI
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value='cli'>
+    <CommandTabs
+      args={[
+        'add',
+        'https://react-native-component-docs.vercel.app/r/tabs.json',
+      ]}
+    />
+  </TabsContent>
+</Tabs>
+
+### 使用
+
+```tsx
+import Tabs from '@/components/Tabs';
+
+<Tabs indicatorWidth={24}>
+  <Tabs.TabPane key='1' tab='第一个' badge='44'>
+    <></>
+  </Tabs.TabPane>
+
+  {null}
+
+  <>
+    <Tabs.TabPane key='3' tab='第二个1'>
+      <></>
+    </Tabs.TabPane>
+    <Tabs.TabPane key='4' tab='第二个2'>
+      <></>
+    </Tabs.TabPane>
+  </>
+
+  <Tabs.TabPane key='2' tab='第二个'>
+    <></>
+  </Tabs.TabPane>
+</Tabs>;
+```

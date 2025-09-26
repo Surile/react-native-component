@@ -1,0 +1,62 @@
+---
+title: Toast
+Toast: An example component to help you get started.
+---
+
+import { ToastPreview } from '@docs/components/examples';
+
+<div className='h-5' />
+
+<Toast defaultValue="preview">
+  <ToastList>
+    <ToastTrigger value="preview">Preview</ToastTrigger>
+    <ToastTrigger value="code">Code</ToastTrigger>
+  </ToastList>
+  <ToastContent value="preview">
+    <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
+      ## Preview
+    </div>
+    <PreviewCard preview={<ToastPreview />} />
+  </ToastContent>
+  <ToastContent value="code">
+    ```json doc-gen:file
+    {
+      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoToast/index.tsx",
+      "codeblock": {
+        "lang": "tsx"
+      }
+    }
+    ```
+  </ToastContent>
+</Toast>
+
+## 安装
+
+<Toast defaultValue='cli'>
+  <ToastList>
+    <ToastTrigger id='cli' value='cli'>
+      CLI
+    </ToastTrigger>
+  </ToastList>
+  <ToastContent value='cli'>
+    <CommandToast
+      args={[
+        'add',
+        'https://react-native-component-docs.vercel.app/r/toast.json',
+      ]}
+    />
+  </ToastContent>
+</Toast>
+
+### 使用
+
+```tsx
+import Toast from '@/components/Toast';
+
+const showToast = () => {
+  Toast({
+    message: '提示内容',
+    forbidPress: true,
+  });
+};
+```

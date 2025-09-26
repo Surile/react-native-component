@@ -1,0 +1,59 @@
+---
+title: WaterMark
+WaterMark: An example component to help you get started.
+---
+
+import { WaterMarkPreview } from '@docs/components/examples';
+
+<div className='h-5' />
+
+<WaterMark defaultValue="preview">
+  <WaterMarkList>
+    <WaterMarkTrigger value="preview">Preview</WaterMarkTrigger>
+    <WaterMarkTrigger value="code">Code</WaterMarkTrigger>
+  </WaterMarkList>
+  <WaterMarkContent value="preview">
+    <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
+      ## Preview
+    </div>
+    <PreviewCard preview={<WaterMarkPreview />} />
+  </WaterMarkContent>
+  <WaterMarkContent value="code">
+    ```json doc-gen:file
+    {
+      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoWaterMark/index.tsx",
+      "codeblock": {
+        "lang": "tsx"
+      }
+    }
+    ```
+  </WaterMarkContent>
+</WaterMark>
+
+## 安装
+
+<WaterMark defaultValue='cli'>
+  <WaterMarkList>
+    <WaterMarkTrigger id='cli' value='cli'>
+      CLI
+    </WaterMarkTrigger>
+  </WaterMarkList>
+  <WaterMarkContent value='cli'>
+    <CommandWaterMark
+      args={[
+        'add',
+        'https://react-native-component-docs.vercel.app/r/water-mark.json',
+      ]}
+    />
+  </WaterMarkContent>
+</WaterMark>
+
+### 使用
+
+```tsx
+import WaterMark from '@/components/WaterMark';
+
+<WaterMark text='水印内容' textWidth={90}>
+  <></>
+</WaterMark>;
+```

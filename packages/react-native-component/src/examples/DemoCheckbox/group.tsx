@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import Tst from '@/react-native-component/index';
+import Tst from '@/react-native-component/components';
 import { Text } from 'react-native';
 
 const options = new Array(6).fill(0).map((_, index) => ({
