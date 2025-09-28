@@ -134,10 +134,10 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/flex.json",
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/space.json",
-        "http://localhost:3000/r/hooks.json"
+        "https://react-native-component-docs.vercel.app/r/flex.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/space.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json"
       ],
       "files": [
         {
@@ -169,11 +169,11 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/button.json",
-        "http://localhost:3000/r/divider.json",
-        "http://localhost:3000/r/popup.json"
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/button.json",
+        "https://react-native-component-docs.vercel.app/r/divider.json",
+        "https://react-native-component-docs.vercel.app/r/popup.json"
       ],
       "files": [
         {
@@ -268,12 +268,12 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/space.json",
-        "http://localhost:3000/r/action-sheet.json",
-        "http://localhost:3000/r/bottom-bar.json",
-        "http://localhost:3000/r/button.json",
-        "http://localhost:3000/r/styles.json",
-        "http://localhost:3000/r/helpers.json"
+        "https://react-native-component-docs.vercel.app/r/space.json",
+        "https://react-native-component-docs.vercel.app/r/action-sheet.json",
+        "https://react-native-component-docs.vercel.app/r/bottom-bar.json",
+        "https://react-native-component-docs.vercel.app/r/button.json",
+        "https://react-native-component-docs.vercel.app/r/styles.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json"
       ],
       "files": [
         {
@@ -301,11 +301,11 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/blank.json",
-        "http://localhost:3000/r/divider.json",
-        "http://localhost:3000/r/skeleton.json",
-        "http://localhost:3000/r/card-body.json"
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/blank.json",
+        "https://react-native-component-docs.vercel.app/r/divider.json",
+        "https://react-native-component-docs.vercel.app/r/skeleton.json",
+        "https://react-native-component-docs.vercel.app/r/card-body.json"
       ],
       "files": [
         {
@@ -333,9 +333,9 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/divider.json",
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/helpers.json"
+        "https://react-native-component-docs.vercel.app/r/divider.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json"
       ],
       "files": [
         {
@@ -363,10 +363,10 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/space.json",
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/icons.json"
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/space.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/icons.json"
       ],
       "files": [
         {
@@ -398,11 +398,11 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/card.json",
-        "http://localhost:3000/r/cell.json",
-        "http://localhost:3000/r/divider.json",
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/hooks.json"
+        "https://react-native-component-docs.vercel.app/r/card.json",
+        "https://react-native-component-docs.vercel.app/r/cell.json",
+        "https://react-native-component-docs.vercel.app/r/divider.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json"
       ],
       "files": [
         {
@@ -426,11 +426,11 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/popup.json",
-        "http://localhost:3000/r/date-picker-view.json",
-        "http://localhost:3000/r/button.json"
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/popup.json",
+        "https://react-native-component-docs.vercel.app/r/date-picker-view.json",
+        "https://react-native-component-docs.vercel.app/r/button.json"
       ],
       "files": [
         {
@@ -462,9 +462,9 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/picker-view.json",
-        "http://localhost:3000/r/helpers.json"
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/picker-view.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json"
       ],
       "files": [
         {
@@ -500,9 +500,9 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/date-picker-view.json",
-        "http://localhost:3000/r/space.json"
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/date-picker-view.json",
+        "https://react-native-component-docs.vercel.app/r/space.json"
       ],
       "files": [
         {
@@ -554,13 +554,13 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/number-input.json",
-        "http://localhost:3000/r/text-input.json",
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/portal.json",
-        "http://localhost:3000/r/popup.json",
-        "http://localhost:3000/r/icons.json"
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/number-input.json",
+        "https://react-native-component-docs.vercel.app/r/text-input.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/portal.json",
+        "https://react-native-component-docs.vercel.app/r/popup.json",
+        "https://react-native-component-docs.vercel.app/r/icons.json"
       ],
       "files": [
         {
@@ -599,7 +599,9 @@
       "title": "Example divider",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
-      "registryDependencies": ["http://localhost:3000/r/helpers.json"],
+      "registryDependencies": [
+        "https://react-native-component-docs.vercel.app/r/helpers.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/divider/divider-line-dashed.tsx",
@@ -630,15 +632,15 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/components.json",
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/portal.json",
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/popup.json",
-        "http://localhost:3000/r/tree.json",
-        "http://localhost:3000/r/date-picker.json",
-        "http://localhost:3000/r/date-picker-view.json",
-        "http://localhost:3000/r/button.json"
+        "https://react-native-component-docs.vercel.app/r/components.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/portal.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/popup.json",
+        "https://react-native-component-docs.vercel.app/r/tree.json",
+        "https://react-native-component-docs.vercel.app/r/date-picker.json",
+        "https://react-native-component-docs.vercel.app/r/date-picker-view.json",
+        "https://react-native-component-docs.vercel.app/r/button.json"
       ],
       "files": [
         {
@@ -701,7 +703,9 @@
       "title": "Example empty",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
-      "registryDependencies": ["http://localhost:3000/r/result.json"],
+      "registryDependencies": [
+        "https://react-native-component-docs.vercel.app/r/result.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/empty/empty.tsx",
@@ -724,9 +728,9 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/blank.json",
-        "http://localhost:3000/r/button.json",
-        "http://localhost:3000/r/result.json"
+        "https://react-native-component-docs.vercel.app/r/blank.json",
+        "https://react-native-component-docs.vercel.app/r/button.json",
+        "https://react-native-component-docs.vercel.app/r/result.json"
       ],
       "files": [
         {
@@ -746,20 +750,20 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/button.json",
-        "http://localhost:3000/r/cell.json",
-        "http://localhost:3000/r/checkbox.json",
-        "http://localhost:3000/r/date-picker.json",
-        "http://localhost:3000/r/date-picker-view.json",
-        "http://localhost:3000/r/text-input.json",
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/icons.json",
-        "http://localhost:3000/r/number-input.json",
-        "http://localhost:3000/r/password-input.json",
-        "http://localhost:3000/r/selector.json",
-        "http://localhost:3000/r/loading.json",
-        "http://localhost:3000/r/switch.json"
+        "https://react-native-component-docs.vercel.app/r/button.json",
+        "https://react-native-component-docs.vercel.app/r/cell.json",
+        "https://react-native-component-docs.vercel.app/r/checkbox.json",
+        "https://react-native-component-docs.vercel.app/r/date-picker.json",
+        "https://react-native-component-docs.vercel.app/r/date-picker-view.json",
+        "https://react-native-component-docs.vercel.app/r/text-input.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/icons.json",
+        "https://react-native-component-docs.vercel.app/r/number-input.json",
+        "https://react-native-component-docs.vercel.app/r/password-input.json",
+        "https://react-native-component-docs.vercel.app/r/selector.json",
+        "https://react-native-component-docs.vercel.app/r/loading.json",
+        "https://react-native-component-docs.vercel.app/r/switch.json"
       ],
       "files": [
         {
@@ -818,7 +822,9 @@
       "title": "Example flex",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
-      "registryDependencies": ["http://localhost:3000/r/helpers.json"],
+      "registryDependencies": [
+        "https://react-native-component-docs.vercel.app/r/helpers.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/flex/flex-item.tsx",
@@ -841,9 +847,9 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/divider.json",
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/portal.json"
+        "https://react-native-component-docs.vercel.app/r/divider.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/portal.json"
       ],
       "files": [
         {
@@ -871,8 +877,8 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/toast.json"
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/toast.json"
       ],
       "files": [
         {
@@ -911,7 +917,9 @@
       "title": "Example loading",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
-      "registryDependencies": ["http://localhost:3000/r/helpers.json"],
+      "registryDependencies": [
+        "https://react-native-component-docs.vercel.app/r/helpers.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/loading/index.tsx",
@@ -938,9 +946,9 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/divider.json",
-        "http://localhost:3000/r/icons.json"
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/divider.json",
+        "https://react-native-component-docs.vercel.app/r/icons.json"
       ],
       "files": [
         {
@@ -960,8 +968,8 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/icons.json"
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/icons.json"
       ],
       "files": [
         {
@@ -985,9 +993,9 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/portal.json",
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/popup.json"
+        "https://react-native-component-docs.vercel.app/r/portal.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/popup.json"
       ],
       "files": [
         {
@@ -1019,9 +1027,9 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/text-input.json",
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/helpers.json"
+        "https://react-native-component-docs.vercel.app/r/text-input.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json"
       ],
       "files": [
         {
@@ -1062,9 +1070,9 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/text-input.json",
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/icons.json"
+        "https://react-native-component-docs.vercel.app/r/text-input.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/icons.json"
       ],
       "files": [
         {
@@ -1084,11 +1092,11 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/picker-view.json",
-        "http://localhost:3000/r/popup.json",
-        "http://localhost:3000/r/portal.json",
-        "http://localhost:3000/r/hooks.json"
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/picker-view.json",
+        "https://react-native-component-docs.vercel.app/r/popup.json",
+        "https://react-native-component-docs.vercel.app/r/portal.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json"
       ],
       "files": [
         {
@@ -1120,10 +1128,10 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/loading.json",
-        "http://localhost:3000/r/divider.json"
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/loading.json",
+        "https://react-native-component-docs.vercel.app/r/divider.json"
       ],
       "files": [
         {
@@ -1158,7 +1166,9 @@
       "title": "Example popover",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
-      "registryDependencies": ["http://localhost:3000/r/helpers.json"],
+      "registryDependencies": [
+        "https://react-native-component-docs.vercel.app/r/helpers.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/popover/index.ts",
@@ -1189,12 +1199,12 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/portal.json",
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/icons.json",
-        "http://localhost:3000/r/overlay.json",
-        "http://localhost:3000/r/navbar.json"
+        "https://react-native-component-docs.vercel.app/r/portal.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/icons.json",
+        "https://react-native-component-docs.vercel.app/r/overlay.json",
+        "https://react-native-component-docs.vercel.app/r/navbar.json"
       ],
       "files": [
         {
@@ -1263,11 +1273,11 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/button.json",
-        "http://localhost:3000/r/result.json",
-        "http://localhost:3000/r/space.json",
-        "http://localhost:3000/r/hooks.json"
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/button.json",
+        "https://react-native-component-docs.vercel.app/r/result.json",
+        "https://react-native-component-docs.vercel.app/r/space.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json"
       ],
       "files": [
         {
@@ -1295,8 +1305,8 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/icons.json"
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/icons.json"
       ],
       "files": [
         {
@@ -1335,10 +1345,10 @@
       "title": "Example search",
       "description": "Displays a button which is always red.",
       "registryDependencies": [
-        "http://localhost:3000/r/text-input.json",
-        "http://localhost:3000/r/button.json",
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/icons.json"
+        "https://react-native-component-docs.vercel.app/r/text-input.json",
+        "https://react-native-component-docs.vercel.app/r/button.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/icons.json"
       ],
       "author": "@gabimoncha",
       "files": [
@@ -1363,15 +1373,15 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/portal.json",
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/popup.json",
-        "http://localhost:3000/r/tree.json",
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/divider.json",
-        "http://localhost:3000/r/space.json",
-        "http://localhost:3000/r/button-bar.json",
-        "http://localhost:3000/r/button.json",
+        "https://react-native-component-docs.vercel.app/r/portal.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/popup.json",
+        "https://react-native-component-docs.vercel.app/r/tree.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/divider.json",
+        "https://react-native-component-docs.vercel.app/r/space.json",
+        "https://react-native-component-docs.vercel.app/r/button-bar.json",
+        "https://react-native-component-docs.vercel.app/r/button.json",
         ""
       ],
       "files": [
@@ -1412,10 +1422,10 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/badge.json",
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/loading.json",
-        "http://localhost:3000/r/result.json"
+        "https://react-native-component-docs.vercel.app/r/badge.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/loading.json",
+        "https://react-native-component-docs.vercel.app/r/result.json"
       ],
       "files": [
         {
@@ -1439,8 +1449,8 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/space.json"
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/space.json"
       ],
       "files": [
         {
@@ -1476,8 +1486,8 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/blank.json"
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/blank.json"
       ],
       "files": [
         {
@@ -1497,13 +1507,13 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/popup.json",
-        "http://localhost:3000/r/portal.json",
-        "http://localhost:3000/r/cell.json",
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/loading.json",
-        "http://localhost:3000/r/icons.json"
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/popup.json",
+        "https://react-native-component-docs.vercel.app/r/portal.json",
+        "https://react-native-component-docs.vercel.app/r/cell.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/loading.json",
+        "https://react-native-component-docs.vercel.app/r/icons.json"
       ],
       "files": [
         {
@@ -1539,9 +1549,9 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/loading.json"
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/loading.json"
       ],
       "files": [
         {
@@ -1565,8 +1575,8 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/bottom-bar.json",
-        "http://localhost:3000/r/hooks.json"
+        "https://react-native-component-docs.vercel.app/r/bottom-bar.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json"
       ],
       "files": [
         {
@@ -1590,10 +1600,10 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/tab-bar.json",
-        "http://localhost:3000/r/divider.json",
-        "http://localhost:3000/r/hooks.json"
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/tab-bar.json",
+        "https://react-native-component-docs.vercel.app/r/divider.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json"
       ],
       "files": [
         {
@@ -1624,7 +1634,9 @@
       "title": "Example tag",
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
-      "registryDependencies": ["http://localhost:3000/r/icons.json"],
+      "registryDependencies": [
+        "https://react-native-component-docs.vercel.app/r/icons.json"
+      ],
       "files": [
         {
           "path": "./node_modules/@tastien/react-native-component/src/components/tag/index.ts",
@@ -1647,9 +1659,9 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/icons.json",
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/hooks.json"
+        "https://react-native-component-docs.vercel.app/r/icons.json",
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json"
       ],
       "files": [
         {
@@ -1677,11 +1689,11 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/portal.json",
-        "http://localhost:3000/r/loading.json",
-        "http://localhost:3000/r/popup.json",
-        "http://localhost:3000/r/icons.json"
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/portal.json",
+        "https://react-native-component-docs.vercel.app/r/loading.json",
+        "https://react-native-component-docs.vercel.app/r/popup.json",
+        "https://react-native-component-docs.vercel.app/r/icons.json"
       ],
       "files": [
         {
@@ -1709,13 +1721,13 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/flex.json",
-        "http://localhost:3000/r/checkbox.json",
-        "http://localhost:3000/r/icons.json",
-        "http://localhost:3000/r/empty.json",
-        "http://localhost:3000/r/hooks.json",
-        "http://localhost:3000/r/search.json"
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/flex.json",
+        "https://react-native-component-docs.vercel.app/r/checkbox.json",
+        "https://react-native-component-docs.vercel.app/r/icons.json",
+        "https://react-native-component-docs.vercel.app/r/empty.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json",
+        "https://react-native-component-docs.vercel.app/r/search.json"
       ],
       "files": [
         {
@@ -1751,10 +1763,10 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/icons.json",
-        "http://localhost:3000/r/loading.json",
-        "http://localhost:3000/r/hooks.json"
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/icons.json",
+        "https://react-native-component-docs.vercel.app/r/loading.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json"
       ],
       "files": [
         {
@@ -1790,8 +1802,8 @@
       "description": "Displays a button which is always red.",
       "author": "@gabimoncha",
       "registryDependencies": [
-        "http://localhost:3000/r/helpers.json",
-        "http://localhost:3000/r/hooks.json"
+        "https://react-native-component-docs.vercel.app/r/helpers.json",
+        "https://react-native-component-docs.vercel.app/r/hooks.json"
       ],
       "files": [
         {
