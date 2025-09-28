@@ -1,0 +1,60 @@
+---
+title: Checkbox
+description: An example component to help you get started.
+---
+
+import { CheckboxPreview } from '@docs/components/examples';
+
+<div className='h-5' />
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
+      ## Preview
+    </div>
+    <PreviewCard preview={<CheckboxPreview />} />
+  </TabsContent>
+  <TabsContent value="code">
+    ```json doc-gen:file
+    {
+      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoCheckbox/index.tsx",
+      "codeblock": {
+        "lang": "tsx"
+      }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## 安装
+
+<Tabs defaultValue='cli'>
+  <TabsList>
+    <TabsTrigger id='cli' value='cli'>
+      CLI
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value='cli'>
+    <CommandTabs
+      args={[
+        'add',
+        'https://react-native-component-docs.vercel.app/r/checkbox.json',
+      ]}
+    />
+  </TabsContent>
+</Tabs>
+
+### 使用
+
+```tsx
+import Checkbox from '@/components/Checkbox';
+import { useState } from 'react';
+
+const [value, setValue] = useState(true);
+
+<Checkbox label='受控:更新' value={value} onChange={setValue} />;
+```

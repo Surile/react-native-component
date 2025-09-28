@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "loading",
+  "type": "registry:component",
+  "title": "Example loading",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/helpers.json"
+  ],
+  "files": [
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/loading/index.tsx",
+      "content": "import { attachPropertiesToComponent } from '../../helpers';\nimport Loading from './loading';\nimport LoadingSpinner from './loading-spinner';\n\nexport default attachPropertiesToComponent(Loading, {\n  Spinner: LoadingSpinner,\n});\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/loading/loading.tsx",
+      "content": "import React, { isValidElement, memo } from 'react';\nimport isNil from 'lodash/isNil';\nimport { Text, View } from 'react-native';\nimport type { LoadingProps } from './interface';\nimport Spinner from './loading-spinner';\nimport { cn } from '../../lib/utils';\n\n/**\n * Loading 加载\n * 加载图标，用于表示加载中的过渡状态。\n */\nconst Loading: React.FC<LoadingProps> = ({\n  children,\n  size,\n  colorClassName,\n  textSize,\n  color,\n  vertical = false,\n  loadingIcon,\n  ...restProps\n}) => {\n  const textJSX = !isNil(children) ? (\n    isValidElement(children) ? (\n      children\n    ) : (\n      <Text\n        style={{\n          fontSize: textSize,\n        }}\n        className={cn(\n          'ml-2',\n          {\n            'ml-2 mt-2': vertical,\n          },\n          restProps.textClassName\n        )}\n      >\n        {children}\n      </Text>\n    )\n  ) : null;\n\n  return (\n    <View\n      {...restProps}\n      className={cn(\n        'flex-row items-center',\n        {\n          'flex-col': vertical,\n        },\n        restProps.className\n      )}\n    >\n      {isValidElement(loadingIcon) ? (\n        loadingIcon\n      ) : typeof loadingIcon === 'function' ? (\n        loadingIcon(size, color)\n      ) : (\n        <Spinner size={size} colorClassName={colorClassName} />\n      )}\n      {textJSX}\n    </View>\n  );\n};\n\nexport default memo(Loading);\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/loading/loading-spinner.tsx",
+      "content": "import React, { memo, useEffect, useRef } from 'react';\nimport { cssInterop } from 'nativewind';\nimport { Animated, Easing, View, ViewProps } from 'react-native';\nimport { cn } from '../../lib/utils';\n\ncssInterop(Animated.View, {\n  className: 'style',\n});\n\nexport interface SpinnerProps extends ViewProps {\n  /**\n   * 大小\n   */\n  size?: number;\n\n  /**\n   * 颜色\n   */\n  colorClassName?: string;\n}\n\nconst PETAL_COUNT = 8;\nconst PETALS = new Array(PETAL_COUNT).fill(0);\nconst A_OPACITY = 1 / PETAL_COUNT;\nconst A_ROTATE = 360 / PETAL_COUNT;\n\nconst useLoop = (\n  AnimatedValue: Animated.Value,\n  initValue: number,\n  config: Pick<Animated.TimingAnimationConfig, 'toValue' | 'duration' | 'easing'>\n) => {\n  useEffect(() => {\n    const spinAnimation = Animated.timing(AnimatedValue, {\n      toValue: config.toValue,\n      duration: config.duration,\n      easing: config.easing,\n      useNativeDriver: true,\n    });\n\n    Animated.loop(spinAnimation).start();\n  }, [AnimatedValue, initValue, config.duration, config.toValue, config.easing]);\n};\n\nconst Spinner: React.FC<SpinnerProps> = ({\n  size = 24,\n  colorClassName = 'bg-primary-7',\n  ...restProps\n}) => {\n  const AnimatedSpinnerValue = useRef(new Animated.Value(0)).current;\n\n  useLoop(AnimatedSpinnerValue, 0, {\n    toValue: 1,\n    duration: 800,\n    easing: Easing.linear,\n  });\n\n  return (\n    <Animated.View\n      className={cn('relative justify-center items-center', restProps.className)}\n      style={{\n        width: size,\n        height: size,\n        transform: [\n          {\n            rotateZ: AnimatedSpinnerValue.interpolate({\n              inputRange: [0, 1],\n              outputRange: ['0deg', '360deg'],\n            }),\n          },\n        ],\n      }}\n      {...restProps}\n    >\n      {PETALS.map((_, i) => {\n        return (\n          <View\n            key={i}\n            style={{\n              opacity: A_OPACITY * (i + 1),\n              transform: [\n                {\n                  rotate: `${A_ROTATE * i}deg`,\n                },\n              ],\n            }}\n            className={cn('absolute top-0 left-0 bottom-0 right-0 items-center')}\n          >\n            <View className={cn('h-[30%] w-[2px]', colorClassName)} />\n          </View>\n        );\n      })}\n    </Animated.View>\n  );\n};\n\nexport default memo(Spinner);\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/loading/interface.ts",
+      "content": "import type { ColorValue, ViewProps } from 'react-native';\n\nexport interface LoadingProps extends ViewProps {\n  /**\n   * 文案的样式\n   */\n  textClassName?: string;\n\n  /**\n   * 颜色\n   */\n  colorClassName?: string;\n\n  color?: ColorValue\n\n  /**\n   * 加载图标大小，默认单位为px\n   */\n  size?: number;\n\n  /**\n   * 文字大小\n   */\n  textSize?: number;\n\n  /**\n   * 是否垂直排列图标和文字内容\n   * @default false\n   */\n  vertical?: boolean;\n\n  /**\n   * 自定义 loading 图标，需要自己实现动画\n   */\n  loadingIcon?: React.ReactNode | ((className?: string) => React.ReactNode);\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+---
+title: DatePicker
+description: An example component to help you get started.
+---
+
+import { DatePickerPreview } from '@docs/components/examples';
+
+<div className='h-5' />
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
+      ## Preview
+    </div>
+    <PreviewCard preview={<DatePickerPreview />} />
+  </TabsContent>
+  <TabsContent value="code">
+    ```json doc-gen:file
+    {
+      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoDatePicker/index.tsx",
+      "codeblock": {
+        "lang": "tsx"
+      }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## 安装
+
+<Tabs defaultValue='cli'>
+  <TabsList>
+    <TabsTrigger id='cli' value='cli'>
+      CLI
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value='cli'>
+    <CommandTabs
+      args={[
+        'add',
+        'https://react-native-component-docs.vercel.app/r/date-picker.json',
+      ]}
+    />
+  </TabsContent>
+</Tabs>
+
+### 使用
+
+```tsx
+import DatePicker from '@/components/DatePicker';
+
+const showDatePicker = () => {
+  DatePicker({
+    title: '某个时间',
+  }).then(({ action, value }) => {
+    console.log('单选:Promise  =>>  action  =>', action);
+    console.log('单选:Promise  =>>  value  =>', value);
+  });
+};
+```

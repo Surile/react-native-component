@@ -1,0 +1,76 @@
+---
+title: FloatingPanel
+FloatingPanel: An example component to help you get started.
+---
+
+import { FloatingPanelPreview } from '@docs/components/examples';
+
+<div className='h-5' />
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
+      ## Preview
+    </div>
+    <PreviewCard preview={<FloatingPanelPreview />} />
+  </TabsContent>
+  <TabsContent value="code">
+    ```json doc-gen:file
+    {
+      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoFloatingPanel/index.tsx",
+      "codeblock": {
+        "lang": "tsx"
+      }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## 安装
+
+<Tabs defaultValue='cli'>
+  <TabsList>
+    <TabsTrigger id='cli' value='cli'>
+      CLI
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value='cli'>
+    <CommandTabs
+      args={[
+        'add',
+        'https://react-native-component-docs.vercel.app/r/floating-panel.json',
+      ]}
+    />
+  </TabsContent>
+</Tabs>
+
+### 使用
+
+```tsx
+import FloatingPanel from '@/components/FloatingPanel';
+import { Text, View } from 'react-native';
+
+const anchorStart = insets.bottom + 100;
+const anchorEnd = height - insets.top - 100;
+
+<FloatingPanel
+  title='FloatingPanel'
+  anchorStart={anchorStart}
+  anchorEnd={anchorEnd}
+>
+  <Text>434</Text>
+  <View style={{ backgroundColor: '#ff8', height: 400 }} />
+  <View style={{ backgroundColor: '#f18', height: 400 }} />
+  <View style={{ backgroundColor: '#f98', height: 400 }} />
+  <View style={{ backgroundColor: '#a18', height: 400 }} />
+  <View style={{ backgroundColor: '#a58', height: 400 }} />
+  <View style={{ backgroundColor: '#b98', height: 400 }} />
+  <View style={{ backgroundColor: '#C18', height: 400 }} />
+  <View style={{ backgroundColor: '#C48', height: 400 }} />
+  <Text>end</Text>
+</FloatingPanel>;
+```

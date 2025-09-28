@@ -1,0 +1,155 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icons",
+  "type": "registry:component",
+  "title": "icons",
+  "author": "@zhaolinyang",
+  "description": "icons",
+  "files": [
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/arrow-down-fill.tsx",
+      "content": "import React from 'react'\nimport { Svg, Path } from 'react-native-svg'\n\nimport { genFillIcon } from './gen'\n\nconst ArrowDownFill = genFillIcon(({ size, color, strokeWidth }, props) => {\n  return (\n    <Svg\n      {...props}\n      viewBox=\"0 0 1024 1024\"\n      fill={color}\n      width={size}\n      height={size}>\n      <Path\n        d=\"m482.133 738.133-345.6-345.6c-17.066-17.066-17.066-42.666 0-59.733 8.534-8.533 19.2-12.8 29.867-12.8h689.067c23.466 0 42.666 19.2 42.666 42.667 0 10.666-4.266 21.333-12.8 29.866l-343.466 345.6c-17.067 17.067-42.667 17.067-59.734 0z\"\n        fill={color}\n      />\n    </Svg>\n  )\n})\nexport default ArrowDownFill\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/arrow-down-outline.tsx",
+      "content": "import React from 'react'\nimport { Svg, Path } from 'react-native-svg'\n\nimport { genOutlineIcon } from './gen'\n\nconst ArrowDownOutline = genOutlineIcon(\n  ({ size, color, strokeWidth }, props) => {\n    return (\n      <Svg\n        {...props}\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        width={size}\n        height={size}>\n        <Path\n          d=\"m20 8-8 8-8-8\"\n          stroke={color}\n          strokeWidth={strokeWidth || 2}\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n        />\n      </Svg>\n    )\n  },\n)\nexport default ArrowDownOutline\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/arrow-left-fill.tsx",
+      "content": "import React from 'react';\nimport { Svg, Path } from 'react-native-svg';\n\nimport { genFillIcon } from './gen';\n\nconst ArrowLeftFill = genFillIcon(({ size, color, strokeWidth }, { hitSlop, ...props }) => {\n  return (\n    <Svg {...props} viewBox='0 0 1024 1024' fill={color} width={size} height={size}>\n      <Path\n        d='m268.8 480 364.8-330.667c17.067-14.933 44.8-14.933 59.733 2.134 6.4 8.533 10.667 19.2 10.667 29.866v661.334c0 23.466-19.2 42.666-42.667 42.666-10.666 0-21.333-4.266-27.733-10.666L270.933 544c-17.066-14.933-19.2-42.667-2.133-59.733-2.133-2.134 0-2.134 0-4.267z'\n        fill={color}\n      />\n    </Svg>\n  );\n});\nexport default ArrowLeftFill;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/arrow-left-outline.tsx",
+      "content": "import { size } from 'lodash';\nimport { Svg, Path } from 'react-native-svg';\n\nconst ArrowLeftOutline = ({ color, strokeWidth, size, ...props }: any) => {\n  return (\n    <Svg {...props} viewBox='0 0 24 24' fill='none' width={size} height={size}>\n      <Path\n        d='m16 20-8-8 8-8'\n        stroke={color}\n        strokeWidth={strokeWidth || 2}\n        strokeLinecap='round'\n        strokeLinejoin='round'\n      />\n    </Svg>\n  );\n};\nexport default ArrowLeftOutline;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/arrow-right-fill.tsx",
+      "content": "import React from 'react';\nimport { Svg, Path } from 'react-native-svg';\n\nimport { genFillIcon } from './gen';\n\nconst ArrowRightFill = genFillIcon(({ size, color, strokeWidth }, { hitSlop, ...props }) => {\n  return (\n    <Svg {...props} viewBox='0 0 1024 1024' fill={color} width={size} height={size}>\n      <Path\n        d='M755.2 544 390.4 874.667c-17.067 14.933-44.8 14.933-59.733-2.134-6.4-8.533-10.667-19.2-10.667-29.866V181.333c0-23.466 19.2-42.666 42.667-42.666 10.666 0 21.333 4.266 27.733 10.666L753.067 480c17.066 14.933 19.2 42.667 2.133 59.733 2.133 2.134 0 2.134 0 4.267z'\n        fill={color}\n      />\n    </Svg>\n  );\n});\nexport default ArrowRightFill;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/arrow-right-outline.tsx",
+      "content": "import React from 'react'\nimport { Svg, Path } from 'react-native-svg'\n\nimport { genOutlineIcon } from './gen'\n\nconst ArrowRightOutline = genOutlineIcon(\n  ({ size, color, strokeWidth }, props) => {\n    return (\n      <Svg\n        {...props}\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        width={size}\n        height={size}>\n        <Path\n          d=\"m8 4 8 8-8 8\"\n          stroke={color}\n          strokeWidth={strokeWidth || 2}\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n        />\n      </Svg>\n    )\n  },\n)\nexport default ArrowRightOutline\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/arrow-up-fill.tsx",
+      "content": "import React from 'react'\nimport { Svg, Path } from 'react-native-svg'\n\nimport { genFillIcon } from './gen'\n\nconst ArrowUpFill = genFillIcon(({ size, color, strokeWidth }, props) => {\n  return (\n    <Svg\n      {...props}\n      viewBox=\"0 0 1024 1024\"\n      fill={color}\n      width={size}\n      height={size}>\n      <Path\n        d=\"m541.867 285.867 345.6 345.6c17.066 17.066 17.066 42.666 0 59.733-8.534 8.533-19.2 12.8-29.867 12.8H168.533c-23.466 0-42.666-19.2-42.666-42.667 0-10.666 4.266-21.333 12.8-29.866l343.466-345.6c17.067-17.067 42.667-17.067 59.734 0z\"\n        fill={color}\n      />\n    </Svg>\n  )\n})\nexport default ArrowUpFill\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/arrow-up-outline.tsx",
+      "content": "import React from 'react'\nimport { Svg, Path } from 'react-native-svg'\n\nimport { genOutlineIcon } from './gen'\n\nconst ArrowUpOutline = genOutlineIcon(({ size, color, strokeWidth }, props) => {\n  return (\n    <Svg {...props} viewBox=\"0 0 24 24\" fill=\"none\" width={size} height={size}>\n      <Path\n        d=\"m4 16 8-8 8 8\"\n        stroke={color}\n        strokeWidth={strokeWidth || 2}\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n      />\n    </Svg>\n  )\n})\nexport default ArrowUpOutline\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/circle-outline.tsx",
+      "content": "import React from 'react';\nimport { Svg, Path } from 'react-native-svg';\n\nimport { genOutlineIcon } from './gen';\n\nconst CircleOutline = genOutlineIcon(({ size, color, strokeWidth }, { hitSlop, ...props }) => {\n  return (\n    <Svg {...props} viewBox='0 0 24 25' fill='none' width={size} height={size}>\n      <Path\n        d='M12.043 2.012c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10Z'\n        stroke={color}\n        strokeWidth={strokeWidth || 2}\n        strokeLinejoin='round'\n      />\n    </Svg>\n  );\n});\nexport default CircleOutline;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/cross-circle-outline.tsx",
+      "content": "import React from 'react'\nimport { Svg, Path } from 'react-native-svg'\n\nimport { genOutlineIcon } from './gen'\n\nconst CrossCircleOutline = genOutlineIcon(\n  ({ size, color, strokeWidth }, props) => {\n    return (\n      <Svg\n        {...props}\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        width={size}\n        height={size}>\n        <Path\n          d=\"M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2Z\"\n          stroke={color}\n          strokeWidth={strokeWidth || 2}\n          strokeLinejoin=\"round\"\n        />\n        <Path\n          d=\"m9 9 5.833 5.833m-5.833 0L14.833 9\"\n          stroke={color}\n          strokeWidth={strokeWidth || 2}\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n        />\n      </Svg>\n    )\n  },\n)\nexport default CrossCircleOutline\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/cross-fill.tsx",
+      "content": "import React from 'react';\nimport { Svg, Circle, Path } from 'react-native-svg';\n\nimport { genFillIcon } from './gen';\n\nconst CrossFill = genFillIcon(({ size, color, strokeWidth }, props) => {\n  return (\n    <Svg {...props} viewBox='0 0 24 24' fill='none' width={size} height={size}>\n      <Circle r='10' cx='12' cy='12' fill={color} />\n      <Path\n        d='M9.707 8.293a1 1 0 0 0-1.414 1.414l1.414-1.414Zm4.42 7.247a1 1 0 0 0 1.413-1.414l-1.414 1.414ZM8.292 9.707l5.833 5.833 1.414-1.414-5.833-5.833-1.414 1.414Z'\n        fill='#FFF'\n      />\n      <Path\n        d='M8.293 14.126a1 1 0 1 0 1.414 1.414l-1.414-1.414Zm7.247-4.419a1 1 0 0 0-1.414-1.414l1.414 1.414ZM9.707 15.54l5.833-5.833-1.414-1.414-5.833 5.833 1.414 1.414Z'\n        fill='#FFF'\n      />\n    </Svg>\n  );\n});\nexport default CrossFill;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/cross-outline.tsx",
+      "content": "import React from 'react';\nimport { Svg, Path } from 'react-native-svg';\n\nimport { genOutlineIcon } from './gen';\n\nconst CrossOutline = genOutlineIcon(({ size, color, strokeWidth }, props) => {\n  return (\n    <Svg {...props} viewBox='0 0 24 24' fill='none' width={size} height={size}>\n      <Path\n        strokeLinejoin='round'\n        strokeLinecap='round'\n        strokeWidth={strokeWidth || 2}\n        stroke={color}\n        d='m5 5 14 14M5 19 19 5'\n      />\n    </Svg>\n  );\n});\nexport default CrossOutline;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/delete-fill.tsx",
+      "content": "import React from 'react'\nimport { Svg, Circle, Path } from 'react-native-svg'\n\nimport { genFillIcon } from './gen'\n\nconst DeleteFill = genFillIcon(({ size, color, strokeWidth }, props) => {\n  return (\n    <Svg {...props} viewBox=\"0 0 24 24\" fill=\"none\" width={size} height={size}>\n      <Circle r=\"10\" cx=\"12\" cy=\"12\" fill={color} />\n      <Path d=\"M8 13h8v-2H8v2Z\" fill=\"#FFF\" />\n    </Svg>\n  )\n})\nexport default DeleteFill\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/double-arrow-clockwise-outline.tsx",
+      "content": "import React from 'react'\nimport { Svg, Path } from 'react-native-svg'\n\nimport { genOutlineIcon } from './gen'\n\nconst DoubleArrowClockwiseOutline = genOutlineIcon(\n  ({ size, color, strokeWidth }, props) => {\n    return (\n      <Svg\n        {...props}\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        width={size}\n        height={size}>\n        <Path\n          strokeLinejoin=\"round\"\n          strokeLinecap=\"round\"\n          strokeWidth={strokeWidth || 2}\n          stroke={color}\n          d=\"M3.183 10.186c.12-.586.297-1.15.524-1.69a9.015 9.015 0 0 1 1.93-2.86A8.972 8.972 0 0 1 12 3a8.972 8.972 0 0 1 6.364 2.636C19.193 6.465 20.5 8 20.5 8m.5 6a9.014 9.014 0 0 1-2.453 4.55 8.972 8.972 0 0 1-6.364 2.636 8.972 8.972 0 0 1-6.364-2.637c-.83-.828-2.136-2.363-2.136-2.363\"\n        />\n        <Path\n          strokeLinejoin=\"round\"\n          strokeLinecap=\"round\"\n          strokeWidth={strokeWidth || 2}\n          stroke={color}\n          d=\"M21 4.5v4h-4M3.183 19.686v-4h4\"\n        />\n      </Svg>\n    )\n  },\n)\nexport default DoubleArrowClockwiseOutline\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/eye-close-outline.tsx",
+      "content": "import React from 'react'\nimport { Svg, Path } from 'react-native-svg'\n\nimport { genOutlineIcon } from './gen'\n\nconst EyeCloseOutline = genOutlineIcon(\n  ({ size, color, strokeWidth }, props) => {\n    return (\n      <Svg\n        {...props}\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        width={size}\n        height={size}>\n        <Path\n          d=\"M4.929 9C3.119 10.5 2 12 2 12s4.477 6 10 6c.685 0 2-.254 2-.254M10.016 6.25A8.223 8.223 0 0 1 12 6c5.523 0 10 6 10 6l-2.929 3\"\n          stroke={color}\n          strokeWidth={strokeWidth || 2}\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n        />\n        <Path\n          d=\"M9.773 10A2.997 2.997 0 0 0 9 12.016C9 13.664 10.317 15 11.941 15A2.91 2.91 0 0 0 14 14.147M21 21 3 3\"\n          stroke={color}\n          strokeWidth={strokeWidth || 2}\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n        />\n      </Svg>\n    )\n  },\n)\nexport default EyeCloseOutline\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/eye-outline.tsx",
+      "content": "import React from 'react'\nimport { Svg, Path } from 'react-native-svg'\n\nimport { genOutlineIcon } from './gen'\n\nconst EyeOutline = genOutlineIcon(({ size, color, strokeWidth }, props) => {\n  return (\n    <Svg {...props} viewBox=\"0 0 24 24\" fill=\"none\" width={size} height={size}>\n      <Path\n        d=\"M12 18c5.523 0 10-6 10-6s-4.477-6-10-6-10 6-10 6 4.477 6 10 6Z\"\n        stroke={color}\n        strokeWidth={strokeWidth || 2}\n        strokeLinejoin=\"round\"\n      />\n      <Path\n        d=\"M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z\"\n        stroke={color}\n        strokeWidth={strokeWidth || 2}\n        strokeLinejoin=\"round\"\n      />\n    </Svg>\n  )\n})\nexport default EyeOutline\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/gen.tsx",
+      "content": "import isNil from 'lodash/isNil';\nimport omit from 'lodash/omit';\nimport pick from 'lodash/pick';\nimport React, { memo } from 'react';\nimport { TouchableWithoutFeedback, View } from 'react-native';\nimport type { ViewStyle, TouchableWithoutFeedbackProps, ViewProps, ColorValue } from 'react-native';\nimport type { SvgProps } from 'react-native-svg/lib/typescript/elements/Svg';\nimport { cn } from '../../lib/utils';\nimport { cssInterop } from 'nativewind';\nimport Svg, { Circle, Rect } from 'react-native-svg';\n\ncssInterop(Svg, {\n  className: {\n    target: 'style',\n    nativeStyleToProp: { width: true, height: true },\n  },\n});\n\ncssInterop(Circle, {\n  className: {\n    target: 'style',\n    nativeStyleToProp: { width: true, height: true, stroke: true, strokeWidth: true, fill: true },\n  } as any,\n});\n\ncssInterop(Rect, {\n  className: {\n    target: 'style',\n    nativeStyleToProp: { width: true, height: true, stroke: true, strokeWidth: true, fill: true },\n  } as any,\n});\n\nexport interface IconCommonProps extends SvgProps {\n  /**\n   * 图标大小\n   * @default 24\n   */\n  size?: number;\n\n  /**\n   * 图片颜色\n   * @default '#5A6068'\n   */\n  color?: ColorValue;\n\n  /**\n   * Outline 的路径宽\n   */\n  strokeWidth?: number;\n\n  /**\n   * svg 内部的样式\n   */\n  svgStyle?: ViewProps['style'];\n\n  /**\n   * 可点击的范围大小\n   * @default 44\n   */\n  touchableSize?: number;\n  className?: string;\n  iconClassName?: string;\n}\n\nexport type IconOutlineProps = IconCommonProps;\n\nexport type IconFillProps = Omit<IconCommonProps, 'strokeWidth'>;\n\nexport type IconColoursProps = Omit<IconCommonProps, 'color'>;\n\ntype IconRender = (\n  config: { size: number; color?: ColorValue; strokeWidth?: number },\n  props: ViewProps\n) => React.ReactElement;\n\nconst defaultStyle: ViewStyle = {\n  alignSelf: 'center',\n  justifyContent: 'center',\n  alignItems: 'center',\n};\n\nconst defaultDisabledStyle: ViewStyle = {\n  opacity: 0.4,\n};\n\nconst getDefaultValue = <T,>(value: T, defaultValue: T): T => {\n  return value !== undefined ? value : defaultValue;\n};\n\n/** 可点击元素的属性字段 */\nconst touchablePropsFields: (keyof TouchableWithoutFeedbackProps)[] = [\n  'delayLongPress',\n  'delayPressIn',\n  'delayPressOut',\n  'disabled',\n  'hitSlop',\n  'onBlur',\n  'onFocus',\n  'onLongPress',\n  'onPress',\n  'onPressIn',\n  'onPressOut',\n  'pressRetentionOffset',\n];\n\n/**\n * 挑选出点击事件的属性\n */\nexport const pickTouchablePropsField = (\n  props: Partial<ViewProps & TouchableWithoutFeedbackProps>\n) => {\n  return pick(props, touchablePropsFields);\n};\n\n/**\n * 排除点击事件的属性\n */\nexport const omitTouchablePropsField = (props: ViewProps) => {\n  return omit(props, touchablePropsFields);\n};\n\n/**\n * 生成一个 Outline 类型的 icon 组件\n */\nexport const genIcon = (render: IconRender): React.FC<IconCommonProps> => {\n  return memo(\n    ({\n      size = 24,\n      color = '#5A6068',\n      strokeWidth,\n      svgStyle,\n      touchableSize = 44,\n      className,\n      iconClassName,\n      style,\n      hitSlop,\n      ...restProps\n    }) => {\n      const hitSlopSize = (touchableSize - size) / 2;\n      const iconHitSlop = getDefaultValue(hitSlop, {\n        left: hitSlopSize,\n        right: hitSlopSize,\n        top: hitSlopSize,\n        bottom: hitSlopSize,\n      });\n\n      const touchableOpacityProps = pickTouchablePropsField(restProps);\n      const svgProps = omitTouchablePropsField(restProps);\n\n      return (\n        <TouchableWithoutFeedback {...touchableOpacityProps} hitSlop={iconHitSlop}>\n          <View\n            className={cn(\n              'items-center justify-center',\n              restProps.disabled && 'opacity-40',\n              className\n            )}\n            style={style}\n            pointerEvents={!isNil(touchableOpacityProps.onPress) ? svgProps.pointerEvents : 'none'}\n          >\n            {render(\n              {\n                color,\n                size,\n                strokeWidth,\n              },\n              {\n                className: iconClassName,\n                ...svgProps,\n              }\n            )}\n          </View>\n        </TouchableWithoutFeedback>\n      );\n    }\n  );\n};\n\nexport const genFillIcon = (render: IconRender): React.FC<IconFillProps> => genIcon(render);\n\nexport const genOutlineIcon = (render: IconRender): React.FC<IconOutlineProps> => genIcon(render);\n\nexport const genColoursIcon = (render: IconRender): React.FC<IconColoursProps> => genIcon(render);\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/index.ts",
+      "content": "export { default as CrossOutline } from './cross-outline';\nexport { default as ArrowLeftOutline } from './arrow-left-outline';\nexport { default as SuccessFill } from './success-fill';\nexport { default as CircleOutline } from './circle-outline';\nexport { default as ArrowUpOutline } from './arrow-up-outline';\nexport { default as ArrowDownOutline } from './arrow-down-outline';\nexport { default as ArrowLeftFill } from './arrow-left-fill';\nexport { default as ArrowRightFill } from './arrow-right-fill';\nexport { default as ArrowUpFill } from './arrow-up-fill';\nexport { default as ArrowDownFill } from './arrow-down-fill';\nexport { default as SuccessCircleOutline } from './success-circle-outline';\nexport { default as CrossCircleOutline } from './cross-circle-outline';\nexport { default as ArrowRightOutline } from './arrow-right-outline';\nexport { default as PlayCircleFill } from './play-circle-fill';\nexport { default as PlusOutline } from './plus-outline';\nexport { default as EyeOutline } from './eye-outline';\nexport { default as EyeCloseOutline } from './eye-close-outline';\nexport { default as SearchOutline } from './search-outline';\nexport { default as WarningOutline } from './warning-outline';\nexport { default as SuccessOutline } from './success-outline';\nexport { default as SwapRightOutline } from './swap-right-outline';\nexport { default as DeleteFill } from './delete-fill';\nexport { default as MenuOutline } from './menu-outline';\nexport { default as DoubleArrowClockwiseOutline } from './double-arrow-clockwise-outline';\nexport { default as VideoColours } from './video-colours';\nexport { default as CrossFill } from './cross-fill';\nexport { default as VolumeOutline } from './volume-outline';",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/menu-outline.tsx",
+      "content": "import React from 'react'\nimport { Svg, Path } from 'react-native-svg'\n\nimport { genOutlineIcon } from './gen'\n\nconst MenuOutline = genOutlineIcon(({ size, color, strokeWidth }, props) => {\n  return (\n    <Svg {...props} viewBox=\"0 0 24 24\" fill=\"none\" width={size} height={size}>\n      <Path\n        d=\"M3 5h18M3 12h14M3 19h18\"\n        stroke={color}\n        strokeWidth={strokeWidth || 2}\n        strokeLinecap=\"round\"\n      />\n    </Svg>\n  )\n})\nexport default MenuOutline\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/play-circle-fill.tsx",
+      "content": "import React from 'react';\nimport { Svg, Circle, Path } from 'react-native-svg';\n\nimport { genFillIcon } from './gen';\n\nconst PlayCircleFill = genFillIcon(({ size, color }, { hitSlop, ...props }) => {\n  return (\n    <Svg {...props} viewBox='0 0 24 24' fill='none' width={size} height={size}>\n      <Circle r='10' cx='12' cy='12' fill={color} />\n      <Path\n        d='M10.65 15.48a.4.4 0 0 1-.65-.312V8.832a.4.4 0 0 1 .65-.312l3.96 3.168a.4.4 0 0 1 0 .624l-3.96 3.168Z'\n        fill='#FFF'\n      />\n    </Svg>\n  );\n});\nexport default PlayCircleFill;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/plus-outline.tsx",
+      "content": "import React from 'react';\nimport { Svg, Path } from 'react-native-svg';\n\nimport { genOutlineIcon } from './gen';\n\nconst PlusOutline = genOutlineIcon(({ size, color, strokeWidth }, { hitSlop, ...props }) => {\n  return (\n    <Svg {...props} viewBox='0 0 24 24' fill='none' width={size} height={size}>\n      <Path\n        d='M3 12h18m-9 8.999v-18'\n        stroke={color}\n        strokeWidth={strokeWidth || 2}\n        strokeLinecap='round'\n        strokeLinejoin='round'\n      />\n    </Svg>\n  );\n});\nexport default PlusOutline;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/search-outline.tsx",
+      "content": "import React from 'react'\nimport { Svg, Path } from 'react-native-svg'\n\nimport { genOutlineIcon } from './gen'\n\nconst SearchOutline = genOutlineIcon(({ size, color, strokeWidth }, props) => {\n  return (\n    <Svg {...props} viewBox=\"0 0 24 24\" fill=\"none\" width={size} height={size}>\n      <Path\n        d=\"M11 20a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z\"\n        stroke={color}\n        strokeWidth={strokeWidth || 2}\n      />\n      <Path\n        d=\"m18 18 3 3\"\n        stroke={color}\n        strokeWidth={strokeWidth || 2}\n        strokeLinecap=\"round\"\n      />\n    </Svg>\n  )\n})\nexport default SearchOutline\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/success-circle-outline.tsx",
+      "content": "import React from 'react'\nimport { Svg, Path } from 'react-native-svg'\n\nimport { genOutlineIcon } from './gen'\n\nconst SuccessCircleOutline = genOutlineIcon(\n  ({ size, color, strokeWidth }, props) => {\n    return (\n      <Svg\n        {...props}\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        width={size}\n        height={size}>\n        <Path\n          d=\"M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2Z\"\n          stroke={color}\n          strokeWidth={strokeWidth || 2}\n          strokeLinejoin=\"round\"\n        />\n        <Path\n          d=\"m16 10-5.464 5.465L7 11.929\"\n          stroke={color}\n          strokeWidth={strokeWidth || 2}\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n        />\n      </Svg>\n    )\n  },\n)\nexport default SuccessCircleOutline\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/success-fill.tsx",
+      "content": "import { Svg, Path } from 'react-native-svg';\n\nimport { genFillIcon } from './gen';\n\nconst SuccessFill = genFillIcon(({ size, color }, { hitSlop, ...props }) => {\n  return (\n    <Svg {...props} viewBox='0 0 24 24' fill='none' width={size} height={size}>\n      <Path\n        fill={color}\n        d='M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10Z'\n      />\n      <Path\n        fill='#FFF'\n        d='M7.08 12.372a.365.365 0 0 0 .04.499l3.097 2.997c.227.22.59.23.811.015l7.104-6.875c.149-.144.16-.362.017-.5l-.163-.157a.405.405 0 0 0-.512-.02l-6.619 5.206a.46.46 0 0 1-.483.022l-2.504-1.62a.386.386 0 0 0-.498.08l-.29.353Z'\n      />\n    </Svg>\n  );\n});\nexport default SuccessFill;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/success-outline.tsx",
+      "content": "import React from 'react'\nimport { Svg, Path } from 'react-native-svg'\n\nimport { genOutlineIcon } from './gen'\n\nconst SuccessOutline = genOutlineIcon(({ size, color, strokeWidth }, props) => {\n  return (\n    <Svg {...props} viewBox=\"0 0 24 24\" fill=\"none\" width={size} height={size}>\n      <Path\n        fill={color}\n        fillRule=\"evenodd\"\n        d=\"M6.097 12.447a.437.437 0 0 0 .047.598L9.86 16.64c.273.264.709.276.974.019l8.525-8.25c.178-.173.19-.435.02-.6l-.195-.189a.486.486 0 0 0-.615-.023l-7.943 6.246a.553.553 0 0 1-.58.027l-3.005-1.944a.463.463 0 0 0-.597.095l-.347.425Z\"\n      />\n    </Svg>\n  )\n})\nexport default SuccessOutline\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/swap-right-outline.tsx",
+      "content": "import React from 'react'\nimport { Svg, Path } from 'react-native-svg'\n\nimport { genOutlineIcon } from './gen'\n\nconst SwapRightOutline = genOutlineIcon(\n  ({ size, color, strokeWidth }, props) => {\n    return (\n      <Svg\n        {...props}\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        width={size}\n        height={size}>\n        <Path\n          d=\"M3 14h18l-4.821-6\"\n          stroke={color}\n          strokeWidth={strokeWidth || 2}\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n        />\n      </Svg>\n    )\n  },\n)\nexport default SwapRightOutline\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/video-colours.tsx",
+      "content": "import React from 'react'\nimport {\n  Svg,\n  Defs,\n  LinearGradient,\n  Stop,\n  ClipPath,\n  Rect,\n  G,\n  Path,\n  Circle,\n} from 'react-native-svg'\n\nimport { genColoursIcon } from './gen'\n\nconst VideoColours = genColoursIcon(({ size, color, strokeWidth }, props) => {\n  return (\n    <Svg {...props} viewBox=\"0 0 24 24\" fill=\"none\" width={size} height={size}>\n      <Defs>\n        <LinearGradient id=\"bc2da__b\" y2=\"1\" x2=\".5\" y1=\"0\" x1=\".5\">\n          <Stop stopOpacity=\"0\" stopColor=\"#864DBF\" offset=\"0%\" />\n          <Stop stopColor=\"#7A4DBF\" offset=\"100%\" />\n        </LinearGradient>\n        <ClipPath id=\"bc2da__a\">\n          <Rect rx=\"0\" height=\"24\" width=\"24\" />\n        </ClipPath>\n      </Defs>\n      <G clipPath=\"url(#bc2da__a)\">\n        <Path\n          fill=\"#9366E2\"\n          d=\"M2.25 23.25c0 .414.336.75.75.75h18a.75.75 0 0 0 .75-.75V6.75h-6A.75.75 0 0 1 15 6V0H3a.75.75 0 0 0-.75.75v22.5Z\"\n        />\n        <Path\n          fill=\"#FFF\"\n          d=\"M10.5 17.47a.3.3 0 0 0 .454.257l2.867-1.72a.3.3 0 0 0 0-.514l-2.867-1.72a.3.3 0 0 0-.454.257v3.44Z\"\n        />\n        <Path\n          fill=\"url(#bc2da__b)\"\n          d=\"M21.75 26.25h6l-6-9.75v9.75Z\"\n          transform=\"rotate(180 21.75 16.5)\"\n        />\n        <Path fill=\"#F0E1FF\" d=\"M15 6c0 .414.336.75.75.75h6L15 0v6Z\" />\n        <Circle strokeWidth=\"1.2\" stroke=\"#FFF\" cy=\"15.75\" cx=\"12\" r=\"4.5\" />\n      </G>\n    </Svg>\n  )\n})\nexport default VideoColours\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/volume-outline.tsx",
+      "content": "import React from 'react'\nimport { Svg, Path } from 'react-native-svg'\n\nimport { genOutlineIcon } from './gen'\n\nconst VolumeOutline = genOutlineIcon(({ size, color, strokeWidth }, props) => {\n  return (\n    <Svg {...props} viewBox=\"0 0 24 24\" fill=\"none\" width={size} height={size}>\n      <Path\n        d=\"M12 3 3 9.98v4L12 21V3Z\"\n        stroke={color}\n        strokeWidth={strokeWidth || 2}\n        strokeLinejoin=\"round\"\n      />\n      <Path\n        d=\"M15.5 8.5c.9 2.37.892 4.703 0 7M19 7c2 2 2 8 0 10\"\n        stroke={color}\n        strokeWidth={strokeWidth || 2}\n        strokeLinecap=\"round\"\n      />\n    </Svg>\n  )\n})\nexport default VolumeOutline\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/icons/warning-outline.tsx",
+      "content": "import React from 'react';\nimport { Svg, Path } from 'react-native-svg';\n\nimport { genOutlineIcon } from './gen';\n\nconst WarningOutline = genOutlineIcon(({ size, color, strokeWidth }, props) => {\n  return (\n    <Svg {...props} viewBox='0 0 24 24' fill='none' width={size} height={size}>\n      <Path d='M12 21.5a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z' fill={color} />\n      <Path\n        d='M12 3v13'\n        stroke={color}\n        strokeWidth={strokeWidth || 2}\n        strokeLinecap='round'\n        strokeLinejoin='round'\n      />\n    </Svg>\n  );\n});\nexport default WarningOutline;\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+---
+title: Search
+Search: An example component to help you get started.
+---
+
+import { SearchPreview } from '@docs/components/examples';
+
+<div className='h-5' />
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
+      ## Preview
+    </div>
+    <PreviewCard preview={<SearchPreview />} />
+  </TabsContent>
+  <TabsContent value="code">
+    ```json doc-gen:file
+    {
+      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoSearch/index.tsx",
+      "codeblock": {
+        "lang": "tsx"
+      }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## 安装
+
+<Tabs defaultValue='cli'>
+  <TabsList>
+    <TabsTrigger id='cli' value='cli'>
+      CLI
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value='cli'>
+    <CommandTabs
+      args={[
+        'add',
+        'https://react-native-component-docs.vercel.app/r/search.json',
+      ]}
+    />
+  </TabsContent>
+</Tabs>
+
+### 使用
+
+```tsx
+import Search from '@/components/Search';
+
+<Search
+  autoSearch
+  showSearchButton={false}
+  placeholder='请输入关键词搜索'
+  onSearch={(v) => {
+    console.log(v);
+  }}
+/>;
+```

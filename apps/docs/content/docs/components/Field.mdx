@@ -1,0 +1,72 @@
+---
+title: Field
+Field: An example component to help you get started.
+---
+
+import { FieldPreview } from '@docs/components/examples';
+
+<div className='h-5' />
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
+      ## Preview
+    </div>
+    <PreviewCard preview={<FieldPreview />} />
+  </TabsContent>
+  <TabsContent value="code">
+    ```json doc-gen:file
+    {
+      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoField/index.tsx",
+      "codeblock": {
+        "lang": "tsx"
+      }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## 安装
+
+<Tabs defaultValue='cli'>
+  <TabsList>
+    <TabsTrigger id='cli' value='cli'>
+      CLI
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value='cli'>
+    <CommandTabs
+      args={[
+        'add',
+        'https://react-native-component-docs.vercel.app/r/field.json',
+      ]}
+    />
+  </TabsContent>
+</Tabs>
+
+### 使用
+
+```tsx
+import Field from '@/components/Field';
+import { Text } from 'react-native';
+import { useState } from 'react';
+
+const [s1, setS1] = useState<number | undefined>(undefined);
+
+<Field.Text title='标题' value='显示的文案' />;
+<Field.Selector
+  title='单选单选单选单选单选单选单选单选单选'
+  placeholder='请选择'
+  value={s1}
+  options={[]}
+  onChange={(v) => {
+    setS1(v as number);
+  }}
+  clearable
+  valueClassName='text-2xl'
+/>;
+```

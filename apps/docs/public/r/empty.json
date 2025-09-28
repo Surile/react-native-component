@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty",
+  "type": "registry:component",
+  "title": "Example empty",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/result.json"
+  ],
+  "files": [
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/empty/empty.tsx",
+      "content": "import isUndefined from 'lodash/isUndefined';\nimport React, { memo } from 'react';\n\nimport Result from '../result';\nimport ResultIconEmpty from '../result/icons/result-icon-empty';\n\nimport { cn } from '../../lib/utils';\nimport { EmptyProps } from './interface';\n\n/**\n * Empty 空元素\n * @description 用于填充空白数据。\n */\nconst Empty: React.FC<EmptyProps> = ({\n  testID,\n  text,\n  className,\n  textClassName,\n  iconClassName,\n  icon,\n  full = false,\n}) => {\n  const iconJSX = !isUndefined(icon) ? (\n    icon\n  ) : (\n    <ResultIconEmpty className={cn('self-center mb-2', iconClassName)} />\n  );\n\n  return (\n    <Result\n      testID={testID}\n      status='info'\n      renderIcon={() => iconJSX}\n      className={cn(\n        'items-center justify-center',\n        {\n          'flex-1': full,\n        },\n        className\n      )}\n      subtitle={text ?? '暂无数据'}\n      subtitleTextClassName={cn('text-gray-600 text-lg', textClassName)}\n    />\n  );\n};\n\nexport default memo(Empty);\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/empty/index.ts",
+      "content": "import Empty from './empty';\n\nexport default Empty;",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/empty/interface.ts",
+      "content": "import type React from 'react'\nimport type { ViewProps } from 'react-native'\n\nexport interface EmptyProps extends Pick<ViewProps, 'testID' | 'className'> {\n  /**\n   * 文案文字样式\n   */\n  textClassName?: string\n\n  /**\n   * 图标样式\n   */\n  iconClassName?: string\n\n  /**\n   * 自定义图标\n   */\n  icon?: React.ReactNode\n\n  /**\n   * 空数据提示文案\n   * @default '暂无数据'\n   */\n  text?: React.ReactNode\n\n  /**\n   * 全屏填充\n   * @default false\n   */\n  full?: boolean\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

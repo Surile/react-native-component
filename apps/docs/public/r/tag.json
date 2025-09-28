@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tag",
+  "type": "registry:component",
+  "title": "Example tag",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/icons.json"
+  ],
+  "files": [
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/tag/index.ts",
+      "content": "import Tag from './tag'\n\nexport default Tag; \n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/tag/interface.ts",
+      "content": "import type { ViewProps, ViewStyle, StyleProp, ColorValue } from 'react-native'\n\nexport type TagSize = 'l' | 'm' | 's'\nexport type TagType = 'primary' | 'hazy' | 'ghost'\nexport interface TagProps extends ViewProps {\n  /**\n   * 内部包裹层样式，可以对文案、图标排版影响\n   */\n  innerClassName?: string\n  /**\n   * 是否为可关闭标签\n   * @default false\n   */\n  closable?: boolean\n  /**\n   * 关闭时的回调\n   */\n  onClose?: () => void\n  /**\n   * 大小\n   * @default 'm'\n   */\n  size?: TagSize\n  /**\n   * 类型\n   *\n   * @default 'primary'\n   */\n  type?: TagType\n  /**\n   * 是否显示标签\n   * @default true\n   */\n  visible?: boolean\n  /**\n   * 按钮文案颜色\n   */\n  textColor?: ColorValue\n  textClassName?: string\n  /**\n   * 自定义关闭按钮\n   */\n  closeIcon?: React.ReactNode\n  /**\n   * 自定义图标\n   */\n  icon?: React.ReactNode\n  /**\n   * 细边框\n   */\n  hairline?: boolean\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/tag/tag.tsx",
+      "content": "import isNil from 'lodash/isNil';\nimport React, { memo, useMemo } from 'react';\nimport type { TextStyle, ViewStyle } from 'react-native';\nimport { TouchableOpacity, View, Text, StyleSheet } from 'react-native';\nimport Color from 'color';\nimport type { TagProps } from './interface';\nimport { CrossOutline } from '../icons';\nimport { cn } from '../../lib/utils';\nimport { cva } from 'class-variance-authority';\n\n// 文字 size\nconst textVariants = cva('', {\n  variants: {\n    size: {\n      l: 'text-lg leading-5',\n      m: 'text-base leading-4',\n      s: 'text-sm leading-3',\n    },\n  },\n});\n\n// tag size\nconst tagVariants = cva('', {\n  variants: {\n    size: {\n      l: 'h-6 px-2',\n      m: 'h-5 px-1',\n      s: 'h-4 px-0.5',\n    },\n  },\n});\n\n/**\n * Tag 标签\n */\nconst Tag: React.FC<TagProps> = ({\n  children,\n  style,\n  innerClassName,\n  closable = false,\n  onClose,\n  size = 'm',\n  type = 'primary',\n  visible = true,\n  closeIcon,\n  icon,\n  textClassName,\n  textColor,\n  hairline,\n  ...restProps\n}) => {\n  const textStyle = StyleSheet.flatten<TextStyle>([\n    !isNil(textColor) && {\n      color: textColor,\n    },\n  ]);\n\n  // 关闭的图标\n  const renderCloseIcon = () => {\n    if (closable) {\n      return closeIcon ? (\n        <TouchableOpacity onPress={onClose}>{closeIcon}</TouchableOpacity>\n      ) : (\n        <CrossOutline onPress={onClose} size={20} color={textStyle.color as string} />\n      );\n    }\n    return null;\n  };\n\n  if (visible) {\n    return (\n      <View {...restProps} className='bg-transparent flex-row overflow-visible' style={style}>\n        <View\n          className={cn(\n            'flex-row items-center rounded-[2px]',\n            {\n              'bg-transparent border-primary-5 border': type === 'ghost',\n              'bg-primary-5/95 border-primary-5/5': type === 'hazy',\n              'bg-primary-5 border-primary-5': type === 'primary',\n              'border-hairline border-primary-5': hairline && type === 'ghost',\n            },\n            tagVariants({ size }),\n            innerClassName\n          )}\n        >\n          {icon}\n          <Text\n            className={cn(\n              {\n                'text-white': type === 'primary' || type === 'hazy',\n                'text-primary-5': type === 'ghost',\n              },\n              textVariants({ size }),\n              textClassName\n            )}\n          >\n            {children}\n          </Text>\n          {renderCloseIcon()}\n        </View>\n      </View>\n    );\n  }\n\n  return null;\n};\n\nexport default memo(Tag);\n",
+      "type": "registry:component"
+    }
+  ]
+}

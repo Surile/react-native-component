@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "water-mark",
+  "type": "registry:component",
+  "title": "Example water-mark",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/helpers.json",
+    "http://localhost:3000/r/hooks.json"
+  ],
+  "files": [
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/water-mark/index.ts",
+      "content": "import WaterMark from './water-mark'\n\nexport default WaterMark; ",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/water-mark/interface.ts",
+      "content": "import type { ColorValue, ViewProps } from 'react-native'\n\nexport interface WaterMarkProps extends ViewProps {\n  /**\n   * 文字内容\n   */\n  text: string\n\n  /**\n   * 文字颜色\n   * @default water_mark_text_color\n   */\n  color?: ColorValue\n\n  /**\n   * 字体大小\n   * @default water_mark_text_font_size\n   */\n  fontSize?: number\n\n  /**\n   * 文字透明度\n   * @default water_mark_text_opacity\n   */\n  opacity?: number\n\n  /**\n   * 文字宽\n   * @default 64\n   */\n  textWidth?: number\n\n  /**\n   * 文字高/行高\n   * @default 64\n   */\n  textHeight?: number\n\n  /**\n   * 水印绘制时，旋转的角度，单位 °\n   * @default -45\n   */\n  rotate?: number\n\n  /**\n   * 否需要前置水印\n   * @default false\n   */\n  foreground?: boolean\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/water-mark/water-mark.tsx",
+      "content": "import React, { memo, useState } from 'react';\nimport type { LayoutChangeEvent } from 'react-native';\nimport { StyleSheet, Text, View } from 'react-native';\nimport type { WaterMarkProps } from './interface';\nimport { getDefaultValue } from '../../helpers';\nimport { usePersistFn } from '../../hooks';\n\nconst STYLES = StyleSheet.create({\n  water_mark: {\n    flex: 1,\n    width: '100%',\n    overflow: 'hidden',\n  },\n\n  text_row: {\n    alignContent: 'center',\n  },\n\n  texts: {\n    position: 'absolute',\n    left: 0,\n    right: 0,\n    top: 0,\n    bottom: 0,\n    flexDirection: 'row',\n  },\n});\n\nconst WaterMark: React.FC<WaterMarkProps> = ({\n  text,\n  color,\n  fontSize,\n  opacity,\n  textWidth = 64,\n  textHeight = 64,\n  rotate = -45,\n  foreground = false,\n\n  children,\n  style,\n  onLayout,\n  ...restProps\n}) => {\n  const [measure, setMeasure] = useState({ width: 0, height: 0 });\n\n  const _color = getDefaultValue(color, '#8C9199');\n  const _fontSize = getDefaultValue(fontSize, 12);\n  const _opacity = getDefaultValue(opacity, 0.1);\n\n  const onLayoutWrapper = usePersistFn((e: LayoutChangeEvent) => {\n    onLayout?.(e);\n    setMeasure(e.nativeEvent.layout);\n  });\n\n  const renderMark = () => {\n    if (measure.height === 0 || measure.width === 0 || textWidth === 0 || textHeight === 0) {\n      return null;\n    }\n\n    const texts: React.ReactNode[] = [];\n    const x = Math.ceil(measure.width / textWidth);\n    const y = Math.ceil(measure.height / textHeight);\n\n    for (let index0 = 0; index0 < x * y; index0++) {\n      const ts: React.ReactNode[] = [];\n\n      for (let index1 = 0; index1 < y; index1++) {\n        ts.push(\n          <Text\n            key={`${index0}_${index1}`}\n            // eslint-disable-next-line react-native/no-inline-styles\n            style={{\n              color: _color,\n              fontSize: _fontSize,\n              width: textWidth,\n              height: textHeight,\n              lineHeight: textHeight,\n              textAlign: 'center',\n              opacity: _opacity,\n              transform: [\n                {\n                  rotateZ: `${rotate}deg`,\n                },\n              ],\n            }}\n          >\n            {text}\n          </Text>\n        );\n      }\n\n      texts.push(\n        <View key={index0} style={STYLES.text_row}>\n          {ts}\n        </View>\n      );\n    }\n\n    return (\n      <View pointerEvents='none' style={STYLES.texts}>\n        {texts}\n      </View>\n    );\n  };\n\n  return (\n    <View\n      {...restProps}\n      onLayout={onLayoutWrapper}\n      style={style ? [STYLES.water_mark, style] : STYLES.water_mark}\n    >\n      {!foreground ? renderMark() : null}\n      {children}\n      {foreground ? renderMark() : null}\n    </View>\n  );\n};\n\nexport default memo(WaterMark);\n",
+      "type": "registry:component"
+    }
+  ]
+}

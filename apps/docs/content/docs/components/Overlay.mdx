@@ -1,0 +1,83 @@
+---
+title: Overlay
+Overlay: An example component to help you get started.
+---
+
+import { OverlayPreview } from '@docs/components/examples';
+
+<div className='h-5' />
+
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
+    <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
+      ## Preview
+    </div>
+    <PreviewCard preview={<OverlayPreview />} />
+  </TabsContent>
+  <TabsContent value="code">
+    ```json doc-gen:file
+    {
+      "file": "./node_modules/@tastien/react-native-component/src/examples/DemoOverlay/index.tsx",
+      "codeblock": {
+        "lang": "tsx"
+      }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## 安装
+
+<Tabs defaultValue='cli'>
+  <TabsList>
+    <TabsTrigger id='cli' value='cli'>
+      CLI
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value='cli'>
+    <CommandTabs
+      args={[
+        'add',
+        'https://react-native-component-docs.vercel.app/r/overlay.json',
+      ]}
+    />
+  </TabsContent>
+</Tabs>
+
+### 使用
+
+```tsx
+import Overlay from '@/components/Overlay';
+import { Text } from 'react-native';
+import { useState } from 'react';
+
+const [state, setState] = useState<
+  Record<'normal' | 'inset' | 'backgroundColor', boolean>
+>({
+  normal: false,
+  inset: false,
+  backgroundColor: false,
+});
+
+<Overlay
+  visible={state.normal}
+  onPress={() => {
+    setState((s) => ({
+      ...s,
+      normal: false,
+    }));
+  }}
+  onRequestClose={() => {
+    console.log('???');
+    setState((s) => ({
+      ...s,
+      normal: false,
+    }));
+    return true;
+  }}
+/>;
+```

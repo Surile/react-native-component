@@ -1,0 +1,49 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form",
+  "type": "registry:component",
+  "title": "Example form",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/hooks.json",
+    "http://localhost:3000/r/toast.json"
+  ],
+  "files": [
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/form/form.tsx",
+      "content": "import type { FormInstance as RCFormInstance } from 'rc-field-form';\nimport RCForm from 'rc-field-form';\nimport type { ValidateErrorEntity } from 'rc-field-form/lib/interface';\nimport React, { useImperativeHandle, forwardRef, useMemo } from 'react';\n\nimport Toast from '../toast';\n\nimport { FormContext } from './context';\nimport type { FormProps } from './interface';\nimport useForm from './useForm';\nimport { usePersistFn } from '../../hooks';\n\n/**\n * 默认处理错误的回调\n */\nconst defaultOnFinishFailed = (errorInfo: ValidateErrorEntity<unknown>) => {\n  Toast(errorInfo.errorFields[0].errors[0]);\n};\n\nconst InternalForm: React.ForwardRefRenderFunction<RCFormInstance, FormProps> = (\n  { onFinishFailed = defaultOnFinishFailed, form, onFinish, ...restProps },\n  ref\n) => {\n  const [wrapForm] = useForm(form);\n  const value = useMemo(\n    () => ({\n      form: wrapForm,\n    }),\n    [wrapForm]\n  );\n\n  useImperativeHandle(ref, () => wrapForm);\n\n  const onFinishPersistFn = usePersistFn(() => {\n    onFinish?.(wrapForm.getFieldsValue(true));\n  });\n\n  return (\n    <FormContext.Provider value={value}>\n      <RCForm\n        {...restProps}\n        component={false}\n        form={wrapForm}\n        onFinishFailed={onFinishFailed}\n        onFinish={onFinishPersistFn}\n      />\n    </FormContext.Provider>\n  );\n};\n\nconst Form = forwardRef<RCFormInstance, FormProps>(InternalForm) as <Values = any>(\n  props: React.PropsWithChildren<FormProps<Values>> & {\n    ref?: React.Ref<RCFormInstance<Values>>;\n  }\n) => React.ReactElement;\n\nexport default Form;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/form/context.tsx",
+      "content": "import { createContext } from 'react'\n\nimport type { FormContextProps } from './interface'\n\nexport const FormContext = createContext<FormContextProps>({})\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/form/form-item.tsx",
+      "content": "import type { FormInstance } from 'rc-field-form';\nimport { Field } from 'rc-field-form';\nimport type { FieldProps } from 'rc-field-form/lib/Field';\nimport type { NamePath, EventArgs } from 'rc-field-form/lib/interface';\nimport React from 'react';\nimport { usePersistFn } from '../../hooks';\n\ntype RenderChildren<Values = any> = (form: FormInstance<Values>) => React.ReactNode;\ntype RcFieldProps<Values = any> = Omit<FieldProps<Values>, 'children'>;\ntype ChildrenType<Values = any> = RenderChildren<Values> | React.ReactNode;\n\nexport interface FormItemProps<Values = any> extends RcFieldProps<Values> {\n  children?: ChildrenType<Values>;\n}\n\nconst hasValidName = (name?: NamePath): Boolean => {\n  return !(name === undefined || name === null);\n};\n\nfunction FormItem<Values = any>(props: FormItemProps<Values>): React.ReactElement {\n  const { children, ...restProps } = props;\n\n  const hasName = hasValidName(restProps.name);\n  const isRenderProps = typeof children === 'function';\n  const getValueFromEvent = usePersistFn((...args: EventArgs) => {\n    const event = args[0];\n    const valuePropName = props.valuePropName || 'text';\n    if (\n      event?.nativeEvent &&\n      typeof event.nativeEvent === 'object' &&\n      valuePropName in event.nativeEvent\n    ) {\n      return event.nativeEvent[valuePropName];\n    }\n\n    return event;\n  });\n\n  return (\n    <Field {...restProps} getValueFromEvent={props.getValueFromEvent || getValueFromEvent}>\n      {!hasName && (restProps.shouldUpdate || restProps.dependencies) && isRenderProps\n        ? (_, __, context) => (children as RenderChildren)(context)\n        : (children as React.ReactElement)}\n    </Field>\n  );\n}\n\nexport default FormItem;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/form/index.ts",
+      "content": "import {\n  List,\n  FormProvider,\n  FieldContext,\n  ListContext,\n  useWatch,\n} from 'rc-field-form'\nimport type { Rule, RuleObject, RuleRender } from 'rc-field-form/lib/interface'\nimport type { ListProps } from 'rc-field-form/lib/List'\n\nimport InternalForm from './form'\nimport type { FormItemProps } from './form-item'\nimport Item from './form-item'\nimport type { FormProps, FormInstance } from './interface'\nimport useForm from './useForm'\nimport useFormInstance from './useFormInstance'\n\ntype InternalFormType = typeof InternalForm\n\ninterface FormInterface extends InternalFormType {\n  useForm: typeof useForm\n  useFormInstance: typeof useFormInstance\n  useWatch: typeof useWatch\n  Item: typeof Item\n  List: typeof List\n  Provider: typeof FormProvider\n}\n\nconst Form = InternalForm as FormInterface\nconst FormItemContext = FieldContext\n\nForm.Item = Item\nForm.List = List\nForm.useForm = useForm\nForm.useFormInstance = useFormInstance\nForm.useWatch = useWatch\nForm.Provider = FormProvider\n\nexport type {\n  FormInstance,\n  FormProps,\n  FormItemProps,\n  ListProps,\n  Rule,\n  RuleObject,\n  RuleRender,\n}\n\nexport { FormItemContext, ListContext }\n\nexport default Form\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/form/interface.ts",
+      "content": "import type {\n  FormProps as RCFormProps,\n  FormInstance as RCFormInstance,\n} from 'rc-field-form'\n\nexport interface FormInstance<Values = any> extends RCFormInstance<Values> {\n  validateFieldsWithoutToast?: RCFormInstance<Values>['validateFields']\n}\n\nexport interface FormContextProps {\n  form?: FormInstance\n}\n\n/**\n * Form 组件可用 props\n * @description 暂时不支持自定义 component\n */\nexport interface FormProps<Values = any>\n  extends Omit<RCFormProps<Values>, 'component' | 'from'> {\n  form?: FormInstance<Values>\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/form/useForm.ts",
+      "content": "import { useForm as useRcForm } from 'rc-field-form'\nimport { useMemo } from 'react'\nimport { Keyboard } from 'react-native'\n\nimport Toast from '../toast'\n\nimport type { FormInstance } from './interface'\n\nexport default function <Values = any>(\n  form?: FormInstance<Values>,\n): [FormInstance<Values>] {\n  const [rcForm] = useRcForm<Values>()\n\n  const wrapForm: FormInstance<Values> = useMemo(\n    () =>\n      form ?? {\n        ...rcForm,\n\n        submit: (...args) => {\n          // 触发提交的时候收齐软键盘\n          Keyboard.dismiss()\n          rcForm.submit(...args)\n        },\n        validateFields: (...args) => {\n          return new Promise<Values>((resolve, reject) => {\n            rcForm\n              .validateFields(...(args as any))\n              .then(resolve)\n              .catch(e => {\n                Toast(e.errorFields[0].errors[0])\n                reject(e)\n              })\n          })\n        },\n        validateFieldsWithoutToast: rcForm.validateFields,\n      },\n    [form, rcForm],\n  )\n\n  return [wrapForm]\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/form/useFormInstance.tsx",
+      "content": "import { useContext } from 'react'\n\nimport { FormContext } from './context'\nimport type { FormInstance } from './interface'\n\nexport default function useFormInstance<Value = any>(): FormInstance<Value> {\n  const { form } = useContext(FormContext)\n\n  return form!\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "helpers",
+  "type": "registry:file",
+  "title": "Example button",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "files": [
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/helpers/attach-properties-to-component.ts",
+      "content": "export function attachPropertiesToComponent<C, P extends Record<string, any>>(component: C, properties: P): C & P {\n  const ret = component as any;\n\n  for (const key in properties) {\n    if (properties.hasOwnProperty(key)) {\n      ret[key] = properties[key];\n    }\n  }\n\n  return ret;\n}\n",
+      "type": "registry:file",
+      "target": "helpers/attach-properties-to-component.ts"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/helpers/arrow.ts",
+      "content": "import { ArrowDownFill, ArrowDownOutline, ArrowLeftFill, ArrowLeftOutline, ArrowRightFill, ArrowRightOutline, ArrowUpFill, ArrowUpOutline } from \"../components\"\n\ntype DirectionValue = 'left' | 'up' | 'right' | 'down'\n\nexport const getArrowOutline = (x: DirectionValue | undefined) => {\n  switch (x) {\n    case 'down':\n      return ArrowDownOutline\n\n    case 'up':\n      return ArrowUpOutline\n\n    case 'left':\n      return ArrowLeftOutline\n\n    default:\n      return ArrowRightOutline\n  }\n}\n\nexport const getArrowFill = (x: DirectionValue | undefined) => {\n  switch (x) {\n    case 'down':\n      return ArrowDownFill\n\n    case 'up':\n      return ArrowUpFill\n\n    case 'left':\n      return ArrowLeftFill\n\n    default:\n      return ArrowRightFill\n  }\n}",
+      "type": "registry:file",
+      "target": "helpers/arrow.ts"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/helpers/interceptor.ts",
+      "content": "import isUndefined from 'lodash/isUndefined';\nimport noop from 'lodash/noop';\nimport { isPromise } from './typeof';\n\nexport type Interceptor = (...args: any[]) => Promise<boolean> | boolean | undefined | Promise<void> | void;\n\nexport function callInterceptor(\n  interceptor: Interceptor | undefined,\n  {\n    args = [],\n    done,\n    canceled,\n  }: {\n    args?: unknown[];\n    done: () => void;\n    canceled?: () => void;\n  },\n) {\n  if (interceptor) {\n    // eslint-disable-next-line prefer-spread\n    const returnVal = interceptor.apply(null, args);\n\n    if (isPromise(returnVal)) {\n      returnVal\n        .then((value) => {\n          if (isUndefined(value) || value) {\n            done();\n          } else if (canceled) {\n            canceled();\n          }\n        })\n        .catch(noop);\n    } else if (isUndefined(returnVal) || returnVal) {\n      done();\n    } else if (canceled) {\n      canceled();\n    }\n  } else {\n    done();\n  }\n}\n",
+      "type": "registry:file",
+      "target": "helpers/interceptor.ts"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/helpers/typeof.ts",
+      "content": "import isFunction from 'lodash/isFunction';\n\n// [object Promise] Promise 在 JSC 中是 object，在浏览器端是 Promise\nexport const isObject = (val: unknown): val is Record<any, any> => val !== null && typeof val === 'object';\n\n/** 是一个 Promise */\nexport const isPromise = <T = any>(val: any): val is Promise<T> => {\n  return isObject(val) && isFunction(val.then) && isFunction(val.catch);\n};\n",
+      "type": "registry:file",
+      "target": "helpers/typeof.ts"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/helpers/types.ts",
+      "content": "import type { ViewProps } from 'react-native';\n\nexport type FixHitSlopProps<T> = Omit<T, 'hitSlop'> & Pick<ViewProps, 'hitSlop'>;\nexport type ExcludeUndefined<T> = Exclude<T, undefined>;\nexport type ExcludeUndefinedNull<T> = Exclude<T, undefined | null>;\n",
+      "type": "registry:file",
+      "target": "helpers/types.ts"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/helpers/z-index.ts",
+      "content": "let zIndex = 2000;\n\n/**\n * 获取下一个 z-index\n */\nexport const getNextZIndex = () => ++zIndex;\n",
+      "type": "registry:file",
+      "target": "helpers/z-index.ts"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/helpers/index.tsx",
+      "content": "import { isValidElement } from 'react';\nimport { isNil, isUndefined } from 'lodash';\nimport { Text, TextProps } from 'react-native';\n\nexport { default as childrenToArray } from './children/to-array';\nexport { default as easing } from './easing';\n\n/** 获取默认值 */\nexport const getDefaultValue = <T,>(value: T, defaultValue: T): T => {\n  return !isUndefined(value) ? value : defaultValue;\n};\n\n/** 渲染类文字的 JSX */\nexport const renderTextLikeJSX = (\n  node: React.ReactNode,\n  className?: string,\n  restProps?: Omit<TextProps, 'className'>\n) => {\n  return !isNil(node) ? (\n    isValidElement(node) ? (\n      node\n    ) : (\n      <Text {...restProps} className={className}>\n        {node}\n      </Text>\n    )\n  ) : null;\n};\n\nexport * from './z-index';\nexport * from './attach-properties-to-component';\nexport * from './typeof';\nexport * from './interceptor';\nexport * from './arrow';\nexport * from './format/number';\n",
+      "type": "registry:file",
+      "target": "helpers/index.tsx"
+    }
+  ]
+}

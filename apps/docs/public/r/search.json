@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "search",
+  "type": "registry:component",
+  "title": "Example search",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/text-input.json",
+    "http://localhost:3000/r/button.json",
+    "http://localhost:3000/r/hooks.json",
+    "http://localhost:3000/r/icons.json"
+  ],
+  "files": [
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/search/index.ts",
+      "content": "import Search from './search'\n\nexport default Search; \n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/search/interface.ts",
+      "content": "import type { ColorValue, ViewProps } from 'react-native'\n\nimport type { TextInputProps } from '../text-input/interface'\n\nexport interface SearchProps\n  extends Pick<\n      TextInputProps,\n      | 'value'\n      | 'defaultValue'\n      | 'placeholder'\n      | 'placeholderTextColor'\n      | 'autoFocus'\n      | 'onChangeText'\n    >,\n    ViewProps {\n  /**\n   * 图标大小\n   * @default 20\n   */\n  iconSize?: number\n\n  /**\n   * 图标颜色\n   * @default text_input_placeholder_text_color\n   */\n  iconColor?: ColorValue\n\n  /**\n   * 点击搜索\n   */\n  onSearch?: (value: string) => void\n\n  /**\n   * 显示返回图标\n   * @default false\n   */\n  showBack?: boolean\n\n  /**\n   * 点击返回图标\n   */\n  onPressBack?: () => void\n\n  /**\n   * 内容变化时自动触发 onSearch\n   * @default false\n   */\n  autoSearch?: boolean\n\n  /**\n   * onSearch debounce wait\n   * @default 300\n   */\n  onSearchDebounceWait?: number\n\n  /**\n   * 搜索按钮文案\n   * @default '搜索'\n   */\n  searchText?: string\n\n  /**\n   * 搜索按钮右侧自定义内容\n   */\n  extra?: React.ReactNode\n  /**\n   * 搜索 icon 左边自定义内容\n   */\n  prefix?: React.ReactNode\n  /**\n   * 搜索框内右边自定义内容\n   */\n  suffix?: React.ReactNode\n\n  /**\n   * 是否显示搜索按钮\n   * @default true\n   */\n  showSearchButton?: boolean\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/search/search.tsx",
+      "content": "import isUndefined from 'lodash/isUndefined';\nimport noop from 'lodash/noop';\nimport { useRef, useCallback, memo, forwardRef } from 'react';\nimport { View } from 'react-native';\n\nimport Button from '../button';\nimport TextInput from '../text-input';\nimport type { TextInputInstance } from '../text-input/interface';\n\nimport type { SearchProps } from './interface';\nimport { useDebounceFn, usePersistFn } from '../../hooks';\nimport { getDefaultValue } from '../../helpers';\nimport { cn } from '../../lib/utils';\nimport { ArrowLeftOutline, SearchOutline } from '../icons';\n\n/**\n * 搜索\n */\nconst Search = forwardRef<TextInputInstance, SearchProps>(\n  (\n    {\n      iconSize = 20,\n      iconColor,\n      onSearch,\n      showBack = false,\n      onPressBack,\n      autoSearch = false,\n      showSearchButton = true,\n      onSearchDebounceWait = 300,\n      searchText,\n      extra,\n      prefix,\n      suffix,\n\n      value,\n      defaultValue,\n      placeholder,\n      placeholderTextColor,\n      autoFocus,\n      onChangeText,\n\n      style,\n      ...restProps\n    },\n    ref\n  ) => {\n    const onChangeTextPersistFn = usePersistFn(onChangeText || noop);\n    const { run: runOnSearch } = useDebounceFn(onSearch || noop, {\n      wait: onSearchDebounceWait,\n      leading: false,\n      trailing: true,\n    });\n\n    /** 输入框内部的值，不维护状态，避免没必要的更新 */\n    const SearchText = useRef(!isUndefined(value) ? value : defaultValue);\n\n    placeholderTextColor = getDefaultValue(placeholderTextColor, '#6b7280');\n\n    iconColor = getDefaultValue(iconColor, placeholderTextColor as string);\n\n    const onChange = useCallback(\n      (v: string) => {\n        SearchText.current = v;\n\n        if (autoSearch) {\n          runOnSearch(v);\n        }\n      },\n      [autoSearch, runOnSearch]\n    );\n\n    const _onChangeText = useCallback(\n      (v: string) => {\n        SearchText.current = v;\n        onChangeTextPersistFn(v);\n\n        if (autoSearch) {\n          runOnSearch(v);\n        }\n      },\n      [autoSearch, onChangeTextPersistFn, runOnSearch]\n    );\n\n    const onPress = useCallback(() => {\n      runOnSearch(SearchText.current);\n    }, [runOnSearch]);\n\n    // TextInput value、defaultValue 对值进行了判断，影响 clearable\n    // 此处对两个属性的 undefined 情况进行过滤，useControllableValue 能正确识别是否受控\n    const textInputProps = {\n      ...(isUndefined(value) ? {} : { value }),\n      ...(isUndefined(defaultValue) ? {} : { defaultValue }),\n    };\n\n    return (\n      <View\n        {...restProps}\n        className={cn(\n          'bg-white px-3 py-1 gap-2 flex-row items-center',\n          {\n            'pl-2': showBack,\n          },\n          restProps.className\n        )}\n      >\n        {showBack ? (\n          <ArrowLeftOutline\n            onPress={onPressBack}\n            color='#11151A'\n            size={24}\n            className='items-center justify-center mr-2'\n          />\n        ) : null}\n\n        <TextInput\n          ref={ref}\n          {...textInputProps}\n          clearable\n          fixGroupClassName='flex-1 bg-gray-100 rounded'\n          className={cn('ml-2')}\n          placeholder={placeholder}\n          placeholderTextColor={placeholderTextColor}\n          prefix={\n            <>\n              {prefix}\n              <SearchOutline className='mr-2' color={iconColor} size={20} />\n            </>\n          }\n          suffix={suffix}\n          onChange={onChange}\n          onChangeText={_onChangeText}\n          autoFocus={autoFocus}\n        />\n        {showSearchButton ? (\n          <Button\n            text={searchText ?? '搜索'}\n            type='primary'\n            className='ml-2'\n            size='s'\n            onPress={onPress}\n          />\n        ) : null}\n\n        {extra}\n      </View>\n    );\n  }\n);\n\nexport default memo(Search);\n",
+      "type": "registry:component"
+    }
+  ]
+}

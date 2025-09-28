@@ -1,0 +1,41 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs",
+  "type": "registry:component",
+  "title": "Example tabs",
+  "author": "@gabimoncha",
+  "description": "Displays a button which is always red.",
+  "registryDependencies": [
+    "http://localhost:3000/r/helpers.json",
+    "http://localhost:3000/r/tab-bar.json",
+    "http://localhost:3000/r/divider.json",
+    "http://localhost:3000/r/hooks.json"
+  ],
+  "files": [
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/tabs/index.ts",
+      "content": "\nimport { attachPropertiesToComponent } from '../../helpers'\nimport TabPane from './tab-pane'\nimport Tabs from './tabs'\n\nexport default attachPropertiesToComponent(Tabs, {\n  TabPane: TabPane,\n})\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/tabs/interface.ts",
+      "content": "import type { PropsWithChildren } from 'react'\nimport type { ColorValue } from 'react-native'\n\nimport type { TabBarProps, TabItem } from '../tab-bar/interface'\n\ntype UsedTabBarProps = TabBarProps<string>\n\nexport interface TabsProps\n  extends Omit<\n      UsedTabBarProps,\n      | 'value'\n      | 'defaultValue'\n      | 'options'\n      | 'onChange'\n      | 'indicator'\n      | 'divider'\n      | 'safeAreaInsetBottom'\n      | 'keyboardShowNotRender'\n      | 'hidden'\n      | 'style'\n      | 'height'\n      | 'backgroundColor'\n    >,\n    PropsWithChildren<{}> {\n  /**\n   * TabBar style\n   */\n  tabBarStyle?: UsedTabBarProps['style']\n\n  /**\n   * TabBar 高度\n   */\n  tabBarHeight?: UsedTabBarProps['height']\n\n  /**\n   * TabBar 背景色\n   * @default bottom_bar_background_color\n   */\n  tabBarBackgroundColor?: UsedTabBarProps['backgroundColor']\n\n  /**\n   * 当前激活 tab 面板的 key\n   */\n  activeKey?: string\n\n  /**\n   * 初始化选中面板的 key，如果没有设置 activeKey\n   */\n  defaultActiveKey?: string\n\n  /**\n   * 切换面板的回调\n   */\n  onChange?: (activeKey: string) => void\n\n  /**\n   * 是否显示分割线\n   * @default false\n   */\n  divider?: boolean\n\n  /**\n   * 自定义分割线颜色\n   */\n  dividerColor?: ColorValue\n}\n\nexport interface TabPaneProps\n  extends PropsWithChildren<Pick<TabItem<string>, 'badge'>> {\n  /**\n   * 对应 activeKey\n   */\n  key: string\n\n  /**\n   * 选项卡头显示文字\n   */\n  tab: string\n\n  /**\n   * 是否在激活时才渲染节点\n   * @default true\n   */\n  lazyRender?: boolean\n}\n\nexport interface TabViewProps extends PropsWithChildren<{}> {\n  /**\n   * 是否在激活时才渲染节点\n   * @default true\n   */\n  lazyRender?: boolean\n\n  /**\n   * 是否激活\n   */\n  active?: boolean\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/tabs/tab-pane.tsx",
+      "content": "import type React from 'react'\nimport { memo } from 'react'\n\nimport type { TabPaneProps } from './interface'\n\nconst TabPane: React.FC<TabPaneProps> = ({ children }) => {\n  return children as React.ReactElement\n}\n\nexport default memo(TabPane)\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/tabs/tab-view.tsx",
+      "content": "import React, { useRef, memo } from 'react'\nimport type { ViewStyle } from 'react-native'\nimport { View } from 'react-native'\n\nimport type { TabViewProps } from './interface'\n\nconst activeStyle: ViewStyle = { flex: 1 }\nconst inactiveStyle: ViewStyle = { flex: 1, display: 'none' }\n\nconst TabView: React.FC<TabViewProps> = ({\n  children,\n  active,\n  lazyRender = true,\n}) => {\n  const Activated = useRef(!lazyRender)\n\n  if (active) {\n    Activated.current = true\n  }\n\n  return (\n    <View style={active ? activeStyle : inactiveStyle}>\n      {Activated.current ? children : null}\n    </View>\n  )\n}\n\nexport default memo(TabView)\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "./node_modules/@tastien/react-native-component/src/components/tabs/tabs.tsx",
+      "content": "import React, { useMemo, memo, isValidElement } from 'react';\n\nimport Divider from '../divider';\nimport TabBar from '../tab-bar';\nimport type { TabItem } from '../tab-bar/interface';\n\nimport type { TabsProps, TabPaneProps } from './interface';\nimport TabView from './tab-view';\nimport { childrenToArray } from '../../helpers';\nimport { useControllableValue } from '../../hooks';\n\nconst parseTabList = (children: React.ReactNode) => {\n  return childrenToArray(children)\n    .map((node) => {\n      if (isValidElement<TabPaneProps>(node)) {\n        const key = node.key !== undefined ? String(node.key) : undefined;\n        return {\n          ...node.props,\n          key,\n          node,\n        };\n      }\n\n      return null;\n    })\n    .filter((tab) => tab);\n};\n\nconst Tabs: React.FC<TabsProps> = ({\n  children,\n  tabBarStyle,\n  tabBarHeight,\n  tabBarBackgroundColor,\n  divider,\n  dividerColor,\n  ...restProps\n}) => {\n  const [_options, _tabs] = useMemo(() => {\n    const tabs = parseTabList(children);\n    // @ts-ignore\n    const options: TabItem<string>[] = tabs.map((t) => ({\n      value: t!.key,\n      label: t!.tab,\n      badge: t!.badge,\n    }));\n\n    return [options, tabs];\n  }, [children]);\n\n  const [value, onChange] = useControllableValue<string>(restProps, {\n    valuePropName: 'activeKey',\n    defaultValuePropName: 'defaultActiveKey',\n    defaultValue: _options[0]?.value as string,\n  });\n\n  return (\n    <>\n      <TabBar\n        {...restProps}\n        style={tabBarStyle}\n        height={tabBarHeight}\n        backgroundColor={tabBarBackgroundColor}\n        indicator\n        divider={false}\n        safeAreaInsetBottom={false}\n        keyboardShowNotRender={false}\n        hidden={false}\n        value={value}\n        options={_options}\n        onChange={onChange}\n      />\n\n      {divider ? <Divider color={dividerColor} /> : null}\n\n      {_tabs.map((t) => {\n        return (\n          <TabView key={t!.key} lazyRender={t!.node.props.lazyRender} active={t!.key === value}>\n            {t!.node}\n          </TabView>\n        );\n      })}\n    </>\n  );\n};\n\nexport default memo(Tabs);\n",
+      "type": "registry:component"
+    }
+  ]
+}
