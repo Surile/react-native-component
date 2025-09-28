@@ -7,18 +7,18 @@ import { UploaderPreview } from '@docs/components/examples';
 
 <div className='h-5' />
 
-<Uploader defaultValue="preview">
-  <UploaderList>
-    <UploaderTrigger value="preview">Preview</UploaderTrigger>
-    <UploaderTrigger value="code">Code</UploaderTrigger>
-  </UploaderList>
-  <UploaderContent value="preview">
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
     <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
       ## Preview
     </div>
     <PreviewCard preview={<UploaderPreview />} />
-  </UploaderContent>
-  <UploaderContent value="code">
+  </TabsContent>
+  <TabsContent value="code">
     ```json doc-gen:file
     {
       "file": "./node_modules/@tastien/react-native-component/src/examples/DemoUploader/index.tsx",
@@ -27,26 +27,26 @@ import { UploaderPreview } from '@docs/components/examples';
       }
     }
     ```
-  </UploaderContent>
-</Uploader>
+  </TabsContent>
+</Tabs>
 
 ## 安装
 
-<Uploader defaultValue='cli'>
-  <UploaderList>
-    <UploaderTrigger id='cli' value='cli'>
+<Tabs defaultValue='cli'>
+  <TabsList>
+    <TabsTrigger id='cli' value='cli'>
       CLI
-    </UploaderTrigger>
-  </UploaderList>
-  <UploaderContent value='cli'>
-    <CommandUploader
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value='cli'>
+    <CommandTabs
       args={[
         'add',
         'https://react-native-component-docs.vercel.app/r/uploader.json',
       ]}
     />
-  </UploaderContent>
-</Uploader>
+  </TabsContent>
+</Tabs>
 
 ### 使用
 
