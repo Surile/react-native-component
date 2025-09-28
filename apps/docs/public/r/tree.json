@@ -6,13 +6,13 @@
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
   "registryDependencies": [
-    "http://localhost:3000/r/helpers.json",
-    "http://localhost:3000/r/flex.json",
-    "http://localhost:3000/r/checkbox.json",
-    "http://localhost:3000/r/icons.json",
-    "http://localhost:3000/r/empty.json",
-    "http://localhost:3000/r/hooks.json",
-    "http://localhost:3000/r/search.json"
+    "https://react-native-component-docs.vercel.app/r/helpers.json",
+    "https://react-native-component-docs.vercel.app/r/flex.json",
+    "https://react-native-component-docs.vercel.app/r/checkbox.json",
+    "https://react-native-component-docs.vercel.app/r/icons.json",
+    "https://react-native-component-docs.vercel.app/r/empty.json",
+    "https://react-native-component-docs.vercel.app/r/hooks.json",
+    "https://react-native-component-docs.vercel.app/r/search.json"
   ],
   "files": [
     {

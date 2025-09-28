@@ -6,12 +6,12 @@
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
   "registryDependencies": [
-    "http://localhost:3000/r/portal.json",
-    "http://localhost:3000/r/helpers.json",
-    "http://localhost:3000/r/hooks.json",
-    "http://localhost:3000/r/icons.json",
-    "http://localhost:3000/r/overlay.json",
-    "http://localhost:3000/r/navbar.json"
+    "https://react-native-component-docs.vercel.app/r/portal.json",
+    "https://react-native-component-docs.vercel.app/r/helpers.json",
+    "https://react-native-component-docs.vercel.app/r/hooks.json",
+    "https://react-native-component-docs.vercel.app/r/icons.json",
+    "https://react-native-component-docs.vercel.app/r/overlay.json",
+    "https://react-native-component-docs.vercel.app/r/navbar.json"
   ],
   "files": [
     {

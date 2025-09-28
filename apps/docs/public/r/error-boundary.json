@@ -6,9 +6,9 @@
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
   "registryDependencies": [
-    "http://localhost:3000/r/blank.json",
-    "http://localhost:3000/r/button.json",
-    "http://localhost:3000/r/result.json"
+    "https://react-native-component-docs.vercel.app/r/blank.json",
+    "https://react-native-component-docs.vercel.app/r/button.json",
+    "https://react-native-component-docs.vercel.app/r/result.json"
   ],
   "files": [
     {

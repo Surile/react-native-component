@@ -6,10 +6,10 @@
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
   "registryDependencies": [
-    "http://localhost:3000/r/badge.json",
-    "http://localhost:3000/r/hooks.json",
-    "http://localhost:3000/r/loading.json",
-    "http://localhost:3000/r/result.json"
+    "https://react-native-component-docs.vercel.app/r/badge.json",
+    "https://react-native-component-docs.vercel.app/r/hooks.json",
+    "https://react-native-component-docs.vercel.app/r/loading.json",
+    "https://react-native-component-docs.vercel.app/r/result.json"
   ],
   "files": [
     {

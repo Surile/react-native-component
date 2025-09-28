@@ -6,8 +6,8 @@
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
   "registryDependencies": [
-    "http://localhost:3000/r/helpers.json",
-    "http://localhost:3000/r/space.json"
+    "https://react-native-component-docs.vercel.app/r/helpers.json",
+    "https://react-native-component-docs.vercel.app/r/space.json"
   ],
   "files": [
     {
