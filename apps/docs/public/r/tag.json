@@ -6,7 +6,7 @@
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
   "registryDependencies": [
-    "http://localhost:3000/r/icons.json"
+    "https://react-native-component-docs.vercel.app/r/icons.json"
   ],
   "files": [
     {

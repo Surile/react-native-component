@@ -6,11 +6,11 @@
   "author": "@gabimoncha",
   "description": "Displays a button which is always red.",
   "registryDependencies": [
-    "http://localhost:3000/r/helpers.json",
-    "http://localhost:3000/r/button.json",
-    "http://localhost:3000/r/result.json",
-    "http://localhost:3000/r/space.json",
-    "http://localhost:3000/r/hooks.json"
+    "https://react-native-component-docs.vercel.app/r/helpers.json",
+    "https://react-native-component-docs.vercel.app/r/button.json",
+    "https://react-native-component-docs.vercel.app/r/result.json",
+    "https://react-native-component-docs.vercel.app/r/space.json",
+    "https://react-native-component-docs.vercel.app/r/hooks.json"
   ],
   "files": [
     {
