@@ -7,18 +7,18 @@ import { TextInputPreview } from '@docs/components/examples';
 
 <div className='h-5' />
 
-<TextInput defaultValue="preview">
-  <TextInputList>
-    <TextInputTrigger value="preview">Preview</TextInputTrigger>
-    <TextInputTrigger value="code">Code</TextInputTrigger>
-  </TextInputList>
-  <TextInputContent value="preview">
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
     <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
       ## Preview
     </div>
     <PreviewCard preview={<TextInputPreview />} />
-  </TextInputContent>
-  <TextInputContent value="code">
+  </TabsContent>
+  <TabsContent value="code">
     ```json doc-gen:file
     {
       "file": "./node_modules/@tastien/react-native-component/src/examples/DemoTextInput/index.tsx",
@@ -27,26 +27,26 @@ import { TextInputPreview } from '@docs/components/examples';
       }
     }
     ```
-  </TextInputContent>
-</TextInput>
+  </TabsContent>
+</Tabs>
 
 ## 安装
 
-<TextInput defaultValue='cli'>
-  <TextInputList>
-    <TextInputTrigger id='cli' value='cli'>
+<Tabs defaultValue='cli'>
+  <TabsList>
+    <TabsTrigger id='cli' value='cli'>
       CLI
-    </TextInputTrigger>
-  </TextInputList>
-  <TextInputContent value='cli'>
-    <CommandTextInput
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value='cli'>
+    <CommandTabs
       args={[
         'add',
-        'https://react-native-component-docs.vercel.app/r/textInput.json',
+        'https://react-native-component-docs.vercel.app/r/text-input.json',
       ]}
     />
-  </TextInputContent>
-</TextInput>
+  </TabsContent>
+</Tabs>
 
 ### 使用
 

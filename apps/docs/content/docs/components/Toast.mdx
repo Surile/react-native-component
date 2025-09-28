@@ -7,18 +7,18 @@ import { ToastPreview } from '@docs/components/examples';
 
 <div className='h-5' />
 
-<Toast defaultValue="preview">
-  <ToastList>
-    <ToastTrigger value="preview">Preview</ToastTrigger>
-    <ToastTrigger value="code">Code</ToastTrigger>
-  </ToastList>
-  <ToastContent value="preview">
+<Tabs defaultValue="preview">
+  <TabsList>
+    <TabsTrigger value="preview">Preview</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="preview">
     <div id="preview" className='*:hidden scroll-m-20' aria-hidden>
       ## Preview
     </div>
     <PreviewCard preview={<ToastPreview />} />
-  </ToastContent>
-  <ToastContent value="code">
+  </TabsContent>
+  <TabsContent value="code">
     ```json doc-gen:file
     {
       "file": "./node_modules/@tastien/react-native-component/src/examples/DemoToast/index.tsx",
@@ -27,26 +27,26 @@ import { ToastPreview } from '@docs/components/examples';
       }
     }
     ```
-  </ToastContent>
-</Toast>
+  </TabsContent>
+</Tabs>
 
 ## 安装
 
-<Toast defaultValue='cli'>
-  <ToastList>
-    <ToastTrigger id='cli' value='cli'>
+<Tabs defaultValue='cli'>
+  <TabsList>
+    <TabsTrigger id='cli' value='cli'>
       CLI
-    </ToastTrigger>
-  </ToastList>
-  <ToastContent value='cli'>
-    <CommandToast
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value='cli'>
+    <CommandTabs
       args={[
         'add',
         'https://react-native-component-docs.vercel.app/r/toast.json',
       ]}
     />
-  </ToastContent>
-</Toast>
+  </TabsContent>
+</Tabs>
 
 ### 使用
 
